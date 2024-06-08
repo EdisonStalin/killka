@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-29 17:38+0000\n"
+"PO-Revision-Date: 2021-11-29 17:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock
+#: model:ir.ui.view,arch_db:stock.view_backorder_confirmation
+msgid "Create Backorder"
+msgstr "Crear una entrega pendiente"
+
+#. module: stock
+#: code:addons/stock/models/stock_picking.py:715
+#, python-format
+msgid "Create Backorder?"
+msgstr "¿Crear una entrega pendiente?"
+
+#. module: stock
+#: model:ir.ui.view,arch_db:stock.view_backorder_confirmation
+msgid ""
+"Create a backorder, if you expect to process the remaining\n"
+"                        products later.  Do not create a backorder if you "
+"will not\n"
+"                        supply the remaining products."
+msgstr ""
+"Genere un entrega pendiente, si va a procesar la cantidad "
+"restante\n"
+"de los productos después. No genere un entrega pendiente si usted no suministrará\n"
+"los productos restantes."
+
+#. module: stock
+#: model:ir.ui.view,arch_db:stock.view_backorder_confirmation
+msgid "No Backorder"
+msgstr "Sin entrega pendiente"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_move_product_uom_qty
+#: model:ir.ui.view,arch_db:stock.view_picking_form
+msgid "Initial Demand"
+msgstr "Pedido inicial"
+
+#. module: stock
+#: model:ir.model.fields,field_description:stock.field_stock_inventory_line_product_uom_id
+#: model:ir.model.fields,field_description:stock.field_stock_warehouse_orderpoint_product_uom
+msgid "Product Unit of Measure"
+msgstr "Unidad de medida"

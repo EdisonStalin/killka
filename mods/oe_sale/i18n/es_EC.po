@@ -1,0 +1,432 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-03 15:19+0000\n"
+"PO-Revision-Date: 2022-11-03 15:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "&amp;bull;"
+msgstr "&amp;bull;"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "&amp;nbsp;<span>on</span>&amp;nbsp;"
+msgstr "&amp;nbsp;<span>en</span>&amp;nbsp;"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+msgid "<br/>\n"
+"								Código Postal:"
+msgstr "<br/>\n"
+"								Código Postal:"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<br/>\n"
+"							Código Postal:"
+msgstr "<br/>\n"
+"							Código Postal:"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<span style=\"color: #080808;\">Email</span>"
+msgstr "<span style=\"color: #080808;\">Correo</span>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+msgid "<span style=\"color: #080808;\">Telephone</span>"
+msgstr "<span style=\"color: #080808;\">Teléfono</span>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<span style=\"color: #080808;\">Teléfono</span>"
+msgstr "<span style=\"color: #080808;\">Teléfono</span>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+msgid "<span>Delivery Note # </span>"
+msgstr "<span>Nota de Entrega # </span>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<span>Proforma Factura # </span>"
+msgstr "<span>Proforma Factura # </span>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<strong>Expiration Date:</strong>"
+msgstr "<strong>Fecha de caducidad:</strong>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<strong>Offer conditions</strong>"
+msgstr "<strong>CONDICIONES DE LA OFERTA</strong>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<strong>Payment Terms:</strong>"
+msgstr "<strong>Plazo de pago:</strong>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referencia:</strong>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<strong>Subtotal: </strong>"
+msgstr "<strong>Subtotal: </strong>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotal</strong>"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: oe_sale
+#: model:ir.actions.act_window,name:oe_sale.action_sale_massive_products
+#: model:ir.ui.view,arch_db:oe_sale.view_order_form_inherit_oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.view_sale_massive_products_form
+msgid "Add Products"
+msgstr "Agregar Productos"
+
+#. module: oe_sale
+#: model:ir.model,name:oe_sale.model_sale_massive_products
+msgid "Add of massive products"
+msgstr "Agregar"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Amount"
+msgstr "Monto"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_account_analytic_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+msgid "Aprobado By:"
+msgstr "Aprobado Por:"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Beneficiary By:"
+msgstr "Beneficiario:"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_order_establishment_id
+msgid "Business Store"
+msgstr "Sucursal"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.view_sale_massive_products_form
+msgid "Cancel"
+msgstr "Anular"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_categ_id
+msgid "Category"
+msgstr "Categoría"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Code"
+msgstr "Código"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Cordially,"
+msgstr "Atentamente,"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: oe_sale
+#: selection:sale.massive.products,type_request:0
+msgid "Delivery"
+msgstr "Entrega"
+
+#. module: oe_sale
+#: model:ir.actions.report,name:oe_sale.action_report_delivey_note
+msgid "Delivery Note"
+msgstr "Nota de Entrega"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Dirección Matriz"
+msgstr "Dirección Matriz"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_order_amount_discount
+msgid "Discount Amount"
+msgstr "Descuento"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: oe_sale
+#: model:ir.model,name:oe_sale.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Asistente para composición de Email"
+
+#. module: oe_sale
+#: selection:sale.order.line,type_discount:0
+msgid "Fixed"
+msgstr "Monto"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oe_sale
+#: model:ir.model.fields,help:oe_sale.field_sale_order_print_image
+msgid "If ticked, you can see the product image in report of sale order/quotation"
+msgstr "Si está marcado, puede ver la imagen del producto en el informe del pedido de venta/presupuesto"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Image"
+msgstr "Imagen"
+
+#. module: oe_sale
+#: model:ir.model.fields,help:oe_sale.field_sale_order_line_image_small
+msgid "Image of the product variant (Small-sized image of product template if false)."
+msgstr "Imagen de la variante del producto (Imagen pequeña de la plantilla del producto en caso de que no exista)."
+
+#. module: oe_sale
+#: model:ir.actions.act_window,name:oe_sale.action_view_sale_advance_payment_inv
+msgid "Invoice to Order Lines"
+msgstr "Facturar las Lineas de Venta"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+msgid "Made By:"
+msgstr "Elaborado Por:"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+msgid "Main Address"
+msgstr "Dirección Matriz"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "N/D"
+msgstr "N/D"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Name:"
+msgstr "Nombre:"
+
+#. module: oe_sale
+#: selection:sale.order.line,type_discount:0
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_order_print_image
+msgid "Print Image"
+msgstr "Imprimir imagen"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_order_line_image_small
+msgid "Product Image"
+msgstr "Imagen del producto"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_line_products
+#: model:ir.ui.view,arch_db:oe_sale.view_sale_massive_products_form
+msgid "Products"
+msgstr "Productos"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_product_qty
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: oe_sale
+#: model:ir.model,name:oe_sale.model_sale_order
+msgid "Quotation"
+msgstr "Cotización"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "R.U.C./C.I.:"
+msgstr "R.U.C./C.I.:"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.view_sale_massive_products_form
+msgid "SELECT A CATEGORY IF YOU WANT TO FILTER THE PRODUCTS OF THAT CATEGORY. \n"
+"                    		LEAVE EMPTY IF YOU WANT TO SEE ALL PRODUCTS"
+msgstr "SELECCIONE UNA CATEGORÍA SI DESEA FILTRAR LOS PRODUCTOS DE ESTA CATEGORÍA. \n"
+"DEJAR VACÍO SI QUIERES VER TODOS LOS PRODUCTOS."
+
+#. module: oe_sale
+#: selection:sale.massive.products,type_request:0
+msgid "Sale"
+msgstr "Venta"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_order_vendor_id
+msgid "Sale Vendor"
+msgstr "Vendedor"
+
+#. module: oe_sale
+#: model:ir.model,name:oe_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de Orden de Venta"
+
+#. module: oe_sale
+#: model:ir.actions.act_window,name:oe_sale.action_sale_order_line
+msgid "Sales Order Lines"
+msgstr "Líneas de pedido"
+
+#. module: oe_sale
+#: model:ir.model.fields,help:oe_sale.field_sale_massive_products_categ_id
+msgid "Select category for the current product"
+msgstr "Seleccione la categoría para el producto actual."
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.view_order_form_inherit_oe_sale
+msgid "Send Message"
+msgstr "Enviar Mensaje"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_taxes_id
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: oe_sale
+#: model:ir.actions.act_window,name:oe_sale.action_sms_template_message_sale
+#: model:ir.ui.menu,name:oe_sale.menu_action_sms_template_message_sale
+msgid "Template Message"
+msgstr "Plantilla Mensaje"
+
+#. module: oe_sale
+#: model:ir.ui.menu,name:oe_sale.menu_templates_sale
+msgid "Template Sale"
+msgstr "Plantilla de Venta"
+
+#. module: oe_sale
+#: model:ir.actions.act_window,name:oe_sale.action_email_template_tree_sale
+#: model:ir.ui.menu,name:oe_sale.menu_email_templates_sale
+msgid "Templates Email"
+msgstr "Plantilla Correo"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Total Price"
+msgstr "Precio total"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_type_request
+msgid "Type"
+msgstr "Tipo"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_order_line_type_discount
+msgid "Type Discount"
+msgstr "Tipo Descuento"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Unit"
+msgstr "Medida"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_price_unit
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: oe_sale
+#: model:ir.model.fields,field_description:oe_sale.field_sale_massive_products_warehouse_id
+msgid "Warehouse"
+msgstr "Bodega"
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "We appreciate your trust and we are attentive to serve you."
+msgstr "Agradecemos tu confianza y estamos atentos para servirte."
+
+#. module: oe_sale
+#: model:ir.ui.view,arch_db:oe_sale.report_delivery_note_document
+#: model:ir.ui.view,arch_db:oe_sale.report_saleorder_document
+msgid "________________"
+msgstr "________________"
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+		<record id="account_journal_dashboard_kanban_view_inherit_oe_edocs" model="ir.ui.view">
+		    <field name="name">account.journal.dashboard.kanban.inherit.oe_edocs</field>
+		    <field name="model">account.journal</field>
+		    <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+		    <field name="arch" type="xml">
+				
+				<xpath expr="//t[@t-name='JournalBodySalePurchase']/div[hasclass('o_kanban_primary_right')]/div[hasclass('row')][2]" position='after'>
+					<div class="row">
+                        <div class="col-xs-6">
+							<a type="object" t-if="journal_type == 'sale'" name="action_authorization"
+			                	context="{'search_default_not_authorized': 1, 'search_default_status': 1, 'authorization': True}">
+			                    <t t-esc="dashboard.number_not_authorization"/> Not authorized by SRI
+			                </a>
+							<a type="object" t-if="journal_type == 'sale'" name="action_authorization"
+			                	context="{'search_default_authorized': 1, 'search_default_status': 1, 'authorization': False}">
+			                    <t t-esc="dashboard.number_authorization"/> Authorized by SRI
+			                </a>
+			                <a type="object" t-if="journal_type == 'sale'" name="action_open_email" context="{}">
+			                    <t t-esc="dashboard.not_sent_email"/> Emails not sent
+			                </a>
+                        </div>
+                    </div>
+
+				</xpath>
+				
+		    </field>
+		</record>
+    
+	</data>
+</odoo>

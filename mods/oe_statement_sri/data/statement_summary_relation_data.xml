@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+		
+		<!-- Formulario 107 -->
+		<record model="statement.form" id="data_statement_form_rdep">
+			<field name="name">RDEP</field>
+			<field name="sequence">20</field>
+			<field name="type_period">yearly</field>
+			<field name="action_id" ref="oe_account.action_statement_form_107_report"/>
+			<field name="context">{'group_by': ['group_id', 'line_id']}</field>
+			<field name="description">Comprobante de retenciones en la fuente del impuesto a la Renta por ingresos del trabajo en relación de dependencia</field>
+		</record>
+		
+		<!-- Ingresos Gravados -->
+		
+		<record model="statement.form.line" id="data_statement_line_hr_024">
+			<field name="name">INGRESOS GRAVADOS CON ESTE EMPLEADOR (informativo)</field>
+			<field name="sequence">1</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_349')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_001">
+			<field name="name">SUELDOS Y SALARIOS</field>
+			<field name="sequence">1</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_024"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_301')])]"/>			
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_hr_002">
+			<field name="name">SOBRESUELDOS, COMISIONES, BONOS Y OTROS INGRESOS GRAVADOS</field>
+			<field name="sequence">2</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_024"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_303')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_hr_003">
+			<field name="name">PARTICIPACIÓN UTILIDADES</field>
+			<field name="sequence">3</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_024"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_305')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_004">
+			<field name="name">INGRESOS GRAVADOS GENERADOS CON OTROS EMPLEADORES</field>
+			<field name="sequence">4</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_024"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_307')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_018">
+			<field name="name">IMPUESTO A LA RENTA ASUMIDO POR ESTE EMPLEADOR</field>
+			<field name="sequence">5</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_024"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_381')])]"/>
+		</record>
+		
+		<!-- Ingresos Exentos -->
+		
+		<record model="statement.form.line" id="data_statement_line_hr_026">
+			<field name="name">TOTAL INGRESOS EXENTOS</field>
+			<field name="sequence">2</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_005">
+			<field name="name">DÉCIMO TERCER SUELDO</field>
+			<field name="sequence">1</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_026"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_311')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_006">
+			<field name="name">DÉCIMO CUARTO SUELDO</field>
+			<field name="sequence">2</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_026"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_313')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_007">
+			<field name="name">FONDO DE RESERVA</field>
+			<field name="sequence">3</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_026"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_315')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_008">
+			<field name="name">OTROS INGRESOS EN RELACIÓN DE DEPENDENCIA QUE NO CONSTITUYEN RENTA</field>
+			<field name="sequence">4</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_026"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_317')])]"/>
+		</record>
+		
+		<!-- Gastos IESS -->
+		
+		<record model="statement.form.line" id="data_statement_line_hr_028">
+			<field name="name">GASTOS IESS</field>
+			<field name="sequence">3</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_009">
+			<field name="name">APORTE PERSONAL IESS CON ESTE EMPLEADOR (únicamente pagado por el trabajador)</field>
+			<field name="sequence">9</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_028"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_351')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_010">
+			<field name="name">APORTE PERSONAL IESS CON OTROS EMPLEADORES (únicamente pagado por el trabajador)</field>
+			<field name="sequence">10</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_028"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_353')])]"/>
+		</record>
+		
+		<!-- Gastos Personales -->
+		
+		<record model="statement.form.line" id="data_statement_line_hr_027">
+			<field name="name">TOTAL DEDUCCIÓN GASTOS PERSONALES</field>
+			<field name="sequence">4</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_hr_011">
+			<field name="name">DEDUCCIÓN GASTOS PERSONALES - VIVIENDA</field>
+			<field name="sequence">1</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_027"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_361')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_012">
+			<field name="name">DEDUCCIÓN GASTOS PERSONALES - SALUD</field>
+			<field name="sequence">2</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_027"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_363')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_013">
+			<field name="name">DEDUCCIÓN GASTOS PERSONALES - EDUCACIÓN</field>
+			<field name="sequence">4</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_027"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_365')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_014">
+			<field name="name">DEDUCCIÓN GASTOS PERSONALES - ALIMENTACIÓN</field>
+			<field name="sequence">5</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_027"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_367')])]"/>
+		</record>
+					
+		<record model="statement.form.line" id="data_statement_line_hr_015">
+			<field name="name">DEDUCCIÓN GASTOS PERSONALES - VESTIMENTA</field>
+			<field name="sequence">6</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_027"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_369')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_016">
+			<field name="name">EXONERACIÓN POR DISCAPACIDAD</field>
+			<field name="sequence">7</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="parent_id" ref="data_statement_line_hr_027"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_371')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_017">
+			<field name="name">EXONERACIÓN POR TERCERA EDAD</field>
+			<field name="sequence">8</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_373')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_019">
+			<field name="name">BASE IMPONIBLE GRAVADA</field>
+			<field name="sequence">9</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_399')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_020">
+			<field name="name">IMPUESTO A LA RENTA CAUSADO</field>
+			<field name="sequence">10</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_401')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_hr_021">
+			<field name="name">VALOR DEL IMPUESTO RETENIDO Y ASUMIDO POR OTROS EMPLEADORES DURANTE EL PERÍODO DECLARADO</field>
+			<field name="sequence">11</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_403')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_hr_022">
+			<field name="name">VALOR DEL IMPUESTO ASUMIDO POR ESTE EMPLEADOR</field>
+			<field name="sequence">12</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_405')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_hr_023">
+			<field name="name">VALOR DEL IMPUESTO RETENIDO AL TRABAJADOR POR ESTE EMPLEADOR</field>
+			<field name="sequence">13</field>
+			<field name="form_id" ref="data_statement_form_rdep"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_hr_407')])]"/>
+		</record>
+		
+	</data>
+</odoo>	

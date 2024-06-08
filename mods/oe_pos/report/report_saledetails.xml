@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    	<template id="report_saledetails" inherit_id="point_of_sale.report_saledetails">
+    	
+    		<xpath expr="//table[1]/thead/tr/th[3]" position="after">
+    			<th>Subtotal</th>
+                <th>Cost Subtotal</th>
+                <th>Profit</th>
+    		</xpath>
+    		
+    		<xpath expr="//table[1]/tbody/tr/td[3]" position="after">
+    			<td>
+    				<t t-esc='line["subtotal"]' />
+    			</td>
+    			<td>
+    				<t t-esc='line["cost_subtotal"]' />
+    			</td>
+    			<td>
+    				<t t-esc='line["profit"]' />
+    			</td>
+    		</xpath>
+    		
+    		<xpath expr="//table[1]/tbody/tr[1]" position="after">
+    			<td></td>
+    			<td></td>
+    			<td></td>
+    			<td>
+    				<strong><t t-esc='subtotal' t-options="{'widget': 'float', 'precision': currency_precision}"/></strong>
+    			</td>
+    			<td>
+    				<strong><t t-esc='cost_subtotal' t-options="{'widget': 'float', 'precision': currency_precision}"/></strong>
+    			</td>
+    			<td>
+    				<strong><t t-esc='profit' t-options="{'widget': 'float', 'precision': currency_precision}"/></strong>
+    			</td>
+    		</xpath>
+    		
+    	</template>
+    
+    </data>
+</odoo>

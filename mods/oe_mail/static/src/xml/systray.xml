@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<templates>
+
+	<t t-name="mail.chat.NotificationMenu">
+		<t t-if="widget.notification_bar">
+			<li class="o_mail_navbar_item">
+				<!--t t-set="company_id" t-value="request.env['res.company'].sudo().search([], limit=1)"/-->
+				<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Notification" href="#">
+	                <i class="fa fa-desktop"/>
+	            </a>
+	            <div class="o_mail_navbar_dropdown dropdown-menu" role="menu">
+	            	<div class="o_mail_navbar_mobile_header">
+		            	<div>
+							<div style="height:80px;width:90px;display:inline-block;margin-left:10px;">
+					            <!--img class="company_logo" t-att-src="'data:image/png;base64,%s' % to_text(company_id.logo_login)"/-->
+					        </div>
+					        <div style="display:inline-block;">
+					        	<!-- strong><span t-esc="company_id.name_software"/></strong--><span class="o_mail_request_permission"> needs your permission to <a href="#"> enable desktop notifications</a>.</span>
+					        </div>
+		            	</div>
+		            	<button class="btn btn-default pull-left o_request_permission_close" style="margin-top:5px; margin-bottom:5px;margin-left:40px;">Not thanks</button>
+		            	<button class="btn btn-primary pull-right o_mail_request_permission" style="margin-top:5px; margin-bottom:5px;margin-right:70px;">Continue</button>
+	            	</div> 			
+	            </div>
+			</li>
+		</t>
+	</t>
+
+</templates>

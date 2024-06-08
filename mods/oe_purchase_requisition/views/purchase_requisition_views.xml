@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+		
+		<record model="ir.ui.view" id="view_purchase_requisition_tree_inherit_oe_purchase_requisition">
+            <field name="name">purchase.requisition.tree.inherit.oe_purchase_requisition</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_tree"/>
+            <field name="arch" type="xml">
+
+				<xpath expr="//tree" position="attributes">
+					<attribute name="decoration-info">state == 'draft'</attribute>
+					<attribute name="decoration-bf">state == 'in_progress'</attribute>
+					<attribute name="decoration-muted">state == 'cancel'</attribute>
+					<attribute name="decoration-danger">state == 'open'</attribute>
+					<attribute name="decoration-success">state == 'done'</attribute>
+				</xpath>
+            	
+            </field>
+        </record>
+		
+		<record model="ir.ui.view" id="view_purchase_requisition_form_inherit_oe_purchase_requisition">
+            <field name="name">purchase.requisition.form.inherit.oe_purchase_requisition</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form"/>
+            <field name="arch" type="xml">
+            
+            	<xpath expr="//button[@name='action_in_progress']" position="after">
+            		<button name="%(oe_purchase.action_purchase_massive_products)d" type="action" states="draft"
+            			string="Add Products" class="btn-primary" context="{'default_type_request': 'requisition'}"/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='line_ids']/tree/field[@name='price_unit']" position="after">
+					<field name="available_qty" readonly="1" force_save="1"/>
+					<field name="last_cost" readonly="1" force_save="1"/>
+					<field name="type_discount" widget="radio"/>
+					<field name="discount"/>
+					<field name="taxes_id" widget="many2many_tags" domain="[('type_tax_use','=','purchase')]" context="{'default_type_tax_use': 'purchase'}" options="{'no_create': True}"/>
+                    <field name="price_subtotal" widget="monetary"/>
+                    <field name="price_total" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='line_ids']" position="after">
+	                <group class="oe_subtotal_footer oe_right">
+	                	<field name="currency_id" groups="base.group_multi_currency"/>
+	                    <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                    <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                    <div class="oe_subtotal_footer_separator oe_inline">
+	                        <label for="amount_total"/>
+	                    </div>
+	                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                </group>
+				</xpath>
+
+            </field>
+		</record>
+	
+		<record id="action_purchase_requisition_tree_form_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="purchase_requisition.view_purchase_requisition_tree"/>
+            <field name="act_window_id" ref="purchase_requisition.action_purchase_requisition"/>
+        </record>
+
+        <record id="action_purchase_requisition_form_form_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="purchase_requisition.view_purchase_requisition_form"/>
+            <field name="act_window_id" ref="purchase_requisition.action_purchase_requisition"/>
+        </record>
+		
+	</data>
+</odoo>

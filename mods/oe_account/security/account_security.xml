@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<data noupdate="0">
+		
+		<record id="account.group_account_user" model="res.groups">
+	        <field name="name">Show Full Accounting Features</field>
+	        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+	    </record>
+
+		<record id="group_manager_form" model="res.groups">
+	        <field name="name">Manager Form and Locker</field>
+	        <field name="category_id" ref="base.module_category_hidden"/>
+	    </record>		
+
+	</data>
+
+	<data noupdate="1">
+	
+		<record id="withholding_comp_rule" model="ir.rule">
+	        <field name="name">Withholding multi-company</field>
+	        <field name="model_id" ref="model_account_withholding"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+	    </record>
+	
+	    <record model="ir.rule" id="account_withholding_line_comp_rule">
+	        <field name="name">Withholding Line company rule</field>
+	        <field name="model_id" ref="model_account_withholding_line"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+	    </record>
+
+		<record id="authorization_comp_rule" model="ir.rule">
+	        <field name="name">Authorization multi-company</field>
+	        <field name="model_id" ref="model_account_authorization"/>
+	        <field name="global" eval="True"/>
+	        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+	    </record>
+
+	</data>
+</odoo>

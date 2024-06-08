@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+		<menuitem id="menu_sri_statement" name="SRI Statements"
+			parent="account.menu_finance_reports" sequence="6"
+			groups="account.group_account_manager"/>
+		
+		<menuitem id="menu_setting_sri_statement" name="Setting SRI Statements"
+			parent="account.menu_finance_configuration" sequence="6"
+			groups="account.group_account_manager"/>
+
+    </data>
+</odoo>    

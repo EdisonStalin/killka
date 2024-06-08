@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+	
+		<record id="send_sms_view_form_inherit_oe_sms" model="ir.ui.view">
+        	<field name="name">sms.send_sms.form.inherit.oe_sms</field>
+        	<field name="model">sms.send_sms</field>
+        	<field name="inherit_id" ref="sms.send_sms_view_form"/>
+        	<field name="arch" type="xml">
+        		
+        		<xpath expr="//sheet" position="after">
+        			<div class="alert alert-info" role="alert" style="margin-bottom:0px;">
+	                    Check the documentation to know how to write to a message in <bold><a class="alert-link" href="https://faq.whatsapp.com/general/chats/how-to-format-your-messages/?lang=es" target="_blank" role="button">WhatsApp</a></bold>
+	                </div>
+        		</xpath>
+        		
+        		<xpath expr="//field[@name='recipients']" position="before">
+        			<field name="model" invisible="1"/>
+        			<field name="tmpl_message_id" options="{'no_create': True}" domain="[('model','=',model)]"/>
+        		</xpath>
+        		
+        		<xpath expr="//button[@name='action_send_sms']" position="after">
+        			<button string="Send by WhatsApp " type="object" class="oe_stat_button" icon="fa-whatsapp" name="action_send_whatsapp"/>
+        		</xpath>
+        		
+        	</field>
+        </record>
+	
+	</data>
+</odoo>

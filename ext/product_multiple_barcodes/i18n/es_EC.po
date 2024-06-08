@@ -1,0 +1,138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* product_multiple_barcodes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-26 20:35+0000\n"
+"PO-Revision-Date: 2022-03-26 20:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_product_barcode_ids
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_template_barcode_ids
+msgid "Additional Barcodes"
+msgstr "Códigos de barras adicionales"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_name
+msgid "Barcode"
+msgstr "Código de barras"
+
+#. module: product_multiple_barcodes
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.view_multiply_barcode_wizard_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_create_uid
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_create_date
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_display_name
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_id
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard___last_update
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_write_uid
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_write_date
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_name
+msgid "New Barcode"
+msgstr "Nuevo código de barras"
+
+#. module: product_multiple_barcodes
+#: sql_constraint:product.product:0
+msgid "No error"
+msgstr "No error"
+
+#. module: product_multiple_barcodes
+#: model:ir.model,name:product_multiple_barcodes.model_product_product
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_product_barcode_multi_product_id
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.product_barcode_multi_view_search
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.product_variant_barcode_multi_view_search
+msgid "Product"
+msgstr "Producto"
+
+#. module: product_multiple_barcodes
+#: model:ir.model,name:product_multiple_barcodes.model_product_barcode_multi
+msgid "Product Barcode Multi"
+msgstr "Multi código de barras del producto"
+
+#. module: product_multiple_barcodes
+#: model:ir.model,name:product_multiple_barcodes.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: product_multiple_barcodes
+#: model:ir.model.fields,field_description:product_multiple_barcodes.field_multiply_barcode_wizard_remember_previous_barcode
+msgid "Remember previous barcode in \"Additional Barcodes\" field"
+msgstr "Recordar el código de barras anterior en campo \"Código de barras\""
+
+#. module: product_multiple_barcodes
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.product_product_view_form_multiply_barcode
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.product_template_view_form_multiply_barcode
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.view_multiply_barcode_wizard_form
+msgid "Update Barcode"
+msgstr "Actualizar código"
+
+#. module: product_multiple_barcodes
+#: model:ir.actions.act_window,name:product_multiple_barcodes.action_multiply_barcode_wizard
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.view_multiply_barcode_wizard_form
+msgid "Update Product Barcode"
+msgstr "Actualizar código de barras del producto"
+
+#. module: product_multiple_barcodes
+#: model:ir.model,name:product_multiple_barcodes.model_multiply_barcode_wizard
+msgid "Update Product Multiply Barcode Wizard"
+msgstr "Actualizar asistente de código de barras de multiplicación de productos"
+
+#. module: product_multiple_barcodes
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.view_multiply_barcode_wizard_form
+msgid "Use this popup in case you would like to update barcode of current product. It also allows you to record automatically previous barcode into \"Additional Barcodes\" field,\n"
+"                        so it will still be searchable and also in this case you will be 100% sure that this barcode will not be used by other products also"
+msgstr "Utilice esta ventana emergente en caso de que desee actualizar el código de barras del producto actual. También le permite registrar automáticamente el código de barras anterior en el campo \"Códigos de barras adicionales\",\n"
+"                        para que aún se pueda buscar y también en este caso estará 100% seguro de que este código de barras no será utilizado por otros productos también"
+
+#. module: product_multiple_barcodes
+#: model:ir.ui.view,arch_db:product_multiple_barcodes.view_multiply_barcode_wizard_form
+msgid "or"
+msgstr "o"
+

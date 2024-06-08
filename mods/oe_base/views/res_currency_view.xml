@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_currency_form_inherit_oe_base">
+            <field name="name">res.currency.form.inherit.oe_base</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="arch" type="xml">
+                
+				<xpath expr="//field[@name='symbol']" position="before">
+            		<field name="display_rounding"/>
+                    <field name="display_decimal_places"/>
+            	</xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

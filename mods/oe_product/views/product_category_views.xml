@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<record id="product_category_list_view_inherit_oe_product" model="ir.ui.view">
+        <field name="name">product.category.list.inherit.oe_product</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_list_view"/>
+        <field name="arch" type="xml">
+        	
+        	<xpath expr="//field[@name='display_name']" position="after">
+        		<field name="prefix"/>
+        		<field name="active" widget="boolean_toggle"/>
+        	</xpath>
+        	
+        </field>
+    </record>
+
+	<record id="product_category_form_view_inherit_oe_product" model="ir.ui.view">
+        <field name="name">product.category.form.inherit.oe_product</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+        	
+            <xpath expr="//div[@name='button_box']" position="inside">
+	            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	                <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+	            </button>
+            </xpath>
+        	
+        	<xpath expr="//field[@name='parent_id']" position="before">
+        		<field name="prefix" required="1"/>
+        	</xpath>
+        	
+        </field>
+	</record>     
+	
+
+</odoo>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+        <record id="pos_config_view_form_inherit_ip" model="ir.ui.view">
+            <field name="name">pos.config.view.form.inherit.ip</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+            	
+				<xpath expr="//field[@name='name']" position="before">
+                    <field name="image" widget='image' class="oe_avatar"/>
+                </xpath>
+            
+                <xpath expr="//div[@id='category_reference']" position="after">
+                    <div class="col-12 col-lg-6 o_setting_box" title="Default Cusotmer in POS Order.">
+                        <div class="o_setting_right_pane">
+                            <label for="default_partner_id"/>
+                            <div class="text-muted">
+                                Default Customer.
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="default_partner_id" colspan="4" nolabel="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+                
+                <xpath expr="//field[@name='iface_big_scrollbars']/../.." position="after">
+	                
+					<div class="col-xs-12 col-md-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="allow_service"/>
+						</div>
+						<div class="o_setting_right_pane">
+						    <label for="service_category_id" string='Allow Service Charges'/>
+						    <div class="content-group mt16" attrs="{'invisible': [('allow_service', '=', False)]}">
+						    	<field name="service_category_id"/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-xs-12 col-md-6 o_setting_box">
+						<div class="o_setting_left_pane">
+						    <field name="pos_lock"/>
+						</div>
+						<div class="o_setting_right_pane">
+						    <label for="pos_lock"/>
+							<div class="content-group mt16" attrs="{'invisible': [('pos_lock', '=', False)]}">
+	                            <div class="row mt16">
+	                                <label for="bg_color" class="col-md-3 o_light_label" />
+	                                <field name="bg_color" style="height:30px;width:200px"/>
+	                            </div>
+	                        </div>
+						</div>
+					</div>
+                </xpath>
+                
+                <xpath expr="//div[@id='pricelist_setting']" position="after">
+					<div class="col-xs-12 col-md-6 o_setting_box">
+						<div class="o_setting_left_pane">
+							<field name="lock_price"/>
+						</div>
+						<div class="o_setting_right_pane">
+							<label for="lock_price"/>
+							<div class="text-muted">
+	                            Enable price lock
+	                        </div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-6 o_setting_box">
+						<div class="o_setting_left_pane">
+					    	<field name="lock_discount"/>
+					  	</div>
+					  	<div class="o_setting_right_pane">
+							<label for="lock_discount"/>
+							<div class="text-muted">
+	                            Enable discount lock
+	                        </div>
+					  </div>
+					</div>
+					<div class="col-xs-12 col-md-6 o_setting_box" attrs="{'invisible':['&amp;', ('lock_price', '=', False), ('lock_discount', '=', False)]}">
+	                    <div class="o_setting_left_pane"/>
+	                    <div class="o_setting_right_pane">
+	                        <label for="lock_password"/>
+                            <div class="text-muted">
+                                Enter lock password
+                            </div>
+							<div class="content-group mt16">
+                                <field name="lock_password" colspan="4" nolabel="1" 
+                                	attrs="{'required':['|', ('lock_price', '=', True), ('lock_discount', '=', True)]}"/>
+                            </div>
+	                    </div>
+	                </div>
+                </xpath>
+                
+				<xpath expr="//div[@id='auto_printing']" position="before">
+                    <div class="col-12 col-lg-6 o_setting_box" title="Default Business Store in POS Order.">
+                        <div class="o_setting_right_pane">
+                            <label for="establishment_id"/>
+                            <div class="text-muted">
+                                Business Store.
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="establishment_id" colspan="4" nolabel="1" options="{'no_create': True, 'no_edit': True}"/>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-12 col-lg-6 o_setting_box" title="Default authorization in POS Order."
+						attrs="{'invisible': [('iface_invoicing','=',False)]}">
+                        <div class="o_setting_right_pane">
+                            <label for="authorization_id"/>
+                            <div class="text-muted">
+                                Establish authorization for invoice.
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="authorization_id" colspan="4" nolabel="1" 
+                                	domain="[('type', '=', 'internal'), ('establishment_id', '=', establishment_id)]" 
+                                	options="{'no_create': True, 'no_edit': True}" attrs="{'required': [('iface_invoicing','=',True)]}"
+                                	context="{'form_view_ref': 'oe_account.view_authorization_form', 'tree_view_ref': 'oe_account.view_authorization_form'}"/>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-xs-12 col-md-6 o_setting_box" id="check_return" title="Default refund authorization in POS Order."
+						attrs="{'required': [('iface_invoicing','=',False)]}">
+	                    <div class="o_setting_left_pane">
+	                        <field name="check_refund"/>
+	                    </div>
+	                    <div class="o_setting_right_pane">
+	                        <label for="check_refund"/>
+	                        <div class="text-muted">
+	                            Allow for the return of orders
+	                        </div>
+							<div class="content-group mt16" attrs="{'invisible': ['|',('check_refund','=',False),('iface_invoicing','=',False)]}">
+                                <field name="refund_authorization_id" colspan="4" nolabel="1" 
+                                	domain="[('type', '=', 'internal'), ('establishment_id', '=', establishment_id)]"
+                                	options="{'no_create': True, 'no_edit': True}"
+                                	attrs="{'required': ['|',('check_refund', '=', True),('iface_invoicing','=',True)]}"
+                                	context="{'form_view_ref': 'oe_account.view_authorization_form', 'tree_view_ref': 'oe_account.view_authorization_form'}"/>
+                            </div>
+	                    </div>
+	                </div>
+                </xpath>
+                
+				<xpath expr="//sheet/h2['Bills &amp; Receipts']" position="after">
+					<group>
+						<field name='payment_details' invisible="1"/>
+						<field name="untaxamount_total" invisible="1"/>
+						<field name="tax_amount" invisible="1"/>
+						<field name="subtotal_session" invisible="1"/>
+						<field name="number_of_order" invisible="1"/>
+						<field name="total_discount" invisible="1"/>
+						<field name="sale_qty" invisible="1"/>
+						<field name="total_cancel_order" invisible="1"/>
+						<field name="total_done_order" invisible="1"/>
+					</group>
+				</xpath>
+                
+            </field>
+        </record>
+    </data>
+</odoo>

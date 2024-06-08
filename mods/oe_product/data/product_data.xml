@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="1">
+
+		<record id="product_product_tip" model="product.product">
+            <field name="name">Tips</field>
+            <field name="default_code">Tips</field>
+            <field name="lst_price">0.0</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="type">service</field>
+        </record>
+
+        <record id="product.product_category_all" model="product.category">
+            <field name="name">Todos</field>
+        </record>
+
+        <!-- Precisions -->
+		<record forcecreate="True" id="product.decimal_price" model="decimal.precision">
+            <field name="name">Product Price</field>
+            <field name="digits">2</field>
+            <field name="display_digits">2</field>
+        </record>
+        <record forcecreate="True" id="product.decimal_discount" model="decimal.precision">
+            <field name="name">Discount</field>
+            <field name="digits">2</field>
+            <field name="display_digits">2</field>
+        </record>
+        <record forcecreate="True" id="product.decimal_stock_weight" model="decimal.precision">
+            <field name="name">Stock Weight</field>
+            <field name="digits">2</field>
+            <field name="display_digits">2</field>
+        </record>
+
+		<!--
+            Resource: product.uom
+        -->
+        <record id="product_uom_square_meter" model="product.uom">
+            <field name="category_id" ref="product.uom_categ_length"/>
+            <field name="name">m2</field>
+            <field name="factor_inv" eval="4"/>
+            <field name="uom_type">bigger</field>
+        </record>
+
+        <record id="product_uom_cubic_meter" model="product.uom">
+            <field name="category_id" ref="product.uom_categ_length"/>
+            <field name="name">m3</field>
+            <field name="factor_inv" eval="6"/>
+            <field name="uom_type">bigger</field>
+        </record>
+
+        <record id="product_uom_global" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="name">Global</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="0.001"/>
+        </record>
+        
+        <record id="product_uom_lote" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="name">Lote</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="0.001"/>
+        </record>
+        
+        <record id="product_uom_month" model="product.uom">
+            <field name="name">Month(s)</field>
+            <field name="category_id" ref="product.uom_categ_wtime"/>
+            <field name="factor_inv" eval="30.0"/>
+        </record>
+        
+        <record id="product_uom_game" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="name">Game</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="0.001"/>
+        </record>
+        
+        <record id="product_uom_roll" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="name">Roll</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="0.001"/>
+        </record>
+
+        <record id="product_uom_coat" model="product.uom">
+            <field name="category_id" ref="product.product_uom_categ_kgm"/>
+            <field name="name">Coat</field>
+            <field name="factor" eval="1.0"/>
+            <field name="rounding" eval="0.001"/>
+        </record>
+
+	</data>
+</odoo>

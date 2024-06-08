@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve"> 
+    <t t-name="OwnPizzaWidget">
+        <div class='modal-dialog'>
+            <div class="popup popup-confirm" style="width:85% ! important;">
+                <t t-if="widget.data">
+                    <div class="popup popup-selection" style="width:100% ! important; height: 700px;">
+                        <p class="title">Make Own</p>
+                        <div class='main_product_id' t-att-data-product_id="widget.main_product">
+                            <script type="text/javascript">
+                                $('#tabs').tabs().addClass('ui-tabs-vertical ui-helper-clearfix');
+                            </script>
+
+                            <div id="tabs">
+                                <ul>
+                                    <li style="background: white;width: 273px;height: 207px;font-size: 12px;overflow: scroll;" class="order-menu">
+                                        
+                                    </li>
+                                    <li style="background: white;">
+                                        <div style="float:right">Total: <span class="total-pricel">0</span></div>
+                                    </li>
+                                    <t t-foreach="widget.data" t-as="categ">
+                                        <li>
+                                            <a t-attf-href="#a#{categ.categ_id}"><t t-esc="categ.category"/></a>
+                                        </li>
+                                    </t>
+                                </ul>
+                                <t t-foreach="widget.data" t-as="categ">
+                                    <div t-attf-id="a#{categ.categ_id}">
+                                        <t t-foreach="categ.products" t-as="p">
+                                            <span class='product pos_topp_product' t-att-data-product-id="p.id" t-att-data-category-id="categ.categ_id" t-att-data-multi_selection="categ.multi_selection">
+                                                <div class="product-img">
+                                                	<img t-attf-src='/web/image?model=product.product&#38;field=image_medium&#38;id=#{p.id}'/> 
+													<t t-if="!p.to_weight">
+													     <span class="price-tag">
+													         <t t-esc="widget.format_currency(p.list_price,'Product Price')"/>
+													     </span>
+													 </t>
+													<t t-if="p.to_weight">
+													    <span class="price-tag">
+													        <t t-esc="widget.format_currency(p.list_price,'Product Price')+'/'+widget.pos.units_by_id[p.uom_id[0]].name"/>
+													    </span>
+													</t>
+                                                </div>
+                                                <div class="product-name">
+                                                    <t t-esc="p.display_name"/>
+                                                </div>
+                                            </span>
+                                        </t>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="button confirm">
+                                Confirm 
+                            </div>
+                            <div class="button cancel">
+                                Cancel 
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+	<t t-name="ComboPack">
+		<div class='modal-dialog'>
+			<div class="popup popup-confirm" style="height:170px ! important">
+				<t t-if="widget.data">
+					<div class="popup popup-selection">
+		                <p class="title">ComboPack</p>
+		                <div class='scrollable-y touch-scrollable combo_product_id' t-att-data-product_id="widget.main_product" style="height: 275px;">
+		                    <table>
+			                    <tr t-foreach="widget.data" t-as="categ">
+			                        <td>
+			                        	<span style="float:left;margin-left:5px;font-size: 20px;" >
+			                            	<t t-esc="categ.category"/>
+			                            </span>
+			                        </td>
+			                        <td>
+			                            <select t-att-id='categ.categ_id' t-att-data-qty="categ.qty" t-att-data-is_extra="categ.is_extra" class="product_combo_select" style="font-size: 20px;float: left;margin-top: 8px;width: 286px;height: 43px;">
+			                            	<option value=''>Select Your Food....</option>
+			                            	<t t-foreach="categ.products" t-as="p">
+			                            		<option t-att-value="p.id" t-att-selected="p.id==(categ.default and categ.default.id or -1)">
+			                            			<t t-esc="p.display_name"/>
+			                            		</option>
+			                            	</t> 
+			                            </select>
+			                        </td>
+			                    </tr>
+		                	</table>
+		                    <div style="margin-top:10px;font-size: 20px;">
+		                    	Fix Products
+		                    </div>
+		                    <t t-foreach="widget.fix_pack_data" t-as="fix_pro_data">
+						        <span class='product fix_product' t-att-data-product-id="fix_pro_data.product.id">
+						            <div class="product-img">
+						                <img t-attf-src='/web/image?model=product.product&#38;field=image_medium&#38;id=#{fix_pro_data.product.id}'/> 
+					                    <span class="price-tag">
+					                        <t t-esc="fix_pro_data.qty"/>
+					                    </span>
+						            </div>
+						            <div class="product-name">
+						                <t t-esc="fix_pro_data.product.display_name"/>
+						            </div>
+						        </span>
+		                    </t>
+		                </div>
+		                <div class="footer">
+		                	<div class="button confirm">
+		                        Confirm 
+		                    </div>
+		                    <div class="button cancel">
+		                        Cancel 
+		                    </div>
+		                </div>
+		            </div>
+					
+				</t>
+			</div>
+		</div>
+	</t>
+
+    <t t-name="Product">
+        <t t-if="product.is_pack">
+        	<t t-esc="product"/>
+            <span class='product' t-att-data-product-id="product.id">
+                <div class="product-img">
+                    <img t-att-src='image_url' /> 
+                    <t t-if="!product.to_weight">
+                        <span class="price-tag">
+                            <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')"/>
+                        </span>
+                    </t>
+                    <t t-if="product.to_weight">
+                        <span class="price-tag">
+                            <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')+'/'+widget.pos.units_by_id[product.uom_id[0]].name"/>
+                        </span>
+                    </t>
+                    <t t-if="product.is_pack">   
+                       <div class="product_pack">
+                           Combo Pack
+                       </div>
+                   </t>
+                </div>
+                <t t-if="product.is_pack">
+                    <div class="topping_background product-name">
+                        <t t-esc="product.display_name"/>
+                    </div>
+                </t>
+            </span>
+        </t>
+        <t t-if="product.is_extra">
+            <span class='product' t-att-data-product-id="product.id">
+                <div class="product-img">
+                    <img t-att-src='image_url' /> 
+                    <t t-if="!product.to_weight">
+                        <span class="price-tag">
+                            <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')"/>
+                        </span>
+                    </t>
+                    <t t-if="product.to_weight">
+                        <span class="price-tag">
+                            <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')+'/'+widget.pos.units_by_id[product.uom_id[0]].name"/>
+                        </span>
+                    </t>
+                   <div class="product_extra">
+                       Make my Own
+                   </div>
+                </div>
+                <div class="topping_background product-name">
+                    <t t-esc="product.display_name"/>
+                </div>
+            </span>
+        </t>
+        <t t-if="! product.is_extra or product.is_pack">
+             <span class='product' t-att-data-product-id="product.id">
+                <div class="product-img">
+                <img t-att-src='image_url' /> 
+                <t t-if="!product.to_weight">
+                    <span class="price-tag">
+                        <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')"/>
+                    </span>
+                </t>
+                <t t-if="product.to_weight">
+                    <span class="price-tag">
+                        <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')+'/'+widget.pos.units_by_id[product.uom_id[0]].name"/>
+                    </span>
+                </t>
+            </div>
+            <div class="product-name">
+                <t t-esc="product.display_name"/>
+            </div>
+            </span>
+        </t>
+    </t>
+
+   
+    <t t-name="Orderline">
+        <li t-attf-class="orderline #{ line.selected ? 'selected' : '' }">
+            <span class="product-name">
+                <t t-esc="line.get_product().display_name"/>
+            </span>
+            <span class="price">
+                <t t-esc="widget.format_currency(line.get_display_price())"/>
+            </span>
+            <ul class="info-list">
+                <t t-if="line.get_quantity_str() !== '1' || line.selected ">
+                    <li class="info">
+                        <em>
+                            <t t-esc="line.get_quantity_str()" />
+                        </em>
+                        <t t-esc="line.get_unit().name" />
+                        at
+                        <t t-esc="widget.format_currency(line.get_unit_display_price(),'Product Price')" />
+                        /
+                        <t t-esc="line.get_unit().name" />
+                    </li>
+                </t>
+                <t t-if="line.get_product().is_pack">
+                   <i style="color: green; font-size:13px;">
+                   <t t-if="line.pack_data">
+                            <t t-foreach="line.pack_data" t-as="pos_pack"> 
+                               <div> &#187; <t t-esc="pos_pack.product_id.display_name"/> :- <t t-esc="pos_pack.qty * line.quantity"/> </div>
+                            </t>
+                        </t>
+                   </i>
+                </t>
+                <t t-if="line.get_product().is_extra">
+                   <i style="color: green; font-size:13px;">
+                       <t t-if="line.order_menu">
+                            <t t-foreach="line.order_menu" t-as="order_menu"> 
+                                <div>&#187;  <t t-esc="order_menu.categoryName"/></div>
+                                <t t-foreach="order_menu.products" t-as="product"> 
+                                    <div style="margin-left: 15px;">&#187;<t t-esc="product.product_name"/> :- <t t-esc="line.quantity"/> </div>
+                                </t>
+                            </t>
+                        </t>
+                   </i>
+                </t>
+                <t t-if="line.get_discount_str() !== '0'">
+                    <li class="info">
+                        With a 
+                        <em>
+                            <t t-esc="line.get_discount_str()" />%
+                        </em>
+                        discount
+                    </li>
+                </t>
+            </ul>
+        </li>
+    </t>
+
+   	<t t-extend="PosTicket">
+	   	<t t-jquery='table[class="receipt-orderlines"]' t-operation='replace'>
+        	<table class='receipt-orderlines'>
+                <colgroup>
+                    <col width='50%' />
+                    <col width='25%' />
+                    <col width='25%' />
+                </colgroup>
+                <tr t-foreach="orderlines" t-as="orderline">
+                    <td>
+                        <t t-esc="orderline.get_product().display_name"/>
+                        <t  t-if="orderline.get_product().is_pack and orderline.pack_data">
+				            <br/>Combo<br/> 
+				            <table>
+				                <colgroup>
+				                    <col width='13%' />
+				                    <col width='87%' />
+				                </colgroup>
+				                <tr t-foreach="orderline.pack_data" t-as="line">
+				                    <td><t t-esc="line.qty * orderline.quantity"/></td>
+				                    <td><span style="font-style: italic;font-size:11px;font-weight: bold;" ><t t-esc="line.product_id.display_name"/></span></td>
+				                </tr>
+				            </table>
+			        	</t>
+                        <t  t-if="orderline.get_product().is_extra and orderline.order_menu">
+                            <t t-foreach="orderline.order_menu" t-as="order_menu"> 
+                                <div style="font-weight: bold;"><t t-esc="order_menu.categoryName"/></div>
+                                <table>
+                                    <colgroup>
+                                        <col width='13%' />
+                                        <col width='87%' />
+                                    </colgroup>
+                                    <tr t-foreach="order_menu.products" t-as="line">
+                                        <td><t t-esc="orderline.quantity"/></td>
+                                        <td><span style="font-style: italic;font-size:11px;font-weight: bold;" ><t t-esc="line.product_name"/></span></td>
+                                    </tr>
+                                </table>
+                            </t>
+                        </t>  
+                         <t t-if="orderline.get_discount() > 0">
+                            <div class="pos-disc-font">
+                                With a <t t-esc="orderline.get_discount()"/>% discount
+                            </div>
+                        </t>
+                    </td>
+                    <td class="pos-right-align" valign="top">
+                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                    </td>
+                    <td class="pos-right-align" valign="top">
+                        <t t-esc="widget.format_currency(orderline.get_display_price())"/>
+                    </td>
+                </tr>
+            </table>
+	   	</t>
+    </t>
+</templates>

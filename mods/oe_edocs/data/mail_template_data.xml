@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="1">
+
+		<record id="oe_account.mail_template_data_notification_email_account_withholding" model="mail.template">
+			<field name="report_template" ref="account_withholdings_electronics"/>
+		</record>
+
+	</data>
+	
+</odoo>			

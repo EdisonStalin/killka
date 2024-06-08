@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<notaDebito id="comprobante" version="1.0.0">
+	<infoTributaria>
+	    <ambiente>{{ ambiente }}</ambiente>
+	    <tipoEmision>{{ tipoEmision }}</tipoEmision>
+	    <razonSocial>{{ razonSocial }}</razonSocial>{% if nombreComercial %}
+	    <nombreComercial>{{ nombreComercial }}</nombreComercial>{% endif %}
+	    <ruc>{{ ruc }}</ruc>
+	    <claveAcceso>{{ claveAcceso }}</claveAcceso>
+	    <codDoc>{{ codDoc }}</codDoc>
+	    <estab>{{ estab }}</estab>
+	    <ptoEmi>{{ ptoEmi }}</ptoEmi>
+	    <secuencial>{{ secuencial }}</secuencial>
+	    <dirMatriz>{{ dirMatriz }}</dirMatriz>{% if agenteRetencion %}
+	    <agenteRetencion>{{ agenteRetencion }}</agenteRetencion>{% endif %}{% if regimenMicroempresas %}
+	    <regimenMicroempresas>{{ regimenMicroempresas }}</regimenMicroempresas>{% endif %}{% if contribuyenteRimpe %}
+	    <contribuyenteRimpe>{{ contribuyenteRimpe }}</contribuyenteRimpe>{% endif %}
+	</infoTributaria>
+	<infoNotaDebito>
+	    <fechaEmision>{{ fechaEmision }}</fechaEmision> {# dd/mm/aaaa #}{% if dirEstablecimiento %}
+	    <dirEstablecimiento>{{ dirEstablecimiento }}</dirEstablecimiento>{% endif %}{% if contribuyenteEspecial %}
+		<contribuyenteEspecial>{{ contribuyenteEspecial }}</contribuyenteEspecial>{% endif %}
+	    <tipoIdentificacionComprador>{{ tipoIdentificacionComprador }}</tipoIdentificacionComprador>
+	    <razonSocialComprador>{{ razonSocialComprador }}</razonSocialComprador>
+		<identificacionComprador>{{ identificacionComprador }}</identificacionComprador>
+	    <obligadoContabilidad>{{ obligadoContabilidad }}</obligadoContabilidad>
+	    <codDocModificado>{{ codDocModificado }}</codDocModificado>
+	    <numDocModificado>{{ numDocModificado }}</numDocModificado>
+	    <fechaEmisionDocSustento>{{ fechaEmisionDocSustento }}</fechaEmisionDocSustento>
+	    <totalSinImpuestos>{{ totalSinImpuestos }}</totalSinImpuestos>
+	    <impuestos>{% for item in totalConImpuestos %}
+			<impuesto>
+			  <codigo>{{ item['codigo'] }}</codigo>
+			  <codigoPorcentaje>{{ item['codigoPorcentaje'] }}</codigoPorcentaje>
+			  <tarifa>{{ item['tarifa'] }}</tarifa>
+			  <baseImponible>{{ item['baseImponible'] }}</baseImponible>
+			  <valor>{{ item['valor'] }}</valor>
+			</impuesto>{% endfor %}
+	    </impuestos>
+		<valorTotal>{{ valorTotal }}</valorTotal>
+		<pagos>{% for item in pagos %}
+	        <pago>
+	            <formaPago>{{ item['formaPago'] }}</formaPago>
+	            <total>{{ item['total'] }}</total>
+	        </pago>{% endfor %}
+	    </pagos>
+	</infoNotaDebito>
+	<motivos>{% for item in detalles %}
+		<motivo>
+			<razon>{{ item['razon'] }}</razon>
+			<valor>{{ item['valor'] }}</valor>
+		</motivo>{% endfor %}
+	</motivos>{% if infoAdicional %}
+	<infoAdicional>{% for item in infoAdicional %}
+		{{ item }}{% endfor %}
+	</infoAdicional>{% endif %}
+</notaDebito>

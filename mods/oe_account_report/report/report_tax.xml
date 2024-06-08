@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<template id="report_tax" inherit_id="account.report_tax">
+		
+		<xpath expr="//table/thead/tr/th[1]" position="after">
+			<th>Account</th>
+			<th>No Documents</th>
+		</xpath>
+		
+		<xpath expr="//table/tr[1]/td[1]" position="after">
+			<td><span t-esc="line.get('account')"/></td>
+			<td><span t-esc="line.get('qty')"/></td>
+		</xpath>
+		
+		<xpath expr="//table/tr[3]/td[1]" position="after">
+			<td><span t-esc="line.get('account')"/></td>
+			<td><span t-esc="line.get('qty')"/></td>
+		</xpath>
+		
+	</template>
+	
+</odoo>

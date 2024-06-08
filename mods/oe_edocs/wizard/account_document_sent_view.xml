@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+        <record id="transport_permit_sent_view" model="ir.ui.view">
+            <field name="name">transport.permit.sent.form</field>
+            <field name="model">transport.permit.sent</field>
+            <field name="arch" type="xml">
+                <form string="Send documents to the SRI">
+                    <p class="oe_grey">
+                    Once the documents have been sent to the SRI platform, you cannot modify them once they have been sent.
+                    The documents will receive a confirmation message from the SRI once authorized.
+					Note:
+					-> It is recommended to send the documents in groups of 50 records.
+					-> It should be noted that the maximum time it will take to
+					   SRI to process an electronic receipt will be 24 hours.
+                    </p>
+                    <footer>
+                        <button string="Confirm Sending Documents" name="transport_confirm_sent" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_withholding_sent_view" model="ir.ui.view">
+            <field name="name">account.withholding.sent.form</field>
+            <field name="model">account.withholding.sent</field>
+            <field name="arch" type="xml">
+                <form string="Send documents to the SRI">
+                    <p class="oe_grey">
+                    Once the documents have been sent to the SRI platform, you cannot modify them once they have been sent.
+                    The documents will receive a confirmation message from the SRI once authorized.
+					Note:
+					-> It is recommended to send the documents in groups of 50 records.
+					-> It should be noted that the maximum time it will take to
+					   SRI to process an electronic receipt will be 24 hours.
+                    </p>
+                    <footer>
+                        <button string="Confirm Sending Documents" name="withholding_confirm_sent" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_invoice_sent_view" model="ir.ui.view">
+            <field name="name">account.invoice.sent.form</field>
+            <field name="model">account.invoice.sent</field>
+            <field name="arch" type="xml">
+                <form string="Send documents to the SRI">
+                    <p class="oe_grey">
+                    Once the documents have been sent to the SRI platform, you cannot modify them once they have been sent.
+                    The documents will receive a confirmation message from the SRI once authorized.
+					Note:
+					-> It is recommended to send the documents in groups of 50 records.
+					-> It should be noted that the maximum time it will take to
+					   SRI to process an electronic receipt will be 24 hours.
+                    </p>
+                    <footer>
+                        <button string="Confirm Sending Documents" name="invoice_confirm_sent" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_transport_permit_sent"
+            multi="True"
+            key2="client_action_multi" name="Send Documents to the SRI"
+            res_model="transport.permit.sent" src_model="transport.permit"
+            view_mode="form" target="new" view_type="form" />
+
+        <act_window id="action_account_withholding_sent"
+            multi="True"
+            key2="client_action_multi" name="Send Documents to the SRI"
+            res_model="account.withholding.sent" src_model="account.withholding"
+            view_mode="form" target="new" view_type="form" />
+
+        <act_window id="action_account_invoice_sent"
+            multi="True"
+            key2="client_action_multi" name="Send Documents to the SRI"
+            res_model="account.invoice.sent" src_model="account.invoice"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</odoo>

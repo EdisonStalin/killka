@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<template id="less_helpers" name="oe_web less" inherit_id="web.less_helpers">
+		<xpath expr="." position="inside">
+			<!-- LESS -->
+			<link rel="stylesheet" type="text/less" href="/oe_web/static/src/less/oe_variables.less"/>
+		</xpath>
+	</template>
+
+	<template id="assets_backend" name="oe_web assets_backend" inherit_id="web.assets_backend">
+		<xpath expr="." position="inside">
+			<!-- CSS -->
+			<link rel="stylesheet" type="text/css" href="/oe_web/static/src/css/oe_backend.css"/>
+			<link rel="stylesheet" type="text/css" href="/oe_web/static/src/css/views.css"/>
+			
+			<!-- LESS -->
+			<link rel="stylesheet" type="text/less" href="/oe_web/static/src/less/oe_backend.less"/>
+			<link rel="stylesheet" type="text/less" href="/oe_web/static/src/less/oe_form_view_extra.less"/>
+			<link rel="stylesheet" type="text/less" href="/oe_web/static/src/less/kanban_dashboard.less"/>
+
+			<!-- JS -->
+			<script type="text/javascript" src="/oe_web/static/src/js/oe_user_menu.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/numpad_dot.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/oe_title.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/web_export_view.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/dynamic_list.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/show_number_list.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/list_renderer.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/field_open_tab.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/button_import.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/backend/fields.js"></script>
+			<script type="text/javascript" src="/oe_web/static/src/js/chrome/pager.js"></script>
+			
+			
+				<!-- Bar Progress  -->
+			<script type="text/javascript" src="/oe_web/static/src/js/loading.js"/>
+            <script type="text/javascript" src="/oe_web/static/src/js/progress_bar.js"/>
+			<script type="text/javascript" src="/oe_web/static/src/js/ajax.js"/>
+			<script type="text/javascript" src="/oe_web/static/src/js/progress_menu.js"/>
+			
+			<script type="text/javascript" src="/oe_web/static/src/js/fields/field_registry.js"/>
+				<!-- Percentage  -->
+			<script type="text/javascript" src="/oe_web/static/src/js/fields/basic_fields.js"/>
+            <script type="text/javascript" src="/oe_web/static/src/js/fields/field_utils_format.js"/>
+            
+            <!--script type="text/javascript" src="/oe_web/static/src/js/views/form/form_controller.js"/-->
+		</xpath>
+	</template>
+
+	<template id="assets_frontend" name="oe_web assets_frontend" inherit_id="web.assets_frontend">
+		<xpath expr="." position="inside">
+			<!-- CSS -->
+			<link rel="stylesheet" href="/oe_web/static/src/css/oe_frontend.css"/>
+			<link rel="stylesheet" href="/oe_web/static/src/css/web_login.css"/>
+
+		</xpath>
+	</template>
+
+
+	<template id="report_assets_common" name="oe_web less report" inherit_id="web.report_assets_common">
+		<xpath expr="." position="inside">
+			<!-- LESS -->
+			<link rel="stylesheet" type="text/less" href="/oe_web/static/src/less/layout_background.less"/>
+		</xpath>
+	</template>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<template id="assets_backend_account_oe_account" name="oe_account account assets_backend" inherit_id="account.assets_backend">
+		<xpath expr="." position="inside">
+			
+            <script type="text/javascript" src="/oe_account/static/src/js/reconciliation_action.js"></script>
+        	<script type="text/javascript" src="/oe_account/static/src/js/reconciliation_renderer.js"></script>
+        	<script type="text/javascript" src="/oe_account/static/src/js/account_payment_field.js"></script>
+			
+		</xpath>
+	</template>
+	
+</odoo>

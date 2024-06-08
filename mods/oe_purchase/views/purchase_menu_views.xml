@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+        <menuitem action="purchase.purchase_rfq" id="purchase.menu_purchase_rfq"
+            parent="purchase.menu_procurement_management" sequence="12"/>
+            
+        <menuitem action="purchase.purchase_form_action" id="purchase.menu_purchase_form_action" 
+        	parent="purchase.menu_procurement_management" sequence="13"/>
+
+
+    </data>
+</odoo>

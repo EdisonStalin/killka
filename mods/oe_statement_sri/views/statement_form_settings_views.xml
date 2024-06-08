@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+		
+		<!-- Statement Form Line-->
+    	
+		<record id="view_settings_statement_form_line" model="ir.ui.view">
+			<field name="name">statement.form.line</field>
+		    <field name="model">statement.form.line</field>
+		    <field name="arch" type="xml">
+			    <form string="Statement Form Line">
+			    	<sheet>
+						<div class="oe_button_box" name="button_box">
+	                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+	                        </button>
+	                    </div>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="form_id" readonly="1"/>
+								<field name="parent_id" readonly="1"/>
+				            </group>
+				            <group>
+				            	<field name="total_check"/>
+				            	<field name="fixed_asset"/>
+				            	<field name="service"/>
+				            	<field name="goods"/>
+				            	<field name="type_tax"/>
+				            	<field name="tributary_credit"/>	            	
+				            </group>
+			            </group>
+						<field name="line_code_ids">
+	            			<tree>
+		            			<field name="name"/>
+		            			<field name="type"/>
+		            			<field name="document_type"/>
+	            			</tree>
+	            		</field>
+		            </sheet>
+			    </form>
+		    </field>
+		</record>
+		
+		<!-- Statement Form -->
+		
+		<record id="view_settings_statement_form_tree" model="ir.ui.view">
+            <field name="name">statement.form.tree</field>
+            <field name="model">statement.form</field>
+            <field name="arch" type="xml">
+                <tree string="Statements Form" decoration-muted="not active">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+		<record id="view_settings_statement_form" model="ir.ui.view">
+			<field name="name">statement.form.form</field>
+		    <field name="model">statement.form</field>
+		    <field name="arch" type="xml">
+			    <form string="Statement Form">
+			    	<sheet>
+						<div class="oe_button_box" name="button_box">
+	                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+	                        </button>
+	                    </div>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="code"/>
+								<field name="type_period" widget="radio"/>				
+								<field name="sequence"/>		
+				            </group>
+				            <group>
+				            	<field name="description"/> 
+				            	<field name="action_id" options="{'no_create': True}"/>
+				            	<field name="context"/>
+				            </group>
+			            </group>
+			            <notebook>
+			            	<page name="statement_lines" string="Statement Lines">
+			            		<field name="line_ids">
+			            			<tree decoration-danger="total_check == True" decoration-success="parent_id != False">
+			            				<field name="parent_id" invisible="1"/>
+				            			<field name="name"/>
+				            			<field name="total_check"/>
+				            			<field name="fixed_asset"/>
+				            			<field name="service"/>
+				            			<field name="goods"/>
+				            			<field name="type_tax"/>
+				            			<field name="tributary_credit"/>
+				            			<field name="active" widget="boolean_toggle"/>
+				            			<field name="line_code_ids" widget="many2many_tags"/>
+			            			</tree>
+			            		</field>
+			            	</page>
+			            </notebook>
+		            </sheet>
+			    </form>
+		    </field>
+		</record>
+
+		<record id="action_statement_form_settings" model="ir.actions.act_window">
+		    <field name="name">Statement Form Settings</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">statement.form</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_settings_statement_form_tree"/>
+		</record>
+
+
+    	<menuitem action="action_statement_form_settings" id="menu_action_settings_statement_form"
+    		parent="oe_statement_sri.menu_setting_sri_statement" 
+    		groups="oe_account.group_manager_form" sequence="50"/>
+
+
+    </data>
+</odoo>

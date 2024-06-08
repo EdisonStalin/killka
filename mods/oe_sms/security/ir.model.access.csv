@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sms_template_message,sms_template_message,model_sms_template_message,,1,1,1,1
+access_sms_template_message_admin,sms_template_message_admin,model_sms_template_message,oe_base.group_admin,1,1,1,1
+access_sms_template_message_manager,sms_template_message_manager,model_sms_template_message,base.group_erp_manager,1,1,1,1

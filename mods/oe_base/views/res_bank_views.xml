@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+    <record id="view_res_bank_form_inherit_oe_base" model="ir.ui.view">
+        <field name="name">res.bank.form.inherit.oe_base</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form"/>
+        <field name="arch" type="xml">
+
+        	<xpath expr="//field[@name='bic']" position="after">
+        		<field name="code"/>
+        		<field name="cup"/>
+        	</xpath>
+            
+        </field>
+    </record>
+    
+    <record id="view_partner_bank_form_inherit_oe_base" model="ir.ui.view">
+        <field name="name">res.partner.bank.form.inherit.oe_base</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+        	
+        	<xpath expr="//field[@name='acc_number']" position="before">
+        		<field name="type_account"/>
+        	</xpath>
+        	
+        	<xpath expr="//field[@name='acc_number']" position="after">
+        		<field name="cash_number"/>
+        	</xpath>
+        	
+        </field>
+	</record>
+
+    <record id="view_partner_bank_tree_inherit_oe_base" model="ir.ui.view">
+        <field name="name">res.partner.bank.tree.inherit.oe_base</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+        <field name="arch" type="xml">
+        	
+			<xpath expr="//field[@name='acc_number']" position="before">
+        		<field name="type_account"/>
+        	</xpath>
+        	
+        	<xpath expr="//field[@name='acc_number']" position="after">
+        		<field name="cash_number"/>
+        	</xpath>
+        	
+        </field>
+	</record>
+
+</odoo>

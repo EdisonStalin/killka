@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+		<record id="view_account_payment_search_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.payment.search.inherit.oe_account</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='name']" position="attributes">
+            		<attribute name="filter_domain">['|', '|', ('name','ilike',self), ('communication','ilike',self), ('document_number','ilike',self)]</attribute>
+            	</xpath>
+
+            </field>
+		</record> 
+
+		<record model="ir.ui.view" id="view_payment_pivot">
+            <field name="name">account.payment.pivot</field>
+            <field name="model">account.payment</field>
+            <field name="arch" type="xml">
+                <pivot string="Payments" display_quantity="true">
+                    <field name="partner_id"/>
+                    <field name="amount" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+    	
+		<record id="view_account_payment_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.payment.tree.inherit.oe_account</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+            
+				<xpath expr="//tree" position="attributes">
+            		<attribute name="decoration-muted">state =='cancelled'</attribute>
+            		<attribute name="decoration-success">state =='reconciled'</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='payment_method_id']" position="after">
+            		<!--field name="payment_transaction_id" invisible="1"/-->
+            		<field name="communication"/>
+            	</xpath>
+
+            </field>
+		</record>
+
+		<record id="view_account_supplier_payment_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.supplier.payment.tree.inherit.oe_account</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_supplier_payment_tree"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//tree" position="attributes">
+            		<attribute name="decoration-muted">state =='cancelled'</attribute>
+            		<attribute name="decoration-success">state =='reconciled'</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='payment_method_id']" position="after">
+            		<field name="payment_transaction_id" invisible="1"/>
+            		<field name="communication"/>
+            	</xpath>
+
+            </field>
+		</record>
+    	
+		<record id="view_account_payment_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.payment.form.inherit.oe_account</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+				
+				<xpath expr="//button[@name='post']" position="after">
+					<button name="%(account.account_send_payment_receipt_by_email_action)d"
+						states="posted,sent,reconciled" string="Send Receipt By Email" type="action"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='payment_date']" position="before">
+					<field name="is_advance"/>
+					<field name="date_reconcile" attrs="{'invisible': [('state','!=','reconciled')]}"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='communication']" position="attributes">
+					<attribute name="readonly">0</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='communication']" position="before">
+					<field name="document_number"/>
+				</xpath>
+
+				<xpath expr="//field[@name='payment_date']" position="after">
+					<field name="show_details" invisible="1"/>
+					<field name="is_card" invisible="1"/>
+					<field name="method_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" 
+						options="{'no_create': True, 'no_open': True}"/>
+					<field name="conciliation_type" widget="radio" attrs="{'readonly': [('state', '!=', 'draft')]}" options="{'horizontal': true}"/>
+					<field name="destination_account_id" attrs="{'invisible': [('conciliation_type', '!=', 'counterpart')], 'required': [('conciliation_type','=','counterpart')]}"
+						options="{'no_create': True}" domain="[('deprecated','=',False)]"/>
+					<field name="user_id" required="1" string="Responsible" options="{'no_create': True}"/>
+					<field name="approved_id" options="{'no_create': True}"/>
+					<field name="notes"/>
+            	</xpath>
+
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="amount_values" invisible="1"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='check_number']" position="replace"/>
+				
+				<xpath expr="//group[1]" position="after">
+					<notebook>
+						<page string="Extra values" name="extra_values" attrs="{'invisible': ['|',('is_card', '=', False),('is_card', '=', False)]}">
+							<group>
+								<group string="Pending values" attrs="{'invisible': [('show_details', '=', False)]}">
+				                    <field name="payment_line_ids" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}">
+				                        <tree string="Payment Detail" create="0" delete="0" editable="bottom">
+				                            <field name="move_line_id" invisible="1"/>
+				                            <field name="partner_id" invisible="1"/>
+				                            <field name="date" readonly="1"/>
+				                            <field name="date_maturity" readonly="1"/>
+				                            <field name="name" readonly="1"/>
+				                            <field name="account_id" readonly="1" groups="account.group_account_manager"/>
+				                            <field name="balance" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				                            <field name="amount_residual" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+											<field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				                        </tree>
+				                    </field>
+								</group>
+								<group string="Extra Values" attrs="{'invisible': [('is_card', '=', False)]}">
+				                    <field name="line_extra_ids" nolabel="1">
+				                        <tree string="Extra value" create="0" delete="0" editable="bottom">
+				                            <field name="name"/>
+				                            <field name="account_id" groups="account.group_account_manager" options="{'no_create': True}"/>
+				                            <field name="description"/>
+											<field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				                        </tree>
+				                    </field>
+								</group>
+							</group>
+						</page>
+						<page string="Check Printing" name="check_printing" attrs="{'invisible': [('payment_method_code', '!=', 'check_printing')]}">
+							<group>
+								<field name="check_number" readonly="0" attrs="{'readonly': [('state', 'in', ['posted','reconciled'])], 'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="pay_to" attrs="{'readonly': [('state', 'in', ['posted','reconciled'])], 'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="pos_payment_date" attrs="{'readonly': [('state', 'in', ['posted','reconciled'])], 'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="check_amount_in_words" attrs="{'readonly': [('state', 'in', ['posted','reconciled'])], 'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="check_amount_in_words2" attrs="{'readonly': [('state', 'in', ['posted','reconciled'])]}"/>
+							</group>
+						</page>
+					</notebook>
+				</xpath>
+            </field>
+		</record>            
+
+
+		<record id="view_account_payment_invoice_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.payment.invoice.form.inherit.oe_account</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form"/>
+            <field name="arch" type="xml">
+            	
+				<xpath expr="//label[@for='amount']" position="before">
+					<field name="show_details" invisible="1"/>
+					<field name="is_card" invisible="1"/>
+            		<field name="partner_bank_id" domain="[('partner_id','=',partner_id)]"
+            			context="{'default_partner_id': partner_id}"/> 
+					<field name="method_id" required="1" options="{'no_create': True, 'no_open': True}"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='payment_date']" position="before">
+            		<field name="is_advance"/>
+            		<field name="date_reconcile" attrs="{'invisible': [('state','!=','reconciled')]}"/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='communication']" position="after">
+					<field name="document_number"/>
+					<field name="user_id" required="1" string="Responsible" options="{'no_create': True}"/>
+					<field name="approved_id" options="{'no_create': True}"/>
+				</xpath>
+				
+				<xpath expr="//group" position="after">
+					<notebook>
+						<page string="Extra values" attrs="{'invisible': [('is_card', '=', False)]}">
+							<group string="Extra Values" attrs="{'invisible': [('is_card', '=', False)]}">
+			                    <field name="line_extra_ids" nolabel="1">
+			                        <tree string="Extra value" create="0" delete="0" editable="bottom">
+			                            <field name="name"/>
+			                            <field name="account_id" groups="account.group_account_manager" options="{'no_create': True}"/>
+			                            <field name="description"/>
+										<field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+			                        </tree>
+			                    </field>
+							</group>
+						</page>
+						<page string="Check Printing" attrs="{'invisible': [('payment_method_code', '!=', 'check_printing')]}">
+							<group>
+								<field name="check_number" readonly="0" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="pay_to" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="pos_payment_date" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="check_amount_in_words" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="check_amount_in_words2"/>
+							</group>
+						</page>
+					</notebook>
+				</xpath>
+				
+            </field>
+		</record>
+
+		<record id="account.action_account_payments" model="ir.actions.act_window">
+			<field name="view_mode">tree,kanban,form,pivot,graph</field>
+		</record>
+
+        <record id="action_account_payments_customer_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account.view_account_payment_tree"/>
+            <field name="act_window_id" ref="account.action_account_payments"/>
+        </record>
+
+
+        <record id="action_account_payments_customer_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.view_account_payment_form"/>
+            <field name="act_window_id" ref="account.action_account_payments"/>
+        </record>
+
+		<record id="account.action_account_payments_payable" model="ir.actions.act_window">
+			<field name="view_mode">tree,kanban,form,pivot,graph</field>
+		</record>
+
+        <record id="action_account_payments_supplier_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account.view_account_supplier_payment_tree"/>
+            <field name="act_window_id" ref="account.action_account_payments_payable"/>
+        </record>
+
+
+        <record id="action_account_payments_supplier_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.view_account_payment_form"/>
+            <field name="act_window_id" ref="account.action_account_payments_payable"/>
+        </record>
+
+		<!-- Inherit Form Wizard: Check Printing -->
+		
+		<record id="view_account_payment_invoice_form_inherited_oe_account" model="ir.ui.view">
+            <field name="name">account.payment.invoice.form.inherited.oe_account</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account_check_printing.view_account_payment_invoice_form_inherited"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='check_amount_in_words']" position="attributes">
+					<attribute name="invisible">1</attribute>
+            	</xpath>
+
+            </field>
+		</record>
+    	
+    	
+		<record id="account.action_account_payments_payable" model="ir.actions.act_window">
+			<field name="domain">['|', ('partner_type', '=', 'supplier'), ('payment_type', '=', 'transfer')]</field>
+        </record>
+
+
+    	<!-- Inherit Form: Check Printing -->
+    	
+		<record id="view_account_payment_form_inherited_oe_account" model="ir.ui.view">
+            <field name="name">account.payment.form.inherited.oe_account</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account_check_printing.view_account_payment_form_inherited"/>
+            <field name="arch" type="xml">
+
+				<xpath expr="//button[@name='print_checks']" position="attributes">
+					<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='unmark_sent']" position="attributes">
+					<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='check_amount_in_words']" position="attributes">
+					<attribute name="invisible">1</attribute>
+            	</xpath>
+
+				<xpath expr="//field[@name='check_number']" position="attributes">
+					<attribute name="readonly">0</attribute>
+					<attribute name="attrs">{'invisible': [('payment_method_code', '!=', 'check_printing')], 'readonly': [('state', '!=', 'draft')]}</attribute>
+            	</xpath>
+
+            </field>
+		</record>
+		
+		<!-- Inherit Form Wizard: Payment of not reconciled  -->
+		
+        <record id="action_account_payments_not_reconciled" model="ir.actions.act_window">
+            <field name="name">Payments not Reconciled</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,graph</field>
+            <field name="context">{'default_payment_type': 'inbound', 'default_partner_type': 'customer'}</field>
+            <field name="domain">[('state','!=','reconciled')]</field>
+            <field name="view_id" ref="account.view_account_payment_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click to register a payment
+                </p><p>
+                  Payments are used to register liquidity movements (send, collect or transfer money).
+                  You can then process those payments by your own means or by using installed facilities.
+                </p>
+            </field>
+        </record>
+
+        <record id="action_account_payments_not_reconciled_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="account.view_account_payment_tree"/>
+            <field name="act_window_id" ref="action_account_payments_not_reconciled"/>
+        </record>
+
+
+        <record id="action_account_payments_not_reconciled_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="account.view_account_payment_form"/>
+            <field name="act_window_id" ref="action_account_payments_not_reconciled"/>
+        </record>
+
+		<menuitem id="menu_account_payment_bank_statement" parent="account.menu_finance_entries_management"
+			action="action_account_payments_not_reconciled" sequence="2"/>
+
+        <record id="account_payment_draft_action_server" model="ir.actions.server">
+            <field name="name">Set To Draft</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_payment"/>
+            <field name="binding_model_id" ref="model_account_payment"/>
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    action = records.action_draft()
+            </field>
+        </record>
+
+        <record id="account_payment_cancel_action_server" model="ir.actions.server">
+            <field name="name">Cancel</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_payment"/>
+            <field name="binding_model_id" ref="model_account_payment"/>
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    action = records.cancel()
+            </field>
+        </record>
+
+    	<!-- Inherit Form Wizard: Payment of Invoice  -->
+
+        <record id="view_account_payment_from_invoices_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.register.payments.wizard.inherit.oe_account</field>
+            <field name="model">account.register.payments</field>
+            <field name="inherit_id" ref="account_check_printing.view_account_payment_from_invoices_inherited" />
+            <field name="arch" type="xml">
+
+				<xpath expr="//field[@name='journal_id']" position="before">
+					<field name="show_details" invisible="1"/>
+					<field name="is_card" invisible="1"/>
+            	</xpath>
+				
+				<xpath expr="//field[@name='journal_id']" position="after">
+					<field name="method_id" required="1" options="{'no_create': True, 'no_open': True}"/>
+				</xpath>
+
+				<xpath expr="//field[@name='payment_date']" position="before">
+					<field name="is_advance"/>
+				</xpath>
+
+				<xpath expr="//field[@name='communication']" position="after">
+					<field name="document_number"/>
+					<field name="notes"/>
+					<field name="user_id" required="1" string="Responsible" options="{'no_create': True}"/>
+				</xpath>
+
+                <xpath expr="//field[@name='check_amount_in_words']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+            	<xpath expr="//field[@name='check_number']" position="replace"/>
+
+				<xpath expr="//group[1]" position="after">
+					<notebook>
+						<page string="Extra values" attrs="{'invisible': [('is_card', '=', False)]}">
+							<group string="Extra Values" attrs="{'invisible': [('is_card', '=', False)]}">
+			                    <field name="line_extra_ids" nolabel="1">
+			                        <tree string="Extra value" create="0" delete="0" editable="bottom">
+			                            <field name="name"/>
+			                            <field name="account_id" groups="account.group_account_manager" options="{'no_create': True}"/>
+			                            <field name="description"/>
+										<field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+			                        </tree>
+			                    </field>
+							</group>
+						</page>
+						<page string="Check Printing" attrs="{'invisible': [('payment_method_code', '!=', 'check_printing')]}">
+							<group>
+								<field name="check_number" readonly="0" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="pay_to" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="pos_payment_date" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="check_amount_in_words" attrs="{'required': [('payment_method_code','=','check_printing')]}"/>
+								<field name="check_amount_in_words2"/>
+							</group>
+						</page>
+					</notebook>
+				</xpath>
+
+            </field>
+        </record>
+
+
+        <record id="view_account_payment_method_tree" model="ir.ui.view">
+            <field name="model">account.payment.method</field>
+            <field name="arch" type="xml">
+                <tree string="Payment Methods" editable="top">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="payment_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_account_payment_method" model="ir.actions.act_window">
+            <field name="name">Payment Methods</field>
+            <field name="res_model">account.payment.method</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{'default_payment_type': 'outbound'}</field>
+            <field name="view_id" ref="view_account_payment_method_tree"/>
+        </record>
+
+        <menuitem action="action_account_payment_method" id="menu_action_account_payment_method" parent="payment.root_payment_menu" sequence="5"/>
+
+    </data>
+</odoo>    

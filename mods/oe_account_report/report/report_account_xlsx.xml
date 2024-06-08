@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+	    <report id="action_report_general_ledger_xlsx" 
+	    	string="General Ledger XLSX" 
+	    	model="report_general_ledger"
+            report_type="xlsx" 
+            name="oe_account_report.report_general_ledger_xlsx" 
+            file="report_general_ledger"/>
+
+	    <report id="action_report_journal_ledger_xlsx" 
+	    	string="Journal Ledger XLSX" 
+	    	model="report_journal_ledger"
+            report_type="xlsx" 
+            name="oe_account_report.report_journal_ledger_xlsx" 
+            file="report_journal_ledger"/>
+
+	    <report id="action_report_vat_report_xlsx" 
+	    	string="VAT Report XLSX" 
+	    	model="report_vat_report"
+            report_type="xlsx" 
+            name="oe_account_report.report_vat_report_xlsx" 
+            file="report_vat_report"/>
+
+	    <report id="action_report_aged_partner_balance_xlsx" 
+	    	string="Aged Partner Balance XLSX" 
+	    	model="report_aged_partner_balance"
+            report_type="xlsx" 
+            name="oe_account_report.report_aged_partner_balance_xlsx" 
+            file="report_aged_partner_balance"/>
+
+    </data>
+</odoo>  

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<report 
+			id="sale.action_report_saleorder"
+			string="Quotation / Order"
+			model="sale.order" 
+            report_type="qweb-pdf"
+            file="sale.report_saleorder" 
+            name="sale.report_saleorder"
+			print_report_name="(object.state in ('draft', 'sent') and 'Cotización - %s' % (object.name)) or 'Order Sale - %s' % (object.name)"/>
+
+        <report 
+            id="action_report_delivey_note"
+            string="Delivery Note"
+            model="sale.order" 
+            report_type="qweb-pdf"
+            file="oe_sale.report_deliverynote" 
+            name="oe_sale.report_deliverynote"
+            print_report_name="('Nota Entrega - %s' % (object.name))"
+        />
+
+	</data>	
+</odoo>

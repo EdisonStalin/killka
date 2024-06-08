@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+        <record model ="ir.ui.view" id="odoo_journal_item_import_wizard_view">
+           <field name="name">import.journal.wizard.wizard</field>
+           <field name="model">journal.item.wizard</field>
+           <field name="arch" type="xml">
+               <form string="Journal Item Import Wizard">
+                   <separator string="This wizard will import journal items from selected excel file. Make sure you have selected .xls/xlsx file..."/>
+                   <li>Download the <a href="/oe_account/static/template/journal.xls">Excel template</a></li>
+                   <group>
+                       <div>
+                            <field name="files" class="oe_inline" filename="datas_fname" required="True"/>
+                            <field name="datas_fname" class="oe_inline" invisible="0" readonly="1"/>
+                       </div>
+                   </group>
+                   <footer>
+                        <button string="Import" name="journal_item" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                   </footer>
+               </form>
+           </field>
+       </record>
+       
+       <record model="ir.actions.act_window" id="journal_item_import_action1">
+           <field name="name">Import Journal Items</field>
+           <field name="res_model">journal.item.wizard</field>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+       </record>
+       
+    </data>
+</odoo>

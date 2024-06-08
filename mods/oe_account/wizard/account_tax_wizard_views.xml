@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+        <record id="view_account_tax_wizard_form" model="ir.ui.view">
+            <field name="name">account.tax.wizard.form</field>
+            <field name="model">account.tax.wizard</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="multi_step_wizard.multi_step_wizard_form"/>
+            <field name="arch" type="xml">
+				
+				<xpath expr="//header" position="inside">
+					<button name="action_import" string="Import Chart of Accounts" type="object"
+						attrs="{'invisible': ['|',('type','!=','import'),('state','!=','chart')]}"/>
+					<button name="action_disable" string="Disable Chart of Accounts" type="object"
+						attrs="{'invisible': [('state','!=','chart')]}"/>
+				</xpath>
+				
+            	<xpath expr="//field[@name='allow_back']" position="after">
+            		<group>
+	            		<group>
+	            			<field name="type" widget="radio" attrs="{'invisible': [('state','!=','start')]}"/>
+	            		</group>
+	            		<group>
+	            			<field name="name"/>
+							<field name="chart_template_id" attrs="{'invisible': [('chart_template_id','=',False)]}"/>
+							<field name="files" class="oe_inline" filename="datas_fname"
+								attrs="{'invisible': [('type','!=','import')], 'required': [('type','=','import')]}"/>
+                            <field name="datas_fname" class="oe_inline" invisible="0" readonly="1"
+                            	attrs="{'invisible': [('type','!=','import')]}"/>
+                            <li attrs="{'invisible': [('state','!=','chart')]}">Download the <a href="/oe_account/static/template/plantilla_plan_cuentas.xls">Chart of Accounts</a></li>
+	            		</group>
+            		</group>
+					<field name="tax_ids" nolabel="1" widget="one2many_list"
+						mode="tree" context="{}" attrs="{'invisible': [('state','!=','enable')]}">
+		       			<tree string="Taxes" editable="bottom" create="false" delete="false">
+		       				<field name="sequence" widget="handle"/>
+		       				<field name="name"/>
+		            	    <field name="form_code_ats" required="1" readonly="1"/>
+		            	    <field name="code_form_id" required="1" readonly="1"/>
+		            	    <field name="refund_code_form_id" required="1" readonly="1"/>
+		            	    <field name="code_applied_id" required="1" readonly="1"/>
+		            		<field name="tax_group_id" required="1" readonly="1"/>
+		            		<field name="amount" required="1" readonly="1"/>
+		            		<field name="account_id" groups="account.group_account_user"/>
+		            		<field name="refund_account_id" groups="account.group_account_user"/>
+		            		<field name="active" widget="boolean_toggle"/>
+		       			</tree>
+		       		</field>
+					<field name="template_taxes_ids" nolabel="1" mode="tree"
+						context="{'active_test': True}"
+						attrs="{'invisible': [('state','!=','taxes')]}">
+		       			<tree string="Taxes Template" editable="top">
+		       				<field name="sequence" widget="handle"/>
+		       				<field name="name"/>
+		            	    <field name="form_code_ats"/>
+		            	    <field name="code_form_id"/>
+		            	    <field name="refund_code_form_id"/>
+		            	    <field name="code_applied_id"/>
+		            		<field name="tax_group_id"/>
+		            		<field name="amount"/>
+		            		<field name="active" widget="boolean_toggle"/>
+		       			</tree>
+		       		</field>
+            	</xpath>
+
+            </field>
+        </record>
+
+        <record id="action_account_tax_wizard" model="ir.actions.act_window">
+            <field name="name">Tax setup wizard</field>
+            <field name="res_model">account.tax.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+           <field name="view_id" ref="view_account_tax_wizard_form"/>
+           <field name="target">new</field>
+        </record>
+	
+		<menuitem action="action_account_tax_wizard" id="menu_action_tax_wizard_form"
+        	parent="menu_setting_tax_main" sequence="2"/>
+
+    </data>
+</odoo>

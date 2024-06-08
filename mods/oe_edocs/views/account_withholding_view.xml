@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<record id="view_withholding_purchase_tree_inherit_oe_edocs" model="ir.ui.view">
+			<field name="name">account.withholding.purchase.inherit.oe_edocs</field>
+			<field name="model">account.withholding</field>
+			<field name="inherit_id" ref="oe_account.view_withholding_purchase_tree"/>
+			<field name="arch" type="xml">
+
+				<xpath expr="//field[@name='state']" position="before">
+					<field name="message_state" string="SRI status"/>
+				</xpath>
+
+			</field>
+		</record>
+
+
+		<record id="view_withholding_purchase_form_inherit_oe_edocs" model="ir.ui.view">
+			<field name="name">account.withholding.form.inherit.oe_edocs</field>
+			<field name="model">account.withholding</field>
+			<field name="inherit_id" ref="oe_account.view_withholding_purchase_form"/>
+			<field name="arch" type="xml">
+			
+				<xpath expr="//header" position="after">
+					<div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('message_state', 'not in', ['RECIBIDA', 'EN PROCESO'])]}">
+	                    <bold><a class="alert-link" href="#outstanding" role="button">verify which document was authorized by SRI</a></bold>. Remember that the SRI has a period of 72 hours to authorize the document.
+	                </div>
+	                <div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}">
+	                    Perform the electronic document<strong> cancellation</strong> on the <bold><a class="alert-link" href="https://srienlinea.sri.gob.ec/sri-en-linea/#/inicio/NAT" target="_blank" role="button">SRI</a></bold> platform
+	                </div>
+				</xpath>
+				
+				<xpath expr="//button[@name='action_withholding_approved']" position="attributes">
+                    <attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+                </xpath>
+                
+                <xpath expr="//button[@name='action_withholding_cancel']" position="attributes">
+                    <attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+                </xpath>
+                
+                <xpath expr="//button[@name='action_withholding_draft']" position="attributes">
+                	<attribute name="attrs">{'invisible': ['|', ('authorization', '=', True)]}</attribute>
+                    <attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+                </xpath>
+
+				<xpath expr="//header/button[@name='action_withholding_approved']" position="after">
+					<button name="action_send_to_sri" string="Send to SRI" type="object" states="approved"
+						attrs="{'invisible': ['|', '|', ('received', '=', True), ('is_electronic', '=', False)]}"
+						groups="account.group_account_invoice,oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_validate_to_sri" string="Validate with SRI" type="object" states="approved"
+						attrs="{'invisible': ['|', '|', '|', ('authorization', '=', True), ('received', '=', False), ('is_electronic', '=', False)]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_restore_doc" string="Restore" type="object"
+						attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+				</xpath>
+
+				<xpath expr="//div[@name='title']/h1[hasclass('mt0')]" position="before">
+					<div class="label label-warning" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('received', '=', False)]}">SRI: RECEIVED</div>
+					<div class="label label-success" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('authorization', '=', False)]}">SRI: <field name="message_state" readonly="1"/></div>
+				</xpath>
+				
+				<xpath expr="//field[@name='statement_tax_line_ids']" position="before">
+					<header>
+						<button name="action_generate_xml" string="Generate XML" type="object" 
+							attrs="{'invisible': ['|',('is_electronic', '=', False), ('authorization', '=', False)]}"/>
+					</header>
+					<group string="SRI Info">
+						<group>
+							<field name="received" attrs="{'invisible': [('is_electronic', '=', False)]}"/>
+							<field name="authorization" attrs="{'invisible': [('is_electronic', '=', False)]}"/>
+							<field name="authorization_number" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="access_key" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+						</group>
+						<group>
+							<field name="environment" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="authorization_date" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="message_state" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+						</group>
+					</group>
+				</xpath>
+				
+				<xpath expr="//field[@name='statement_tax_line_ids']" position="after">
+					<field name="edi_document_ids" attrs="{'invisible': [('edi_document_ids', '=', 0)]}">
+						<tree string="History lines" edit="false" create="false">
+							<field name="sequence" invisible="1"/>
+							<field name="company_id" invisible="1"/>
+							<field name="invoice_id" invisible="1"/>
+							<field name="code"/>
+							<field name="type"/>
+							<field name="date_action"/>
+							<field name="message"/>
+							<field name="add_information"/>
+						</tree>
+					</field>
+				</xpath>
+
+			</field>
+		</record>			
+
+	</data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<menuitem id="menu_stock_product_pricelist_main" name="Pricelists" 
+		parent="stock.menu_stock_inventory_control" action="product.product_pricelist_action2" 
+		groups="product.group_sale_pricelist,oe_stock.group_stock_user_basic" sequence="3"/>
+
+    <record model="ir.ui.menu" id="stock.menu_stock_root" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('oe_stock.group_stock_user_basic'))]"/>
+	</record>
+
+	<record model="ir.ui.menu" id="stock.stock_picking_type_menu" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="stock.menu_stock_warehouse_mgmt" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('stock.group_stock_user')), (4, ref('oe_stock.group_stock_user_basic'))]"/>
+	</record>
+
+	<record model="ir.ui.menu" id="stock.menu_product_variant_config_stock" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('stock.group_stock_user')), (4, ref('oe_stock.group_stock_user_basic'))]"/>
+	</record>
+
+	<record model="ir.ui.menu" id="stock.menu_reordering_rules_config" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]"/>
+	</record>
+
+	<record model="ir.ui.menu" id="stock.menu_warehouse_report" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('oe_stock.group_stock_user_basic'))]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="stock.stock_move_menu" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('oe_stock.group_stock_user_basic'))]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="stock.stock_move_line_menu" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]"/>
+	</record>
+
+    <record model="ir.ui.menu" id="stock.menu_action_inventory_form" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]"/>
+	</record>
+
+    <record model="ir.ui.menu" id="stock.all_picking" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('oe_stock.group_stock_user_basic'))]"/>
+	</record>
+	
+	<record model="ir.ui.menu" id="stock.menu_procurement_compute" forcecreate="0">
+		<field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]"/>
+	</record>
+
+</odoo>

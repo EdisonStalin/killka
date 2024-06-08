@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<record id="view_picking_form_inherit_oe_stock_account" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.oe_stock_account</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+            	
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_get_account_moves" icon="fa-usd" class="oe_stat_button" string="Accounting Entries" type="object"/>
+                </xpath>
+            	
+            </field>
+		</record>
+
+	</data>
+</odoo>

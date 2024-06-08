@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<templates>
+
+	<!-- Change Logo -->
+	<t t-extend="Chrome">
+		<t t-jquery='.pos-topheader' t-operation='replace'>
+            <div class="pos-topheader">
+                <div class="pos-branding">
+                    <t t-if='widget.a2'>
+                        <img class="pos-logo" t-att-src="widget.a2" style="width:76px;height:47px"/>
+                    </t>
+                    <t t-if='!widget.a2'>
+                       <img class="pos-logo" src="/oe_pos/static/src/img/logo-pos.png" />
+                    </t>
+                    <span class="placeholder-UsernameWidget"></span>
+                </div>
+                <div class="pos-rightheader">
+                    <span class="placeholder-OrderSelectorWidget"></span>
+                    <!-- here goes header buttons -->
+                </div>
+            </div>
+		</t>
+	</t>
+
+	<!-- Reorganize Client Screen -->
+	
+	<t t-extend="ClientDetailsEdit">
+	
+		<t t-jquery="input[name=name]" t-operation="replace">
+			<div class='client-details-box clearfix'>
+				<div class='client-detail required'>
+					<span class='label'>Customer</span>
+					<input class='detail client-name client-firstname' name='firstname' t-att-value='partner.firstname or ""' placeholder='Firstname'/>
+					<input class='detail client-name' name='lastname' t-att-value='partner.lastname  or ""' placeholder='Lastname'/>
+				</div>
+			</div>
+		</t>
+		
+		<t t-jquery="div.client-details-left" t-operation="replace">
+			<div class='client-details-left'>
+				<div class='client-detail required'>
+				    <span class='label'>Identification Type</span>
+					<select class='detail needsclick' name='l10n_latam_identification_type_id'>
+				        <t t-foreach='widget.pos.identifications' t-as='identification'>
+				            <option t-att-value='identification.id'
+				                    t-att-selected="partner.l10n_latam_identification_type_id ? (identification.id === partner.l10n_latam_identification_type_id[0] ? true : undefined) : undefined"> 
+				                <t t-esc='identification.name'/>
+				            </option>
+				        </t>
+				    </select>
+				</div>
+				<div class='client-detail required'>
+				    <span class='label'>Tax ID</span>
+				    <input class='detail vat' name='vat' t-att-value='partner.vat || ""'></input>
+				</div>
+				<div class='client-detail required'>
+				    <span class='label'>Email</span>
+				    <input class='detail client-email' name='email' type='email' t-att-value='partner.email || ""'></input>
+				</div>
+				<div class='client-detail'>
+				    <span class='label'>Phone</span>
+				    <input class='detail client-phone' name='phone' type='tel' t-att-value='partner.phone || ""'></input>
+				</div>
+				<div t-attf-class='client-detail #{widget.pos.pricelists.length &lt;= 1 ? "oe_hidden" : ""}'>
+				    <span class='label'>Pricelist</span>
+				    <select class='detail needsclick' name='property_product_pricelist'>
+				        <t t-foreach='widget.pos.pricelists' t-as='pricelist'>
+				            <option t-att-value='pricelist.id'
+				                    t-att-selected="partner.property_product_pricelist ? (pricelist.id === partner.property_product_pricelist[0] ? true : undefined) : undefined"> 
+				                <t t-esc='pricelist.display_name'/>
+				            </option>
+				        </t>
+				    </select>
+				</div>
+			</div>
+		</t>
+		<t t-jquery="div.client-details-right" t-operation="replace">
+			<div class='client-details-right'>
+				<div class='client-detail required'>
+		            <span class='label'>Street</span>
+		            <input class='detail client-address-street' name='street'       t-att-value='partner.street || ""' placeholder='Street'></input>
+		        </div>
+		        <div class='client-detail required'>
+		            <span class='label'>City</span>
+		            <input class='detail client-address-city'   name='city'         t-att-value='partner.city || ""' placeholder='City'></input>
+		        </div>
+				<div class='client-detail'>
+		            <span class='label'>State</span>
+		            <select class='detail client-address-country needsclick' name='state_id'>
+		                <option value=''>None</option>
+		                <t t-foreach='widget.pos.states' t-as='state'>
+		                    <option t-att-value='state.id' t-att-selected="partner.state_id ? ((state.id === partner.state_id[0]) ? true : undefined) : undefined"> 
+		                        <t t-esc='state.name'/>
+		                    </option>
+		                </t>
+		            </select>
+		        </div>
+		        <div class='client-detail'>
+		            <span class='label'>Postcode</span>
+		            <input class='detail client-address-zip'    name='zip'          t-att-value='partner.zip || ""' placeholder='ZIP'></input>
+		        </div>
+		        <div class='client-detail'>
+		            <span class='label'>Country</span>
+		            <select class='detail client-address-country needsclick' name='country_id'>
+		                <option value=''>None</option>
+		                <t t-foreach='widget.pos.countries' t-as='country'>
+		                    <option t-att-value='country.id' t-att-selected="partner.country_id ? ((country.id === partner.country_id[0]) ? true : undefined) : undefined"> 
+		                        <t t-esc='country.name'/>
+		                    </option>
+		                </t>
+		            </select>
+		        </div>
+			</div>
+		</t>
+	</t>
+
+	<t t-extend="ClientDetails">
+		<t t-jquery="div.client-details-left" t-operation="replace">
+			<div class='client-details-left'>
+				<div class='client-detail'>
+				    <span class='label'>Identification Type</span>
+				    <t t-if='partner.l10n_latam_identification_type_id'>
+				        <span class='detail l10n_latam_identification_type_id'><t t-esc='partner.l10n_latam_identification_type_id[1]'/></span>
+				    </t>
+				</div>
+				<div class='client-detail'>
+				    <span class='label'>Tax ID</span>
+				    <t t-if='partner.vat'>
+				        <span class='detail vat'><t t-esc='partner.vat'/></span>
+				    </t>
+				    <t t-if='!partner.vat'>
+				        <span class='detail vat empty'>N/A</span>
+				    </t>
+				</div>
+				<div class='client-detail'>
+                    <span class='label'>Email</span>
+                    <t t-if='partner.email'>
+                        <span class='detail client-email'><t t-esc='partner.email' /></span>
+                    </t>
+                    <t t-if='!partner.email'>
+                        <span class='detail client-email empty'>N/A</span>
+                    </t>
+                </div>
+				<div class='client-detail'>
+                    <span class='label'>Phone</span>
+                    <t t-if='partner.phone'>
+                        <span class='detail client-phone'><t t-esc='partner.phone' /></span>
+                    </t>
+                    <t t-if='!partner.phone'>
+                        <span class='detail client-phone empty'>N/A</span>
+                    </t>
+                </div>
+				<div t-attf-class='client-detail #{widget.pos.pricelists.length &lt;= 1 ? "oe_hidden" : ""}'>
+				    <span class='label'>Pricelist</span>
+				    <t t-if='partner.property_product_pricelist'>
+				        <span class='detail property_product_pricelist'><t t-esc='partner.property_product_pricelist[1]'/></span>
+				    </t>
+				    <t t-if='!partner.property_product_pricelist'>
+				        <span class='detail property_product_pricelist empty'>N/A</span>
+				    </t>
+				</div>
+			</div>
+		</t>
+		
+		<t t-jquery="div.client-details-right" t-operation="replace">
+			<div class='client-details-right'>
+				<div class='client-detail'>
+				    <span class='label'>Address</span>
+				    <t t-if='partner.address'>
+				        <span class='detail client-address'><t t-esc='partner.address' /></span>
+				    </t>
+				    <t t-if='!partner.address'>
+				        <span class='detail client-address empty'>N/A</span>
+				    </t>
+				</div>
+				<div class='client-detail'>
+				    <span class='label'>City</span>
+				    <t t-if='partner.city'>
+				        <span class='detail client-address-city'><t t-esc='partner.city' /></span>
+				    </t>
+				    <t t-if='!partner.city'>
+				        <span class='detail client-address-city empty'>N/A</span>
+				    </t>
+				</div>
+				<div class='client-detail'>
+				    <span class='label'>Postcode</span>
+				    <t t-if='partner.zip'>
+				        <span class='detail client-address-zip'><t t-esc='partner.zip' /></span>
+				    </t>
+				    <t t-if='!partner.zip'>
+				        <span class='detail client-address-zip empty'>N/A</span>
+				    </t>
+				</div>
+			</div>
+		</t>
+	</t>
+
+	<t t-name="ClientLine">
+		<tr class='client-line' t-att-data-id='partner.id'>
+			<td><t t-esc='partner.firstname'/></td>
+			<td><t t-esc='partner.lastname or ""'/></td>
+			<td><t t-esc='partner.l10n_latam_identification_type_id[1] or ""'/></td>
+			<td><t t-esc='partner.vat or ""'/></td>
+			<td><t t-esc='partner.email or ""'/></td>
+			<td><t t-esc='partner.phone or partner.mobile or ""' /></td>
+			<td><t t-esc='partner.address' /></td>
+		</tr>
+	</t>
+	
+	<t t-extend="ClientListScreenWidget">
+		<t t-jquery=".client-list > thead > tr" t-operation="replace">
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Identification Type</th>
+				<th>Tax ID</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Street</th>
+			</tr>
+		</t>
+	</t>
+
+
+	<!-- Reorganize Product Screen -->
+	<t t-extend="OrderWidget">
+		<t t-jquery="div.summary" t-operation="replace">
+			<div class="summary clearfix">
+			    <div class="line">
+			        <div class='entry total'>
+			            <div class='subtotal'>Subtotal: <span class="value">0.00€</span></div>
+			            <div class='base_0'>Base without Taxes: <span class="value">0.00€</span></div>
+			            <div class='base_taxes'>Base with Taxes: <span class="value">0.00€</span></div>
+			            <div class='subentry'>Taxes: <span class="value">0.00€</span></div>
+			            <span class="label">Total: </span> <span class="value">0.00 €</span>
+			        </div>
+			    </div>
+			</div>
+		</t>
+	</t>
+
+
+    <!-- for keyboard shortcut help button and details -->
+    <t t-extend="NumpadWidget">
+		<t t-jquery=".numpad" t-operation="after">
+			<span class="control-button" id="shortcut_tips_btn" style="width: 384px;margin-right: 5px;margin-top: -8px;">
+				<i class='fa fa-info-circle' style="font-size:24px;"/> Shortcut Tips (F2)
+			</span>
+		</t>
+	</t>
+
+    <t t-extend="ProductScreenWidget">
+        <t t-jquery=".subwindow-container-fix.pads" t-operation="replace">
+            <div style="border-top: solid 2px rgb(110,200,155);">
+                <i class="numpad-toggle fa fa-caret-down fa-2x"
+                   style="cursor: pointer; transform: scale(2,1); color: rgb(110,200,155);">
+                </i>
+            </div>
+
+            <div class="numpad-container">
+                <div class="control-buttons oe_hidden"></div>
+                <div class="placeholder-ActionpadWidget"></div>
+                <div class="placeholder-NumpadWidget"></div>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="ProductCategoriesWidget">
+        <t t-jquery="div.searchbox" t-operation="replace">
+			<div class="searchbox">
+			    <input type="test" class="search-input" placeholder="Search Products" accesskey="s"/>
+			    <span class="search-clear"/>
+			</div>
+        </t>
+    </t>
+
+	<!-- Reorganize Ticket Receipt -->
+
+	<t t-extend="PosTicket">
+		<t t-jquery="div.pos-sale-ticket" t-operation="replace">
+			<div class="pos-sale-ticket">
+				<t t-if="receipt.header">
+	                <div style='text-align:center'>
+	                    <t t-esc="receipt.header" />
+	                </div>
+	            </t>
+				<div class="pos-center-align">
+					<div style="width: 45%;margin-left: auto;margin-right: auto;">
+					    <t t-if='widget.pos.config.image'>
+					        <img t-att-src="a2" style="width:100%"/>
+					    </t>
+					    <t t-if='!widget.pos.config.image'>
+					        <img src='/oe_pos/static/src/img/logo-pos.png' style="width:100%"/>
+					    </t>
+					</div>
+				</div>
+				<div class="pos-center-align">
+					<ul class="list-unstyled">	
+						<li>Business Main</li>
+						<li><span t-esc="widget.pos.company.name"/><br /></li>
+						<li>RUC: <span t-esc="widget.pos.company.vat"/><br /></li>
+					</ul>
+				</div>
+	            <table class='receipt-orderlines'>
+					<!--colgroup>
+	                    <col width='30%' />
+	                    <col width='16%' />
+	                    <col width='18%' />
+	                    <col width='18%' />
+	                    <col width='18%' />
+	                </colgroup-->
+					<thead>
+						<tr>
+							<th style="text-align: center !important;">Quantity</th>
+							<th colspan="2" style="text-align: center !important;">Description</th>
+						</tr>
+						<tr>
+							<th class="text-right" style="text-align: right !important;">Unit Price</th>
+							<th class="text-right" style="text-align: right !important;">Disc. %</th>
+							<th class="text-right" style="text-align: right !important;">Amount</th>
+						</tr>
+					</thead>
+					<t t-foreach="orderlines" t-as="orderline">
+		                <tr>
+		                	<td class="pos-center-align">
+		                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+		                    </td>
+		                    <td colspan="2">
+		                        <t t-esc="orderline.get_product().display_name"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td class="pos-right-align">
+		                        <t t-esc="widget.format_currency(orderline.get_display_unit())"/>
+		                    </td>
+		                    <td class="pos-right-align">
+		                        <t t-if="orderline.get_discount() > 0" t-esc="orderline.get_discount()"/>
+		                        <t t-if="orderline.get_discount() == 0">-</t>
+		                    </td>
+		                    <td class="pos-right-align">
+		                        <t t-esc="widget.format_currency(orderline.get_display_price())"/>
+		                    </td>
+		                </tr>
+					</t>
+	            </table>
+	            <table class='receipt-total'>
+	                <tr>
+	                    <td>Subtotal:</td>
+	                    <td class="pos-right-align">
+	                        <t t-esc="widget.format_currency(order.get_total_without_tax())"/>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>Base without Taxes:</td>
+	                    <td class="pos-right-align">
+	                        <t t-esc="widget.format_currency(order.get_base_0_taxes())"/>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>Base with Taxes:</td>
+	                    <td class="pos-right-align">
+	                        <t t-esc="widget.format_currency(order.get_base_taxes())"/>
+	                    </td>
+	                </tr>
+	                <t t-foreach="order.get_tax_details()" t-as="taxdetail">
+	                    <tr>
+	                        <td><t t-esc="taxdetail.name"/></td>
+	                        <td class="pos-right-align">
+	                            <t t-esc="widget.format_currency(taxdetail.amount)" />
+	                        </td>
+	                    </tr>
+	                </t>
+	                <tr>
+	                    <t t-if="order.get_total_discount() > 0">
+	                        <td>Discount:</td>
+	                        <td class="pos-right-align">
+	                            <t t-esc="widget.format_currency(order.get_total_discount())"/>
+	                        </td>
+	                    </t>
+	                </tr>
+	                <tr class="emph">
+	                    <td>Total:</td>
+	                    <td class="pos-right-align">
+	                        <t t-esc="widget.format_currency(order.get_total_with_tax())"/>
+	                    </td>
+	                </tr>
+	            </table>
+	            <table class='receipt-paymentlines'>
+	                <t t-foreach="paymentlines" t-as="line">
+	                  <tr>
+	                      <td>
+	                          <t t-esc="line.name"/>
+	                      </td>
+	                      <td class="pos-right-align">
+	                          <t t-esc="widget.format_currency(line.get_amount())"/>
+	                      </td>
+	                  </tr>
+	                </t>
+	            </table>
+	            <table class='receipt-change'>
+	                <tr>
+	                	<td>Change:</td>
+	                	<td class="pos-right-align">
+	                    	<t t-esc="widget.format_currency(order.get_change())"/>
+	                    </td>
+					</tr>
+	            </table>
+	            <t t-esc="order.name"/> <t t-esc="order.formatted_validation_date"/>
+                <t t-set="client" t-value="order.get_client()"/>
+				<ul class="list-unstyled">
+					<li>  Customer: <span style="font-weight: bold;" t-esc="client['name']"/><br/></li>
+					<li t-if="client['vat']">  RUC/CI: <span t-esc="client['vat']"/><br/></li>
+					<li t-if="client['email']">  Email: <span t-esc="client['email']"/><br/></li>
+					<li t-if="client['phone'] or client['mobile']">  Phone: <span t-esc="client['phone'] || client['mobile']"/><br/></li>
+					<!--li>Total number of items sold: <span t-esc="len(orderlines)"/><br/></li-->
+					<li t-if="order.invoice_number">  Nr° Invoice: <span t-esc="order.invoice_number"/><br/></li>
+					<li t-if="order.access_key">  Access Key: <span style="font-size:1pt;" t-esc="order.access_key"/><br/></li>
+					<li style="text-transform: uppercase;font-weight: bold;text-align: center !important;">
+						<br/>
+						<span>Thanks for your purchase</span>
+					</li>
+				</ul>
+				<t t-if="receipt.footer">
+	                <div style='text-align:center'>
+	                    <t t-esc="receipt.footer" />
+	                </div>
+	            </t>		
+			</div>
+		</t>
+	</t>
+
+
+    <t t-name="Reminder">
+        <div class="modal-dialog">
+            <div class="popup popup-warning" style="height: 40%; width: 40%; border-radius: 0; background: white">
+                <p class="title" style="font-size: 18px; height: 30px; padding: 8px;">
+                    <t t-esc=" widget.options.title || 'Warning' "/>
+                </p>
+                <div class="body">
+                    <div style="display: flex; flex-flow: row;">
+                        <div>
+                            <img t-att-src="widget.options.product_image_url" style="max-width: 128px;"/>
+                        </div>
+                        <div style="flex-grow: 1; margin-left: 16px; text-align: center;">
+                            <p style="font-weight: bold;">
+                                <t t-esc="widget.options.product_name"/>
+                            </p>
+                            <p>
+                                Maximum quantity available is
+                                <b style="color: #32a868"><t t-esc="  widget.options.max_available || '' "/></b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="button cancel" style="width: 64px;">
+                        Cancel
+                    </div>
+                    <div class="button confirm" style="color: #32a868; width: 64px;">
+                        Order
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+	<!-- Shortcut Tips -->
+
+    <t t-name="ShortcutTipsWidget">
+        <div role="dialog" class="modal-dialog modal-dialog-shortcut-tips">
+            <div class="popup popup-shortcut-tips" style="width:40%;height: 70%;">
+                <header class="title">Shortcut Tips</header>
+                <div class="body" style="height:75%;overflow-y:scroll;">
+                    <h3>Important Instruction (must read):</h3>
+                    <div style="width:100%;text-align:left;">
+                        <ul>
+                            <li style="font-size:16px;color:red;">Cursor will be default focused on product search panel when POS Home Screen (Product Screen) will be opened. In this time keyboard shortcut keys won't work except <b>"Tab"</b> and <b>"F2"</b> shortcut buttons. Now, search product and press <b>"Tab"</b> button to switch focus on product selection. Then all keyboard shortcut keys will work.</li>
+                            <li style="font-size:16px;color:red;">Press <b>"F2"</b> button to get shortcut help.</li>
+                        </ul>
+                    </div>
+                    <h3>Product/Home Screen</h3>
+                    <table class="shortcut-tips-table">
+                        <tr width="50%">
+                            <th>Shortcut Key</th><th>Action Description</th>
+                        </tr>
+                        <tr><td width="25%">F2</td><td width="75%">Sortcut Tips</td></tr>
+                        <tr><td>F4</td><td>Product search</td></tr>
+                        <tr><td>Tab</td><td>Switch focus product search panel to individual product and one to another product</td></tr>
+                        <tr><td>Q</td><td>Numeric pad "Qty" button select to change product line quantity</td></tr>
+                        <tr><td>D</td><td>Numeric pad "Disc" button select to change product line discount</td></tr>
+                        <tr><td>P</td><td>Numeric pad "Price" button select to change product line price</td></tr>
+                        <tr><td>Backspace</td><td>Delete last number for "Qty", "Disc" and "Price"</td></tr>
+                        <tr><td>0-9 (Numpad)</td><td>Change number for "Qty", "Disc" and "Price"</td></tr>
+                        <tr><td>. (Numpad)</td><td>Point for numbers</td></tr>
+                        <tr><td>- (Numpad)</td><td>Switch number to negetive or positive</td></tr>
+                        <tr><td>C</td><td>Open customer screen</td></tr>
+                        <tr><td>Spacebar</td><td>Open payment screen</td></tr>
+                        <tr><td>Delete</td><td>Delete selected order line from cart</td></tr>
+                        <tr><td>Arrow Up</td><td>Change selection of cart order line to up direction</td></tr>
+                        <tr><td>Arrow Down</td><td>Change selection of cart order line to down direction</td></tr>
+                    </table>
+
+                    <h3 style="margin-top:40px;">Customer Screen</h3>
+                    <table class="shortcut-tips-table">
+                        <tr width="50%">
+                            <th>Shortcut Key</th><th>Action Description</th>
+                        </tr>
+                        <tr><td width="25%">Esc</td><td width="75%">Back to previous screen</td></tr>
+                        <tr><td>F4</td><td>Customer search</td></tr>
+                        <tr><td>Arrow Up</td><td>Change selection of customer to up direction</td></tr>
+                        <tr><td>Arrow Down</td><td>Change selection of customer to down direction</td></tr>
+                        <tr><td>Enter</td><td>Set selected customer</td></tr>
+                        <tr><td>+ (Numpad)</td><td>Open new customer add form</td></tr>
+                    </table>
+
+                    <h3 style="margin-top:40px;">Payment Screen</h3>
+                    <table class="shortcut-tips-table">
+                        <tr width="50%">
+                            <th>Shortcut Key</th><th>Action Description</th>
+                        </tr>
+                        <tr><td width="25%">Esc</td><td width="75%">Back to previous screen</td></tr>
+                        <tr><td>C</td><td>Open customer screen</td></tr>
+                        <tr><td>I</td><td>Select invoice to print invoice on receipt screen</td></tr>
+                        <tr><td>Page Up</td><td>Change payment method selection to up direction</td></tr>
+                        <tr><td>Page Down</td><td>Change payment method selection to down direction</td></tr>
+                        <tr><td>Spacebar</td><td>Choose selected payment method</td></tr>
+                        <tr><td>Arrow Up</td><td>Change payment line selection to up direction</td></tr>
+                        <tr><td>Arrow Down</td><td>Change payment line selection to down direction</td></tr>
+                        <tr><td>Delete</td><td>Delete selected payment line</td></tr>
+                    </table>
+
+                    <h3 style="margin-top:40px;">Receipt Screen</h3>
+                    <table class="shortcut-tips-table">
+                        <tr width="50%">
+                            <th>Shortcut Key</th><th>Action Description</th>
+                        </tr>
+                        <tr><td width="25%">I</td><td width="75%">Print customer invoice receipt</td></tr>
+                        <tr><td>R</td><td>Print POS receipt</td></tr>
+                        <tr><td>Enter</td><td>Back to Home/POS screen</td></tr>
+                    </table>
+
+                    <h3 style="margin-top:40px;">Shortcut Tips Modal</h3>
+                    <table class="shortcut-tips-table">
+                        <tr width="50%">
+                            <th>Shortcut Key</th><th>Action Description</th>
+                        </tr>
+                        <tr><td width="25%">Esc</td><td width="75%">Close popup modal</td></tr>
+                    </table>
+                </div>
+                <footer class="footer">
+                    <div class="button cancel">
+                        Cancel
+                    </div>
+                </footer>
+            </div>
+       </div>
+    </t>
+
+	<!-- PosServiceWidget -->
+   
+	<t t-name="PosServiceWidget" name="Pos Service Widget">
+	   <t t-if="widget.pos.config.allow_service">
+	       <div class="control-button button confirm" id="pos_service" style="background-color: #6ec89b; color: #fff;">
+	           <i class="fa fa-shopping-bag"></i> Service 
+	       </div>
+	   </t>
+	</t>
+
+	<!-- PosServicePopupWidget -->
+	<t t-name="PosServicePopupWidget">
+	    <div class="modal-dialog">
+	        <div class="popup popup-confirm">
+	            <p class="title" style="background-color: rgb(110,200,155); color: #fff;">List of Service Charges</p>
+				<div class="body">
+					<div class='div-container'>
+						<div class='product-list'>
+							<span class='product service-category' t-foreach="widget.options.orderlines || []" t-as="item" t-att-data-product-id="item.id">
+								<div class="product-img">
+									<img t-att-src='item.image_url' />
+									 <span class="price-tag">
+									    <t t-esc="widget.format_currency(item.lst_price,'Product Price')"/>
+									</span>
+								</div>
+								<div class="product-name">
+									<t t-esc="item.display_name"/>
+								</div>
+							</span>
+						</div>
+					</div>
+				</div>
+	            <div class="footer" style="background-color: rgb(110,200,155); color: #fff;">
+	            	<div class="button cancel" style="background-color: #0075AC; color: #fff;">
+	                    Cancel
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</t>
+
+</templates>

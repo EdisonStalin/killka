@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<record id="account_report_print_journal_view_inherit_oe_account_report" model="ir.ui.view">
+		<field name="name">account.print.journal.inherit.oe_account_report</field>
+		<field name="model">account.print.journal</field>
+		<field name="inherit_id" ref="account.account_report_print_journal_view"/>
+		<field name="arch" type="xml">
+			
+			<xpath expr="//newline" position="replace"/>
+			
+			<xpath expr="//field[@name='sort_selection']" position="after">
+	            <field name="foreign_currency"/>
+	            <field name="with_account_name"/>
+	            <field name="group_option" widget="radio"/>
+			</xpath>
+			
+			<xpath expr="/form/footer/button[@name='check_report']" position="before">
+				<button name="button_export_html" string="View" type="object" class="oe_highlight"/>
+				or
+			</xpath>
+			
+			<xpath expr="/form/footer/button[@name='check_report']" position="after">
+				or
+				<button name="button_export_xlsx" string="Export XLSX" type="object" class="oe_highlight"/>
+				or
+			</xpath>
+			
+		</field>
+	</record>
+
+</odoo>

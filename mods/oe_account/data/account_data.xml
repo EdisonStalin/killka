@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="1">
+
+		<!-- Tax Group -->
+
+        <!-- Account Tax Group -->
+
+		<record id="tax_group_renta_1" model="account.tax.group">
+			<field name="code">1</field>
+			<field name="name">RENTA</field>
+			<field name="type">renta</field>
+		</record>
+
+		<record id="tax_group_renta_iva_2" model="account.tax.group">
+			<field name="code">2</field>
+			<field name="name">RENTA (Apply IVA)</field>
+			<field name="type">renta_iva</field>
+		</record>
+
+		<record id="tax_group_iva_2" model="account.tax.group">
+			<field name="code">2</field>
+			<field name="name">IVA</field>
+			<field name="type">iva</field>
+		</record>
+
+		<record id="tax_group_iva_2_0" model="account.tax.group">
+			<field name="code">2</field>
+			<field name="name">IVA 0</field>
+			<field name="type">iva0</field>
+		</record>
+		
+		<record id="tax_group_no_iva_6_0" model="account.tax.group">
+			<field name="code">2</field>
+			<field name="name">No Objeto de Impuesto</field>
+			<field name="type">nobiva</field>
+		</record>
+
+		<record id="tax_group_exento_iva_7_0" model="account.tax.group">
+			<field name="code">2</field>
+			<field name="name">Exento de IVA</field>
+			<field name="type">exiva</field>
+		</record>
+		
+		<record id="tax_group_ice_3" model="account.tax.group">
+			<field name="code">3</field>
+			<field name="name">ICE</field>
+			<field name="type">ice</field>
+		</record>
+
+		<record id="tax_group_ipr_4" model="account.tax.group">
+			<field name="code">4</field>
+			<field name="name">IVA PRESUNTIVO Y RENTA</field>
+			<field name="type">other</field>
+		</record>
+
+		<record id="tax_group_irbpnr_5" model="account.tax.group">
+			<field name="code">5</field>
+			<field name="name">IRBPNR</field>
+			<field name="type">irbpnr</field>
+		</record>
+
+		<record id="tax_group_isd_6" model="account.tax.group">
+			<field name="code">6</field>
+			<field name="name">ISD</field>
+			<field name="type">isd</field>
+		</record>
+
+        <record forcecreate="True" id="decimal_account" model="decimal.precision">
+            <field name="name">Account</field>
+            <field name="digits">2</field>
+            <field name="display_digits">2</field>
+        </record>
+
+	</data>
+</odoo>

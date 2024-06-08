@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+		
+		<record id="finance_xls_output_view" model="ir.ui.view">
+			<field name="name">Account Financial Excel Output</field>
+			<field name="model">accounting.finance.report.output.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Excel Output">
+					<separator colspan="4" string="Please save file as .xls excel format"/>
+					<field name="name" invisible="1"/>
+					<field name="xls_output" filename='name' readonly='1'/>
+					<footer>
+					    <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+	
+	
+	</data>
+</odoo>

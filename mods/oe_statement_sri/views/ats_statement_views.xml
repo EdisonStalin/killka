@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+	    <record id="view_ats_statement_filter" model="ir.ui.view">
+	        <field name="name">ats.statement.select</field>
+	        <field name="model">ats.statement</field>
+	        <field name="arch" type="xml">
+	            <search string="Search statement">
+	                <field name="list_month" string="Statement" filter_domain="[('list_month','ilike',self)]"/>
+	                <field name="date_start"/>
+	                <filter string="Draft" domain="[('state','=','draft')]" help="Draft statement"/>
+	                <filter string="Done" domain="[('state','=','reviewed')]" help="Reviewed statement"/>
+	                <group expand="0" string="Group By">
+	                    <filter string="States" name="state" context="{'group_by':'state'}"/>
+	                </group>
+	            </search>
+	        </field>
+	    </record>
+
+		<record id="view_ats_form_tree" model="ir.ui.view">
+            <field name="name">ats.statement.tree</field>
+            <field name="model">ats.statement</field>
+            <field name="arch" type="xml">
+                <tree string="Statement">
+                    <field name="type_period"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+		<record id="view_sri_statement_form" model="ir.ui.view">
+			<field name="name">ATS Statement</field>
+		    <field name="model">ats.statement</field>
+		    <field name="arch" type="xml">
+			    <form string="Statement">
+			    	<header>
+			    		<button name="generate_ats" string="ATS Generate" type="object" default_focus="1"
+			    			class="oe_highlight"/>
+			    		<button name="generate_xml" string="ATS XML Generate" type="object" default_focus="1"
+			    			class="oe_highlight"/>
+			            <button string="Set of draft" class="btn btn-default" states="reviewed"/>
+			            <field name="state" widget="statusbar" statusbar_visible="draft,reviewed"/>
+			    	</header>
+					<sheet>
+						<group>
+							<group string="Informant">
+								<field name="type_period"/>
+								<field name="list_month" attrs="{'invisible': [('type_period','in',['semester_1','semester_2'])], 
+									'required': [('type_period','=','monthly')]}"/>
+								<field name="date_start"/>
+								<field name="date_end"/>
+								<field name="company_id" groups="base.group_multi_company"/>
+				            </group>
+				            <group>
+				            	<field name="name"/>
+				            	<label for="attachment_ids" string="Donwload:"/>
+				            	<div>
+									<field name="attachment_ids" widget="many2many_binary" string="Attach a file" nolabel="1" colspan="2" readonly="1"/>
+								</div>
+				            </group>
+			            </group>
+			            <notebook>
+		                    <page string="Customer Invoices">
+		                        <field name="invoice_out_ids" domain="[('type', '=', 'out_invoice')]" attrs="{'readonly': [('state','!=','draft')]}">
+		                            <tree string="Customer Invoice" editable="bottom" decoration-danger="error">
+					                    <field name="partner_id" invisible="1"/>
+					                    <field name="company_type"/>
+					                    <field name="l10n_latam_identification_type_id"  required="1" option="{'no_create': True}"/>
+					                    <field name="vat"/>
+					                    <field name="firstname" required="1" string="Name"/>
+					                    <field name="lastname" attrs="{'required': [('company_type','=','person')], 'readonly': [('company_type','=','company')]}"/>
+					                    <field name="type_document_id" required="1" options="{'no_create': True}" readonly="1"/>
+					                    <field name="entity" readonly="1"/>
+					                    <field name="issue" readonly="1"/>
+					                    <field name="number" readonly="1"/>
+					                    <field name="date" required="1" readonly="1"/>
+					                    <field name="is_electronic" required="1" readonly="1"/>
+					                    <field name="authorization" required="1" readonly="1"/>
+					                    <field name="amount_no_oject_tax" readonly="1" sum="Total No Object"/>
+					                    <field name="amount_no_apply_tax" readonly="1" sum="Total No Apply"/>
+					                    <field name="amount_base_ice" readonly="1" sum="Total base ICE"/>
+					            		<field name="amount_ice" readonly="1" sum="Total ICE"/>
+					                    <field name="amount_untaxed_0" readonly="1" sum="Total without Taxes"/>
+					            		<field name="amount_untaxed" readonly="1" sum="Total with Taxes"/>
+					                    <field name="amount_tax" readonly="1" sum="Total Taxes"/>
+					                    <field name="amount_total" readonly="1" sum="Total"/>
+					                    <field name="state" readonly="1"/>
+					                    <field name="error" readonly="1"/>
+		                            </tree>
+		                        </field>
+		                   </page>
+		                    <page string="Customer Credit Notes">
+		                        <field name="refund_out_ids" domain="[('type', '=', 'out_refund')]" attrs="{'readonly': [('state','!=','draft')]}">
+		                            <tree string="Customer Credit Note" editable="bottom" decoration-danger="error">
+					                    <field name="partner_id" invisible="1"/>
+					                    <field name="company_type"/>
+					                    <field name="l10n_latam_identification_type_id"  required="1" option="{'no_create': True}"/>
+					                    <field name="vat"/>
+					                    <field name="firstname" required="1" string="Name"/>
+					                    <field name="lastname" attrs="{'required': [('company_type','=','person')], 'readonly': [('company_type','=','company')]}"/>
+					                    <field name="type_document_id" required="1" options="{'no_create': True}" readonly="1"/>
+					                    <field name="entity" readonly="1"/>
+					                    <field name="issue" readonly="1"/>
+					                    <field name="number" readonly="1"/>
+					                    <field name="date" required="1" readonly="1"/>
+					                    <field name="is_electronic" required="1" readonly="1"/>
+					                    <field name="authorization" required="1" readonly="1"/>
+					                    <field name="amount_no_oject_tax" readonly="1" sum="Total No Object"/>
+					                    <field name="amount_no_apply_tax" readonly="1" sum="Total No Apply"/>
+					                    <field name="amount_base_ice" readonly="1" sum="Total base ICE"/>
+					            		<field name="amount_ice" readonly="1" sum="Total ICE"/>
+					                    <field name="amount_untaxed_0" readonly="1" sum="Total without Taxes"/>
+					            		<field name="amount_untaxed" readonly="1" sum="Total with Taxes"/>
+					                    <field name="amount_tax" readonly="1" sum="Total Taxes"/>
+					                    <field name="amount_total" readonly="1" sum="Total"/>
+					                    <field name="state" readonly="1"/>
+					                    <field name="error" readonly="1"/>
+		                            </tree>
+		                        </field>
+		                   </page>
+		                    <page string="Sale Withholdings">
+		                        <field name="withholding_in_ids" domain="[('type', '=', 'in_withholding')]" attrs="{'readonly': [('state','!=','draft')]}">
+		                            <tree string="Sale Withholding" editable="bottom" decoration-danger="error">
+					                    <field name="partner_id" invisible="1"/>
+					                    <field name="company_type"/>
+					                    <field name="l10n_latam_identification_type_id"  required="1" option="{'no_create': True}"/>
+					                    <field name="vat"/>
+					                    <field name="firstname" required="1" string="Name"/>
+					                    <field name="lastname" attrs="{'required': [('company_type','=','person')], 'readonly': [('company_type','=','company')]}"/>
+					                    <field name="type_document_id" required="1" options="{'no_create': True}"/>
+					                    <field name="entity"/>
+					                    <field name="issue"/>
+					                    <field name="number"/>
+					                    <field name="date" required="1"/>
+					                    <field name="is_electronic" required="1"/>
+					                    <field name="authorization" required="1"/>
+					                    <field name="tax_id" readonly="1"/>
+					                    <field name="amount_tax" string="Percentage" readonly="1"/>
+					                    <field name="amount_untaxed" string="Base amount" readonly="1" sum="Total Taxes"/>
+					                    <field name="amount_total" readonly="1" sum="Total"/>
+					                    <field name="state" readonly="1"/>
+					                    <field name="error" readonly="1"/>
+		                            </tree>
+		                        </field>
+		                   </page>
+		                    <page string="Vendor Bills">
+		                        <field name="invoice_in_ids" domain="[('type', '=', 'in_invoice')]" attrs="{'readonly': [('state','!=','draft')]}">
+		                            <tree string="Vendor Bill" editable="bottom" decoration-danger="error">
+					                    <field name="tax_support_id" required="1" options="{'no_create': True}"/>
+					                    <field name="partner_id" invisible="1"/>
+					                    <field name="company_type"/>
+					                    <field name="l10n_latam_identification_type_id"  required="1" option="{'no_create': True}"/>
+					                    <field name="vat"/>
+					                    <field name="firstname" required="1" string="Name"/>
+					                    <field name="lastname" attrs="{'required': [('company_type','=','person')], 'readonly': [('company_type','=','company')]}"/>
+					                    <field name="type_document_id" required="1" options="{'no_create': True}"/>
+					                    <field name="entity"/>
+					                    <field name="issue"/>
+					                    <field name="number"/>
+					                    <field name="date" required="1"/>
+					                    <field name="is_electronic" required="1"/>
+					                    <field name="authorization" required="1"/>
+					                    <field name="amount_no_oject_tax" readonly="1" sum="Total No Object"/>
+					                    <field name="amount_no_apply_tax" readonly="1" sum="Total No Apply"/>
+					                    <field name="amount_base_ice" readonly="1" sum="Total base ICE"/>
+					            		<field name="amount_ice" readonly="1" sum="Total ICE"/>
+					                    <field name="amount_untaxed_0" readonly="1" sum="Total without Taxes"/>
+					            		<field name="amount_untaxed" readonly="1" sum="Total with Taxes"/>
+					                    <field name="amount_tax" readonly="1" sum="Total Taxes"/>
+					                    <field name="amount_total" readonly="1" sum="Total"/>
+					                    <field name="state" readonly="1"/>
+					                    <field name="error" readonly="1"/>
+		                            </tree>
+		                        </field>
+		                   </page>
+		                    <page string="Vendor Credit Notes">
+		                        <field name="refund_in_ids" domain="[('type', '=', 'in_refund')]" attrs="{'readonly': [('state','!=','draft')]}">
+		                            <tree string="Vendor Credit Note" editable="bottom" decoration-danger="error">
+					                    <field name="tax_support_id" required="1" options="{'no_create': True}"/>
+					                    <field name="partner_id" invisible="1"/>
+					                    <field name="company_type"/>
+					                    <field name="l10n_latam_identification_type_id"  required="1" option="{'no_create': True}"/>
+					                    <field name="vat"/>
+					                    <field name="firstname" required="1" string="Name"/>
+					                    <field name="lastname" attrs="{'required': [('company_type','=','person')], 'readonly': [('company_type','=','company')]}"/>
+					                    <field name="type_document_id" required="1" options="{'no_create': True}" readonly="1"/>
+					                    <field name="entity" readonly="1"/>
+					                    <field name="issue" readonly="1"/>
+					                    <field name="number" readonly="1"/>
+					                    <field name="date" required="1" readonly="1"/>
+					                    <field name="is_electronic" required="1" readonly="1"/>
+					                    <field name="authorization" required="1" readonly="1"/>
+					                    <field name="amount_no_oject_tax" readonly="1" sum="Total No Object"/>
+					                    <field name="amount_no_apply_tax" readonly="1" sum="Total No Apply"/>
+					                    <field name="amount_base_ice" readonly="1" sum="Total base ICE"/>
+					            		<field name="amount_ice" readonly="1" sum="Total ICE"/>
+					                    <field name="amount_untaxed_0" readonly="1" sum="Total without Taxes"/>
+					            		<field name="amount_untaxed" readonly="1" sum="Total with Taxes"/>
+					                    <field name="amount_tax" readonly="1" sum="Total Taxes"/>
+					                    <field name="amount_total" readonly="1" sum="Total"/>
+					                    <field name="state" readonly="1"/>
+					                    <field name="error" readonly="1"/>
+		                            </tree>
+		                        </field>
+		                   </page>
+		                    <page string="Purchase Withholdings">
+		                        <field name="withholding_out_ids" domain="[('type', '=', 'out_withholding')]" attrs="{'readonly': [('state','!=','draft')]}">
+		                            <tree string="Purchase Withholding" editable="bottom" decoration-danger="error">
+					                    <field name="partner_id" invisible="1"/>
+					                    <field name="company_type"/>
+					                    <field name="l10n_latam_identification_type_id"  required="1" option="{'no_create': True}"/>
+					                    <field name="vat"/>
+					                    <field name="firstname" required="1" string="Name"/>
+					                    <field name="lastname" attrs="{'required': [('company_type','=','person')], 'readonly': [('company_type','=','company')]}"/>
+					                    <field name="type_document_id" required="1" options="{'no_create': True}"/>
+					                    <field name="entity"/>
+					                    <field name="issue"/>
+					                    <field name="number"/>
+					                    <field name="date" required="1"/>
+					                    <field name="is_electronic" required="1"/>
+					                    <field name="authorization" required="1"/>
+					                    <field name="tax_id" readonly="1"/>
+					                    <field name="amount_tax" string="Percentage" readonly="1"/>
+					                    <field name="amount_untaxed" string="Base amount" readonly="1" sum="Total Taxes"/>
+					                    <field name="amount_total" readonly="1" sum="Total"/>
+					                    <field name="state" readonly="1"/>
+					                    <field name="error" readonly="1"/>
+		                            </tree>
+		                        </field>
+		                   </page>
+			            </notebook>
+		            </sheet>
+			    </form>
+		    </field>
+		</record>
+
+		<record id="action_sri_statement_form" model="ir.actions.act_window">
+            <field name="name">ATS</field>
+            <field name="res_model">ats.statement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','ats')]</field>
+            <field name="context">{'default_type': 'ats'}</field>
+            <field name="view_id" ref="view_ats_form_tree"/>
+            <field name="search_view_id" ref="view_ats_statement_filter"/>
+        </record>
+
+        <record id="action_sri_statement_form_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_ats_form_tree"/>
+            <field name="act_window_id" ref="action_sri_statement_form"/>
+        </record>
+
+        <record id="action_sri_statement_form_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sri_statement_form"/>
+            <field name="act_window_id" ref="action_sri_statement_form"/>
+        </record>
+
+    	<menuitem action="action_sri_statement_form" id="menu_action_sri_statement_form"
+    		parent="oe_statement_sri.menu_sri_statement" groups="account.group_account_manager,account.group_account_user" sequence="1"/>
+    
+    </data>
+</odoo>    

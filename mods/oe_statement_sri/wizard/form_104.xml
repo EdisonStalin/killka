@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+		<record id="view_sri_form_104" model="ir.ui.view">
+			<field name="name">Form 104</field>
+		    <field name="model">form.104</field>
+		    <field name="arch" type="xml">
+			    <form string="Form 104">
+			   		<field name="company_id" invisible="1"/>
+					<group>
+						<group>
+							<field name="list_month" required="1"/>
+							<field name="date_start"/>
+	                		<field name="date_end"/>
+							<field name="code_483"/>
+							<field name="type_form"/>
+							<field name="number_form" attrs="{'invisible':[('type_form', '=', 'O')], 'required':[('type_form', '=', 'S')]}"/>
+			            </group>
+			            <group>
+			            	<label for="attachment_ids" string="Donwload:"/>
+			            	<div>
+								<field name="attachment_ids" widget="many2many_binary" string="Attach a file" nolabel="1" colspan="2" readonly="1"/>
+							</div>
+			            </group>
+		            </group>
+
+					<footer>
+		                <button name="generate_xml" string="Form 104 Generate" type="object" default_focus="1" class="oe_highlight"/>
+		                <button name="generate_detail_xlxs" string="Form Detail 104" type="object"/>
+		                <button string="Cancel" class="btn btn-default" special="cancel" />
+		            </footer>
+			    </form>
+		    </field>
+		</record>
+    	
+    	
+		<record id="action_sri_form_104" model="ir.actions.act_window">
+		    <field name="name">Form 104</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">form.104</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">form</field>
+		    <field name="view_id" ref="view_sri_form_104"/>
+		    <field name="target">new</field>
+		</record>
+
+    	<!--menuitem action="action_sri_form_104" id="menu_action_sri_form_104" 
+    		parent="oe_account.menu_sri_statement" 
+    		groups="account.group_account_manager,account.group_account_user" sequence="2"/-->
+    
+    </data>
+</odoo>

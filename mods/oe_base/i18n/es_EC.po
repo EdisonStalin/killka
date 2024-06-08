@@ -1,0 +1,982 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-03 15:21+0000\n"
+"PO-Revision-Date: 2022-11-03 15:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_bank_cup
+msgid "% Cup"
+msgstr "Tasa %"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_company.py:56
+#, python-format
+msgid "%s to create already exists in the system, check in the client or supplier of the Sales and Purchases tab, enable the configurations"
+msgstr "%s ya existe en el sistema, verifique en cliente o proveedor y active el indicador señalado."
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_groups
+msgid "Access Groups"
+msgstr "Grupos de acceso"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_active
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_active
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_active
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_search
+#: model:ir.ui.view,arch_db:oe_base.view_l10n_latam_identification_type_search
+msgid "Active"
+msgstr "Activo"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "Address"
+msgstr "Dirección"
+
+#. module: oe_base
+#: model:res.groups,name:oe_base.group_admin
+msgid "Administrator"
+msgstr "Administrador"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_groups.py:29
+#, python-format
+msgid "Application Accesses"
+msgstr "Accesos de aplicaciones"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_search
+#: model:ir.ui.view,arch_db:oe_base.view_l10n_latam_identification_type_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_simple_attachment_form
+msgid "Attached To"
+msgstr "Adjuntado a"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_simple_attachment_form
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_dashboard_background
+msgid "Background"
+msgstr "Imagen de fondo"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_bank
+msgid "Bank"
+msgstr "Banco"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Cuentas Bancarias"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_establishment
+#: model:ir.model.fields,field_description:oe_base.field_res_company_establishments_ids
+msgid "Business Store"
+msgstr "Sucursal"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_code_business
+msgid "Business Store Code"
+msgstr "Código"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_name
+msgid "Business Store Name"
+msgstr "Nombre sucursal"
+
+#. module: oe_base
+#: model:ir.actions.act_window,name:oe_base.action_establishment
+#: model:ir.ui.menu,name:oe_base.menu_establishment
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+msgid "Business Stores"
+msgstr "Sucursales"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_tree
+msgid "Business Stores Name"
+msgstr "Nombre de sucursal"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_code_business
+#: model:ir.model.fields,help:oe_base.field_res_establishment_code_business
+msgid "Business code that identifies the branches of the others"
+msgstr "Código sucursal que identifica las otras sucursales"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.send_msg_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_bank_cash_number
+msgid "Cash Number"
+msgstr "Número Cash"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_bank_check_config
+msgid "Check Format Settings"
+msgstr "Configuración de Formato Cheque"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "City"
+msgstr "Ciudad"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_bank_code
+msgid "Code"
+msgstr "Código"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_code_business
+msgid "Code Business"
+msgstr "N° sucursal"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_ir_color
+msgid "Color"
+msgstr "Color"
+
+#. module: oe_base
+#: code:addons/oe_base/odoo/ir_color.py:16
+#: sql_constraint:ir.color:0
+#, python-format
+msgid "Color already exists"
+msgstr "Color ya existe"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.login
+msgid "Compañia"
+msgstr "Compañia"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_partner
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_partner_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "Contact Name"
+msgstr "Nombre del contacto"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.login
+msgid "Contraseña"
+msgstr "Contraseña"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_comercial_name
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_comercial_name
+#: model:ir.model.fields,field_description:oe_base.field_res_users_comercial_name
+#: model:ir.model.fields,help:oe_base.field_res_company_comercial_name
+#: model:ir.model.fields,help:oe_base.field_res_partner_comercial_name
+#: model:ir.model.fields,help:oe_base.field_res_users_comercial_name
+msgid "Cormecial name"
+msgstr "Nombre Comercial"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.login
+msgid "Correo"
+msgstr "Correo"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_country_id
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_country_id
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "Country"
+msgstr "País"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_country_state
+msgid "Country state"
+msgstr "Provincia"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_create_uid
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_create_uid
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_create_uid
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_create_uid
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_create_date
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_create_date
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_create_date
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_create_date
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: oe_base
+#: selection:res.partner.bank,type_account:0
+msgid "Currents"
+msgstr "Corriente"
+
+#. module: oe_base
+#: model:ir.filters,name:oe_base.filter_customer_without_mail
+msgid "Customer without mail"
+msgstr "Cliente sin correo"
+
+#. module: oe_base
+#: model:ir.filters,name:oe_base.filter_customer_without_mobile
+msgid "Customer without mobile"
+msgstr "Cliente sin móvil o teléfono"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_ir_field_export_form
+#: model:ir.ui.view,arch_db:oe_base.view_ir_field_export_tree
+msgid "Data export"
+msgstr "Exportar datos"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_description
+#: model:ir.ui.view,arch_db:oe_base.view_simple_attachment_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_currency_display_decimal_places
+msgid "Display Decimal Places"
+msgstr "Decimales a mostrar"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_decimal_precision_display_digits
+msgid "Display Digits"
+msgstr "Mostrar Digitos"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_display_name
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_display_name
+#: model:ir.model.fields,field_description:oe_base.field_ir_qweb_field_establishment_display_name
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_display_name
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_display_name
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_currency_display_rounding
+msgid "Display Rounding Factor"
+msgstr "Mostrar Factor de Redondeo"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_code
+msgid "Document Code"
+msgstr "Código de documento"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_documentation_url
+msgid "Documentation Url"
+msgstr "URL Documentación"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_email
+msgid "Email"
+msgstr "Correo"
+
+#. module: oe_base
+#: model:res.groups,name:oe_base.group_empty
+msgid "Empty group"
+msgstr "Grupo vacío"
+
+#. module: oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_fc
+msgid "FINAL CONSUMER"
+msgstr "CONSUMIDOR FINAL"
+
+#. module: oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_fid
+msgid "FOREIGN ID"
+msgstr "ID EXTERIOR"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_company_favicon
+msgid "Favicon"
+msgstr "Favicon"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_state_id
+msgid "Fed. State"
+msgstr "Provincia"
+
+#. module: oe_base
+#: model:ir.actions.act_window,name:oe_base.action_ir_field_export_form
+#: model:ir.model,name:oe_base.model_ir_field_export
+msgid "Field export"
+msgstr "Exportar campos"
+
+#. module: oe_base
+#: selection:res.partner,type_vat:0
+msgid "Final consumer"
+msgstr "Consumidor final"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_firstname
+#: model:ir.model.fields,field_description:oe_base.field_res_users_firstname
+msgid "First name"
+msgstr "Primer Nombre"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_ir_field_export_sequence
+msgid "Gives the sequence of this line when displaying the field."
+msgstr "Da la secuencia de esta línea al mostrar el campo."
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_ir_http
+msgid "HTTP routing"
+msgstr "Enrutado HTTP"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_name
+msgid "Header"
+msgstr "Encabezado"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_id
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_id
+#: model:ir.model.fields,field_description:oe_base.field_ir_qweb_field_establishment_id
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_id
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_id
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oe_base
+#: model:ir.actions.act_window,name:oe_base.action_l10n_latam_identification_type
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_l10n_latam_identification_type_id
+#: model:ir.model.fields,field_description:oe_base.field_res_users_l10n_latam_identification_type_id
+msgid "Identification Type"
+msgstr "Tipo identificación"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_l10n_latam_identification_type
+msgid "Identification Types"
+msgstr "Tipos identificación"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_logo_login
+msgid "Image Login"
+msgstr "Logo inicio sesión"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_logo_report
+msgid "Image Report"
+msgstr "Logo de reportes"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_logo_signed
+msgid "Image Signed"
+msgstr "Imagen de firma"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_simple_attachment_form
+msgid "Indexed Content"
+msgstr "Contenido indexado"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.login
+msgid "Iniciar Sesión"
+msgstr "Iniciar Sesión"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_partner_form_inherit_oe_base
+msgid "Internal Notes"
+msgstr "Informació Adicional"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_partner_form_inherit_oe_base
+msgid "Internal note..."
+msgstr "Nota Interna..."
+
+#. module: oe_base
+#: selection:res.partner,type_vat:0
+msgid "Invalid"
+msgstr "Invalido"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_is_vat
+msgid "Is Vat"
+msgstr "Es identificación"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_is_validation_vat
+#: model:ir.model.fields,field_description:oe_base.field_res_users_is_validation_vat
+msgid "Is validar"
+msgstr "Validador identidad"
+
+#. module: oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_li
+msgid "LICENSE"
+msgstr "LICENCIA"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color___last_update
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export___last_update
+#: model:ir.model.fields,field_description:oe_base.field_ir_qweb_field_establishment___last_update
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type___last_update
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard___last_update
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_write_uid
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_write_uid
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_write_uid
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_write_uid
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_write_date
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_write_date
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_write_date
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_write_date
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_lastname
+#: model:ir.model.fields,field_description:oe_base.field_res_users_lastname
+msgid "Last name"
+msgstr "Apellido"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_partner_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_partner_simple_form_inherit_oe_base
+msgid "Lastname"
+msgstr "Apellido"
+
+#. module: oe_base
+#: model:res.groups,name:oe_base.group_admin_dashboard
+msgid "Menu Dashborad"
+msgstr "Menu Informes"
+
+#. module: oe_base
+#: model:res.groups,name:oe_base.group_admin_extra
+msgid "Menu extra"
+msgstr "Menu Extra"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_message
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_mobile
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+msgid "Mobile:"
+msgstr "Móvil:"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_ir_module_module
+msgid "Module"
+msgstr "Módulo"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_account_url
+msgid "My Odoo.com Account Url"
+msgstr "Mi Sistema cuente URL"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_name
+#: model:ir.ui.view,arch_db:oe_base.view_partner_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_partner_simple_form_inherit_oe_base
+msgid "Name"
+msgstr "Nombre"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_name
+msgid "Name Color"
+msgstr "Nombre de Color"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_name_software
+msgid "Name Software"
+msgstr "Nombre Sistema"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_partner.py:106
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: oe_base
+#: code:addons/oe_base/report/report_xlsx.py:152
+#: code:addons/oe_base/report/report_xlsx.py:184
+#, python-format
+msgid "Not finding record path %s, error: %s"
+msgstr "No encontrar la ruta del registro %s, error: %s"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_comment
+msgid "Notes"
+msgstr "Notas"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_smtp_pass
+msgid "Optional password for SMTP authentication"
+msgstr "Contraseña opcional para la autenticación del SMTP"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_groups.py:43
+#, python-format
+msgid "Other"
+msgstr "Otro"
+
+#. module: oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_pass
+msgid "PASSPORT"
+msgstr "PASAPORTE"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_partner.py:66
+#, python-format
+msgid "Partner vat must be unique per company except on partner with parent/childe relationship. Partners with same vat and not related, are: %s!"
+msgstr "El Identificación del socio debe ser único por contacto, excepto en el socio con relación padre/hijo. Contacto con mismo identificación y no relacionados, son: %s!"
+
+#. module: oe_base
+#: selection:res.partner,type_vat:0
+msgid "Passport"
+msgstr "Pasaporte"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_smtp_pass
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_name_software
+msgid "Program name who developed the software"
+msgstr "Nombre del programa que desarrolló el software."
+
+#. module: oe_base
+#: selection:ir.field.export,ttype:0
+msgid "Python"
+msgstr "Python"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_ruc
+msgid "RUC"
+msgstr "RUC"
+
+#. module: oe_base
+#: selection:res.partner,type_vat:0
+msgid "RUC (Business private)"
+msgstr "RUC (Empresa Privada)"
+
+#. module: oe_base
+#: selection:res.partner,type_vat:0
+msgid "RUC (Business public)"
+msgstr "RUC (Empresa Publica)"
+
+#. module: oe_base
+#: selection:res.partner,type_vat:0
+msgid "RUC (Person natural)"
+msgstr "RUC (Persona Natural)"
+
+#. module: oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_rucpr
+msgid "RUC PRIVATE"
+msgstr "RUC (Empresa privada)"
+
+#. module: oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_rucpu
+msgid "RUC PUBLIC"
+msgstr "RUC (Empresa publica)"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_message_wizard_user_id
+msgid "Recipient"
+msgstr "Destinatario"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_res_id
+msgid "Resource ID"
+msgstr "ID del Recurso"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_res_model
+msgid "Resource Model"
+msgstr "Modelo del recurso"
+
+#. module: oe_base
+#: selection:res.partner.bank,type_account:0
+msgid "Savings"
+msgstr "Ahorros"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.send_msg_wizard
+msgid "Send"
+msgstr "Enviar"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.send_msg_wizard
+msgid "Send Message"
+msgstr "Enviar Mensaje"
+
+#. module: oe_base
+#: selection:ir.field.export,ttype:0
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_sequence
+#: model:ir.model.fields,field_description:oe_base.field_l10n_latam_identification_type_sequence
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+msgid "Settings Brand"
+msgstr "Configuración Marca"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_search
+#: model:ir.ui.view,arch_db:oe_base.view_l10n_latam_identification_type_search
+msgid "Show active identification types"
+msgstr "Mostrar tipos de identificación activos"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_search
+#: model:ir.ui.view,arch_db:oe_base.view_l10n_latam_identification_type_search
+msgid "Show archived identification types"
+msgstr "Mostrar tipos de identificación archivados"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_image_small
+msgid "Small-sized image"
+msgstr "Imagen de tamaño pequeño"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_establishment_image_small
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr "Imagen de tamaño pequeño de este contacto. Se redimensiona automáticamente a 64x64px, con el ratio de aspecto preservado. Use este campo donde se requiera una imagen pequeña."
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "State"
+msgstr "Estado"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_city
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_street
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_street2
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_zip
+msgid "Street"
+msgstr "Calle"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "Street 2..."
+msgstr "Calle 2..."
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: oe_base
+#: model:ir.filters,name:oe_base.filter_supplier_without_mail
+msgid "Supplier without mail"
+msgstr "Proveedor sin correo"
+
+#. module: oe_base
+#: model:ir.filters,name:oe_base.filter_supplier_without_mobile
+msgid "Supplier without mobile"
+msgstr "Proveedor sin movil o teléfono"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_support_url
+msgid "Support Url"
+msgstr "URL Soporte"
+
+#. module: oe_base
+#: model:ir.module.category,name:oe_base.module_category_oe
+msgid "Technical Settings Extra"
+msgstr "Configuración Técnica Extra"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_partner.py:84
+#, python-format
+msgid "The Identification field contains blank spaces, Please verify that you try to save again."
+msgstr "The Identification field contains blank spaces, Please verify that you try to save again."
+
+#. module: oe_base
+#: sql_constraint:res.country.state:0
+msgid "The code of the state must be unique by country !"
+msgstr "¡El código del estado debe ser único por país!"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_ir_field_export_res_model
+msgid "The database object this attachment will be attached to."
+msgstr "Objeto de la base de datos a la que será añadido este adjunto."
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_ir_field_export_res_id
+msgid "The record id this is attached to."
+msgstr "El ID de registro está adjuntado a."
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_partner_l10n_latam_identification_type_id
+#: model:ir.model.fields,help:oe_base.field_res_users_l10n_latam_identification_type_id
+msgid "The type of identification"
+msgstr "El tipo de identificación"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_partner.py:185
+#, python-format
+msgid "There is already another customer or supplier with this same identification number, this contact exists: %s "
+msgstr "Ya existe otro cliente o proveedor con este mismo número de identificación, este contacto existe: %s "
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_logo_login
+msgid "This field holds the image used as avatar for this contact, limited to 1600x1024px"
+msgstr "Este campo contiene la imagen utilizada como avatar para este contacto, limitada a 1600x1024px"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_dashboard_background
+msgid "This field holds the image used as avatar for this contact, limited to 1600x900px"
+msgstr "Este campo contiene la imagen utilizada como avatar para este contacto, limitada a 1600x900px"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_logo_report
+msgid "This field holds the image used as report for this contact, limited to 1024x1024px"
+msgstr "Este campo contiene la imagen utilizada como informe para este contacto, limitada a 1024x1024px"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_logo_signed
+msgid "This field holds the image used as signed for this contact, limited to 1024x1024px"
+msgstr "Este campo contiene la imagen utilizada como firmada para este contacto, limitada a 1024x1024px"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_company_favicon
+msgid "This field holds the image used for as favicon"
+msgstr "Este campo contiene la imagen utilizada como favicon"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_ttype
+msgid "Ttype"
+msgstr "Ttype"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_bank_type_account
+msgid "Type Account"
+msgstr "Tipo Cuenta"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_partner_type_vat
+#: model:ir.model.fields,field_description:oe_base.field_res_users_type_vat
+msgid "Type Vat"
+msgstr "Tipo Documento"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_favicon_url
+#: model:ir.model.fields,field_description:oe_base.field_res_company_logo_login_url
+msgid "Url"
+msgstr "URL"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_establishment_sequence
+msgid "Used to order Companies in the company switcher"
+msgstr "Utilizado para ordenar las compañías al menú de cambio de compañía"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: oe_base
+#: model:l10n_latam.identification.type,name:oe_base.it_vat
+msgid "VAT"
+msgstr "CÉDULA"
+
+#. module: oe_base
+#: selection:ir.field.export,ttype:0
+#: model:ir.model.fields,field_description:oe_base.field_ir_field_export_value
+msgid "Value"
+msgstr "Valor"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_ir_color_color_hex
+msgid "Value Hex"
+msgstr "Valor Hex"
+
+#. module: oe_base
+#: selection:res.partner,type_vat:0
+msgid "Vat"
+msgstr "Cédula"
+
+#. module: oe_base
+#: code:addons/oe_base/models/res_partner.py:184
+#, python-format
+msgid "Warning!"
+msgstr "Advertencia!"
+
+#. module: oe_base
+#: model:ir.model.fields,field_description:oe_base.field_res_company_web_software
+#: model:ir.model.fields,field_description:oe_base.field_res_establishment_website
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_establishment_website
+msgid "Website of Establishment"
+msgstr "Sitio Web de sucursal"
+
+#. module: oe_base
+#: model:ir.model.fields,help:oe_base.field_res_company_web_software
+msgid "Website the company in charge of developing the software"
+msgstr "Sitio web la empresa encargada del desarrollo del software"
+
+#. module: oe_base
+#: code:addons/oe_base/odoo/ir_fields_export.py:49
+#: code:addons/oe_base/report/report_xlsx.py:113
+#, python-format
+msgid "Wrong percentage base or quantity defined for salary rule %s (%s)."
+msgstr "Base de porcentaje incorrecta o cantidad definida para la regla de salario %s (%s)."
+
+#. module: oe_base
+#: code:addons/oe_base/report/report_xlsx.py:119
+#, python-format
+msgid "Wrong python code defined for expression %s (%s)."
+msgstr "Código de python incorrecto definido para la expresión %s (%s)."
+
+#. module: oe_base
+#: code:addons/oe_base/odoo/ir_fields_export.py:55
+#, python-format
+msgid "Wrong python code defined for salary rule %s (%s)."
+msgstr "Código de python incorrecto definido para la regla %s (%s)."
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "ZIP"
+msgstr "C.P."
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_decimal_precision
+msgid "decimal.precision"
+msgstr "Precisión Decimal"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "e.g. Mr."
+msgstr "Por ejemplo, Mr."
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "e.g. Sales Director"
+msgstr "Por ejemplo, Director de Ventas"
+
+#. module: oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_company_form_inherit_oe_base
+#: model:ir.ui.view,arch_db:oe_base.view_establishment_form
+#: model:ir.ui.view,arch_db:oe_base.view_res_partner_simple_type_form
+msgid "internal note..."
+msgstr "Nota interna..."
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_ir_property
+msgid "ir.property"
+msgstr "ir.property"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_ir_qweb_field_establishment
+msgid "ir.qweb.field.establishment"
+msgstr "ir.qweb.field.establishment"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_ir_qweb_field_monetary
+msgid "ir.qweb.field.monetary"
+msgstr "Campo de Dinero"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_message_wizard
+msgid "message.wizard"
+msgstr "message.wizard"
+
+#. module: oe_base
+#: model:ir.filters,name:oe_base.filter_oe
+msgid "oe"
+msgstr "Administrador Básico"
+
+#. module: oe_base
+#: model:ir.model,name:oe_base.model_report_report_xlsx_abstract
+msgid "report.report_xlsx.abstract"
+msgstr "report.report_xlsx.abstract"
+

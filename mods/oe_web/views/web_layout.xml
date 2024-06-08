@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+      <!--put the company logo or the fav icons path here in href-->
+    <template id="web_layout_extend" inherit_id="web.layout">
+    
+		<xpath expr="//title" position="replace">
+            <t t-set="company_id" t-value="request.env['res.company'].sudo().search([], limit=1)"/>
+            <title t-if="company_id.name_software">
+            	<t t-esc="company_id.name_software or 'App EcuaOnline'"/>
+            </title>
+        </xpath>
+        
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+        	<t t-set="company_id" t-value="request.env['res.company'].sudo().search([], limit=1)"/>
+        	<!-- Cambiar favicon -->
+            <link type="image/x-icon" rel="shortcut icon" 
+            		t-att-href="x_icon or 'data:image/png;base64,%s' % to_text(company_id and company_id.company_favicon or '')"/>
+        </xpath>
+        
+    </template>
+
+</odoo>

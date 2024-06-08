@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<template id="report_payment_receipt" inherit_id="account.report_payment_receipt">
+		<xpath expr="//div[hasclass('page')]" position="replace">
+			<div class="page">
+				<h3>
+					<t t-if="o.partner_type == 'customer'">
+			            <strong>Voucher Income</strong>
+			        </t>
+			        <t t-if="o.partner_type == 'supplier'">
+			            <strong>Voucher Expense</strong>
+			        </t>
+					<strong><span t-field="o.name"/></strong>
+				</h3>
+				<div class="row">
+				    <div class="col-xs-6" t-if="o.payment_date">
+				        <strong>Payment Date: </strong> <span t-field="o.payment_date"/>
+				    </div>
+				    <div class="col-xs-6" t-if="o.document_number">
+				        <strong>N° Document: </strong><span t-field="o.document_number"/>
+				     </div>
+				    <div class="col-xs-6" t-if="o.communication">
+				        <strong>N° Voucher: </strong><span t-field="o.communication"/>
+				     </div>
+				</div>
+				<div class="row">
+				    <div class="col-xs-6" t-if="o.partner_type">
+				        <t t-if="o.partner_type == 'customer'">
+				            <strong>Customer: </strong>
+				        </t>
+				        <t t-if="o.partner_type == 'supplier'">
+				            <strong>Vendor: </strong>
+				        </t><span t-field="o.partner_id"/>
+				    </div>
+				     <div class="col-xs-6" t-if="o.journal_id.bank_id">
+				        <strong>Bank Name: </strong><span t-field="o.journal_id.bank_id.name"/>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-xs-6" t-if="o.amount">
+				        <strong>Payment Amount: </strong><span t-field="o.amount" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+				     </div>
+				    <div class="col-xs-6" t-if="o.check_number">
+				        <strong>N° Check: </strong><span t-field="o.check_number"/>
+				    </div>
+				    <div class="col-xs-6" t-if="o.notes">
+				        <strong>Notes: </strong><span t-field="o.notes"/>
+				    </div>
+				</div>
+              <table class="table table-condensed" id="move_account">
+                  <thead>
+                      <tr>
+                          <th>Account</th>
+                          <th style="width: 80px;">Date</th>
+                          <th>Description</th>
+                          <th class="text-right">Debit</th>
+                          <th class="text-right">Credit</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr t-foreach="o.move_line_ids" t-as="line">
+                          <td><span t-field="line.account_id.code"/> <span t-field="line.account_id.name"/></td>
+                          <td><span t-field="line.date"/></td>
+                          <td><span t-field="line.name"/></td>
+                          <td class="text-right"><span t-field="line.debit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                          <td class="text-right"><span t-field="line.credit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                      </tr>
+                  </tbody>
+              </table>
+				<div class="row">
+					<t t-set="user" t-value="o.create_uid.sudo()"/>
+					<div class="col-xs-4">
+						<p>Made By: </p>
+						<br/>
+						<p>________________</p>
+						<p><span t-field="user.partner_id.name"/></p>
+					</div>
+					<div class="col-xs-3">
+						<p>Aprobado By: </p>
+						<br/>
+						<p>________________</p>
+						<!--p><span t-field="o.approved_id.name"/></p-->
+					</div>
+					<div class="col-xs-4">
+						<t t-if="o.partner_type == 'customer'">
+				            <p>Customer: </p>
+				        </t>
+				        <t t-if="o.partner_type == 'supplier'">
+				            <p>Vendor: </p>
+				        </t>
+						<br/>
+						<p>________________</p>
+						<p>Name: <span t-field="o.partner_id.firstname"/> <span t-if="o.partner_id.lastname" t-field="o.partner_id.lastname"/></p>
+					</div>
+				</div>
+			</div>
+		</xpath>
+	
+	</template>
+	
+</odoo>

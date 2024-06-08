@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+		<!-- Authorization Internal-->
+    	
+		<record id="view_ir_field_export_tree" model="ir.ui.view">
+            <field name="name">ir.field.export.tree</field>
+            <field name="model">ir.field.export</field>
+            <field name="arch" type="xml">
+                <tree string="Data export">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="ttype"/>
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                </tree>
+            </field>
+        </record>
+  
+    
+		<record id="view_ir_field_export_form" model="ir.ui.view">
+            <field name="name">ir.field.export.form</field>
+            <field name="model">ir.field.export</field>
+            <field name="arch" type="xml">
+				<form string="Data export">
+                    <sheet>
+						<div class="oe_button_box" name="button_box">
+	                    </div>
+						<group>
+	                        <group>
+	                        	<field name="ttype" options="{'horizontal': true}" widget="radio"/>
+	                        	<field name="name"/>
+	                            <field name="value"/>
+	                        </group>
+	                        <group>
+	                        	<field name="sequence"/>
+	                        	<field name="res_model"/>
+	                            <field name="res_id"/>
+	                        </group>
+	                    </group>
+                    </sheet>
+            	</form>
+            </field>
+		</record> 
+		
+		
+		<record id="action_ir_field_export_form" model="ir.actions.act_window">
+            <field name="name">Field export</field>
+            <field name="res_model">ir.field.export</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_id" ref="view_ir_field_export_tree"/>
+        </record>
+
+        <!--menuitem action="action_ir_field_export_form" id="menu_action_authorization_form" 
+        	parent="account.menu_finance_receivables_master_data" sequence="101"/-->
+    
+    </data>
+</odoo>

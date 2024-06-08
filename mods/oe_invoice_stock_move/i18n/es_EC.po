@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_invoice_stock_move
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-01 23:29+0000\n"
+"PO-Revision-Date: 2020-05-01 23:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_invoice_stock_move
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:109
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:136
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:164
+#, python-format
+msgid "A movement was made in the inventory successfully."
+msgstr "Se realizó un movimiento en el inventario con éxito."
+
+#. module: oe_invoice_stock_move
+#: model:ir.model.fields,field_description:oe_invoice_stock_move.field_account_invoice_picking_count
+msgid "Count"
+msgstr "Cantidad"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model,name:oe_invoice_stock_move.model_account_invoice_refund
+msgid "Credit Note"
+msgstr "Nota Rectificativa"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model.fields,field_description:oe_invoice_stock_move.field_account_invoice_picking_transfer_id
+msgid "Deliver To"
+msgstr "Entregar a"
+
+#. module: oe_invoice_stock_move
+#: model:res.groups,name:oe_invoice_stock_move.group_invoice_stock_move
+msgid "Inventory movement on invoices"
+msgstr "Transferir productos desde facturas"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model,name:oe_invoice_stock_move.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model,name:oe_invoice_stock_move.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model.fields,field_description:oe_invoice_stock_move.field_account_invoice_invoice_picking_id
+msgid "Picking Id"
+msgstr "Despacho ID"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model.fields,field_description:oe_invoice_stock_move.field_account_invoice_picking_type_id
+#: model:ir.model.fields,field_description:oe_invoice_stock_move.field_account_invoice_refund_picking_type_id
+msgid "Picking Type"
+msgstr "Tipo Despacho"
+
+#. module: oe_invoice_stock_move
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:91
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:118
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:150
+#, python-format
+msgid "Please Validate invoice."
+msgstr "Por favor valida la factura."
+
+#. module: oe_invoice_stock_move
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:89
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:116
+#: code:addons/oe_invoice_stock_move/models/account_invoice_stock.py:148
+#, python-format
+msgid "Please create some invoice lines."
+msgstr "Por favor crea algunas líneas de factura."
+
+#. module: oe_invoice_stock_move
+#: model:ir.ui.view,arch_db:oe_invoice_stock_move.supplier_account_invoice_stock_view
+msgid "Receive"
+msgstr "Recibir"
+
+#. module: oe_invoice_stock_move
+#: model:ir.ui.view,arch_db:oe_invoice_stock_move.supplier_account_invoice_stock_view
+msgid "Receive Back"
+msgstr "Devolver"
+
+#. module: oe_invoice_stock_move
+#: model:ir.ui.view,arch_db:oe_invoice_stock_move.customer_account_invoice_stock_view
+#: model:ir.ui.view,arch_db:oe_invoice_stock_move.view_invoice_supplier_form_inherit2_account_invoice_stock
+msgid "Shipment"
+msgstr "Enviado"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model.fields,help:oe_invoice_stock_move.field_account_invoice_picking_type_id
+msgid "This will determine picking type of incoming shipment"
+msgstr "Esto determinará el tipo de despacho de envío entrante"
+
+#. module: oe_invoice_stock_move
+#: model:ir.model.fields,help:oe_invoice_stock_move.field_account_invoice_picking_transfer_id
+msgid "This will determine picking type of outgoing shipment"
+msgstr "Esto determinará el tipo de despacho de envío saliente"
+
+#. module: oe_invoice_stock_move
+#: model:ir.ui.view,arch_db:oe_invoice_stock_move.customer_account_invoice_stock_view
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: oe_invoice_stock_move
+#: model:ir.ui.view,arch_db:oe_invoice_stock_move.customer_account_invoice_stock_view
+msgid "Transfer Back"
+msgstr "Devolver"
+

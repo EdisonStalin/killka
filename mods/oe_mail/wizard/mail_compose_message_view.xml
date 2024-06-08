@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="email_compose_message_wizard_form_inherit_oe_mail">
+            <field name="name">mail.compose.message.form.inherit.oe_mail</field>
+            <field name="model">mail.compose.message</field>
+            <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+            <field name="arch" type="xml">
+
+				<xpath expr="//group[2]/field[@name='template_id']" position="attributes">
+					<attribute name="widget">selection</attribute>
+               	</xpath>
+				
+				<xpath expr="//button[@name='save_as_template']" position="attributes">
+					<attribute name="invisible">1</attribute>
+               	</xpath>
+				
+            </field>
+        </record>
+
+    </data>
+</odoo>

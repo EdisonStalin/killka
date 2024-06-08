@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+        <report
+            id="action_report_account_statement" 
+            model="account.bank.statement"
+            string="Bank Reconciliation"
+            name="oe_account_report.report_statement"
+            file="oe_account_report.report_statement"
+            report_type="qweb-pdf"
+            attachment_use="False"
+        />
+</odoo>

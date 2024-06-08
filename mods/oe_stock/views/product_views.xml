@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+	    <record model="ir.ui.view" id="product_category_form_view_inherit_oe_stock" >
+	        <field name="name">product.category.form.inherit.oe_stock</field>
+	        <field name="model">product.category</field>
+	        <field name="inherit_id" ref="stock.product_category_form_view_inherit"/>
+	        <field name="arch" type="xml">
+	            <field name="removal_strategy_id" position="after">
+	                <field name="allow_negative_stock" groups="stock.group_stock_manager"/>
+	            </field>
+	        </field>
+	    </record>
+	    
+		<record model="ir.ui.view" id="product_form_view_procurement_button_inherit_oe_stock">
+		    <field name="name">product.product.procurement.inherit.oe_stock</field>
+		    <field name="model">product.product</field>
+		    <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+		    <field name="arch" type="xml">
+
+            	<xpath expr="//button[@name='%(stock.action_stock_level_forecast_report_template)d']" position="attributes">
+		    		<attribute name="groups">stock.group_stock_manager</attribute>
+		    	</xpath>
+		    	
+		    	<xpath expr="/button[@name='action_view_orderpoints']" position="attributes">
+		    		<attribute name="groups">stock.group_stock_user</attribute>
+		    	</xpath>
+		    	
+		    	<xpath expr="/button[@name='action_view_orderpoints']" position="attributes">
+		    		<attribute name="groups">stock.group_stock_user</attribute>
+		    	</xpath>
+		    	
+		    </field>
+		</record>
+	
+	    <record model="ir.ui.view" id="view_template_property_form_inherit_oe_stock">
+	        <field name="name">product.template.form.inherit.oe_stock</field>
+	        <field name="model">product.template</field>
+	        <field name="inherit_id" ref="stock.view_template_property_form"/>
+	        <field name="arch" type="xml">
+
+	            <field name="categ_id" position="after">
+	                <field name="allow_negative_stock" groups="stock.group_stock_manager"
+	                	attrs="{'invisible': ['|',('type', '!=', 'product'),('sale_ok','=',False)]}"/>
+	            </field>
+
+	        </field>
+	    </record>
+
+
+	    <!--record model="ir.ui.view" id="view_template_property_form2_inherit_oe_stock">
+	        <field name="name">product.template.form2.inherit.oe_stock</field>
+	        <field name="model">product.template</field>
+	        <field name="inherit_id" ref="stock_account.view_template_property_form"/>
+	        <field name="arch" type="xml">
+
+	            <field name="standard_price" position="attributes">
+	                <attribute name="attrs">{}</attribute>
+	            </field>
+
+	        </field>
+	    </record-->
+
+
+		<record id="product_template_form_view_inherit_oe_stock" model="ir.ui.view">
+            <field name="name">product.template.form.inherit.oe_stock</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+				
+				<xpath expr="//field[@name='list_price']" position="before">
+					<field name="case_method"/>
+				</xpath>
+				
+		    </field> 
+	    </record>
+
+
+        <!-- view used for product.product only -->
+        <record model="ir.ui.view" id="product_form_view_procurement_button_inherit_oe_stock">
+            <field name="name">product.product.procurement.inherit.oe_stock</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="stock.product_form_view_procurement_button"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//button[@name='%(stock.action_stock_level_forecast_report_product)d']" position="attributes">
+		    		<attribute name="groups">stock.group_stock_manager</attribute>
+		    	</xpath>
+            
+            	<xpath expr="//button[@name='%(stock.product_open_orderpoint)d']" position="attributes">
+		    		<attribute name="groups">stock.group_stock_manager</attribute>
+		    	</xpath>
+		    	
+            </field>
+		</record>
+
+	</data>
+</odoo>

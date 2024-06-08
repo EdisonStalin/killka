@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="1">
+		
+		<record id="fiscal_position_01" model="account.fiscal.position.template">
+            <field name="name">CONTRIBUYENTE RÉGIMEN MICROEMPRESAS</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="option">micro</field>
+            <field name="active" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>   
+        </record>
+        
+		<record id="fiscal_position_rimpe" model="account.fiscal.position.template">
+            <field name="name">CONTRIBUYENTE RÉGIMEN RIMPE</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="option">rimpe</field>
+            <field name="active" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>   
+        </record>
+
+		<record id="fiscal_position_rimpe_popular" model="account.fiscal.position.template">
+            <field name="name">CONTRIBUYENTE NEGOCIO POPULAR - RÉGIMEN RIMPE</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="option">rimpe</field>
+            <field name="active" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>   
+        </record>
+        
+		<record id="fiscal_position_02" model="account.fiscal.position.template">
+            <field name="name">PERSONAS NATUTALES NO OBLIGADA A LLEVAR CONTABILIDAD LIQUIDACIÓN DE COMPRAS O SERVICIOS</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>        
+        </record>
+
+		<record id="fiscal_position_03" model="account.fiscal.position.template">
+            <field name="name">PERSONAS NATUTALES NO OBLIGADA A LLEVAR CONTABILIDAD QUE EMITE FACTURAS O NOTAS DE VENTA</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>      
+        </record>
+
+		<record id="fiscal_position_04" model="account.fiscal.position.template">
+            <field name="name">PERSONAS NATUTALES NO OBLIGADA A LLEVAR CONTABILIDAD PROFESIONALES</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>    
+        </record>
+        
+		<record id="fiscal_position_05" model="account.fiscal.position.template">
+            <field name="name">PERSONAS NATURALES OBLIGADAS A LLEVAR CONTABILIDAD</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>     
+        </record>
+        
+		<record id="fiscal_position_06" model="account.fiscal.position.template">
+            <field name="name">SOCIEDADES- PERSONAS JURIDICAS</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>       
+        </record>
+        
+        <record id="fiscal_position_07" model="account.fiscal.position.template">
+            <field name="name">CONSTRIBUYENTES ESPECIALES</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>         
+        </record>
+        
+        <record id="fiscal_position_08" model="account.fiscal.position.template">
+            <field name="name">EMPRESAS PUBLICAS</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>        
+        </record>
+        
+        <record id="fiscal_position_09" model="account.fiscal.position.template">
+            <field name="name">INSTITUCIONES DEL ESTADO</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>   
+        </record>
+        
+        <record id="fiscal_position_10" model="account.fiscal.position.template">
+            <field name="name">EMPRESAS EXTRANJERAS</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>        
+        </record>
+        
+		<record id="fiscal_position_11" model="account.fiscal.position.template">
+            <field name="name">PERSONAS NATUTALES NO OBLIGADA A LLEVAR CONTABILIDAD ARRIENDOS</field>
+            <field name="auto_apply" eval="0"/>
+            <field name="vat_required" eval="1"/>
+            <field name="chart_template_id" ref="ec_chart_template_super_company"/>        
+        </record>
+        
+	</data>
+</odoo>

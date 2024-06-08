@@ -1,0 +1,56 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_account_tag_manager,account.account.tag.manager,account.model_account_account_tag,account.group_account_manager,1,1,1,0
+access_product_combo_account_user,product.combo.account.user,oe_product.model_product_combo,account.group_account_user,1,0,0,0
+access_product_combo_account_manager,product.combo.account.manager,oe_product.model_product_combo,account.group_account_manager,1,1,1,1
+access_account_type_document_user,account.type.document.user,model_account_type_document,base.group_user,1,0,0,0
+access_account_type_document,account.type.document,model_account_type_document,account.group_account_invoice,1,0,0,0
+access_account_type_document_manager,account.type.document,model_account_type_document,account.group_account_manager,1,1,1,1
+access_account_tax_support_user,account.tax.support.user,model_account_tax_support,base.group_user,1,0,0,0
+access_account_tax_support,account.tax.support,model_account_tax_support,account.group_account_invoice,1,0,0,0
+access_account_tax_support_manager,account.tax.support,model_account_tax_support,account.group_account_manager,1,1,1,1
+access_account_authorization_user,account.authorization.user,model_account_authorization,base.group_user,1,0,0,0
+access_account_authorization,account.authorization.invoice,model_account_authorization,account.group_account_invoice,1,1,1,1
+access_account_authorization_manager,account.authorization.manager,model_account_authorization,account.group_account_manager,1,1,1,1
+access_account_authorization_uwithholding,account.withholding,model_account_withholding,account.group_account_invoice,1,1,1,1
+access_account_withholding_line_uwithholding,account.withholding.line,model_account_withholding_line,account.group_account_invoice,1,1,1,1
+access_additional_info_user,additional.info.user,model_additional_info,base.group_user,1,1,1,1
+access_additional_info,additional.info,model_additional_info,account.group_account_invoice,1,1,1,1
+access_additional_info_manager,additional.info.manager,model_additional_info,account.group_account_manager,1,1,1,1
+access_account_method_payment_user,account.method.payment.user,model_account_method_payment,base.group_user,1,0,0,0
+access_account_method_payment,account.method.payment.invoice,model_account_method_payment,account.group_account_invoice,1,0,0,0
+access_account_method_payment_manager,account.method.payment.manager,model_account_method_payment,account.group_account_manager,1,1,1,1
+access_account_move_method_payment_user,account.move.method.payment.user,model_account_move_method_payment,base.group_user,1,0,0,0
+access_account_move_method_payment_invoice,account.move.method.payment.invoice,model_account_move_method_payment,account.group_account_invoice,1,1,1,1
+access_account_move_method_payment_manager,account.move.method.payment.manager,model_account_move_method_payment,account.group_account_manager,1,1,1,1
+access_account_refund_invoice_user,refund.invoice.invoice.user,model_account_refund_invoice,base.group_user,1,1,1,1
+access_account_refund_invoice,account.refund.invoice.invoice,model_account_refund_invoice,account.group_account_invoice,1,1,1,1
+access_account_refund_invoice_manager,account.refund.invoice.manager,model_account_refund_invoice,account.group_account_manager,1,1,1,1
+access_account_journal_values_user,account.journal.values.user,model_account_journal_values,base.group_user,1,0,0,0
+access_account_journal_values_invoice,account.journal.values.invoice,model_account_journal_values,account.group_account_invoice,1,0,0,0
+access_account_journal_values_manager,account.journal.values.manager,model_account_journal_values,account.group_account_manager,1,1,1,1
+access_account_card_type_user,account.card.type.user,model_account_card_type,base.group_user,1,0,0,0
+access_account_card_type_invoice,account.card.type.invoice,model_account_card_type,account.group_account_invoice,1,0,0,0
+access_account_card_type_manager,account.card.type.manager,model_account_card_type,account.group_account_manager,1,1,1,1
+access_account_payment_line_extra_user,account.payment.line.extra.user,model_account_payment_line_extra,base.group_user,1,0,0,0
+access_account_payment_line_extra_invoice,account.payment.line.extra.invoice,model_account_payment_line_extra,account.group_account_invoice,1,0,0,0
+access_account_payment_line_extra_manager,account.payment.line.extra.manager,model_account_payment_line_extra,account.group_account_manager,1,1,1,1
+access_account_payment_line_user,account.payment.line.user,model_account_payment_line,base.group_user,1,0,0,0
+access_account_payment_line_invoice,account.payment.line.invoice,model_account_payment_line,account.group_account_invoice,1,0,0,0
+access_account_payment_line_manager,account.payment.line.manager,model_account_payment_line,account.group_account_manager,1,1,1,1
+access_account_tax_repartition_line_user,account.tax repartition.line.user,model_account_tax_repartition_line,base.group_user,1,0,0,0
+access_account_tax_repartition_line_readonly,account.tax repartition.line.invoice,model_account_tax_repartition_line,base.group_user,1,0,0,0
+access_account_tax_repartition_line_invoice,account.tax repartition.line.invoice,model_account_tax_repartition_line,account.group_account_invoice,1,0,0,0
+access_account_tax_repartition_line_manager,account.tax repartition.line.manager,model_account_tax_repartition_line,account.group_account_manager,1,1,1,1
+access_account_tax_repartition_line_template_manager,account.tax repartition.line.template.manager,model_account_tax_repartition_line_template,account.group_account_manager,1,1,1,1
+access_account_tax_report_invoice,account.tax.report.tax.invoice,model_account_tax_report_tax,account.group_account_invoice,1,0,0,0
+access_account_tax_report_ac_user,account.tax.report.tax.ac.user,model_account_tax_report_tax,account.group_account_manager,1,1,1,1
+access_account_tax_report_line_readonly,account.tax.report.line.invoice,model_account_tax_report_line,account.group_account_invoice,1,0,0,0
+access_account_tax_report_line_ac_user,account.tax.report.line.ac.user,model_account_tax_report_line,account.group_account_manager,1,1,1,1
+access_statement_form_user,statement.form.user,model_statement_form,account.group_account_user,1,1,1,0
+access_statement_form_invoice,statement.form.invoice,model_statement_form,account.group_account_invoice,1,1,1,0
+access_statement_form_manager,statement.form.manager,model_statement_form,account.group_account_manager,1,1,1,1
+access_statement_form_line_user,statement.form.line.user,model_statement_form_line,account.group_account_user,1,1,1,0
+access_statement_form_line_invoice,statement.form.line.invoice,model_statement_form_line,account.group_account_invoice,1,1,1,0
+access_statement_form_line_manager,statement.form.line.manager,model_statement_form_line,account.group_account_manager,1,1,1,1
+access_account_statement_tax_accountant,account.statement.tax accountant,model_account_statement_tax,account.group_account_user,1,0,0,0
+access_account_statement_tax_uinvoice,account.statement.tax,model_account_statement_tax,account.group_account_invoice,1,1,1,1

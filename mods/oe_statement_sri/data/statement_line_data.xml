@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+
+		<record model="statement.form" id="data_statement_form_104">
+			<field name="name">FORMULARIO 104</field>
+			<field name="code">104</field>
+			<field name="sequence">2</field>
+			<field name="type_period">yearly</field>
+			<!--field name="action_id" ref="oe_statement_sri.action_statement_form_report"/-->
+			<field name="context">{'group_by': ['group_id', 'line_id', 'code_id']}</field>
+			<field name="description">SISTEMA DE DECLARACIÓN DE IMPUESTOS</field>
+		</record>
+
+		<!-- Formulario 104 Ventas -->
+		<!--record model="statement.form.line" id="data_statement_line_sale_title_001">
+			<field name="name">RESUMEN DE VENTAS Y OTRAS OPERACIONES DEL PERÍODO QUE DECLARA</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="sequence">1</field>			
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_sale_001">
+			<field name="name">VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA DIFERENTE DE CERO</field>
+			<field name="sequence">1</field>
+			<field name="type_tax">iva</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_401'), ref('code_line_sale_411'), ref('code_line_sale_421')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_sale_002">
+			<field name="name">VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA DIFERENTE DE CERO</field>
+			<field name="sequence">2</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="type_tax">iva</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_402'), ref('code_line_sale_412'), ref('code_line_sale_422')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_003">
+			<field name="name">IVA GENERADO EN LA DIFERENCIA ENTRE VENTAS Y NOTAS DE CREDITO CON DISTINTA TARIFA (AJUSTE A PAGAR)</field>
+			<field name="sequence">3</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_423')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_004">
+			<field name="name">IVA GENERADO EN LA DIFERENCIA ENTRE VENTAS Y NOTAS DE CREDITO CON DISTINTA TARIFA (AJUSTE A FAVOR)</field>
+			<field name="sequence">4</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_424')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_005">
+			<field name="name">VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA 0% QUE NO DAN DERECHO A CRÉDITO TRIBUTARIO</field>
+			<field name="sequence">5</field>
+			<field name="type_tax">iva0</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_403'), ref('code_line_sale_413')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_006">
+			<field name="name">VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA 0% QUE NO DAN DERECHO A CRÉDITO TRIBUTARIO</field>
+			<field name="sequence">6</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="type_tax">iva0</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_404'), ref('code_line_sale_414')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_007">
+			<field name="name">VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA 0% QUE DAN DERECHO A CRÉDITO TRIBUTARIO</field>
+			<field name="sequence">7</field>
+			<field name="type_tax">iva0</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_405'), ref('code_line_sale_415')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_008">
+			<field name="name">VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA 0% QUE DAN DERECHO A CRÉDITO TRIBUTARIO</field>
+			<field name="sequence">8</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="type_tax">iva0</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_406'), ref('code_line_sale_416')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_009">
+			<field name="name">EXPORTACIONES DE BIENES</field>
+			<field name="sequence">9</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_407'), ref('code_line_sale_417')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_sale_010">
+			<field name="name">EXPORTACIONES DE SERVICIOS Y/O DERECHOS</field>
+			<field name="sequence">10</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_408'), ref('code_line_sale_418')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_011">
+			<field name="name">TOTAL VENTAS Y OTRAS OPERACIONES</field>
+			<field name="sequence">11</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_409'), ref('code_line_sale_419'), ref('code_line_sale_429')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_012">
+			<field name="name">TRANSFERENCIAS NO OBJETO O EXENTAS DE IVA</field>
+			<field name="sequence">12</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_431'), ref('code_line_sale_441')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_013">
+			<field name="name">NOTAS DE CRÉDITO TARIFA 0% POR COMPENSAR PRÓXIMO MES</field>
+			<field name="sequence">13</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_442')])]"/>
+		</record>
+					
+		<record model="statement.form.line" id="data_statement_line_sale_014">
+			<field name="name">NOTAS DE CRÉDITO TARIFA DIFERENTE DE CERO POR COMPENSAR PRÓXIMO MES</field>
+			<field name="sequence">14</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_443'), ref('code_line_sale_453')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_015">
+			<field name="name">INGRESOS POR REEMBOLSO COMO INTERMEDIARIO/VALORES FACTURADOS POR OPERADORAS DE TRANSPORTE (INFORMATIVO)</field>
+			<field name="sequence">15</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_434'), ref('code_line_sale_444'), ref('code_line_sale_454')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_016">
+			<field name="name">TOTAL TRANSFERENCIAS GRAVADAS TARIFA DIFERENTE DE CERO A CONTADO ESTE MES</field>
+			<field name="sequence">16</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_480')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_017">
+			<field name="name">TOTAL TRANSFERENCIAS GRAVADAS TARIFA DIFERENTE DE CERO A CRÉDITO ESTE MES</field>
+			<field name="sequence">17</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_481')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_018">
+			<field name="name">TOTAL IMPUESTO GENERADO (Trasládese campo 429)</field>
+			<field name="sequence">18</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_482')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_sale_019">
+			<field name="name">IMPUESTO A LIQUIDAR DEL MES ANTERIOR (Trasládese el campo 485 de la declaración del período anterior)</field>
+			<field name="sequence">19</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_483')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_sale_020">
+			<field name="name">IMPUESTO A LIQUIDAR EN ESTE MES</field>
+			<field name="sequence">20</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_484')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_sale_021">
+			<field name="name">IMPUESTO A LIQUIDAR EN EL PRÓXIMO MES (482 - 484)</field>
+			<field name="sequence">21</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_485')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_sale_022">
+			<field name="name">TOTAL IMPUESTO A LIQUIDAR EN ESTE MES (SUMAR 483 + 484)</field>
+			<field name="sequence">22</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_sale_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_sale_499')])]"/>
+		</record-->
+		
+		
+		<!-- Formulario 104 Compras -->
+		
+		<!--record model="statement.form.line" id="data_statement_line_purchase_title_001">
+			<field name="name">RESUMEN DE ADQUISICIONES Y PAGOS DEL PERÍODO QUE DECLARA</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="sequence">1</field>			
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_purchase_001">
+			<field name="name">ADQUISICIONES Y PAGOS (EXCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA DIFERENTE DE CERO (CON DERECHO A CRÉDITO TRIBUTARIO)</field>
+			<field name="sequence">1</field>
+			<field name="type_tax">iva</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_500'), ref('code_line_purchase_510'), ref('code_line_purchase_520')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_purchase_002">
+			<field name="name">ADQUISICIONES LOCALES DE ACTIVOS FIJOS GRAVADOS TARIFA DIFERENTE DE CERO(CON DERECHO A CRÉDITO TRIBUTARIO)</field>
+			<field name="sequence">2</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="type_tax">iva</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_501'), ref('code_line_purchase_511'), ref('code_line_purchase_521')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_003">
+			<field name="name">OTRAS ADQUISICIONES Y PAGOS GRAVADOS TARIFA DIFERENTE DE CERO (SIN DERECHO A CRÉDITO TRIBUTARIO)</field>
+			<field name="sequence">3</field>
+			<field name="type_tax">iva</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_502'), ref('code_line_purchase_512'), ref('code_line_purchase_522')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_purchase_004">
+			<field name="name">IMPORTACIONES DE SERVICIOS Y/O DERECHOS GRAVADOS TARIFA DIFERENTE DE CERO</field>
+			<field name="sequence">4</field>
+			<field name="type_tax">iva</field>
+			<field name="service" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_503'), ref('code_line_purchase_513'), ref('code_line_purchase_523')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_purchase_005">
+			<field name="name">IMPORTACIONES DE BIENES (EXCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA DIFERENTE DE CERO</field>
+			<field name="sequence">5</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="type_tax">iva</field>
+			<field name="goods" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_504'), ref('code_line_purchase_514'), ref('code_line_purchase_524')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_006">
+			<field name="name">IMPORTACIONES DE ACTIVOS FIJOS GRAVADOS TARIFA DIFERENTE DE CERO</field>
+			<field name="sequence">6</field>
+			<field name="type_tax">iva</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_505'), ref('code_line_purchase_515'), ref('code_line_purchase_525')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_007">
+			<field name="name">IVA GENERADO EN LA DIFERENCIA ENTRE ADQUISICIONES Y NOTAS DE CRÉDITO CON DISTINTA TARIFA (AJUSTE EN POSITIVO AL CRÉDITO TRIBUTARIO)</field>
+			<field name="sequence">7</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_526')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_008">
+			<field name="name">IVA GENERADO EN LA DIFERENCIA ENTRE ADQUISICIONES Y NOTAS DE CRÉDITO CON DISTINTA TARIFA (AJUSTE EN NEGATIVO AL CRÉDITO TRIBUTARIO)</field>
+			<field name="sequence">8</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_527')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_purchase_009">
+			<field name="name">IMPORTACIONES DE BIENES (INCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA 0%</field>
+			<field name="sequence">9</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="tributary_credit" eval="1"/>
+			<field name="type_tax">iva0</field>
+			<field name="goods" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_506'), ref('code_line_purchase_516')])]"/>
+		</record>
+
+		<record model="statement.form.line" id="data_statement_line_purchase_010">
+			<field name="name">ADQUISICIONES Y PAGOS (INCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA 0%</field>
+			<field name="sequence">10</field>
+			<field name="fixed_asset" eval="1"/>
+			<field name="tributary_credit" eval="1"/>
+			<field name="type_tax">iva0</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_507'), ref('code_line_purchase_517')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_011">
+			<field name="name">ADQUISICIONES REALIZADAS A CONTRIBUYENTES RISE</field>
+			<field name="sequence">11</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_508'), ref('code_line_purchase_518')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_012">
+			<field name="name">TOTAL ADQUISICIONES Y PAGOS</field>
+			<field name="sequence">12</field>
+			<field name="total_check" eval="1"/>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_509'), ref('code_line_purchase_519'), ref('code_line_purchase_529')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_013">
+			<field name="name">ADQUISICIONES NO OBJETO DE IVA</field>
+			<field name="sequence">13</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="type_tax">nobiva</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_531'), ref('code_line_purchase_541')])]"/>
+		</record>
+		
+		<record model="statement.form.line" id="data_statement_line_purchase_014">
+			<field name="name">ADQUISICIONES EXENTAS DEL PAGO DE IVA</field>
+			<field name="sequence">14</field>
+			<field name="tributary_credit" eval="1"/>
+			<field name="type_tax">exiva</field>
+			<field name="form_id" ref="data_statement_form_104"/>
+			<field name="parent_id" ref="data_statement_line_purchase_title_001"/>
+			<field name="line_code_ids" eval="[(6, 0, [ref('code_line_purchase_532'), ref('code_line_purchase_542')])]"/>
+		</record-->
+	</data>
+</odoo>	

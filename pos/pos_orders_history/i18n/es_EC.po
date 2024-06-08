@@ -1,0 +1,324 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_orders_history
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-20 05:00+0000\n"
+"PO-Revision-Date: 2020-11-20 05:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,help:pos_orders_history.field_pos_config_number_of_days
+msgid "0 - load orders of current day"
+msgstr "0 - cargar pedidos del día actual"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:69
+#, python-format
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,help:pos_orders_history.field_pos_order_pos_name
+msgid "An internal identification of the point of sale."
+msgstr "Una identificación interna del punto de venta."
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:17
+#, python-format
+msgid "Back"
+msgstr "Regresar"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:114
+#, python-format
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:62
+#, python-format
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:131
+#, python-format
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/js/screens.js:105
+#, python-format
+msgid "Enter or Scan barcode"
+msgstr "Ingrese o escanee el código de barras"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/js/screens.js:149
+#: code:addons/pos_orders_history/static/src/js/screens.js:158
+#: code:addons/pos_orders_history/static/src/js/screens.js:451
+#: code:addons/pos_orders_history/static/src/js/screens.js:460
+#, python-format
+msgid "Error: Could not find the Order"
+msgstr "Error: no se pudo encontrar el pedido"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:21
+#, python-format
+msgid "Filters"
+msgstr "Filtros"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:9
+#, python-format
+msgid "History"
+msgstr "Ver Pedidos"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:127
+#, python-format
+msgid "Image"
+msgstr "Imagen"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:117
+#, python-format
+msgid "Invoiced"
+msgstr "Facturado"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_load_barcode_order_only
+msgid "Load Specific Orders only"
+msgstr "Cargar solo pedidos específicos"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,help:pos_orders_history.field_pos_config_load_barcode_order_only
+msgid "Load an order after scan the barcode only rather than all existing orders"
+msgstr "Cargue un pedido después de escanear solo el código de barras en lugar de todos los pedidos existentes"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/js/screens.js:124
+#, python-format
+msgid "No Barcode"
+msgstr "Sin código de barras"
+
+#. module: pos_orders_history
+#: model:base.automation,name:pos_orders_history.rule_new_order
+#: model:ir.actions.server,name:pos_orders_history.rule_new_order_ir_actions_server
+msgid "Notify POS about Orders updates (on new order)."
+msgstr "Notificar al POS sobre actualizaciones de pedidos (en pedidos nuevos)."
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_number_of_days
+msgid "Number of days"
+msgstr "Número de día(s)"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:64
+#, python-format
+msgid "Order Date"
+msgstr "Fecha Pedido"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:61
+#, python-format
+msgid "Order Ref"
+msgstr "Ref. Pedido"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_orders_history
+#: model:ir.ui.view,arch_db:pos_orders_history.view_pos_config_form
+msgid "Orders History"
+msgstr "Historial de pedidos"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_load_orders_of_last_n_days
+msgid "Orders of last 'n' days"
+msgstr "Pedidos de los últimos 'n' día(s)"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:26
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:63
+#, python-format
+msgid "POS"
+msgstr "Caja"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_is_pos_order_cancel_installed
+msgid "POS Order Cancel Module Installed"
+msgstr "Módulo de cancelación de pedido de POS instalado"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:111
+#, python-format
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_order_pos_name
+msgid "Point of Sale Name"
+msgstr "Nombre del Punto de Venta"
+
+#. module: pos_orders_history
+#: model:ir.model,name:pos_orders_history.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Pedidos del Punto de Venta"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_order_pos_history_reference_uid
+msgid "Pos History Reference Uid"
+msgstr "Uid de referencia de historial de posición"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:108
+#, python-format
+msgid "Posted"
+msgstr "Publicado"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:128
+#, python-format
+msgid "Product"
+msgstr "Producto"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:129
+#, python-format
+msgid "Quantity"
+msgstr "Cant"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:65
+#, python-format
+msgid "Salesman"
+msgstr "Vendedor"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:36
+#, python-format
+msgid "Scan Barcode"
+msgstr "Escanear código de barras"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:38
+#, python-format
+msgid "Search Orders"
+msgstr "Buscar Ordenes"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_show_barcode_in_receipt
+msgid "Show Barcode in Receipt"
+msgstr "Mostrar código de barras en el recibo"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_show_cancelled_orders
+msgid "Show Cancelled Orders"
+msgstr "Mostrar pedidos cancelados"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_show_invoiced_orders
+msgid "Show Invoiced Orders"
+msgstr "Mostrar pedidos facturados"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,field_description:pos_orders_history.field_pos_config_show_posted_orders
+msgid "Show Posted Orders"
+msgstr "Mostrar pedidos registrados"
+
+#. module: pos_orders_history
+#: model:ir.model.fields,help:pos_orders_history.field_pos_config_orders_history
+msgid "Show all orders list in POS"
+msgstr "Mostrar la lista de todos los pedidos en POS"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:66
+#, python-format
+msgid "Status"
+msgstr "Estado"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:134
+#, python-format
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:133
+#, python-format
+msgid "Subtotal w/o Tax"
+msgstr "SubTotal sin Impuesto"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:29
+#, python-format
+msgid "Table"
+msgstr "Todo"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:132
+#, python-format
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/js/screens.js:150
+#: code:addons/pos_orders_history/static/src/js/screens.js:452
+#, python-format
+msgid "There is no order with this barcode."
+msgstr "No hay ningún pedido con este código de barras."
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:130
+#, python-format
+msgid "Unit Price"
+msgstr "Precio"
+
+#. module: pos_orders_history
+#. openerp-web
+#: code:addons/pos_orders_history/static/src/xml/pos.xml:23
+#, python-format
+msgid "User"
+msgstr "Vendedor"
+
+#. module: pos_orders_history
+#: model:ir.model,name:pos_orders_history.model_pos_config
+msgid "pos.config"
+msgstr "Configuración POS "
+

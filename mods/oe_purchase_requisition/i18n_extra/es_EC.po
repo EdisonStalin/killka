@@ -1,0 +1,135 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * purchase_requisition
+# * oe_purchase_requisition
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-24 00:05+0000\n"
+"PO-Revision-Date: 2019-06-24 00:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_requisition
+#: model:ir.ui.view,arch_db:purchase_requisition.report_purchaserequisitions
+msgid "<strong>Call for Tender Reference:</strong><br/>"
+msgstr "<strong>N° requisición:</strong><br/>"
+
+#. module: purchase_requisition
+#: model:ir.ui.view,arch_db:purchase_requisition.report_purchaserequisitions
+msgid "<strong>Product UoM</strong>"
+msgstr "<strong>Unidad de medida</strong>"
+
+#. module: purchase_requisition
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_name
+msgid "Agreement Reference"
+msgstr "Número"
+
+#. module: purchase_requisition
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_order_requisition_id
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_line_requisition_id
+msgid "Purchase Agreement"
+msgstr "Requisición"
+
+#. module: purchase_requisition
+#: model:ir.model,name:purchase_requisition.model_purchase_requisition_type
+msgid "Purchase Agreement Type"
+msgstr "Tipo de requisición"
+
+#. module: purchase_requisition
+#: model:ir.actions.act_window,name:purchase_requisition.tender_type_action
+#: model:ir.ui.menu,name:purchase_requisition.menu_purchase_requisition_type
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_type_form
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_type_tree
+msgid "Purchase Agreement Types"
+msgstr "Tipos de Requisición"
+
+#. module: purchase_requisition
+#: model:ir.actions.act_window,name:purchase_requisition.action_purchase_requisition
+#: model:ir.ui.menu,name:purchase_requisition.menu_purchase_requisition_pro_mgt
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_filter
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_form
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_tree
+msgid "Purchase Agreements"
+msgstr "Requisición"
+
+#. module: purchase_requisition
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_filter
+msgid "Search Purchase Agreements"
+msgstr "Buscar requisición"
+
+#. module: purchase_requisition
+#: model:ir.actions.act_window,name:purchase_requisition.tender_type_action
+#: model:ir.ui.menu,name:purchase_requisition.menu_purchase_requisition_type
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_type_form
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_type_tree
+msgid "Purchase Agreement Types"
+msgstr "Tipos de requisición"
+
+#. module: purchase_requisition
+#: selection:purchase.requisition,state:0
+msgid "Bid Selection"
+msgstr "Realizar Compras"
+
+#. module: purchase_requisition
+#: selection:purchase.requisition,state:0
+msgid "Cancelled"
+msgstr "Anulado"
+
+#. module: purchase_requisition
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_form
+msgid "Cancel Call"
+msgstr "Anular"
+
+#. module: purchase_requisition
+#: model:ir.actions.report,name:purchase_requisition.action_report_purchase_requisitions
+#: model:ir.ui.view,arch_db:purchase_requisition.report_purchaserequisitions
+msgid "Call for Tenders"
+msgstr "Requisición"
+
+#. module: purchase_requisition
+#: model:ir.actions.act_window,name:purchase_requisition.action_purchase_requisition
+#: model:ir.ui.menu,name:purchase_requisition.menu_purchase_requisition_pro_mgt
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_filter
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_form
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_tree
+msgid "Purchase Agreements"
+msgstr "Requisición"
+
+#. module: purchase_requisition
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_type_id_10513
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_type_name
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_type_form
+msgid "Agreement Type"
+msgstr "Tipo de requisición"
+
+#. module: purchase_requisition
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_vendor_id
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: purchase_requisition
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_schedule_date
+msgid "Delivery Date"
+msgstr "Fecha de aprobación"
+
+#. module: purchase_requisition
+#: model:ir.ui.view,arch_db:purchase_requisition.view_purchase_requisition_form
+msgid "RFQs/Orders"
+msgstr "Ordenes Compra"
+
+#. module: purchase_requisition
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_line_qty_ordered
+msgid "Ordered Quantities"
+msgstr "Cant. Aprobadas OC"
+
+#. module: purchase_requisition
+#: model:ir.model.fields,field_description:purchase_requisition.field_purchase_requisition_line_product_uom_id
+msgid "Product Unit of Measure"
+msgstr "Unidad de medida"

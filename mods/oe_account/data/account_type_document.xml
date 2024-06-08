@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="1">
+		
+		<record model="account.type.document" id="data_type_documente_01">
+			<field name="code">01</field>
+			<field name="name">Factura de Compra</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_02">
+			<field name="code">02</field>
+			<field name="name">Nota o boleta de venta</field>
+			<field name="type">both</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_03">
+			<field name="code">03</field>
+			<field name="name">Liquidación de compra de Bienes o Prestación de servicios</field>
+			<field name="short_name">Liquidación de compra de Bienes o Prestación de servicios</field>
+			<field name="code_doc_xml">03</field>
+			<field name="type">out</field>
+			<field name="is_electronic" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_04">
+			<field name="code">04</field>
+			<field name="name">Nota de crédito</field>
+			<field name="short_name">Nota de Crédito</field>
+			<field name="code_doc_xml">04</field>
+			<field name="type">out</field>
+			<field name="is_electronic" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_05">
+			<field name="code">05</field>
+			<field name="name">Nota de débito</field>
+			<field name="short_name">Nota de Débito</field>
+			<field name="code_doc_xml">05</field>
+			<field name="type">out</field>
+			<field name="is_electronic" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_06">
+			<field name="code">06</field>
+			<field name="name">Guías de Remisión</field>
+			<field name="short_name">Guías de Remisión</field>
+			<field name="code_doc_xml">06</field>
+			<field name="type">out</field>
+			<field name="is_electronic" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_07">
+			<field name="code">07</field>
+			<field name="name">Comprobante de Retención</field>
+			<field name="short_name">Retención</field>
+			<field name="code_doc_xml">07</field>
+			<field name="type">out</field>
+			<field name="is_electronic" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_08">
+			<field name="code">08</field>
+			<field name="name">Boletos o entradas a espectáculos públicos</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_09">
+			<field name="code">09</field>
+			<field name="name">Tiquetes o vales emitidos por máquinas registradoras</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_11">
+			<field name="code">11</field>
+			<field name="name">Pasajes expedidos por empresas de aviación</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_12">
+			<field name="code">12</field>
+			<field name="name">Documentos emitidos por instituciones financieras</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_15">
+			<field name="code">15</field>
+			<field name="name">Comprobante de venta emitido en el Exterior</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_16">
+			<field name="code">16</field>
+			<field name="name">Formulario Único de Exportación (FUE) o Declaración Aduanera Única (DAU) o Declaración Andina de Valor (DAV)</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_18">
+			<field name="code">18</field>
+			<field name="name">Factura de Venta. Documentos utilizados en venta excepto N/C N/D</field>
+			<field name="short_name">Factura</field>
+			<field name="code_doc_xml">01</field>
+			<field name="type">out</field>
+			<field name="is_electronic" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_19">
+			<field name="code">19</field>
+			<field name="name">Comprobantes de Pago de Cuotas o Aportes</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_20">
+			<field name="code">20</field>
+			<field name="name">Documentos por Servicios Administrativos emitidos por Inst. del Estado</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_21">
+			<field name="code">21</field>
+			<field name="name">Carta de Porte Aéreo</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_22">
+			<field name="code">22</field>
+			<field name="name">RECAP</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_23">
+			<field name="code">23</field>
+			<field name="name">Nota de Crédito TC</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_24">
+			<field name="code">24</field>
+			<field name="name">Nota de Débito TC</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_41">
+			<field name="code">41</field>
+			<field name="name">Comprobante de venta emitido por reembolso</field>
+			<field name="type">out</field>
+			<field name="is_refund" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_42">
+			<field name="code">42</field>
+			<field name="name">Documento agente de retención Presuntiva</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_43">
+			<field name="code">43</field>
+			<field name="name">Liquidacion para Explotacion y Exploracion de Hidrocarburos</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_44">
+			<field name="code">44</field>
+			<field name="name">Comprobante de Contribuciones y Aportes</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_45">
+			<field name="code">45</field>
+			<field name="name">Liquidación por reclamos de aseguradoras</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_47">
+			<field name="code">47</field>
+			<field name="name">Nota de Crédito por Reembolso Emitida por Intermediario</field>
+			<field name="type">out</field>
+			<field name="is_refund" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_48">
+			<field name="code">48</field>
+			<field name="name">Nota de Débito por Reembolso Emitida por Intermediario</field>
+			<field name="type">out</field>
+			<field name="is_refund" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_49">
+			<field name="code">49</field>
+			<field name="name">Proveedor Directo de Exportador Bajo Régimen Especial</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_50">
+			<field name="code">50</field>
+			<field name="name">A Inst. Estado y Empr. Públicas que percibe ingreso exento de Imp. Renta</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_51">
+			<field name="code">51</field>
+			<field name="name">N/C A Inst. Estado y Empr. Públicas que percibe ingreso exento de Imp. Renta</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_52">
+			<field name="code">52</field>
+			<field name="name">N/D A Inst. Estado y Empr. Públicas que percibe ingreso exento de Imp. Renta</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_294">
+			<field name="code">294</field>
+			<field name="name">Liquidación de compra de Bienes Muebles Usados</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_344">
+			<field name="code">344</field>
+			<field name="name">Liquidación de compra de vehículos usados</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_364">
+			<field name="code">364</field>
+			<field name="name">Acta Entrega-Recepción PET</field>
+			<field name="type">in</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_370">
+			<field name="code">370</field>
+			<field name="name">Factura operadora transporte/socio</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_371">
+			<field name="code">371</field>
+			<field name="name">Comprobante socio a operadora de transporte</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_372">
+			<field name="code">372</field>
+			<field name="name">Nota de crédito operadora transporte/socio</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_373">
+			<field name="code">373</field>
+			<field name="name">Nota de débito operadora transporte/socio</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_374">
+			<field name="code">374</field>
+			<field name="name">Nota de débito operadora transporte / socio</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+
+		<record model="account.type.document" id="data_type_documente_375">
+			<field name="code">375</field>
+			<field name="name">Liquidación de compra RISE de bienes o prestación de servicios</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+
+		<record model="account.type.document" id="data_type_documente_376">
+			<field name="code">03</field>
+			<field name="name">Liquidación de compra por Reembolso</field>
+			<field name="type">out</field>
+			<field name="is_electronic" eval="1"/>
+			<field name="is_refund" eval="1"/>
+			<field name="active" eval="1"/>
+		</record>
+
+		<record model="account.type.document" id="data_type_documente_900">
+			<field name="code">900</field>
+			<field name="name">Fondo de garantía</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>
+		
+		<record model="account.type.document" id="data_type_documente_901">
+			<field name="code">901</field>
+			<field name="name">Multa</field>
+			<field name="type">out</field>
+			<field name="active" eval="1"/>
+		</record>	
+	</data>
+</odoo>	

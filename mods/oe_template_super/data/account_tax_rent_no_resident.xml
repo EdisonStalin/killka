@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+   		<!-- Retención de pagos para pagos no residente -->
+
+		<record id="account_tax_500_25" model="account.tax.template">
+			<field name="name">Rentas Inmobiliarias</field>
+			<field name="form_code_ats">500</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_500_35" model="account.tax.template">
+			<field name="name">Rentas Inmobiliarias</field>
+			<field name="form_code_ats">500</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_501_25" model="account.tax.template">
+			<field name="name">Beneficios/Servicios  Empresariales</field>
+			<field name="form_code_ats">501</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_501_35" model="account.tax.template">
+			<field name="name">Beneficios/Servicios  Empresariales</field>
+			<field name="form_code_ats">501</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_501A_25" model="account.tax.template">
+			<field name="name">Servicios técnicos, administrativos o de consultoría y regalías</field>
+			<field name="form_code_ats">501A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_501A_35" model="account.tax.template">
+			<field name="name">Servicios técnicos, administrativos o de consultoría y regalías</field>
+			<field name="form_code_ats">501A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_503_0" model="account.tax.template">
+			<field name="name">Navegación Marítima y/o aérea</field>
+			<field name="form_code_ats">503</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_503_25" model="account.tax.template">
+			<field name="name">Navegación Marítima y/o aérea</field>
+			<field name="form_code_ats">503</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_503_35" model="account.tax.template">
+			<field name="name">Navegación Marítima y/o aérea</field>
+			<field name="form_code_ats">503</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504_0" model="account.tax.template">
+			<field name="name">Dividendos distribuidos a personas naturales (domicilados o no en paraiso fiscal) o a sociedades sin beneficiario efectivo persona natural residente en Ecuador (ni domiciladas en paraíso fiscal)</field>
+			<field name="form_code_ats">504</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504A_0" model="account.tax.template">
+			<field name="name">Dividendos a sociedades con beneficiario efectivo persona natural residente en el Ecuador (no domiciliada en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504B_0" model="account.tax.template">
+			<field name="name">Dividendos a fideicomisos con beneficiario efectivo persona natural residente en el Ecuador (no domiciliada en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504B</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504C_10" model="account.tax.template">
+			<field name="name">Dividendos a sociedades domiciladas en paraísos fiscales o regímenes de menor imposición (con o sin beneficiario efectivo persona natural residente en el Ecuador)</field>
+			<field name="form_code_ats">504C</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-10</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105024"/>
+			<field name="account_id" ref="10105024"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504D_10" model="account.tax.template">
+			<field name="name"> Dividendos a fideicomisos domiciladas en paraísos fiscales o regímenes de menor imposición (con o sin beneficiario efectivo persona natural residente en el Ecuador)</field>
+			<field name="form_code_ats">504D</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-10</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105024"/>
+			<field name="account_id" ref="10105024"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504E_22" model="account.tax.template">
+			<field name="name">Anticipo dividendos (no domiciliada en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504E</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-22</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504E_25" model="account.tax.template">
+			<field name="name">Anticipo dividendos (no domiciliada en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504E</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504F_28" model="account.tax.template">
+			<field name="name">Anticipo dividendos (domiciliadas en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504F</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-28</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504G_22" model="account.tax.template">
+			<field name="name">Préstamos accionistas, beneficiarios o partìcipes (no domiciladas en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504G</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-22</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504G_25" model="account.tax.template">
+			<field name="name">Préstamos accionistas, beneficiarios o partìcipes (no domiciladas en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504G</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504H_28" model="account.tax.template">
+			<field name="name">Préstamos accionistas, beneficiarios o partìcipes (domiciladas en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504H</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-28</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504I_22" model="account.tax.template">
+			<field name="name">Préstamos no comerciales a partes relacionadas  (no domiciladas en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504I</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-22</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504I_25" model="account.tax.template">
+			<field name="name">Préstamos no comerciales a partes relacionadas  (no domiciladas en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504I</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_504J_28" model="account.tax.template">
+			<field name="name">Préstamos no comerciales a partes relacionadas  (domiciladas en paraísos fiscales o regímenes de menor imposición)</field>
+			<field name="form_code_ats">504J</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-28</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505_25" model="account.tax.template">
+			<field name="name">Rendimientos financieros</field>
+			<field name="form_code_ats">505</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505_35" model="account.tax.template">
+			<field name="name">Rendimientos financieros</field>
+			<field name="form_code_ats">505</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505A_0" model="account.tax.template">
+			<field name="name">Intereses de créditos de Instituciones Financieras del exterior</field>
+			<field name="form_code_ats">505A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_403'), ref('tax_tag_453')])]"/>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505A_25" model="account.tax.template">
+			<field name="name">Intereses de créditos de Instituciones Financieras del exterior</field>
+			<field name="form_code_ats">505A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505B_0" model="account.tax.template">
+			<field name="name">Intereses de créditos de gobierno a gobierno</field>
+			<field name="form_code_ats">505B</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505B_25" model="account.tax.template">
+			<field name="name">Intereses de créditos de gobierno a gobierno</field>
+			<field name="form_code_ats">505B</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505C_0" model="account.tax.template">
+			<field name="name">Intereses de créditos de organismos multilaterales</field>
+			<field name="form_code_ats">505C</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505C_25" model="account.tax.template">
+			<field name="name">Intereses de créditos de organismos multilaterales</field>
+			<field name="form_code_ats">505C</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505D_25" model="account.tax.template">
+			<field name="name">Intereses por financiamiento de proveedores externos</field>
+			<field name="form_code_ats">505D</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505E_25" model="account.tax.template">
+			<field name="name">Intereses de otros créditos externos</field>
+			<field name="form_code_ats">505E</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505F_25" model="account.tax.template">
+			<field name="name">Otros Intereses y Rendimientos Financieros</field>
+			<field name="form_code_ats">505F</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_505F_35" model="account.tax.template">
+			<field name="name">Otros Intereses y Rendimientos Financieros</field>
+			<field name="form_code_ats">505F</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_509_25" model="account.tax.template">
+			<field name="name">Cápurchases, derechos de autor,  marcas, patentes y similares</field>
+			<field name="form_code_ats">509</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_509_35" model="account.tax.template">
+			<field name="name">Cápurchases, derechos de autor,  marcas, patentes y similares</field>
+			<field name="form_code_ats">509</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_509A_25" model="account.tax.template">
+			<field name="name">Pregalías por concepto de franquicias</field>
+			<field name="form_code_ats">509A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_509A_35" model="account.tax.template">
+			<field name="name">Pregalías por concepto de franquicias</field>
+			<field name="form_code_ats">509A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_510_5" model="account.tax.template">
+			<field name="name">Otras ganancias de capital distintas de enajenación de derechos representativos de capital </field>
+			<field name="form_code_ats">510</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-5</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_510_25" model="account.tax.template">
+			<field name="name">Otras ganancias de capital distintas de enajenación de derechos representativos de capital </field>
+			<field name="form_code_ats">510</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_510_35" model="account.tax.template">
+			<field name="name">Otras ganancias de capital distintas de enajenación de derechos representativos de capital </field>
+			<field name="form_code_ats">510</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_511_25" model="account.tax.template">
+			<field name="name">Servicios profesionales independientes</field>
+			<field name="form_code_ats">511</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_511_35" model="account.tax.template">
+			<field name="name">Servicios profesionales independientes</field>
+			<field name="form_code_ats">511</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_512_25" model="account.tax.template">
+			<field name="name">Servicios profesionales dependientes</field>
+			<field name="form_code_ats">512</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_512_35" model="account.tax.template">
+			<field name="name">Servicios profesionales dependientes</field>
+			<field name="form_code_ats">512</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_513_25" model="account.tax.template">
+			<field name="name">Artistas</field>
+			<field name="form_code_ats">513</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_513_35" model="account.tax.template">
+			<field name="name">Artistas</field>
+			<field name="form_code_ats">513</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_513A_25" model="account.tax.template">
+			<field name="name">Deportistas</field>
+			<field name="form_code_ats">513A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_513A_35" model="account.tax.template">
+			<field name="name">Deportistas</field>
+			<field name="form_code_ats">513A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_514_25" model="account.tax.template">
+			<field name="name">Participación de consejeros</field>
+			<field name="form_code_ats">514</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_514_35" model="account.tax.template">
+			<field name="name">Participación de consejeros</field>
+			<field name="form_code_ats">514</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_515_25" model="account.tax.template">
+			<field name="name">Entretenimiento Público</field>
+			<field name="form_code_ats">515</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_515_35" model="account.tax.template">
+			<field name="name">Entretenimiento Público</field>
+			<field name="form_code_ats">515</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_516_25" model="account.tax.template">
+			<field name="name">Pensiones</field>
+			<field name="form_code_ats">516</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_516_35" model="account.tax.template">
+			<field name="name">Pensiones</field>
+			<field name="form_code_ats">516</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_517_25" model="account.tax.template">
+			<field name="name">Reembolso de Gastos</field>
+			<field name="form_code_ats">517</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_517_35" model="account.tax.template">
+			<field name="name">Reembolso de Gastos</field>
+			<field name="form_code_ats">517</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_518_25" model="account.tax.template">
+			<field name="name">Funciones Públicas</field>
+			<field name="form_code_ats">518</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_518_35" model="account.tax.template">
+			<field name="name">Funciones Públicas</field>
+			<field name="form_code_ats">518</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_519_25" model="account.tax.template">
+			<field name="name">Estudiantes</field>
+			<field name="form_code_ats">519</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_519_35" model="account.tax.template">
+			<field name="name">Estudiantes</field>
+			<field name="form_code_ats">519</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520A_25" model="account.tax.template">
+			<field name="name">Pago a proveedores de servicios hoteleros y turísticos en el exterior</field>
+			<field name="form_code_ats">520A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520A_35" model="account.tax.template">
+			<field name="name">Pago a proveedores de servicios hoteleros y turísticos en el exterior</field>
+			<field name="form_code_ats">520A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520B_0" model="account.tax.template">
+			<field name="name">Arrendamientos mercantil internacional</field>
+			<field name="form_code_ats">520B</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520B_25" model="account.tax.template">
+			<field name="name">Arrendamientos mercantil internacional</field>
+			<field name="form_code_ats">520B</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520B_35" model="account.tax.template">
+			<field name="name">Arrendamientos mercantil internacional</field>
+			<field name="form_code_ats">520B</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520D_0" model="account.tax.template">
+			<field name="name">Comisiones por exportaciones y por promoción de turismo receptivo</field>
+			<field name="form_code_ats">520D</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520D_25" model="account.tax.template">
+			<field name="name">Comisiones por exportaciones y por promoción de turismo receptivo</field>
+			<field name="form_code_ats">520D</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520D_35" model="account.tax.template">
+			<field name="name">Comisiones por exportaciones y por promoción de turismo receptivo</field>
+			<field name="form_code_ats">520D</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520E_0" model="account.tax.template">
+			<field name="name">Por las empresas de transporte marítimo o aéreo y por empresas pesqueras de alta mar, por su actividad.</field>
+			<field name="form_code_ats">520E</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520F_0" model="account.tax.template">
+			<field name="name">Por las agencias internacionales de prensa</field>
+			<field name="form_code_ats">520F</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520F_25" model="account.tax.template">
+			<field name="name">Por las agencias internacionales de prensa</field>
+			<field name="form_code_ats">520F</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520F_35" model="account.tax.template">
+			<field name="name">Por las agencias internacionales de prensa</field>
+			<field name="form_code_ats">520F</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520G_0" model="account.tax.template">
+			<field name="name">Contratos de fletamento de naves para empresas de transporte aéreo o marítimo internacional</field>
+			<field name="form_code_ats">520G</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520G_25" model="account.tax.template">
+			<field name="name">Contratos de fletamento de naves para empresas de transporte aéreo o marítimo internacional</field>
+			<field name="form_code_ats">520G</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_520G_35" model="account.tax.template">
+			<field name="name">Contratos de fletamento de naves para empresas de transporte aéreo o marítimo internacional</field>
+			<field name="form_code_ats">520G</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_521_5" model="account.tax.template">
+			<field name="name">Enajenación de derechos representativos de capital y otros derechos </field>
+			<field name="form_code_ats">521</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-5</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_521_25" model="account.tax.template">
+			<field name="name">Enajenación de derechos representativos de capital y otros derechos </field>
+			<field name="form_code_ats">521</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_521_35" model="account.tax.template">
+			<field name="name">Enajenación de derechos representativos de capital y otros derechos </field>
+			<field name="form_code_ats">521</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-35</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_523A_0" model="account.tax.template">
+			<field name="name">Seguros y reaseguros (primas y cesiones)  </field>
+			<field name="form_code_ats">523A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_523A_22" model="account.tax.template">
+			<field name="name">Seguros y reaseguros (primas y cesiones)  </field>
+			<field name="form_code_ats">523A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-22</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_523A_25" model="account.tax.template">
+			<field name="name">Seguros y reaseguros (primas y cesiones)  </field>
+			<field name="form_code_ats">523A</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-25</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105022"/>
+			<field name="account_id" ref="10105022"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="account_tax_525_0" model="account.tax.template">
+			<field name="name">Donaciones en dinero -Impuesto a la donaciones</field>
+			<field name="form_code_ats">525</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="10105025"/>
+			<field name="account_id" ref="10105025"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+	</data>
+</odoo>	

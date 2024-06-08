@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+    	<!-- Account Tag -->
+    	
+		<record id="account_tag_view_form_tree" model="ir.ui.view">
+            <field name="name">account.account.tag.tree.oe_account</field>
+            <field name="model">account.account.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Account Tags" decoration-muted="not active">
+                    <field name="name"/>
+                    <field name="applicability"/>
+                    <field name="document_type"/>
+                    <field name="type"/>
+                    <field name="form_id"/>
+                    <field name="statement_line_id"/>
+                    <field name="country_id"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+
+		<record id="account_tag_view_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.account.tag.form.inherit.oe_account</field>
+            <field name="model">account.account.tag</field>
+            <field name="inherit_id" ref="account.account_tag_view_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='name']" position="after">
+            		<field name="applicability"/>
+            		<field name="color"/>
+            		<field name="document_type"/>
+            		<field name="type"/>
+            		<field name="form_id" attrs="{'required': [('applicability','=','taxes')]}"/>
+            		<field name="statement_line_id" domain="[('form_id','=',form_id)]"/>
+            		<field name="country_id"/>
+            	</xpath>
+            	
+            </field>
+		</record>
+
+    	<!-- Inherit: Account Type -->
+    	<record id="view_account_type_tree_inherit" model="ir.ui.view">
+        	<field name="name">account.account.type.tree.inherit.oe_account</field>
+        	<field name="model">account.account.type</field>
+        	<field name="inherit_id" ref="account.view_account_type_tree"/>
+        	<field name="arch" type="xml">
+        	
+				<xpath expr="//field[@name='type']" position="after">
+					<field name="active" widget="boolean_toggle"/>
+	            </xpath>
+	        
+        	</field>
+        </record>
+
+    	<record id="view_account_type_form_inherit" model="ir.ui.view">
+        	<field name="name">account.account.type.form.inherit.oe_account</field>
+        	<field name="model">account.account.type</field>
+        	<field name="inherit_id" ref="account.view_account_type_form"/>
+        	<field name="arch" type="xml">
+
+				<xpath expr="//field[@name='include_initial_balance']" position="after">
+	            	<field name="active" widget="boolean_toggle"/>
+	            </xpath>
+
+        	</field>
+        </record>
+
+    	<!-- Inherit: Account Account -->
+    	<record id="view_account_search_inherit_oe_account" model="ir.ui.view">
+        	<field name="name">account.account.search.inherit.oe_account</field>
+        	<field name="model">account.account</field>
+        	<field name="inherit_id" ref="account.view_account_search"/>
+        	<field name="arch" type="xml">
+        		
+        		<xpath expr="//group/filter[1]" position="attributes">
+        			<attribute name="name">accounttype</attribute>
+        		</xpath>
+        		
+				<xpath expr="//group/filter[1]" position="before">
+					<filter string="Group" name="group" domain="" context="{'group_by':'group_id'}"/>
+					<filter string="Movement" name="movement" domain="" context="{'group_by':'movement'}"/>
+	            </xpath>
+	            
+        	</field>
+        </record>
+
+    	<record id="view_account_list_inherit_oe_account" model="ir.ui.view">
+        	<field name="name">account.account.list.inherit.oe_account</field>
+        	<field name="model">account.account</field>
+        	<field name="inherit_id" ref="account.view_account_list"/>
+        	<field name="arch" type="xml">
+        	
+				<xpath expr="//field[@name='user_type_id']" position="after">
+					<field name="movement"/>
+					<field name="parent_id"/>
+					<field name="group_id"/>
+					<field name="reconcile" readonly="0" widget="boolean_toggle"/>
+	            </xpath>
+	            
+        	</field>
+        </record>
+
+    	<record id="view_account_form_inherit" model="ir.ui.view">
+        	<field name="name">account.account.form.inherit.oe_account</field>
+        	<field name="model">account.account</field>
+        	<field name="inherit_id" ref="account.view_account_form"/>
+        	<field name="arch" type="xml">
+        	
+				<xpath expr="//field[@name='user_type_id']" position="after">
+					<field name="parent_id"/>
+					<field name="movement" widget="radio" options="{'horizontal': True}"/>
+	            </xpath>
+	            
+				<xpath expr="//label[@for='reconcile']" position="attributes">
+					<attribute name="attrs">{}</attribute>
+	            </xpath>
+	            
+				<xpath expr="//div[1]" position="attributes">
+					<attribute name="attrs">{}</attribute>
+	            </xpath>
+	            
+        	</field>
+        </record>
+
+		<record id="account.action_account_form" model="ir.actions.act_window">
+			<field name="context">{'search_default_group': True, 'search_default_accounttype': True, 'search_default_activeacc':True}</field>
+        </record>
+
+		<record id="action_check_hierarchy" model="ir.actions.server">
+            <field name="name">Check hierarchy</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="account.model_account_account"/>
+            <field name="binding_model_id" ref="account.model_account_account"/>
+            <field name="code">
+if records:
+	action = records.action_check_hierarchy()
+            </field>
+        </record>
+    	
+    	
+    	<!-- Journal -->
+
+    	<record id="view_account_journal_form_inherit_oe_account" model="ir.ui.view">
+        	<field name="name">account.journal.form.inherit.oe_account</field>
+        	<field name="model">account.journal</field>
+        	<field name="inherit_id" ref="account.view_account_journal_form"/>
+        	<field name="arch" type="xml">
+
+        		<xpath expr="//field[@name='type']" position="after">
+        			<field name="is_card" attrs="{'invisible': [('type','not in', ['bank'])]}"/>
+        			<field name="show_details" attrs="{'invisible': [('type','not in', ['cash','bank'])]}"/>
+        		</xpath>
+        		
+				<xpath expr="//field[@name='code']" position="after">
+					<field name="establishment_id" options="{'no_create': True}"/>
+					<field name="authorization_id" options="{'no_create': True}"
+						domain="[('type','=','internal'), ('company_id','=',company_id)]"
+						attrs="{'invisible': [('type', 'not in', ['sale', 'purchase'])]}"/>
+					<field name="method_id" options="{'no_create': True, 'no_open': True}"
+						attrs="{'invisible': [('type','not in', ['cash','bank'])], 'required': [('type','in', ['cash','bank'])]}"/>
+            	</xpath>
+
+				<xpath expr="//field[@name='sequence_id']" position="attributes">
+					<attribute name="attrs">{}</attribute>
+					<attribute name="groups">account.group_account_invoice</attribute>
+	            </xpath>
+            	
+            	<xpath expr="//page[@name='advanced_settings']/group[1]/group[2]/field[@name='group_invoice_lines']" position="attributes">
+            		<attribute name="attrs">{'invisible': [('type', 'not in', ['sale', 'purchase','general'])]}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//page[@name='advanced_settings']/group[1]/group[3]" position="after">
+            		<group string="Card" attrs="{'invisible': [('is_card', '=', False)]}"
+            			groups="account.group_account_manager">
+            			<field name="card_type_id" attrs="{'required': [('is_card','=',True)]}" options="{'no_create': True}"/>
+	                    <field name="line_values_ids" class="oe_inline">
+	                        <tree string="Extra value" editable="bottom">
+	                            <field name="name"/>
+	                            <field name="account_id" options="{'no_create': True}"/>
+	                            <field name="type" widget="radio"/>
+								<field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                        </tree>
+	                    </field>
+					</group>
+            	</xpath>
+            	
+        	</field>
+        </record>
+
+
+		<record id="view_account_journal_form2_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.journal.form2.inherit_oe_account</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account_cancel.view_account_journal_form_inherit"/>
+            <field name="arch" type="xml">
+                
+                <xpath expr="//field[@name='update_posted']" position="attributes">
+                	<attribute name="groups">account.group_account_invoice</attribute>
+                </xpath>
+            </field>
+		</record>
+		
+    </data>
+</odoo>    

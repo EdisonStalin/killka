@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+        <!-- Inherit: Account Move -->
+    	<!--record id="view_move_form_inherit" model="ir.ui.view">
+        	<field name="name">account.move.form.inherit.oe_statement_sri</field>
+        	<field name="model">account.move</field>
+        	<field name="inherit_id" ref="account.view_move_form"/>
+        	<field name="arch" type="xml">
+        	
+				<xpath expr="//field[@name='line_ids']/tree/field[@name='currency_id']" position="after">
+					<field name="form_id" options="{'no_create': True, 'no_open': True}" 
+						groups="oe_statement_sri.group_manager_form"/>
+					<field name="form_line_id" options="{'no_create': True, 'no_open': True}" 
+						groups="oe_statement_sri.group_manager_form"
+						attrs="{'required': [('form_id','!=',False)]}"
+						domain="[('statement_line_id','=',form_line_id)]"/>
+					<field name="code_form_id" options="{'no_create': True}" 
+						groups="oe_statement_sri.group_manager_form"
+
+						attrs="{'required': [('form_line_id','!=',False)]}"/>
+	            </xpath>
+	        	
+        	</field>
+        </record-->
+
+        <!-- Inherit: Account Move Line -->
+    	<!--record id="view_move_line_form_inherit_oe_statement_sri" model="ir.ui.view">
+        	<field name="name">account.move.line.form.inherit.oe_statement_sri</field>
+        	<field name="model">account.move.line</field>
+        	<field name="inherit_id" ref="account.view_move_line_form"/>
+        	<field name="arch" type="xml">
+        		
+        		<xpath expr="//field[@name='invoice_id']" position="after">
+        			<field name="form_id" options="{'no_create': True, 'no_open': True}" 
+						groups="oe_statement_sri.group_manager_form"/>
+        			<field name="form_line_id" options="{'no_create': True, 'no_open': True}"
+        				groups="oe_statement_sri.group_manager_form"
+        				attrs="{'required': [('form_id','!=',False)]}"/
+        				domain="[('statement_line_id','=',form_line_id)]" >
+					<field name="code_form_id" options="{'no_create': True}"
+						groups="oe_statement_sri.group_manager_form"
+						attrs="{'required': [('form_line_id','!=',False)]}"/>
+        		</xpath>
+        	
+        	</field>
+        </record-->
+    
+    </data>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+	<record id="account_report_general_ledger_view_inherit_oe_account_report" model="ir.ui.view">
+		<field name="name">account.report.general.ledger.inherit.oe_account_report</field>
+		<field name="model">account.report.general.ledger</field>
+		<field name="inherit_id" ref="account.account_report_general_ledger_view"/>
+		<field name="arch" type="xml">
+			
+			<xpath expr="//field[@name='initial_balance']" position="after">
+				<field name="hide_account_at_0"/>
+				<field name="foreign_currency"/>
+				<field name="show_analytic_tags"/>
+			</xpath>
+			
+			<xpath expr="//group[2]/field[@name='journal_ids']" position="replace"/>
+			
+			<xpath expr="//group[2]" position="after">
+				<notebook>
+					<page string="Filter journals">
+						<group>
+			                <field name="journal_ids" required="0" widget="many2many_tags" options="{'no_create': True}"/>
+			            </group>
+					</page>
+					<page string="Filter accounts">
+	                    <group col="4">
+	                        <field name="receivable_accounts_only"/>
+	                        <field name="payable_accounts_only"/>
+	                    </group>
+	                    <group>
+							<field name="account_ids" widget="many2many_tags" options="{'no_create': True}"/>
+						</group>
+					</page>
+					<page string="Filter partners">
+						<group>
+							<field name="partner_ids" widget="many2many_tags" options="{'no_create': True}"/>
+						</group>
+					</page>
+					<page string="Filter cost centers" groups="analytic.group_analytic_accounting">
+						<group>
+							<field name="cost_center_ids" widget="many2many_tags" options="{'no_create': True}"/>
+						</group>
+					</page>
+					<page string="Filter analytic tags">
+						<group>
+							<field name="analytic_tag_ids" widget="many2many_tags" options="{'no_create': True}"/>
+						</group>
+					</page>
+				</notebook>
+			</xpath>
+			
+			<xpath expr="/form/footer/button[@name='check_report']" position="before">
+				<button name="button_export_html" string="View" type="object" class="oe_highlight"/>
+				or
+			</xpath>
+			
+			<xpath expr="/form/footer/button[@name='check_report']" position="after">
+				or
+				<button name="button_export_xlsx" string="Export XLSX" type="object" class="oe_highlight"/>
+				or
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+	<template id="assets_backend_account_oe_account_report" name="oe_account_report account assets_backend" inherit_id="account.assets_backend">
+		<xpath expr="." position="inside">
+			
+			<link href="/oe_account_report/static/src/css/report.css" rel="stylesheet"/>
+			<link href="/oe_account_report/static/src/css/report_financial.css" rel="stylesheet"/>
+			
+        	<script type="text/javascript" src="/oe_account_report/static/src/js/account_financial_report_backend.js"></script>
+        	<script type="text/javascript" src="/oe_account_report/static/src/js/account_financial_report_widgets.js"></script>
+			
+		</xpath>
+	</template>
+	
+</odoo>

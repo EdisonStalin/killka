@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_mail_admin,mail.mail.admin,mail.model_mail_mail,oe_base.group_admin,1,1,1,1
+mail.access_mail_activity_all,mail.activity.all,mail.model_mail_activity,,1,1,1,1
+access_mail_activity_admin,mail.activity.admin,mail.model_mail_activity,oe_base.group_admin,1,1,1,1

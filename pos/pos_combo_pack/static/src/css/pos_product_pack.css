@@ -1,0 +1,209 @@
+.product_pack{
+    background: green;
+    position: absolute;
+    top: 69px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    padding: 2px 5px;
+    border-radius: 2px;
+    opacity: 0.6;
+    width: 100%;
+}
+
+.combo_background{
+	background: lawngreen !important;
+	opacity: 0.5 !important;	
+}
+.topping_background{
+    background: yellow !important;
+    opacity: 0.5 !important;    
+}
+.pos .product .product-qty {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: green;
+    opacity: 0.6;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+.pos .product .product-qty-low {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: red;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+/*#*/
+.pos .product .qty-tag {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: #7f82ac;
+    padding: 2px 5px;
+    border-radius: 2px;
+    background: green;
+    opacity: 0.6;
+    padding: 2px 5px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+.pos .product .qty-tag.not-available {
+    background: #d882ac;
+}
+
+.pos .order .orderline .qty-info{
+    color: #777;
+    font-weight: bold;
+    font-style: normal;
+}
+.pos .order .orderline .qty-info.not-available{
+    color:red;
+}
+
+.product_extra{
+    background: red;
+    position: absolute;
+    top: 69px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    padding: 2px 5px;
+    border-radius: 2px;
+    opacity: 0.6;
+    width: 100%;
+}
+
+.topping_background{
+    background: yellow !important;
+    opacity: 0.5 !important;    
+}
+.pos .product .product-qty {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: green;
+    opacity: 0.6;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+.pos .product .product-qty-low {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: red;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+/*#*/
+.pos .product .qty-tag {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    vertical-align: top;
+    color: white;
+    line-height: 13px;
+    background: #7f82ac;
+    padding: 2px 5px;
+    border-radius: 2px;
+    background: green;
+    opacity: 0.6;
+    padding: 2px 5px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+.pos .product .qty-tag.not-available {
+    background: #d882ac;
+}
+
+.pos .order .orderline .qty-info{
+    color: #777;
+    font-weight: bold;
+    font-style: normal;
+}
+.pos .order .orderline .qty-info.not-available{
+    color:red;
+}
+
+.ui-tabs.ui-tabs-vertical {
+    padding: 0;
+    width: 74em;
+}
+.ui-tabs.ui-tabs-vertical .ui-widget-header {
+    border: none;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav {
+    float: left;
+    width: 14em;
+    background: #CCC;
+    border-radius: 4px 0 0 4px;
+    /*margin-top: 235px;*/
+    border-right: 1px solid gray;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li {
+    clear: left;
+    width: 100%;
+    margin: 0.2em 0;
+    border: 1px solid gray;
+    border-width: 1px 0 1px 1px;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    position: relative;
+    right: -2px;
+    z-index: 2;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a {
+    display: block;
+    width: 100%;
+    padding: 0.6em 1em;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li a:hover {
+    cursor: pointer;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+    margin-bottom: 0.2em;
+    padding-bottom: 0;
+    background:#7f82ac;
+    border-right: 1px solid white;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-nav li:last-child {
+    margin-bottom: 10px;
+}
+.ui-tabs.ui-tabs-vertical .ui-tabs-panel {
+    float: left;
+    width: 39em;
+    height: 28em;
+    overflow: scroll;
+    border-left: 1px solid gray;
+    border-radius: 0;
+    position: relative;
+    left: -1px;
+}
+
+
+.pos .product{
+    border-width: 2px;
+}
+
+.green_border{
+    border-color: green !important;
+}

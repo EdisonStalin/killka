@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+		<record id="view_account_invoice_refund_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.invoice.refund.form.inherit.oe_account</field>
+            <field name="model">account.invoice.refund</field>
+            <field name="inherit_id" ref="account.view_account_invoice_refund"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='description']" position="before">
+            		<field name="invoice_id" invisible="1"/>
+            		<field name="type" invisible="1"/>
+            		<field name="partner_id" invisible="1"/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='description']" position="after">
+					<field name="tax_support_id" attrs="{'invisible':[('type', '=', 'out_refund')], 'required': [('type', '=', 'in_refund')]}" widget="selection"/>
+            		<field name="type_document_id" widget="selection"/>
+				    <field name="authorization_id" required="1" context="{'default_partner_id': partner_id, 'default_type_document_id': type_document_id, 'invoice_type': type}"/>
+				    <field name="number" attrs="{'invisible':['|', ('filter_refund','=','refund'), ('type', '!=', 'in_refund')], 'required':[('filter_refund','!=','refund'), ('type', '=', 'in_refund')]}"/>
+            	</xpath>
+
+            </field>
+		</record>            
+
+    </data>
+</odoo>    

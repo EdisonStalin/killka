@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<factura id="comprobante" version="2.1.0">
+	<infoTributaria>
+    	<ambiente>{{ ambiente }}</ambiente>
+	    <tipoEmision>{{ tipoEmision }}</tipoEmision>
+	    <razonSocial>{{ razonSocial }}</razonSocial>{% if nombreComercial %}
+	    <nombreComercial>{{ nombreComercial }}</nombreComercial>{% endif %}
+	    <ruc>{{ ruc }}</ruc>
+	    <claveAcceso>{{ claveAcceso }}</claveAcceso>
+	    <codDoc>{{ codDoc }}</codDoc>
+	    <estab>{{ estab }}</estab>
+	    <ptoEmi>{{ ptoEmi }}</ptoEmi>
+	    <secuencial>{{ secuencial }}</secuencial>
+	    <dirMatriz>{{ dirMatriz }}</dirMatriz>{% if agenteRetencion %}
+	    <agenteRetencion>{{ agenteRetencion }}</agenteRetencion>{% endif %}{% if regimenMicroempresas %}
+	    <regimenMicroempresas>{{ regimenMicroempresas }}</regimenMicroempresas>{% endif %}{% if contribuyenteRimpe %}
+	    <contribuyenteRimpe>{{ contribuyenteRimpe }}</contribuyenteRimpe>{% endif %}
+	</infoTributaria>
+	<infoFactura>
+		<fechaEmision>{{ fechaEmision }}</fechaEmision>{# dd/mm/aaaa #}{% if dirEstablecimiento %}
+		<dirEstablecimiento>{{ dirEstablecimiento }}</dirEstablecimiento>{% endif %}{% if contribuyenteEspecial %}
+		<contribuyenteEspecial>{{ contribuyenteEspecial }}</contribuyenteEspecial>{% endif %}
+	    <obligadoContabilidad>{{ obligadoContabilidad }}</obligadoContabilidad>
+	    <tipoIdentificacionComprador>{{ tipoIdentificacionComprador }}</tipoIdentificacionComprador>
+	    <razonSocialComprador>{{ razonSocialComprador }}</razonSocialComprador>
+	    <identificacionComprador>{{ identificacionComprador }}</identificacionComprador>
+	    <direccionComprador>{{ direccionComprador }}</direccionComprador>
+	    <totalSinImpuestos>{{ totalSinImpuestos }}</totalSinImpuestos>
+	    <totalDescuento>{{ totalDescuento }}</totalDescuento>
+    	<totalConImpuestos>{% for item in totalConImpuestos %}
+	    	<totalImpuesto>
+	    		<codigo>{{ item['codigo'] }}</codigo>
+		        <codigoPorcentaje>{{ item['codigoPorcentaje'] }}</codigoPorcentaje>
+		        <baseImponible>{{ item['baseImponible'] }}</baseImponible>
+		        <tarifa>{{ item['tarifa'] }}</tarifa>
+		        <valor>{{ item['valor'] }}</valor>
+			</totalImpuesto>{% endfor %}
+		</totalConImpuestos>
+	    <propina>{{ propina }}</propina>
+	    <importeTotal>{{ importeTotal }}</importeTotal>
+	    <moneda>DOLAR</moneda>
+	    <pagos>{% for item in pagos %}
+	        <pago>
+	            <formaPago>{{ item['formaPago'] }}</formaPago>
+	            <total>{{ item['total'] }}</total>
+	            <plazo>{{ item['plazo'] }}</plazo>
+	            <unidadTiempo>{{ item['unidadTiempo'] }}</unidadTiempo>
+	        </pago>{% endfor %}
+	    </pagos>
+	    {% if valorRetIva %}<valorRetIva>{{ valorRetIva }}</valorRetIva>{% endif %}
+	    {% if valorRetRenta %}<valorRetRenta>{{ valorRetRenta }}</valorRetRenta>{% endif %}
+	</infoFactura>
+	<detalles>{% for item in detalles %}
+		<detalle>
+			<codigoPrincipal>{{ item['codigoPrincipal'] }}</codigoPrincipal>
+			<codigoAuxiliar>{{ item['codigoPrincipal'] }}</codigoAuxiliar>
+			<descripcion>{{ item['descripcion'] }}</descripcion>
+			<cantidad>{{ item['cantidad'] }}</cantidad>
+			<precioUnitario>{{ item['precioUnitario'] }}</precioUnitario>
+			<descuento>{{ item['descuento'] }}</descuento>
+			<precioTotalSinImpuesto>{{ item['precioTotalSinImpuesto'] }}</precioTotalSinImpuesto>
+      		<impuestos>{% for tax in item['impuestos'] %}
+		        <impuesto>
+					<codigo>{{ tax['codigo'] }}</codigo>
+					<codigoPorcentaje>{{ tax['codigoPorcentaje'] }}</codigoPorcentaje>
+					<tarifa>{{ tax['tarifa'] }}</tarifa>
+					<baseImponible>{{ tax['baseImponible'] }}</baseImponible>
+					<valor>{{ tax['valor'] }}</valor>
+		        </impuesto>{% endfor %}
+			</impuestos>
+		</detalle>{% endfor %}
+	</detalles>{% if destinos %}
+	<infoSustitutivaGuiaRemision>
+		<dirPartida>{{ dirPartida }}</dirPartida>
+		<dirDestinatario>{{ dirDestinatario }}</dirDestinatario>
+		<fechaIniTransporte>{{ fechaIniTransporte }}</fechaIniTransporte>
+		<fechaFinTransporte>{{ fechaFinTransporte }}</fechaFinTransporte>
+		<razonSocialTransportista>{{ razonSocialTransportista }}</razonSocialTransportista>
+		<tipoIdentificacionTransportista>{{ tipoIdentificacionTransportista }}</tipoIdentificacionTransportista>
+		<rucTransportista>{{ rucTransportista }}</rucTransportista>
+		<placa>{{ placa }}</placa>
+		<destinos>{% for dest in destinos %}
+	        <destino>
+				<motivoTraslado>{{ dest['motivoTraslado'] }}</motivoTraslado>
+				{% if dest['docAduaneroUnico'] %}<docAduaneroUnico>{{ dest['docAduaneroUnico'] }}</docAduaneroUnico>{% endif %}
+				{% if dest['codEstabDestino'] %}<codEstabDestino>{{ dest['codEstabDestino'] }}</codEstabDestino>{% endif %}
+				<ruta>{{ dest['ruta'] }}</ruta>
+	        </destino>{% endfor %}
+		</destinos>
+	</infoSustitutivaGuiaRemision>{% endif %}{% if infoAdicional %}
+	<infoAdicional>{% for item in infoAdicional %}
+		{{ item }}{% endfor %}
+	</infoAdicional>{% endif %}
+</factura>

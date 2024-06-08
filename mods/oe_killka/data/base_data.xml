@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data noupdate="1">
+
+    	<record id="base.main_partner" model="res.partner" context="{'default_is_company': True}">
+            <field name="email">soporte@killka.ec</field>
+            <field name="website">https://www.killka.ec</field>
+    	</record>
+
+    	<!-- Alter Basic Company  -->
+        <record id="base.main_company" model="res.company">
+            <field name="name_software">Killka Ecuador</field>
+            <field name="web_software">https://www.killka.ec</field>
+            <field name="documentation_url">https://cloud.killka.ec/index.php/s/gaiXCYcrAQ7aTSm</field>
+            <field name="support_url">https://soporte.killka.ec</field>
+        </record>
+        
+        <record id="base.public_partner" model="res.partner">
+            <field name="firstname">Administrador Killka</field>
+            <field name="name">Administrador Killka</field>
+            <field name="email">soporte@killka.ec</field>
+            <field name="customer" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="base.partner_root" model="res.partner">
+            <field name="firstname">Administrador</field>
+            <field name="name">Administrador</field>
+            <field name="email">soporte@killka.ec</field>
+            <field name="customer" eval="False"/>
+        </record>
+	</data>
+</odoo>    

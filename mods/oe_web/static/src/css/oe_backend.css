@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* Cambios del frontend */
+/* LESS no está disponible */
+
+table.o_list_view tbody tr:hover{
+    background-color: #00494940 !important;
+}
+
+table.o_list_view tbody tr.row_selected{
+    background-color: #00494999;
+    color:#ffffff
+}
+
+/* The Close Button */
+.close {
+  float: right;
+  font-size: 2.0rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #df0d0d;
+  text-shadow: none;
+  opacity: initial;
+}
+
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+  opacity: .75;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}

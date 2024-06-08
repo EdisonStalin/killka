@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+		<!-- PDF/HMTL REPORTS -->
+	
+	    <!-- General Ledger -->
+		<report id="action_report_general_ledger_qweb"
+	      model="report_general_ledger"
+	      string="General Ledger"
+	      report_type="qweb-pdf"
+	      name="oe_account_report.report_general_ledger_qweb"
+	      file="oe_account_report.report_general_ledger_qweb"/>
+
+
+		<report id="action_report_general_ledger_html"
+	      model="report_general_ledger"
+	      string="General Ledger"
+	      report_type="qweb-html"
+	      name="oe_account_report.report_general_ledger_qweb"
+	      file="oe_account_report.report_general_ledger_html"/>
+
+		<template id="report_general_ledger">
+	        <div class="o_account_financial_reports_page">
+	            <t t-call="oe_account_report.report_buttons"/>
+	            <t t-call="oe_account_report.report_general_ledger_base"/>
+	        </div>
+	    </template>
+	    
+	    <!-- Journal Ledger -->
+	    
+	    <report id="action_report_journal_ledger_qweb"
+	      model="report_journal_ledger"
+	      string="Journal Ledger"
+	      report_type="qweb-pdf"
+	      name="oe_account_report.report_journal_ledger_qweb"
+	      file="oe_account_report.report_journal_ledger_qweb"
+	      />
+
+	    <template id="report_journal_ledger">
+	        <div class="o_account_financial_reports_page">
+	            <t t-call="oe_account_report.report_buttons"/>
+	            <t t-call="oe_account_report.report_journal_ledger_base"/>
+	        </div>
+	    </template>
+
+	    <!-- VAT Report -->
+	    
+	    <report id="action_report_vat_report_qweb"
+	      model="report_vat_report"
+	      string="VAT Report"
+	      report_type="qweb-pdf"
+	      name="oe_account_report.report_vat_report_qweb"
+	      file="oe_account_report.report_vat_report_qweb"/>
+	    
+	   <report id="action_report_vat_report_html"
+	      model="report_vat_report"
+	      string="VAT Report"
+	      report_type="qweb-html"
+	      name="oe_account_report.report_vat_report_qweb"
+	      file="oe_account_report.report_vat_report_html"/>
+
+		<template id="report_vat_report">
+	        <div class="o_account_financial_reports_page">
+	            <t t-call="oe_account_report.report_buttons"/>
+	            <t t-call="oe_account_report.report_vat_report_base"/>
+	        </div>
+	    </template>
+
+	    <!-- Aged Partner Balance -->
+	    
+	    <report id="action_report_aged_partner_balance_qweb"
+	      model="report_aged_partner_balance"
+	      string="Aged Partner Balance"
+	      report_type="qweb-pdf"
+	      name="oe_account_report.report_aged_partner_balance_qweb"
+	      file="oe_account_report.report_aged_partner_balance_qweb"/>
+
+	    <report id="action_report_aged_partner_balance_html"
+	      model="report_aged_partner_balance"
+	      string="Aged Partner Balance"
+	      report_type="qweb-html"
+	      name="oe_account_report.report_aged_partner_balance_qweb"
+	      file="oe_account_report.report_aged_partner_balance_html"/>
+
+	    <template id="report_aged_partner_balance">
+	        <div class="o_account_financial_reports_page">
+	            <t t-call="oe_account_report.report_buttons"/>
+	            <t t-call="oe_account_report.report_aged_partner_balance_base"/>
+	        </div>
+	    </template>
+    
+	    <report id="journal_entries_moce_print_id"
+	        model = "account.move"
+	        string = "Journal Entries"
+	        report_type = "qweb-pdf"
+	        name = "oe_account_report.journal_entries_report_id"  
+	        file = "oe_account_report.journal_entries_report_id"/>	        
+
+
+		<report id="action_print_customer_outstanding_statement"
+	        model="res.partner"
+	        string="Statement Action to PDF"
+	        report_type="qweb-pdf"
+	        menu="False"
+	        name="oe_account_report.statement"
+	        file="oe_account_report.statement"/>
+
+
+    </data>
+</odoo>    

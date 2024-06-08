@@ -1,0 +1,9 @@
+<odoo>
+    <template id="assets_backend" name="js assets"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript"
+                    src="/kw_matrix_widget/static/src/js/matrix.js"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+
+		<record id="product_template_form_view_inherit_oe_product2" model="ir.ui.view">
+	        <field name="name">product.template.form.inherit.oe_product2</field>
+	        <field name="model">product.template</field>
+	        <field name="inherit_id" ref="account.product_template_form_view"/>
+	        <field name="arch" type="xml">
+	        
+	        	<xpath expr="//field[@name='taxes_id']" position="before">
+	        		<field name="not_sale"/>
+	        	</xpath>
+	        	
+	        </field>
+		</record>
+		
+	</data>
+</odoo>

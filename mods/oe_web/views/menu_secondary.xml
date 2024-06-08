@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+<!-- Quitar menús de oe admin -->
+		<record model="ir.ui.menu" id="iap.iap_root_menu" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+
+<!-- Reemplazar "Odoo" en menú izquierdo -->
+		<template id="menu_secondary" name="oe_web menu_secondary" inherit_id="web.menu_secondary">
+			<xpath expr="//div[hasclass('o_sub_menu_footer')]/a" position="replace">
+				<t t-set="company_id" t-value="request.env['res.company'].sudo().search([], limit=1)"/>
+				<a t-att-href="company_id.web_software" target="_blank"><span itemprop="website" t-esc="company_id.name_software"/></a>
+			</xpath>
+		</template>
+
+	</data>
+
+</odoo>

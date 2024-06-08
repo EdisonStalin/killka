@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="1">
+	
+		<record model="res.partner" id="oe_base.final_consumer">
+			<field name="method_id" ref="oe_account.payment_method_20"/>
+			<field name="property_account_receivable_id" model="account.account" search="[('code', '=', '1010205')]"/>
+			<field name="property_account_payable_id" model="account.account" search="[('code', '=', '2010301')]"/>
+			<field name="limit_amount">50.00</field>
+		</record>
+	
+	</data>
+</odoo>	

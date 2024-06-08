@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+		
+        <record id="it_vat" model="l10n_latam.identification.type">
+            <field name="name">VAT</field>
+            <field name="sequence">10</field>
+            <field name="code">05</field>
+            <field name="is_vat">1</field>
+            <field name="ref">vat</field>
+        </record>
+        
+        <record id="it_ruc" model="l10n_latam.identification.type">
+            <field name="name">RUC</field>
+            <field name="sequence">20</field>
+            <field name="code">04</field>
+            <field name="is_vat">1</field>
+            <field name="ref">ruc</field>
+        </record>
+
+        <record id="it_rucpu" model="l10n_latam.identification.type">
+            <field name="name">RUC PUBLIC</field>
+            <field name="sequence">30</field>
+            <field name="code">04</field>
+            <field name="is_vat">0</field>
+            <field name="ref">ruc_pub</field>
+            <field name="active" eval="0"/>
+        </record>
+
+        <record id="it_rucpr" model="l10n_latam.identification.type">
+            <field name="name">RUC PRIVATE</field>
+            <field name="sequence">40</field>
+            <field name="code">04</field>
+            <field name="is_vat">0</field>
+            <field name="ref">ruc_pri</field>
+            <field name="active" eval="0"/>
+        </record>
+        
+        <record id="it_pass" model="l10n_latam.identification.type">
+            <field name="name">PASSPORT</field>
+            <field name="sequence">50</field>
+            <field name="code">06</field>
+            <field name="is_vat">1</field>
+            <field name="ref">passport</field>
+        </record>
+
+        <record id="it_fc" model="l10n_latam.identification.type">
+            <field name="name">FINAL CONSUMER</field>
+            <field name="sequence">60</field>
+            <field name="code">07</field>
+            <field name="is_vat">0</field>
+            <field name="ref">final_consumer</field>
+        </record>
+
+        <record id="it_li" model="l10n_latam.identification.type">
+            <field name="name">LICENSE</field>
+            <field name="sequence">70</field>
+            <field name="code">09</field>
+            <field name="is_vat">0</field>
+            <field name="ref">license</field>
+        </record>
+        
+        <record id="it_fid" model="l10n_latam.identification.type">
+            <field name="name">FOREIGN ID</field>
+            <field name="sequence">80</field>
+            <field name="code">06</field>
+            <field name="is_vat">0</field>
+            <field name="ref">foreign_id</field>
+            <field name="active" eval="0"/>
+        </record>
+	</data>
+	
+</odoo>

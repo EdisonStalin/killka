@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<openerp>
+    <data noupdate="0">
+
+	<!-- Bank -->
+		<record model="res.bank" id="bank_0790221806001">
+			<field name="name">Banco Amazonas S.A.</field>
+			<field name="bic">0790221806001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990379017001">
+			<field name="name">Banco Bolivariano S.A.</field>
+			<field name="bic">0990379017001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1790033295001">
+			<field name="name">Citibank N.A. Sucursal Ecuador</field>
+			<field name="bic">1790033295001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1090105244001">
+			<field name="name">Banco Capital S.A.</field>
+			<field name="bic">1090105244001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1390067506001">
+			<field name="name">Banco Comercial de Manabí S.A.</field>
+			<field name="bic">1390067506001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990459444001">
+			<field name="name">Banco Coopnacional S.A.</field>
+			<field name="bic">0990459444001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0992701374001">
+			<field name="name">Banco D-Miro S.A.</field>
+			<field name="bic">0992701374001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990049459001">
+			<field name="name">Banco de Guayaquil S.A.</field>
+			<field name="bic">0990049459001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1190002213001">
+			<field name="name">Banco de Loja S.A.</field>
+			<field name="bic">1190002213001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0790002350001">
+			<field name="name">Banco de Machala S.A.</field>
+			<field name="bic">0790002350001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1790368718001">
+			<field name="name">Banco de la Producción PRODUBANCO S.A.</field>
+			<field name="bic">1790368718001</field>
+			<field name="code">0036</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0190055965001">
+			<field name="name">Banco del Austro S.A.</field>
+			<field name="bic">0190055965001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990981930001">
+			<field name="name">Banco del Litoral S.A.</field>
+			<field name="bic">0990981930001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990005737001">
+			<field name="name">Banco del Pacífico S.A.</field>
+			<field name="bic">0990005737001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990048673001">
+			<field name="name">Banco Delbank S.A.</field>
+			<field name="bic">0990048673001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990247536001">
+			<field name="name">Banco Desarrollo de los Pueblos S.A.</field>
+			<field name="bic">0990247536001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1790864316001">
+			<field name="name">Banco General Rumiñahui S.A.</field>
+			<field name="bic">1790864316001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1790098354001">
+			<field name="name">Banco Internacional S.A.</field>
+			<field name="bic">1790098354001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990077185001">
+			<field name="name">Banco para la Asistencia Comunitaria Finca S.A.</field>
+			<field name="bic">0990077185001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1790010937001">
+			<field name="name">Banco Pichincha C.A.</field>
+			<field name="bic">1790010937001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1791269225001">
+			<field name="name">Banco Procredit S.A.</field>
+			<field name="bic">1791269225001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1791109384001">
+			<field name="name">Banco Solidario S.A.</field>
+			<field name="bic">1791109384001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1091748041001">
+			<field name="name">Banco Visionfund del Ecuador</field>
+			<field name="bic">1091748041001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_1790283380001">
+			<field name="name">Diners Club del Ecuador S.A. Sociedad</field>
+			<field name="bic">1790283380001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990511721001">
+			<field name="name">Financiera de la República S.A. FIRESA</field>
+			<field name="bic">0990511721001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_190055051001">
+			<field name="name">Sociedad Financiera del Austro S.A.</field>
+			<field name="bic">190055051001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0990388997001">
+			<field name="name">Sociedad Financiera Interamericana S.A.</field>
+			<field name="bic">0990388997001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+
+		<record model="res.bank" id="bank_0991235949001">
+			<field name="name">Sociedad Financiera Leasingcorp S.A.</field>
+			<field name="bic">0991235949001</field>
+			<field name="country" ref="base.ec"/>
+		</record>
+	</data>
+</openerp>

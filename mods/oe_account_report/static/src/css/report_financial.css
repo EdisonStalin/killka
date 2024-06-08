@@ -1,0 +1,18 @@
+.report_financial th:nth-child(n+2) {
+	padding-right: 10px !important;
+}
+
+.report_financial td:first-of-type {
+	width: 100%;
+}
+
+.report_financial td:last-of-type {
+	min-width: 120px;
+}
+
+.report_financial span.value {
+	display: inline-block;
+	padding-right: 5px;
+	text-align: right;
+	width: 100px;
+}

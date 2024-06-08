@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<record id="view_pickingtype_filter_inherit_oe_stock" model="ir.ui.view">
+	        <field name="name">stock.picking.type.filter.inherit.oe_stock</field>
+	        <field name="model">stock.picking.type</field>
+	        <field name="inherit_id" ref="stock.view_pickingtype_filter"/>
+	        <field name="arch" type="xml">
+	        	
+	        	<xpath expr="//filter[@name='inactive']" position="before">
+	        		<filter string="Incoming" name="code_incoming" domain="[('code','=','incoming')]"/>
+	        		<filter string="Internal transfer" name="code_internal" domain="[('code','=','internal')]"/>
+	        		<filter string="Outgoing" name="code_outgoing" domain="[('code','=','outgoing')]"/>
+	        		<group expand="0" string="Group By">
+	        			<filter string="Movement Type" name="group_by_action_type" domain="[]" context="{'group_by':'action_type'}"/>
+	        		</group>
+	        	</xpath>
+	        	
+	        </field>
+        </record>
+
+		<record id="stock_production_type_kanban_inherit_oe_stock" model="ir.ui.view">
+	        <field name="name">stock.picking.type.kanban.inherit.oe_stock</field>
+	        <field name="model">stock.picking.type</field>
+	        <field name="inherit_id" ref="stock.stock_picking_type_kanban"/>
+	        <field name="arch" type="xml">
+	        	
+	        	<xpath expr="//div[hasclass('o_kanban_manage_new')]/div[2]" position="attributes">
+	        		<attribute name="invisible">1</attribute>
+	        	</xpath>
+	        	
+	        </field>
+        </record>
+
+		<record id="vpicktree_inherit_oe_stock" model="ir.ui.view">
+	        <field name="name">stock.picking.tree.filter.inherit.oe_stock</field>
+	        <field name="model">stock.picking</field>
+	        <field name="inherit_id" ref="stock.vpicktree"/>
+	        <field name="arch" type="xml">
+	        
+            	<xpath expr="//field[@name='backorder_id']" position="after">
+            		<field name="action_type"/>
+            	</xpath>
+            	
+	        </field>
+	    </record>
+
+		<record id="view_picking_form_inherit_oe_stock" model="ir.ui.view">
+            <field name="name">stock.picking.form.inherit.oe_stock</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='backorder_id']" position="after">
+            		<field name="barcode" default_focus="1"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='origin']" position="after">
+            		<field name="guide_reference" attrs="{'readonly': [('state','in',['done','cancel'])]}"/>
+            	</xpath>
+            	
+            	<xpath expr="//notebook/page[@name='extra']/group/group[1]/field[@name='picking_type_id']" position="replace"/>
+            	
+            	<xpath expr="//notebook/page[@name='extra']/group/group[1]" position="inside">
+            		<field name="action_type" widget="radio" force_save="1"/>
+            	</xpath>
+            	
+            	<xpath expr="//group/group[1]/field[@name='location_id']" position="before">
+            		<field name="picking_type_id" attrs="{'readonly': [('state', '!=', 'draft')]}" options="{'no_create': True}"/>
+            	</xpath>
+            	
+            	<xpath expr="//group/group[1]/field[@name='location_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//group/group[1]/field[@name='location_dest_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+				
+            	<!-- Detailed Operations -->
+            	<xpath expr="//field[@name='move_line_ids']/tree" position="attributes">
+            		<attribute name="decoration-info">(state == 'done' and is_locked == True)</attribute>
+            	</xpath>
+
+            	<xpath expr="//field[@name='move_line_ids']/tree/field[@name='product_id']" position="after">
+            		<field name="type"/>
+            		<field name="barcode"/>
+            	</xpath>
+            	
+            	<!-- Operations -->
+            	<xpath expr="//field[@name='move_lines']/tree" position="attributes">
+            		<attribute name="decoration-info">(state == 'done' and is_locked == True)</attribute>
+            		<attribute name="decoration-muted">scrapped == True or state == 'cancel'</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='move_lines']/tree/field[@name='product_id']" position="after">
+            		<field name="type"/>
+            		<field name="barcode"/>
+            	</xpath>
+            	
+            </field>
+		</record>
+		
+		
+		<record id="action_picking_tree_all_tree1_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="act_window_id" ref="stock.action_picking_tree_all"/>
+        </record>
+
+        <record id="action_picking_tree_all_tree1_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock.view_picking_form"/>
+            <field name="act_window_id" ref="stock.action_picking_tree_all"/>
+        </record>
+
+		<record id="action_picking_form_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock.vpicktree"/>
+            <field name="act_window_id" ref="stock.action_picking_form"/>
+        </record>
+
+        <record id="action_picking_form_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock.view_picking_form"/>
+            <field name="act_window_id" ref="stock.action_picking_form"/>
+        </record>
+
+	</data>
+</odoo>

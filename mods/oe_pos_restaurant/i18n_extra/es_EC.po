@@ -1,0 +1,152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_pos_restaurant
+#	* pos_receipt_custom_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-02 00:49+0000\n"
+"PO-Revision-Date: 2022-12-02 00:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,help:pos_receipt_custom_template.field_pos_config_show_discount_in_receipt
+msgid "Check box if you want to display the discount of the orderline on the ticket"
+msgstr "Marque la casilla si desea mostrar el descuento de la línea de pedido en el ticket"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_config_custom_xml_receipt
+msgid "Custom PosBox Receipt"
+msgstr "Personalizar recibo de PosBox"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_config_custom_xml_receipt_id
+msgid "Custom PosBox Receipt Template"
+msgstr "Plantilla personalizada de recibo de PosBox"
+
+#. module: pos_receipt_custom_template
+#: model:ir.ui.view,arch_db:pos_receipt_custom_template.pos_custom_receipt_form_view
+#: model:ir.ui.view,arch_db:pos_receipt_custom_template.view_pos_config_form
+msgid "Custom Receipt"
+msgstr "Recibo personalizado"
+
+#. module: pos_receipt_custom_template
+#: model:ir.ui.view,arch_db:pos_receipt_custom_template.view_pos_config_form
+msgid "Custom Receipt Template"
+msgstr "Plantilla de recibo personalizado"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_config_custom_ticket
+#: model:ir.ui.view,arch_db:pos_receipt_custom_template.view_pos_config_form
+msgid "Custom Ticket"
+msgstr "Tiquete personalizado"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_config_custom_ticket_id
+#: model:ir.ui.view,arch_db:pos_receipt_custom_template.view_pos_config_form
+msgid "Custom Ticket Template"
+msgstr "Plantilla de tiquete"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_config_show_second_product_name_in_receipt
+msgid "Display Second Product Name"
+msgstr "Mostrar segundo nombre de producto"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_config_show_discount_in_receipt
+msgid "Display discount on the ticket"
+msgstr "Mostrar descuento en tiquete"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: pos_receipt_custom_template
+#: selection:pos.custom_receipt,type:0
+msgid "Order Receipt"
+msgstr "Recibo de orden"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model,name:pos_receipt_custom_template.model_pos_custom_receipt
+msgid "POS Custom Receipt/Ticket"
+msgstr "Personalizar tiquete"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model,name:pos_receipt_custom_template.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_qweb_template
+msgid "Qweb"
+msgstr "Qweb"
+
+#. module: pos_receipt_custom_template
+#: selection:pos.custom_receipt,type:0
+msgid "Receipt"
+msgstr "Recibo"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_product_product_second_product_name
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_product_template_second_product_name
+msgid "Second Product Name"
+msgstr "Nombre de producto"
+
+#. module: pos_receipt_custom_template
+#: selection:pos.custom_receipt,type:0
+msgid "Ticket"
+msgstr "Tiquete"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model.fields,field_description:pos_receipt_custom_template.field_pos_custom_receipt_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: pos_receipt_custom_template
+#: model:ir.model,name:pos_receipt_custom_template.model_pos_config
+msgid "pos.config"
+msgstr "Configuración POS "
+

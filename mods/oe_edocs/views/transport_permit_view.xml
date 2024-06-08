@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+		<!-- Remission Guide-->
+    	
+    	<record id="view_transport_permit_filter" model="ir.ui.view">
+            <field name="name">transport.permit.select</field>
+            <field name="model">transport.permit</field>
+            <field name="arch" type="xml">
+                <search string="Search Transport Permit">
+                    <field name="number" string="General" filter_domain="['|','|', ('name','ilike',self), ('origin', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                    <filter name="approved" string="Approved" domain="[('state', '=', 'approved')]"/>
+                    <separator/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id" string="Responsible" domain="[('share','=', False)]"/>
+                    <separator/>
+                    <filter domain="[('user_id','=',uid)]" help="My Transport Permit"/>
+                    <separator/>
+                    <filter string="My Activities" name="activities_my" domain="[('activity_ids.user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter string="Late Activities" name="activities_overdue"
+                        domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                        help="Show all records which has next action date is before today"/>
+                    <filter string="Today Activities" name="activities_today"
+                        domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Future Activities" name="activities_upcoming_all"
+                        domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
+                        ]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_partner_id" string="Partner" context="{'group_by':'partner_id'}"/>
+                        <filter string="Responsible" context="{'group_by':'user_id'}"/>
+                        <filter name="status" string="Status" context="{'group_by':'state'}"/>
+                        <separator/>
+                        <filter string="Transport Permit Date" context="{'group_by':'date_transport'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+    	
+    	
+		<record id="view_transport_permit_out_tree" model="ir.ui.view">
+            <field name="name">transport.permit.out.tree.electronics_documents</field>
+            <field name="model">transport.permit</field>
+            <field name="arch" type="xml">
+                <tree string="Transport Permit" decoration-info="state == 'draft'" decoration-muted="state == 'cancel'">
+                    <field name="name"/>
+                    <field name="partner_id" string="Driver"/>
+                    <field name="type_document_id" readonly="1"/>
+                    <field name="date_transport"/>
+                    <field name="date_due"/>
+                    <field name="license_plate"/>
+                    <field name="origin"/>
+                    <field name="message_state" string="SRI status"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_transport_permit_out_form" model="ir.ui.view">
+            <field name="name">account.invoice.form.electronics_documents</field>
+            <field name="model">transport.permit</field>
+            <field name="arch" type="xml">
+                <form string="Transport Permit" class="o_invoice_form">
+                <header>
+                    <button name="action_transport_sent" type="object" string="Send by Email" attrs="{'invisible':[('state', '!=', 'approved')]}" class="oe_highlight o_invoice_send" groups="base.group_user,oe_edocs.group_account_invoice_electronic"/>
+                    <button name="action_transport_approved" type="object" states="draft" string="Validate" class="oe_highlight o_invoice_validate" groups="account.group_account_invoice,oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_send_to_sri" string="Send to SRI" type="object" states="approved"
+						attrs="{'invisible': ['|', '|', ('received', '=', True), ('is_electronic', '=', False)]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_validate_to_sri" string="Validate with SRI" type="object" states="open,paid"
+						attrs="{'invisible': ['|', '|', '|', ('authorization', '=', True), ('received', '=', False), ('is_electronic', '=', False)]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_restore_doc" string="Restore" type="object" 
+						attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+                    <button name="action_transport_cancel" states="approved" string="Set to Cancel" type="object" groups="account.group_account_invoice,oe_edocs.group_account_invoice_electronic"/>
+                    <button name="action_transport_draft" string="Reset to Draft" type="object"
+                    	attrs="{'invisible': ['|', ('state', 'not in', ['cancel']), ('authorization', '=', True)]}"
+                    	groups="account.group_account_invoice,oe_edocs.group_account_invoice_electronic"/>
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,approved,cancel"/>
+                </header>
+                <div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('message_state', 'not in', ['RECIBIDA', 'EN PROCESO'])]}">
+	            	<bold><a class="alert-link" href="#outstanding" role="button">verify which document was authorized by SRI</a></bold>. Remember that the SRI has a period of 72 hours to authorize the document.
+	            </div>
+				<div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}">
+	            	Perform the electronic document<strong> cancellation</strong> on the <bold><a class="alert-link" href="https://srienlinea.sri.gob.ec/sri-en-linea/#/inicio/NAT" target="_blank" role="button">SRI</a></bold> platform
+	            </div>
+                <sheet string="Transport">
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <div name="title">
+						<div class="label label-warning" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('received', '=', False)]}">SRI: RECEIVED</div>
+						<div class="label label-success" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('authorization', '=', False)]}">SRI: <field name="message_state" readonly="1"/></div>
+	                    <h1 class="mt0">
+	                        <div attrs="{'invisible': [('sequence_number_next_prefix','!=',False)]}">
+	                            <field name="name" readonly="1" class="oe_inline" attrs="{'invisible': [('state','in',('draft',))]}"/>
+	                        </div>
+	                        <div  attrs="{'invisible': [('sequence_number_next_prefix','=',False)]}">
+	                            <field name="sequence_number_next_prefix" class="oe_inline"/>
+	                            <field name="sequence_number_next" class="oe_inline" readonly="1"/>
+	                        </div>
+	                    </h1>
+                    </div>
+                    <field name="type" invisible="1"/>
+                    <group>
+						<group>
+                           <field string="Driver" name="partner_id" context="{'show_address': 1, 'default_company_type': 'person',
+                               'default_driver': 1, 'default_customer': 1, 'default_is_validation_vat': 1}"
+                               options="{'always_reload': True, 'no_quick_create': True}" domain="[('driver', '=', True)]"/>
+                           <field name="address_starting"/>
+                           <field name="license_plate"/>
+                           <field name="number" required="1" attrs="{'readonly': ['|', ('manual_sequence','=',False),('state','!=','draft')]}"/>
+						</group>
+                        <group>
+                        	<field name="date_emission" required="1"/>
+                            <field name="user_id" required="1" groups="base.group_user"/>
+                            <field name="date_transport"/>
+	                        <field name="date_due"/>
+	                        <field name="received" invisible="1"/>
+							<field name="authorization" invisible="1"/>
+                        </group>
+                    </group>
+                    <field name="sent" invisible="1"/>
+                    <notebook colspan="4">
+                        <page string="Destinations">
+                            <field name="transport_permit_line_ids" nolabel="1" widget="one2many_list" mode="tree,form">
+                                <form string="Transport Permit Lines">
+                                	<group>
+                                		<group>
+		                                    <field name="addressee_id" required="1" options="{'no_quick_create': True}"
+				                                context="{'show_address': 1, 'default_company_type': 'person', 'default_customer': 1}"/>
+				                            <field name="destination_id" options="{'always_reload': True, 'no_quick_create': True}" required="1"
+				                                context="{'search_default_customer':1, 'show_address': 1, 'default_type': 'delivery',
+				                                    'default_company_type': 'person', 'default_parent_id': addressee_id, 
+				                                    'form_view_ref': 'oe_base.view_res_partner_simple_type_form', 'tree_view_ref': 'oe_base.view_res_partner_simple_type_form'}"/>
+		                                    <field name="invoice_id" options="{'no_create': True}" domain="[('type','=','out_invoice')]"/>
+		                                    <field name="tmpl_invoice_number" placeholder="000-000-000000" required="1"/>
+		                                    <field name="tmpl_invoice_date" required="1"/>
+                                		</group>
+                                		<group>
+                                			<field name="route"/>
+                        					<field name="reason" required="1"/>
+                        					<field name="customs_document"/>
+											<field name="code_destination_business"/>
+                                			<field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                		</group>
+                                	</group>
+                               		<notebook>
+                                		<page string="Shipping Detail">
+				                            <field name="transport_permit_line_details_ids" nolabel="1" widget="one2many_list" mode="tree">
+				                                <tree string="Transport Permit Lines" editable="bottom">
+				                                    <field name="sequence" widget="handle"/>
+				                                    <field name="transport_permit_id" invisible="1"/>
+				                                    <field name="transport_line_detail_id" invisible="1"/>
+				                                    <field name="product_id" options="{'no_create': True}" required="1"/>
+				                                    <field name="name" invisible="1"/>
+				                                    <field name="code_main"/>
+				                        			<field name="code_assistant"/>
+				                        			<field name="quantity"/>
+				                        			<field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+				                                </tree>
+				                            </field>
+			                            </page>
+		                            </notebook>
+                                </form>
+                                <tree string="Transport Permit Lines">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                    <field name="transport_permit_id" invisible="1"/>
+                                    <field name="invoice_id" options="{'no_create': True}" domain="[('type','=','out_invoice')]"/>
+                                    <field name="tmpl_invoice_number" placeholder="000-000-000000" required="1"/>
+                                    <field name="tmpl_invoice_date" required="1"/>
+                                    <field name="route"/>
+                        			<field name="reason" required="1"/>
+                                    <field name="addressee_id" required="1" options="{'no_quick_create': True}"
+		                                context="{'show_address': 1, 'default_company_type': 'person', 'default_customer': 1}"/>
+		                            <field name="destination_id" options="{'always_reload': True, 'no_quick_create': True}" required="1"
+		                                context="{'search_default_customer':1, 'show_address': 1, 'default_type': 'delivery',
+		                                    'default_company_type': 'person', 'default_parent_id': addressee_id, 
+		                                    'form_view_ref': 'oe_base.view_res_partner_simple_type_form', 'tree_view_ref': 'oe_base.view_res_partner_simple_type_form'}"/>
+									<field name="customs_document"/>
+									<field name="code_destination_business"/>
+                                </tree>
+                            </field>
+                            <group>
+                            	<group>
+			                        <div class="oe_inline">
+			                        	<h2><label for="line_info_ids" string="Additional Information"/></h2>
+										<field name="line_info_ids" nolabel="1" widget="one2many_list" mode="tree">
+					            			<tree string="Information Additional Lines" editable="bottom">
+					            				<field name="sequence" widget="handle"/>
+					            				<field name="transport_id" invisible="1"/>
+					            				<field name="name"/>
+					            				<field name="value_tag"/>
+					            			</tree>
+					            		</field>
+					            		<h2><label for="comment" string="Observations"/></h2>
+					            		<field name="comment" placeholder="Observations..."/>
+			                        </div>
+								</group>
+								<group class="oe_subtotal_footer oe_right">
+								</group>
+							</group>
+                        </page>
+                        <page string="Shipping Detail">
+                            <field name="transport_permit_line_details_ids" nolabel="1" widget="one2many_list" mode="tree"
+                            	context="{'default_transport_permit_id': active_id}">
+                                <tree string="Transport Permit Lines" editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="transport_permit_id" invisible="1"/>
+                                    <field name="transport_line_detail_id" invisible="1" options="{'no_create': True}"/>
+                                    <field name="product_id" required="1"/>
+                                    <field name="name" invisible="1"/>
+                                    <field name="code_main"/>
+                        			<field name="code_assistant"/>
+                        			<field name="quantity"/>
+                        			<field name="company_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Other Info" name="other_info">
+                            <group>
+								<group>
+									<field name="type_document_id" readonly="1"/>
+								    <field name="is_electronic" readonly="1"/>         
+                                    <field name="origin" groups="base.group_user" attrs="{'invisible': [('origin', '=', False)]}"/>
+                                </group>
+                                <group>
+									<field name="authorization_id" attrs="{'readonly': [('state', '!=', 'draft')]}"	required="1"			            		
+				            			context="{'form_view_ref': 'oe_account.view_authorization_form', 'tree_view_ref': 'oe_account.view_authorization_form'}"
+				            			options="{'no_create': True}"/>
+				            		<field name="manual_sequence" invisible="1"/>
+                                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                </group>
+                            </group>
+                        </page>
+						<page string="SRI Info" name="sri_info" attrs="{'invisible': [('is_electronic', '=', False)]}">
+							<header>
+								<button name="action_generate_xml" string="Generate XML" type="object" 
+									attrs="{'invisible': ['|',('is_electronic', '=', False), ('authorization', '=', False)]}"/>
+							</header>
+							<group>
+								<group>
+									<field name="received" attrs="{'invisible': [('is_electronic', '=', False)]}"/>
+									<field name="authorization" attrs="{'invisible': [('is_electronic', '=', False)]}"/>
+									<field name="authorization_number" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+									<field name="access_key" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+								</group>
+								<group>
+									<field name="environment" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+									<field name="authorization_date" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+									<field name="message_state" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+								</group>
+							</group>
+							<field name="edi_document_ids" attrs="{'invisible': [('edi_document_ids', '=', 0)]}">
+								<tree string="History lines" edit="false" create="false">
+									<field name="sequence" invisible="1"/>
+									<field name="company_id" invisible="1"/>
+									<field name="invoice_id" invisible="1"/>
+									<field name="code"/>
+									<field name="type"/>
+									<field name="date_action"/>
+									<field name="message"/>
+									<field name="add_information"/>
+								</tree>
+							</field>
+						</page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_transport_permit_out_form" model="ir.actions.act_window">
+            <field name="name">Transport Permit</field>
+            <field name="res_model">transport.permit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_transport'),('invoice_id','=',False)]</field>
+            <field name="context">{'type':'out_transport'}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a Transport Permit.
+              </p><p>
+				The transport permit facilitated and adjust the Collection of permits.
+              </p>
+            </field>
+        </record>
+
+    	<menuitem action="action_transport_permit_out_form" id="menu_action_transport_permit_out" parent="account.menu_finance_receivables_documents" sequence="3"/>
+
+    </data>
+</odoo>    

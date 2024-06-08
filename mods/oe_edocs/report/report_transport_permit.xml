@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<template id="report_electronic_transport_permit">
+			<t t-if="not o" t-set="o" t-value="doc"/>
+	
+	        <t t-if="not company">
+	            <!-- Multicompany -->
+	            <t t-if="company_id">
+	                <t t-set="company" t-value="company_id"/>
+	            </t>
+	            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+	                <t t-set="company" t-value="o.company_id.sudo()"/>
+	            </t>
+	            <t t-else="else">
+	                <t t-set="company" t-value="res_company"/>
+	            </t>
+	        </t>
+			
+			<div class="page">
+				<!-- Hearder -->
+				<div class="header o_background_header">
+					<div class="row">
+		                <div class="col-xs-5 row_left">
+		                	<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company._get_logo_report())"/>
+		                </div>
+		                <div class="col-xs-1"/>
+		                <div class="col-xs-6 row_right">
+		                    <ul class="list-unstyled">
+		                        <li>
+		                        	<h5>
+		                        		<strong><t t-if="company.country_id.vat_label" t-esc="company.country_id.vat_label" id="inv_tax_id_label"/>
+		                        		<t t-else="">Tax ID</t> </strong><span t-field="company.vat"/>
+		                        	</h5>
+		                        </li>
+		                        <li><h3><span t-field="o.type_document_id.short_name"/></h3></li>
+		                        <li t-if="o.state == 'cancel'"><h3> Cancelled</h3></li>
+		                        <li><h4><strong>No. </strong><span t-field="o.name"/></h4></li>
+		                    </ul>
+		                </div>
+					</div>
+				</div>
+				<br/>
+				<!-- Content -->
+				<div class="article o_report_layout_background">
+					<!-- Hearder 2 -->
+					<div class="row">
+						<div class="col-xs-5 row_left" name="company_address">
+							<ul class="list-unstyled">
+								<li><h6 t-field="company.name"/></li>
+								<li><h6 t-if="company.comercial_name" t-field="company.comercial_name"/></li>
+								<li>
+									<strong>Main Address: </strong>
+									<span class="company_address" t-esc="company.partner_id._display_address(without_company=True)"/>
+								</li>
+								<li t-if="o.authorization_id.establishment_id">
+									<strong>Second Address: </strong>
+									<span t-esc="o.authorization_id.establishment_id._display_address()"/>
+								</li>
+								<li>
+									<strong>Phone: </strong>
+									<span t-if="company.phone" t-field="company.phone"/>
+								</li>
+								<li>
+									<strong>Email: </strong>
+									<span t-if="company.email" t-field="company.email"/>
+								</li>
+								<li>
+									<strong>Obliged to keep accounting: </strong>
+									<span t-if="company.partner_id.check_accounting">SI</span>
+									<span t-if="not company.partner_id.check_accounting">NO</span>
+								</li>
+								<li>
+									<t t-if="company.partner_id.property_account_position_id.agent">
+										<strong>Withholding Agent Resolution No.: </strong>
+										<span style="font-size:8pt;">NAC-DNCRASC20-</span>
+										<span style="font-size:8pt;" t-field="company.partner_id.property_account_position_id.code"/>
+									</t>
+								</li>
+								<li>
+									<t t-if="company.partner_id.property_account_position_id.option in ('micro','rimpe')">
+										<span t-field="company.partner_id.property_account_position_id"/>
+									</t>
+								</li>
+								<li t-if="company.company_registry">
+									<strong>Special Taxpayer SI Resolution: </strong>
+									<span t-field="company.company_registry"/>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-1"/>
+						<div class="col-xs-6 row_right">
+							<ul t-if="o.is_electronic" class="list-unstyled">
+								<li t-if="o.authorization"><h4>Authorization</h4></li>
+								<li t-if="not o.authorization"><h4>Pre authorization</h4></li>
+								<li>
+									<strong>Number: </strong>
+									<span t-esc="o.access_key"/>
+								</li>
+								<li>
+									<strong>Date: </strong>
+									<t t-set="date_auth" t-value="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+									<t t-if="o.authorization_date">
+										<!--t t-set="date_auth" t-value="time.strftime('%d %b %Y %H:%M',time.strptime(o.authorization_date,'%d/%m/%Y %H:%M:%S'))"/-->
+										<span t-field="o.authorization_date"/>
+									</t>
+									<span t-esc="date_auth"/>
+								</li>
+								<li>
+									<strong>Ambient: </strong>
+									<span t-esc="o.environment"/>
+								</li>
+								<li>
+									<strong>Emission: </strong>
+									<span t-if="o.emission_code == '1'">NORMAL</span>
+									<span t-if="o.emission_code == '2'">INDISPONIBLE</span>
+								</li>
+								<li><strong>Access Key: </strong></li>
+								<li class="access_key">
+									<img t-if="o.access_key" t-att-src="'data:image/svg+xml;base64,%s' % to_text(o._get_barcode())"/>
+									<span t-if="o.access_key" t-field="o.access_key"/>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- Hearder 3 -->
+					<div class="row row_header">
+						<div class="col-xs-6">
+							<ul class="list-unstyled">
+								<li>
+									<strong>Business Name/Name: </strong>
+									<span t-field="o.partner_id.name" style="font-weight: bold;"/>
+								</li>
+								<li>
+									<strong>Emission Date: </strong>
+									<span t-field="o.date_emission" t-field-options='{"format": "d MMMM y"}'/>
+								</li>
+								<t t-set="partner_id" t-value="o.partner_id"/>
+								<li>
+									<strong>Address: </strong>
+									<span t-esc="partner_id._display_address(without_company=True)"/>
+								</li>
+								<li>
+									<strong>Phone: </strong>
+									<span t-if="partner_id.phone" t-field="partner_id.phone"/>
+									<span t-if="partner_id.mobile"> - </span>
+									<span t-if="partner_id.mobile" t-field="partner_id.mobile"/>
+								</li>
+								<li>
+									<strong>Email: </strong>
+									<span t-if="partner_id.email" t-field="partner_id.email"/>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-6">
+							<ul class="list-unstyled">
+								<li>
+									<strong>Identificar: (Driver)</strong>
+									<span t-field="o.partner_id.vat"/>
+								</li>
+								<li>
+									<strong>License Plate: </strong>
+									<strong t-field="o.license_plate"/>
+								</li>
+								<li>
+									<strong>Address Starting: </strong>
+									<span t-field="o.address_starting"/>
+								</li>
+								<li>
+									<strong>Date Initial: </strong>
+									<span t-field="o.date_transport" t-field-options='{"format": "d MMMM y"}'/>
+								</li>
+								<li>
+									<strong>Date Finish: </strong>
+									<span t-field="o.date_due" t-field-options='{"format": "d MMMM y"}'/>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<t t-foreach="o.transport_permit_line_ids" t-as="l">
+						<!-- Hearder 4 -->
+						<div class="row row_header">
+							<div class="col-xs-6">
+								<ul class="list-unstyled">
+									<li>
+										<strong>Destination: </strong>
+										<span t-field="l.destination_id.street"/>
+									</li>
+									<li>
+										<strong>Business name: </strong>
+										<span t-field="l.addressee_id.name"/>
+									</li>
+									<li>
+										<strong>Vat (addressee): </strong>
+										<span t-field="l.addressee_id.vat"/>
+									</li>
+									<li>
+										<strong>Reason Transfer: </strong>
+										<span t-field="l.reason"/>
+									</li>
+									<li>
+										<strong>Route: </strong>
+										<span t-field="l.route"/>
+									</li>
+								</ul>
+							</div>
+							<div class="col-xs-6">
+								<ul class="list-unstyled">
+									<li t-if="l.tmpl_invoice_number">
+										<strong>Voucher of Sale: Invoice </strong>
+										<span t-field="l.tmpl_invoice_number"/>
+									</li>
+									<li t-if="l.tmpl_invoice_date">
+										<strong>Invoice Date: </strong>
+										<span t-field="l.tmpl_invoice_date" t-field-options='{"format": "d MMMM y"}'/>
+									</li>
+									<li t-if="l.authorization_number">
+										<strong>Authorization Number: </strong>
+										<span t-field="l.authorization_number"/>
+									</li>
+									<li t-if="l.customs_document">
+										<strong>Customs Document: </strong>
+										<span t-field="l.customs_document"/>
+									</li>
+									<li t-if="l.code_destination_business">
+										<strong>Business Store Code: </strong>
+										<span t-field="l.code_destination_business"/>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</t>
+					<!-- Details -->
+					<table class="table table-condensed">
+						<thead>
+							<tr>
+								<th style="width:50px; vertical-align: text-top;">Quantity</th>
+								<th style="width:250px; vertical-align: text-top;">Description</th>
+								<th style="width:100px; vertical-align: text-top;">Code</th>
+								<th style="width:100px; vertical-align: text-top;">Auxiliary Code</th>
+							</tr>
+						</thead>
+						<tbody class="invoice_tbody">
+						   	<tr t-foreach="o.transport_permit_line_details_ids" t-as="li">
+								<td style="width:50px;">
+									<t t-set="quantity" t-value="li.quantity-int(li.quantity)"/>
+									<span t-if="quantity > 0" t-esc="'{0:,.2f}'.format(li.quantity)"/>
+									<span t-if="quantity == 0" t-esc="int(li.quantity)"/>
+									<!-- span t-field="l.uom_id" groups="product.group_uom"/-->
+								</td>
+						   		<td style="width:250px;"><span t-esc="li.product_id.name"/></td>
+						   		<td style="width:100px;"><span t-field="li.product_id.default_code"/></td>
+						   		<td style="width:100px;"><span t-field="li.code_assistant"/></td>
+						   	</tr>
+						</tbody>
+	   				</table>
+					<!-- Footer -->
+					<div class="clearfix">
+						<div id="total" class="row">
+		                    <div t-if="o.is_electronic" class="col-xs-6 row_left">
+			                    <h5>ADDITIONAL INFORMATION</h5>
+			                    <t t-if="len(o.line_info_ids) &gt; 0">
+									<t t-foreach="o.line_info_ids" t-as="line_info">
+										<ul class="list-unstyled">
+											<li>
+												<span style="color:#080808" t-esc="line_info.name"/>  <span style="text-align: right !important;" t-esc="line_info.value_tag"/>
+											</li>
+										</ul>
+									</t>
+			                    </t>
+			                    <span style="font-size:8.32pt;" t-field="o.comment" t-options='{"widget": "html"}'/>
+		                    </div>
+						</div>
+					</div>
+
+				</div>
+				
+				<t t-call="oe_edocs.footer_text"/>
+			</div>
+		</template>
+
+		<template id="report_transport_permit">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="oe_edocs.report_electronic_transport_permit" t-lang="o.partner_id.lang"/>
+				</t>
+			</t>
+		</template>
+
+	</data>
+</odoo>

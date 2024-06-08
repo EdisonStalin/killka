@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+		
+	    <record id="view_invoice_line_form_inherit_oe_account" model="ir.ui.view">
+	        <field name="name">account.invoice.line.form.inherit.oe_account</field>
+	        <field name="model">account.invoice.line</field>
+	        <field name="inherit_id" ref="account.view_invoice_line_form" />
+	        <field name="arch" type="xml">
+	        	
+	        	<xpath expr="//field[@name='discount']" position="attributes">
+	        		<attribute name="groups"></attribute>
+	        	</xpath>
+	        	
+				<xpath expr="//field[@name='discount']" position="before">
+            		<field name="type_discount" widget="radio"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='invoice_line_tax_ids']" position="after">
+					<field name="tax_tag_ids" widget="many2many_tags" string="Tax Grids" groups="oe_account.group_manager_form"
+                    	options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='currency_id']" position="after">
+					<field name="price_tax" groups="base.group_no_one" sum="Price Tax"/>
+					<field name="price_total" widget="monetary" groups="base.group_no_one" sum="Price Total"/>
+				</xpath>
+				
+				<xpath expr="//group/group[2]" position="after">
+					<group string="Statement">
+						<div class="oe_inline">
+						    <field name="statement_tax_line_ids">
+						        <tree editable="bottom" string="Statement">
+						            <field name="form_id"/>
+						            <field name="name"/>
+						            <field name="tax_group_id"/>
+						            <field name="base"/>
+						            <field name="percentage"/>
+						            <field name="amount"/>
+						            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+						            <field name="currency_id" invisible="1" force_save="1"/>
+						        </tree>
+						    </field>
+						</div>
+					</group>
+				</xpath>
+				
+	        </field>
+	    </record>
+		
+		<menuitem id="menu_board_control_journal" name="Control Panel" action="account.open_account_journal_dashboard_kanban"
+			parent="account.menu_board_journal_1" sequence="1"/>
+
+		<record id="view_account_invoice_filter_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.invoice.select.inherit.oe_account</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+            
+				<xpath expr="//field[@name='number']" position="before">
+            		<field name="name" string="General" filter_domain="['|','|','|','|', ('name','ilike',self), ('number','ilike',self), ('origin','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+            		<field name="refund_invoice_id" string="Source Document" filter_domain="[('origin', 'ilike', self)]"/>
+            		<field name="establishment_id"/>
+            	</xpath>
+
+				<xpath expr="//filter[5]" position="after">
+					<filter string="Late Transactions (7 days)" name="invoices_week"
+                            domain="['&amp;', ('date_invoice', '&lt;=', context_today().strftime('%Y-%m-%d')),
+                                     ('date_invoice', '&gt;=', (context_today()+datetime.timedelta(days=-7)).strftime('%Y-%m-%d'))
+                            ]"/>
+					<filter string="Late Transactions" name="invoices_overdue"
+                        domain="[('date_invoice', '=', (context_today()+datetime.timedelta(days=-1)).strftime('%Y-%m-%d'))]"
+                        help="Show all records which has next action date is before today"/>
+                    <filter string="Today Transactions" name="invoices_today"
+                        domain="[('date_invoice', '=', context_today().strftime('%Y-%m-%d'))]"/>
+				</xpath>
+				
+				<xpath expr="//filter[@name='group_by_partner_id']" position="after">
+					<filter name="group_by_type_document_id" string="Voucher type" context="{'group_by':'type_document_id'}"/>
+				</xpath>
+				
+            </field>
+		</record>
+
+
+		<!-- Invoice Purchase -->
+		
+        <record id="invoice_supplier_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.inherit.oe_account</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+            <field name="arch" type="xml">
+        	
+            	<xpath expr="//field[@name='reference']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='number']" position="replace">
+            		<field name="establishment_id"/>
+            		<field name="type_document_id"/>
+            		<field name="is_electronic"/>
+            		<field name="name" string="Number"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='origin']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='amount_total_signed']" position="before">
+            	    <field name="amount_no_oject_tax" invisible="1" sum="Total No Object"/>
+            		<field name="amount_no_apply_tax" invisible="1" sum="Total No Apply"/>
+            		<field name="amount_untaxed_0" widget="monetary" options="{'currency_field': 'currency_id'}"
+            			string="Tax Base 0" sum="Total without Taxes"/>
+            		<field name="amount_untaxed" string="Untaxed Amount" sum="Total with Taxes"/>
+            		<field name="amount_tax" string="Tax difference of 0%" sum="Total Taxes"/>
+            		<field name="amount_withhold" sum="Total Withhold" groups="account.group_account_manager"/>
+            	</xpath>
+            	
+            </field>
+		</record>
+    
+    
+		<record id="view_invoice_supplier_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.inherit.oe_account</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//sheet/div/label[1]" position="after">
+            		<div class="oe_button_box" name="button_box">
+						<button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_wiew_withholdings"
+							attrs="{'invisible': [('withholding_count', '=', 0)]}">
+							<field name="withholding_count" widget="statinfo" string="Withholdings"/>
+						</button>
+						<button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_open_refunds"
+							attrs="{'invisible': [('refund_count', '=', 0)]}">
+							<field name="refund_count" widget="statinfo" string="Refunds"/>
+						</button>
+						<button class="oe_stat_button" name="action_view_payments"
+							type="object" attrs="{'invisible': [('payment_ids','=',[])]}" icon="fa-dollar">
+							<field name="payment_ids" widget="statinfo" invisible="1"/>
+							<span class="o_stat_text"> Payments</span>
+						</button>
+					</div>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='%(account.action_account_invoice_payment)d']" position="attributes">
+            		<attribute name="context">{'default_method_id': method_id}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='action_invoice_draft']" position="after">
+            		<button name="action_payment_methods" type="object" string="Generate Payments Methods"
+            			context="{'refresh': True}" states="draft,open"/>
+            		<button name="action_create_withholding" type="object" string="Create Withholding" 
+            			class="oe_highlight o_invoice_validate" groups="account.group_account_invoice"
+            			attrs="{'invisible':['|',('type', 'in', ['out_refund', 'in_refund']),('state','not in',['open'])]}"/>
+            	</xpath>
+
+				<xpath expr="//label[2]" position="replace">
+					<div class="label label-warning" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('received', '=', False)]}">SRI: RECEIVED</div>
+					<div class="label label-success" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('authorization', '=', False)]}">SRI: <field name="message_state" readonly="1"/></div>
+				</xpath>
+
+            	<xpath expr="//field[@name='sequence_number_next']" position="attributes">
+            		<attribute name="readonly">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='number']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='sequence_number_next']" position="attributes">
+            		<attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            	</xpath>
+				
+				<xpath expr="//field[@name='partner_id']" position="attributes">
+					<attribute name="domain">[('supplier', '=', True), ('type', '!=', 'delivery')]</attribute>
+					<attribute name="context">{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1, 'default_company_type': 'company', 'default_is_validation_vat': 1}</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="id" invisible="1"/>
+				    <field name="number" required="1" attrs="{'readonly': ['|', ('manual_sequence','=',False),('state','!=','draft')]}"
+				    	context="{'default_number': number}"/>
+				    <field name="internal_number" invisible="1"/>
+            	</xpath>
+            	
+            	<xpath expr="//page[@name='other_info']/group/group[1]/field[@name='payment_term_id']" position="replace"/>
+            	
+            	<xpath expr="//field[@name='reference']" position="after">
+            		<label string="Invoice" attrs="{'invisible': [('type', 'in', ['in_invoice'])]}"/>
+                   	<div attrs="{'invisible': [('type', 'in', ['in_invoice'])]}" class="o_address_format">
+                   		<field name="tmpl_entity" placeholder="000" attrs="{'invisible': [('type', '=', 'in_invoice')], 
+                   			'required': [('type', '=', 'in_refund')], 'readonly': [('state', '!=', 'draft')]}" class="o_address_zip"/>-
+                   		<field name="tmpl_emission" placeholder="000" attrs="{'invisible': [('type', '=', 'in_invoice')], 
+                   			'required': [('type', '=', 'in_refund')], 'readonly': [('state', '!=', 'draft')]}" class="o_address_zip"/>-
+                   		<field name="tmpl_number" placeholder="000000000" attrs="{'invisible': [('type', '=', 'in_invoice')], 
+                   			'required': [('type', '=', 'in_refund')], 'readonly': [('state', '!=', 'draft')]}" class="o_address_city"/>
+                   	</div>
+                   	<field name="tmpl_invoice_date" string="Invoice Date"
+                   		attrs="{'invisible': [('type', 'in', ['in_invoice'])], 'required': [('type', '=', 'in_refund')], 'readonly': [('state', '!=', 'draft')]}"/>
+            		<field name="reason" attrs="{'invisible': [('type', 'in', ['out_invoice', 'in_invoice'])], 'required':[('type', '=', 'in_refund')]}"/>
+            		<field name="payment_term_id" options="{'no_create': True}"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='date_invoice']" position="before">
+            		<field name="establishment_id" options="{'no_create': True}"/>
+            		<field name="tax_support_id" attrs="{'readonly': [('state', '!=', 'draft')]}"
+            			required="1" options="{'no_create': True, 'no_open': True}"/>
+            		<field name="type_document_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" options="{'no_create': True, 'no_open': True}"/>
+				    <field name="is_electronic" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+					<field name="authorization_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"
+						domain="[('is_electronic', '=', is_electronic), ('type_document_id', '=', type_document_id), 
+						('type', '=', 'external'), ('partner_id', '=', partner_id), ('company_id', '=', company_id)]"      			
+            			context="{'default_type': 'external', 'default_type_document_id': type_document_id, 
+            			'default_partner_id': partner_id, 'default_is_electronic': is_electronic, 'default_manual_sequence': True,
+            			'default_date_withholding': date_invoice, 'form_view_ref': 'oe_account.view_authorization_external_form',
+            			'tree_view_ref': 'oe_account.view_authorization_form_external_tree'}"/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='fiscal_position_id']" position="before">
+				    <field name="is_refund" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            		<field name="manual_sequence" invisible="1"/>
+            		<field name="withholding_id" invisible="1"/>
+            	</xpath>
+            	
+            	<!-- List Details -->
+            	
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="before">
+            		<field name="type_discount" widget="radio"/>
+            	</xpath>
+
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
+					<attribute name="domain">[('type_tax_use', 'in', ['all','purchase']),
+						('tax_group_id.type','in',['iva','iva0','nobiva','exiva','ice'])]</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="after">
+					<field name="tax_tag_ids" widget="many2many_tags" width="0.5"
+						force_save="1" string="Tax Grids" groups="oe_account.group_manager_form"
+                    	options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="attributes">
+					<attribute name="widget">monetary</attribute>
+					<attribute name="options">{'currency_field': 'currency_id'}</attribute>
+            	</xpath>
+				
+				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="after">
+					<field name="price_tax" groups="base.group_no_one"/>
+					<field name="price_total" widget="monetary" groups="base.group_no_one"/>
+				</xpath>
+
+            	<xpath expr="//notebook/page[1]/group/group[1]/div[hasclass('oe_inline')]/field[@name='tax_line_ids']" position="before">
+            		<h2><label name="label_payment_term_id" for="payment_method_ids" string="Way to pays"/></h2>
+               		<field name="payment_method_ids" nolabel="1" widget="one2many" mode="tree,kanban"
+               			context="{'default_move_id': active_id, 'default_date_due': date_invoice,
+               				'default_amount': amount_total, 'default_currency_id': currency_id}">
+		       			<tree string="Payment Lines" editable="bottom" default_order="sequence, id">
+		       				<!-- Displayed fields -->
+		       				<field name="sequence" widget="handle"/>
+		       				<field name="invoice_id" invisible="1"/>
+		       				<field name="journal_id" invisible="1"/>
+		       				<field name="currency_id" invisible="1"/>
+		       				<field name="method_id" required="1" options="{'no_create': True}"/>
+		       				<field name="days" required="1"/>
+		       				<field name="date_due" required="1"/>
+		       				<field name="value"/>
+		       				<field name="value_amount" attrs="{'invisible': [('value','!=','percent')]}"/>
+		       				<field name="amount" required="1" sum="Amount Total to Pay"/>
+		       			</tree>
+						<kanban class="o_kanban_mobile">
+  								<field name="method_id"/>
+  								<field name="amount"/>
+						    <templates>
+						        <t t-name="kanban-box">
+						            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+						                <div class="row">
+						                    <div class="col-xs-5 text-muted">
+						                        <span><t t-esc="record.method_id.value"/></span>
+						                    </div>
+						                    <div class="col-xs-7 text-muted">
+						                    <span class="text-right"><t t-esc="record.amount.value"/></span>
+						                    </div>
+						                </div>
+						            </div>
+						        </t>
+							</templates>
+						</kanban>
+					</field>
+                    <h2><label name="label_line_info_ids" for="line_info_ids" string="Additional Information"/></h2>
+					<field name="line_info_ids" nolabel="1" widget="one2many_list" 
+            			mode="tree" context="{'default_invoice_id': active_id}">
+            			<tree string="Information Additional Lines" editable="bottom">
+            				<field name="sequence" widget="handle"/>
+            				<field name="invoice_id" invisible="1"/>
+            				<field name="name"/>
+            				<field name="value_tag"/>
+            			</tree>
+            		</field>               
+            	</xpath>
+				
+				<!-- Other -->
+				
+            	<xpath expr="//page[@name='other_info']/group/group[1]/field[@name='account_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//page[@name='other_info']/group/group[1]/field[@name='name']" position="attributes">
+	         		<attribute name="invisible">1</attribute>
+	         	</xpath>
+            	
+	         	<xpath expr="//page[@name='other_info']/group/group[2]/field[@name='fiscal_position_id']" position="before">
+	         		<field name="method_id" required="1" options="{'no_create': True, 'no_open': True}"/>
+	         		<field name="document_type"/>
+	         	</xpath>
+	         	
+	         	<xpath expr="//page[@name='other_info']/group/group[2]/field[@name='date']" position="attributes">
+	         		<attribute name="invisible">1</attribute>
+	         	</xpath>
+	         	
+				<xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount']" position="attributes">
+					<attribute name="widget">monetary</attribute>
+					<attribute name="options">{'currency_field': 'currency_id'}</attribute>
+				</xpath>
+
+				<xpath expr="//field[@name='tax_line_ids']/tree/field[@name='account_analytic_id']" position="after">
+					<field name="base"/>
+				</xpath>
+
+            	<xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount_total']" position="after">
+					<field name="tax_tag_ids" widget="many2many_tags" width="0.5"
+						force_save="1" string="Tax Grids" groups="oe_account.group_manager_form"
+                    	options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+            	</xpath>
+
+            	<xpath expr="//field[@name='amount_untaxed']" position="attributes">
+            		<attribute name="attrs">{'invisible': [('details_tax', '=', False)]}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='amount_tax']" position="attributes">
+            		<attribute name="attrs">{'invisible': [('details_tax', '=', False)]}</attribute>
+            	</xpath>
+
+            	<xpath expr="//field[@name='amount_untaxed']" position="before">
+            		<field name="details_tax" widget="boolean_toggle"/>
+            		<field name="subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="discount" widget="monetary" options="{'currency_field': 'currency_id'}"
+            			attrs="{'invisible': [('type','=','in_refund')]}"/>
+            		<field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_no_oject_tax" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            <field name="amount_no_apply_tax" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_untaxed_0" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_base_ice" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_ice" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            	</xpath>
+            	            	
+            	<xpath expr="//field[@name='amount_tax']" position="attributes">
+            		<attribute name="string">Tax difference of 0%</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='amount_tax']" position="after">
+            		<field name="amount_base_irbpnr" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_irbpnr" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="total_tax" attrs="{'invisible': [('details_tax', '=', True)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_tax_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_withhold" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_with" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('amount_with','=',0)]}"/>
+            		<field name="amount_penalty" widget="monetary" options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('amount_penalty','=',0)]}"/>
+            	</xpath>
+            	
+				<xpath expr="//page[@name='other_info']" position="after">
+					<page string="SRI Info" name="sri_info" attrs="{'invisible': [('is_electronic', '=', False)]}">
+						<group>
+							<group>
+								<field name="received"/>
+								<field name="authorization"/>
+								<field name="authorization_number" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+								<field name="access_key" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							</group>
+							<group>
+								<field name="environment" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+								<field name="authorization_date" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+								<field name="message_state" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							</group>
+						</group>
+					    <field name="statement_tax_line_ids">
+					        <tree string="Statement">
+					            <field name="form_id"/>
+					            <field name="name"/>
+					            <field name="tax_group_id"/>
+					            <field name="base"/>
+					            <field name="percentage"/>
+					            <field name="amount"/>
+					            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+					            <field name="currency_id" invisible="1" force_save="1"/>
+					        </tree>
+					    </field>
+					</page>
+					<page string="Refunds Data" name="refunds" attrs="{'invisible': [('is_refund', '=',False)]}">
+	                    <field name="account_refund_ids" context="{'default_type': 'refund',
+	                    	'default_journal_id': journal_id, 'default_account_id': account_id, 
+	                    	'form_view_ref': 'oe_account.refund_supplier_invoice_form', 'tree_view_ref': 'account.invoice_supplier_tree'}"
+	                    	domain="[('is_refund','=',True)]">
+	                        <tree string="Refund lines">
+	                            <field name="is_refund" invisible="1"/>
+	                            <field name="partner_id"/>
+	                            <field name="date_invoice"/>
+	                            <field name="is_electronic"/>
+	                            <field name="type_document_id"/>
+	                            <field name="access_key"/>
+	                            <field name="total_subtotal" sum="Subtotal without tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            			<field name="total_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+								<field name="total_untaxed_0" sum="Tax Base 0" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+			            		<field name="total_ice" sum="ICE" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                        	<field name="total_untaxed" sum="Untaxed Amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                            <field name="total_tax" sum="Tax difference of 0%" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+	                            <field name="refund_total" sum="Total" class="oe_subtotal_footer_separator"
+	                            	widget="monetary" options="{'currency_field': 'currency_id'}"/>
+								<field name="state" invisible="1"/>
+	                        </tree>
+	                    </field>
+					</page>
+				</xpath>
+            	
+            </field>
+		</record>
+		
+		
+		<record id="account.action_invoice_tree2" model="ir.actions.act_window">
+			<field name="domain" eval="[('type', '=', 'in_invoice'), ('document_type', '!=', 'clearance')]"/>
+		</record>
+
+    	<!-- Invoice Sale -->
+    	
+    	<record id="view_invoice_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.invoice.tree.inherit.oe_account</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='number']" position="replace">
+            		<field name="establishment_id"/>
+            		<field name="type_document_id"/>
+            		<field name="is_electronic"/>
+            		<field name="name" string="Number"/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='date_due']" position="attributes">
+            		<attribute name="groups">account.group_account_invoice</attribute>
+            	</xpath>
+
+            	<xpath expr="//field[@name='origin']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            		<attribute name="groups">account.group_account_invoice</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='amount_total_signed']" position="before">
+            		<field name="amount_no_oject_tax" invisible="1" sum="Total No Object"/>
+            		<field name="amount_no_apply_tax" invisible="1" sum="Total No Apply"/>
+            		<field name="amount_untaxed_0" widget="monetary" string="Tax Base 0"
+            			options="{'currency_field': 'currency_id'}" sum="Total without Taxes"/>
+            		<field name="amount_untaxed" string="Untaxed Amount" sum="Total with Taxes"/>
+            		<field name="amount_tax" string="Tax difference of 0%" sum="Total Taxes"/>
+            		<field name="amount_withhold" groups="account.group_account_manager" sum="Total Withhold"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='residual_signed']" position="attributes">
+            		<attribute name="groups">account.group_account_invoice</attribute>
+            	</xpath>
+            	
+            </field>
+		</record>
+    	
+    
+		<record id="view_invoice_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit.oe_account</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+            	
+				<xpath expr="//button[@name='invoice_print'][1]" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='invoice_print'][2]" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='%(account.action_account_invoice_payment)d']" position="attributes">
+            		<attribute name="context">{'default_method_id': method_id}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='action_invoice_draft']" position="after">
+            		<button name="action_payment_methods" type="object" string="Generate Payments Methods"
+            			context="{'refresh': True}" states="draft,open"/>
+            		<button name="action_create_withholding" type="object" string="Create Withholding" 
+            			class="oe_highlight o_invoice_validate" groups="account.group_account_invoice"
+            			attrs="{'invisible':['|', '|', ('type', 'in', ['out_refund', 'in_refund']), ('state','not in',['open']), ('is_refund','=',True)]}"/>
+            	</xpath>
+
+				<xpath expr="//div[@name='button_box']" position="inside">
+					<button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_wiew_withholdings"
+						attrs="{'invisible': [('withholding_count', '=', 0)]}">
+						<field name="withholding_count" widget="statinfo" string="Withholdings"/>
+					</button>
+            	</xpath>
+
+            	<xpath expr="//h1/div/field[@name='number']" position="replace">
+            		<field name="name" readonly="1" class="oe_inline"/>
+            	</xpath>
+            	
+            	<xpath expr="//h1/div/field[@name='sequence_number_next']" position="attributes">
+            		<attribute name="readonly">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='partner_id']" position="before">            		
+				    <field name="id" invisible="1"/>
+            	</xpath>
+
+            	<xpath expr="//field[@name='partner_id']" position="attributes">
+            		<attribute name="domain">[('customer', '=', True), ('type', 'in', ['contact'])]</attribute>
+					<attribute name="context">{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company', 'default_is_validation_vat': 1}</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='payment_term_id']" position="attributes">
+					<attribute name="options">{'no_create': True}</attribute>
+				</xpath>
+				
+            	<xpath expr="//field[@name='partner_id']" position="after">
+            		<label string="Invoice" attrs="{'invisible': [('type', 'in', ['out_invoice'])]}"/>
+                   	<div attrs="{'invisible': [('type', 'in', ['out_invoice'])]}" class="o_address_format">
+                   		<field name="tmpl_entity" placeholder="000" attrs="{'required': [('type', '=', 'out_refund')]}" class="o_address_zip"/>-
+                   		<field name="tmpl_emission" placeholder="000" attrs="{'required': [('type', '=', 'out_refund')]}" class="o_address_zip"/>-
+                   		<field name="tmpl_number" placeholder="000000000" attrs="{'required': [('type', '=', 'out_refund')]}" class="o_address_city"/>
+                   	</div>
+                   	<field name="tmpl_invoice_date" attrs="{'invisible': [('type', 'in', ['out_invoice'])], 'required': [('type', '=', 'out_refund')], 'readonly': [('state', '!=', 'draft')]}"/>
+                   	<field name="number" required="1" attrs="{'readonly': ['|', ('manual_sequence','=',False),('state','!=','draft')]}"/>
+            	</xpath>
+
+            	<xpath expr="//field[@name='payment_term_id']" position="after">
+            		<field name="reason" attrs="{'invisible': [('type', 'in', ['out_invoice', 'in_invoice'])], 'required':[('type', '=', 'out_refund')]}"/>
+            	</xpath>
+            	     	
+            	<xpath expr="//field[@name='date_invoice']" position="before">
+            		<field name="establishment_id" options="{'no_create': True}"/>
+            		<field name="type_document_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"
+            			domain="[('type', '=', 'out')]" options="{'no_create': True, 'no_open': True}" groups="account.group_account_manager"/>
+				    <field name="is_electronic" attrs="{'readonly': [('state', '!=', 'draft')]}"/>            		
+            		<field name="authorization_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"
+            			domain="[('is_electronic', '=', is_electronic), ('type_document_id', '=', type_document_id), ('type', '=', 'internal')]"           			
+            			options="{'no_create': True, 'no_edit': True}"
+            			context="{'default_is_electronic': is_electronic, 'form_view_ref': 'oe_account.view_authorization_form', 'tree_view_ref': 'oe_account.view_authorization_form_tree'}"/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='move_id']" position="before">
+					<field name="is_refund" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            		<field name="manual_sequence" invisible="1"/>
+            		<field name="document_type"/>
+            	</xpath>
+            	
+            	<!-- List Details -->
+            	
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="before">
+            		<field name="type_discount" widget="radio"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
+					<attribute name="domain">[('type_tax_use', 'in', ['sale','all']),
+						('tax_group_id.type','in',['iva','iva0','nobiva','exiva','ice'])]</attribute>
+					<attribute name="style">"max-width: 20%%"</attribute>
+            	</xpath>
+
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="after">
+					<field name="tax_tag_ids" widget="many2many_tags" width="0.5"
+						force_save="1" string="Tax Grids" groups="oe_account.group_manager_form"
+                    	options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+            	</xpath>
+
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="attributes">
+					<attribute name="widget">monetary</attribute>
+					<attribute name="options">{'currency_field': 'currency_id'}</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="after">
+					<field name="price_tax" groups="base.group_no_one" sum="Price Tax"/>
+					<field name="price_total" widget="monetary" groups="base.group_no_one" sum="Price Total"/>
+				</xpath>
+            	
+				<!-- Kanban Details -->
+
+				<xpath expr="//field[@name='invoice_line_ids']/kanban/field[@name='product_id']" position="after">
+            		<field name="type_discount"/>
+            		<field name="discount"/>
+            	</xpath>
+            	
+            	<xpath expr="//notebook/page[1]/field[@name='comment']" position="replace"/>
+            	
+            	<xpath expr="//notebook/page[1]/group[hasclass('oe_subtotal_footer')]" position="replace">
+            		<group>
+	                    <group>
+	                        <div class="oe_inline">
+	                        	<h2><label name="label_line_info_ids" for="line_info_ids" string="Additional Information"/></h2>
+								<field name="line_info_ids" nolabel="1" widget="one2many_list" 
+			            			mode="tree" context="{'default_invoice_id': active_id}">
+			            			<tree string="Information Additional Lines" editable="bottom">
+			            				<field name="sequence" widget="handle"/>
+			            				<field name="invoice_id" invisible="1"/>
+			            				<field name="name"/>
+			            				<field name="value_tag"/>
+			            			</tree>
+			            		</field>
+								<h2><label name="label_payment_method_ids" for="payment_method_ids" string="Way to pays"/></h2>
+	                 			<field name="payment_method_ids" nolabel="1" widget="one2many" mode="tree,kanban"
+	                 				context="{'default_move_id': active_id, 'default_amount': amount_total, 'default_currency_id': currency_id}">
+					       			<tree string="Payment Lines" editable="bottom" default_order="sequence, id">
+					       				<!-- Displayed fields -->
+					       				<field name="sequence" widget="handle"/>
+					       				<field name="invoice_id" invisible="1"/>
+					       				<field name="journal_id" invisible="1"/>
+					       				<field name="currency_id" invisible="1"/>
+					       				<field name="method_id" required="1" options="{'no_create': True}"/>
+					       				<field name="days" required="1"/>
+					       				<field name="date_due" required="1"/>
+					       				<field name="value"/>
+					       				<field name="value_amount" attrs="{'invisible': [('value','!=','percent')]}"/>
+					       				<field name="amount" required="1" sum="Amount Total to Pay"/>
+					       			</tree>
+									<kanban class="o_kanban_mobile">
+	    								<field name="method_id"/>
+	    								<field name="amount"/>
+									    <templates>
+									        <t t-name="kanban-box">
+									            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+									                <div class="row">
+									                    <div class="col-xs-5 text-muted">
+									                        <span><t t-esc="record.method_id.value"/></span>
+									                    </div>
+									                    <div class="col-xs-7 text-muted">
+									                    <span class="text-right"><t t-esc="record.amount.value"/></span>
+									                    </div>
+									                </div>
+									            </div>
+									        </t>
+										</templates>
+									</kanban>
+	       						</field>
+			            		<h2><label name="label_comment" for="comment" string="Observations"/></h2>
+			            		<field name="comment" placeholder="Observations..."/>
+	                        </div>
+						</group>
+						<group class="oe_subtotal_footer oe_right">
+							<field name="details_tax" widget="boolean_toggle"/>
+							<!--div name="tip_div" class="o_row">
+		           				<label for="tip_rate"/>
+		           				<field name="tip_rate" class="oe_inline"/>
+		           				<label string="%" class="oe_inline"/>
+		            		</div-->
+		            		<!--field name="apply_tip" widget="boolean_toggle" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/-->
+		            		<field name="subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="discount" widget="monetary" options="{'currency_field': 'currency_id'}"
+		            			attrs="{'invisible': [('type','=','out_refund')]}"/>
+		            		<field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_no_oject_tax" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_no_apply_tax" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_untaxed_0" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_base_ice" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_ice" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        	<field name="amount_untaxed" attrs="{'invisible': [('details_tax', '=', False)]}"/>
+                            <field name="amount_tax" attrs="{'invisible': [('details_tax', '=', False)]}" string="Tax difference of 0%"/>
+                            <field name="amount_base_irbpnr" attrs="{'invisible': [('details_tax', '=', False)]}"/>
+		            		<field name="amount_irbpnr" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="total_tax" attrs="{'invisible': [('details_tax', '=', True)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_tax_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="total_tip" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+		            		<field name="amount_withhold" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                            <field name="payments_widget" colspan="2" nolabel="1" widget="payment"/>
+                            <field name="residual" class="oe_subtotal_footer_separator" attrs="{'invisible': [('state', '=', 'draft')]}"
+                            	groups="account.group_account_invoice"/>
+                            <field name="reconciled" invisible="1"/>
+                            <field name="outstanding_credits_debits_widget" colspan="2" nolabel="1" widget="payment" attrs="{'invisible': [('state', 'not in', 'open')]}"
+                            	groups="account.group_account_invoice"/>
+                    	</group>
+					</group>	                        
+            	</xpath>
+            	
+            	<!-- Other Info -->
+            	
+            	<xpath expr="//page[@name='other_info']/group/group[1]/field[@name='account_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+	         	<xpath expr="//page[@name='other_info']/group/group[1]/field[@name='fiscal_position_id']" position="before">
+	         		<field name="method_id" required="1" options="{'no_create': True, 'no_open': True}"/>
+	         	</xpath>
+	         	
+				<xpath expr="//page[@name='other_info']/group/group[2]/field[@name='name']" position="attributes">
+	         		<attribute name="invisible">1</attribute>
+	         	</xpath>
+	         	
+	         	<xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount_total']" position="before">
+	         		<field name="base"/>
+	         	</xpath>
+
+            	<xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount_total']" position="after">
+					<field name="tax_tag_ids" widget="many2many_tags" width="0.5"
+						force_save="1" string="Tax Grids" groups="oe_account.group_manager_form"
+                    	options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+            	</xpath>
+
+	         	<!-- Refunds -->
+	         	<xpath expr="//notebook/page[@name='other_info']" position="after">
+					<page string="Refunds Data" name="refunds" attrs="{'invisible': [('is_refund', '=', False)]}">
+						<field name="refund_ids" domain="[('type', '=', 'in_invoice'), ('is_refund','=',True), ('state', '!=', 'draft')]" 
+       						context="{'form_view_ref': 'account.invoice_supplier_form', 'tree_view_ref': 'account.invoice_supplier_tree'}">
+       						<tree>
+	       						<field name="partner_id" string="Supplier"/>
+	       						<field name="name"/>
+	       						<field name="date_invoice"/>
+	       						<field name="type_document_id"/>
+	       						<field name="authorization_number"/>
+	       						<field name="amount_untaxed_0"/>
+	       						<field name="amount_untaxed"/>
+	       						<field name="amount_ice"/>
+	       						<field name="amount_total"/>	       						
+	       						<field name="state"/>
+	       						<field name="type" invisible="1"/>
+       						</tree>
+       					</field>
+					</page>
+					<page string="SRI" name="sri_info" attrs="{'invisible': [('is_electronic', '=', False)]}">
+					    <field name="statement_tax_line_ids">
+					        <tree string="Statement">
+					            <field name="form_id"/>
+					            <field name="name"/>
+					            <field name="tax_group_id"/>
+					            <field name="base"/>
+					            <field name="percentage"/>
+					            <field name="amount"/>
+					            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+					            <field name="currency_id" invisible="1" force_save="1"/>
+					        </tree>
+					    </field>
+					</page>
+				</xpath>
+	         	
+            </field>
+		</record>
+
+
+    	<!-- Inherit: Form Invoice Sale  -->
+    	
+		<record id="invoice_form_cancel_inherit_oe_account" model="ir.ui.view">
+            <field name="name">invoice.form.cancel.inherit.oe_account</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>
+            <field name="arch" type="xml">
+				
+				<xpath expr="//button[@name='action_invoice_cancel']" position="attributes">
+					<attribute name="attrs">{'invisible': ['|', ('type', '=', 'out_refund')]}</attribute>
+				</xpath>
+				
+                <xpath expr="//button[@name='action_invoice_draft']" position="before">
+                    <button name="action_invoice_cancel" type="object" attrs="{'invisible':['|', ('state', 'not in', ('open')), ('type', '!=', 'out_refund')]}"
+                    	string="Cancel Refund" groups="account.group_account_invoice"/>
+                </xpath>
+                
+            </field>
+        </record>
+
+
+        <!-- Custom reports sale (aka filters) -->
+		<record id="filter_invoice_sale_by_receivable" model="ir.filters">
+            <field name="name">Sales by receivable</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','open']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'residual',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree1"/>
+        </record>
+
+		<record id="filter_invoice_sale_by_paid" model="ir.filters">
+            <field name="name">Paid sales</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','paid']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree1"/>
+        </record>
+
+        <record id="filter_invoice_sale_by_month" model="ir.filters">
+            <field name="name">Sales by month</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree1"/>
+        </record>
+
+        <record id="filter_invoice_sale_by_week" model="ir.filters">
+            <field name="name">Sales by week</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:week'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice:week'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:week']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree1"/>
+        </record>
+
+        <record id="filter_invoice_sale_by_day" model="ir.filters">
+            <field name="name">Sales by daily</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:day'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'line',
+            	'graph_groupbys': ['date_invoice:day'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:day']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree1"/>
+        </record>
+
+        <!-- Custom reports sale refund (aka filters) -->
+		<record id="filter_invoice_sales_returns_by_receivable" model="ir.filters">
+            <field name="name">Sales returns by receivable</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','open']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'residual',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_out_refund"/>
+        </record>
+
+		<record id="filter_invoice_sales_returns_by_paid" model="ir.filters">
+            <field name="name">Sales returns paid</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','paid']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_out_refund"/>
+        </record>
+
+        <record id="filter_invoice_sale_returns_by_month" model="ir.filters">
+            <field name="name">Sales returns by month</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month', 'state'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice', 'state'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_out_refund"/>
+        </record>
+
+		<!-- Custom reports purchase (aka filters) -->
+		<record id="filter_invoice_purchase_by_payable" model="ir.filters">
+            <field name="name">Purchase by payable</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','open']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree2"/>
+        </record>
+
+		<record id="filter_invoice_paid_purchase" model="ir.filters">
+            <field name="name">Paid purchases</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','paid']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree2"/>
+        </record>
+
+        <record id="filter_invoice_purchase_by_month" model="ir.filters">
+            <field name="name">Purchase by month</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month', 'state'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice', 'state'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree2"/>
+        </record>
+
+        <record id="filter_invoice_purchase_by_week" model="ir.filters">
+            <field name="name">Purchase by week</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:week'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice:week'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:week']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree2"/>
+        </record>
+
+        <record id="filter_invoice_purchase_by_day" model="ir.filters">
+            <field name="name">Purchase by daily</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:day'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'line',
+            	'graph_groupbys': ['date_invoice:day'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:day']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_tree2"/>
+        </record>
+
+		<!-- Custom reports purchase refund (aka filters) -->
+		<record id="filter_invoice_purchase_returns_by_payable" model="ir.filters">
+            <field name="name">Purchase returns by payable</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','open']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_in_refund"/>
+        </record>
+
+		<record id="filter_invoice_purchase_returns_paid" model="ir.filters">
+            <field name="name">Purchase returns paid</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[['state','=','paid']]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_in_refund"/>
+        </record>
+
+        <record id="filter_invoice_purchase_returns_by_month" model="ir.filters">
+            <field name="name">Purchase returns by month</field>
+            <field name="model_id">account.invoice</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[]</field>
+            <field name="context">{
+            	'group_by': ['date_invoice:month', 'state'],
+            	'graph_measure': 'amount_total',
+            	'graph_mode': 'bar',
+            	'graph_groupbys': ['date_invoice', 'state'],
+            	'orderedBy': [],
+            	'pivot_measures': ['__count', 'subtotal', 'amount_discount', 'amount_subtotal','amount_untaxed_0', 'amount_untaxed','total_tax', 'total', 'amount_withhold', 'amount_total', 'residual'],
+            	'pivot_column_groupby': [],
+            	'pivot_row_groupby': ['date_invoice:month']}
+            </field>
+            <field name="action_id" ref="account.action_invoice_in_refund"/>
+        </record>
+
+    </data>
+</odoo>   

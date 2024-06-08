@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+	<template id="assets_backend_import_oe_account_import" name="oe_account_import import assets_backend" inherit_id="base_import.assets_backend">
+		<xpath expr="." position="inside">
+			
+			<script type="text/javascript" src="/oe_account_import/static/src/js/import_action.js"></script>
+			
+		</xpath>
+	</template>
+	
+</odoo>

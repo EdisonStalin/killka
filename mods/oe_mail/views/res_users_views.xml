@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+		
+		<!-- Update Preferences form !-->
+        <record id="view_users_form_simple_modif_mail_inherit_oe_mail" model="ir.ui.view">
+            <field name="name">res.users.preferences.form.mail.inherit.oe_mail</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="mail.view_users_form_simple_modif_mail"/>
+            <field name="arch" type="xml">
+            <data>
+	            <field name="notification_type" position="attributes">
+	                <attribute name="invisible">1</attribute>
+	            </field>
+            </data>
+            </field>
+        </record>
+		
+		<!-- Update user form !-->
+        <record id="view_users_form_mail_inherit_oe_mail" model="ir.ui.view">
+            <field name="name">res.users.form.mail.inherit.oe_mail</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="mail.view_users_form_mail"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="notification_type" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </field>
+                    <field name="alias_id" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </field>
+                </data>
+            </field>
+        </record>
+		
+	</data>
+</odoo>	

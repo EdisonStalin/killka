@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+	
+		<record id="group_stock_user_basic" model="res.groups">
+	        <field name="name">User Basic</field>
+	        <field name="category_id" ref="base.module_category_warehouse_management"/>
+	        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+	    </record>
+	
+	</data>
+</odoo>

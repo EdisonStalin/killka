@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+        <record model ="ir.ui.view" id="view_import_document_wizard">
+           <field name="name">import.document.wizard.form</field>
+           <field name="model">import.document.wizard</field>
+           <field name="arch" type="xml">
+               <form string="Import Wizard">
+                   <!--separator string="This wizard will import journal items from selected excel file. Make sure you have selected .xls/xlsx file..."/-->
+                   <group>
+                   		<group>
+                   			<field name="type" widget="radio" options="{'horizontal': true}"/>
+                   		</group>
+                       <group>
+                            <field  name="file" class="oe_inline" filename="datas_fname"
+                            	attrs="{'invisible': [('type','!=','import')], 'required': [('type','=','import')]}"/>
+                            <field name="datas_fname" class="oe_inline" readonly="1"
+                            	attrs="{'invisible': [('type','!=','import')]}"/>
+                       </group>
+                   </group>
+                   <footer>
+                        <button string="Import" name="action_document_import" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                   </footer>
+               </form>
+           </field>
+       </record>
+       
+       <record model="ir.actions.act_window" id="action_view_import_document_wizard">
+           <field name="name">Document Import</field>
+           <field name="res_model">import.document.wizard</field>
+           <field name="view_mode">form</field>
+           <field name="target">new</field>
+       </record>
+       
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<autorizacion id="FACTURA_COMERCIAL_NEGOCIABLE">
+  <estado>{{ estado }}</estado>
+  <numeroAutorizacion>{{ numeroAutorizacion }}</numeroAutorizacion>
+  <fechaAutorizacion>{{ fechaAutorizacion }}</fechaAutorizacion>
+  <ambiente>{{ ambiente }}</ambiente>
+  <detalleConfirmacion>
+  	<textoCompromiso>
+	<![CDATA[{{ textoCompromiso }}]]>
+  	</textoCompromiso>
+  <claveAccesoFactura>{{ claveAccesoFactura }}</claveAccesoFactura>
+  <valorTotalFactura>{{ valorTotalFactura }}</valorTotalFactura>
+  <valorNegociableFactura>{{ valorNegociableFactura }}</valorNegociableFactura>
+  <fechasComprometidas>
+  	<fechaPago>{{ fechaPago }}</fechaPago>
+  </fechasComprometidas>
+  </detalleConfirmacion>
+  <comprobante><![CDATA[{{ comprobante }}]]></comprobante>
+</autorizacion>

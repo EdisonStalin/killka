@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<!-- Invoice -->
+
+	<!--template id="portal_my_home_menu_invoice" inherit_id="account.portal_my_home_menu_invoice">
+		<xpath expr="//li[1]" position="after">
+            <t t-esc="invoice.name"/>
+		</xpath>
+	</template-->
+	
+	<template id="portal_my_invoices" inherit_id="account.portal_my_invoices">
+		
+		<xpath expr="//h3" position="replace">
+			<form action="/my/invoices" id="search_document" method="post">
+				<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+				<div class="row">
+					<div class="col-md-12">
+						<div t-if="error_message" class="alert alert-danger">
+						    <t t-foreach="error_message" t-as="err"><t t-esc="err"/><br /></t>
+						</div>
+	                    <div t-attf-class="form-group #{error.get('vat') and 'has-error' or ''} col-lg-6">
+	                        <label class="control-label label-optional" for="vat">VAT Number</label>
+	                        <!-- DO NOT FORWARD-PORT! ONLY FOR v11 -->
+	                        <input type="text" name="vat" class="form-control" t-att-value="vat"/>
+	                    </div>
+	                    <button type="submit" class="btn btn-primary pull-right mb32 ">
+	                        Search
+	                        <span class="fa fa-search" />
+	                    </button>
+					</div>
+				</div>
+			</form>
+		</xpath>
+		
+		<xpath expr="//table[hasclass('o_portal_my_doc_table')]/thead/tr/th[1]" position="after">
+			<th>VAT</th>
+			<th>Name</th>
+		</xpath>
+
+		<xpath expr="//table[hasclass('o_portal_my_doc_table')]/thead/tr/th[7]" position="after">
+			<th>Amount Total</th>
+		</xpath>
+
+		<xpath expr="//table[hasclass('o_portal_my_doc_table')]/thead/tr/th[9]" position="after">
+			<th>PDF</th>
+		</xpath>
+		
+		<xpath expr="//table[hasclass('o_portal_my_doc_table')]/t/tr/td[1]" position="after">
+			<td><span t-field="invoice.partner_id.vat"/></td>
+			<td><span t-field="invoice.partner_id.name"/></td>
+		</xpath>
+		
+		<xpath expr="//table[hasclass('o_portal_my_doc_table')]/t/tr/td[7]" position="after">
+			<td><span t-field="invoice.amount_total"/></td>
+		</xpath>
+		
+		<xpath expr="//table[hasclass('o_portal_my_doc_table')]/t/tr/td[9]" position="after">
+			<td>
+			    <a target="_blank" t-att-href="'/my/invoices/pdf/%s?%s' % (invoice.id, keep_query())" style="width:20%;" class="pull-right" title="Download PDF">
+			        <i class="fa fa-download fa-2x" aria-hidden="true"/>
+			    </a>
+			</td>
+		</xpath>
+
+	</template>
+
+	<template id="portal_invoice_report" inherit_id="account.portal_invoice_report">
+
+		<xpath expr="//div[@t-if='invoice.name']" position="replace"/>
+
+		<xpath expr="//div[@t-if='invoice.date_invoice']" position="attributes">
+			<attribute name="class">col-xs-3</attribute>
+		</xpath>
+
+		<xpath expr="//span[@t-field='t.tax_id.description']" position="replace">
+        	<span t-field="t.tax_id.name"/>
+        </xpath>
+
+		<xpath expr="//div[@id='total']/div[hasclass('col-xs-4')]" position="attributes">
+			<attribute name="class">col-xs-6 pull-right</attribute>
+		</xpath>
+
+		<xpath expr="//span[@t-field='invoice.comment']" position="attributes">
+        	<attribute name="t-options">{'widget': 'html'}</attribute>
+        </xpath>
+	</template>
+	
+	<!-- Withhold -->
+	
+	<template id="portal_my_home_menu_withholding" name="Portal layout : withholding menu entries" inherit_id="portal.portal_layout" priority="30">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'withholding'" class="active">
+                <a t-if="withholding" t-attf-href="/my/withholdings?{{ keep_query() }}">Withholdings</a>
+                <t t-else="">Invoices</t>
+            </li>
+            <li t-if="withholding">
+                <t t-esc="withholding.name"/>
+            </li>
+        </xpath>
+    </template>
+	
+	<template id="portal_my_home_withholding" name="Portal My Home : withholding entries" inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//ul[hasclass('o_portal_docs')]" position="inside">
+            <li t-if="withholding_count" class="list-group-item">
+                <span class="badge" t-esc="withholding_count"/>
+                <a href="/my/withholdings">Withholdings</a>
+            </li>
+        </xpath>
+    </template>
+	
+	<template id="portal_withholding_page" name="Withholding Portal Template">
+        <t t-call="portal.portal_layout">
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>
+                                    <t t-call='portal.record_pager'/>
+                                    <span t-if="withholding.type == 'out_withholding' and (withholding.state == 'approved')">withholding</span>
+                                    <span t-if="withholding.type == 'out_withholding' and withholding.state == 'draft'">Draft withholding</span>
+                                    <span t-if="withholding.type == 'out_withholding' and withholding.state == 'cancel'">Cancelled withholding</span>
+                                    <span t-field="withholding.name"/>
+                                </h4>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 hidden-print" id="o_portal_account_actions">
+                                <a target="_blank" t-att-href="'/my/withholdings/pdf/%s?%s' % (withholding.id, keep_query())" class="pull-right" title="Download">
+                                    <i class="fa fa-download fa-2x" aria-hidden="true"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <t t-if="error or warning" t-call="account.portal_withholding_error"/>
+                        <t t-if="success and (not error and not warning)" t-call="account.portal_withholding_success"/>
+                        <t t-call="oe_account.portal_withholding_report"/>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure mb32"/>
+        </t>
+    </template>
+	
+	
+	<template id="portal_withholding_report" name="Withholding Portal Report">
+        <div class="row">
+            <div class="col-xs-5" name="customer_address">
+                <strong>Customer Address</strong>
+                <address t-field="withholding.partner_id"
+                    t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                <div t-if="withholding.partner_id.vat" class="mt16">RUC: <span t-field="withholding.partner_id.vat"/></div>
+            </div>
+        </div>
+
+        <div class="row mt32 mb32">
+            <div class="col-xs-2" t-if="withholding.name">
+                <strong>Description:</strong>
+                <p t-field="withholding.name"/>
+            </div>
+            <div class="col-xs-2" t-if="withholding.date_withholding">
+                <strong>Date emission:</strong>
+                <p t-field="withholding.date_withholding"/>
+            </div>
+            <div class="col-xs-2" t-if="withholding.origin">
+                <strong>Source:</strong>
+                <p t-field="withholding.origin"/>
+            </div>
+            <div class="col-xs-2" t-if="withholding.partner_id.ref">
+                <strong>Customer Code:</strong>
+                <p t-field="withholding.partner_id.ref"/>
+            </div>
+            <div name="reference" class="col-xs-2" t-if="withholding.reference">
+                <strong>Reference:</strong>
+                <p t-field="withholding.reference"/>
+            </div>
+        </div>
+
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Voucher</th>
+                    <th class="hidden">Number</th>
+                    <th class="text-right">Date Emission</th>
+                    <th class="text-right">Fiscal exercise</th>
+                    <th class="text-right">Base Amount</th>
+                    <th class="text-right">Tax</th>
+                    <th class="text-right">Percent</th>
+                    <th class="text-right">Amount Rent</th>
+                </tr>
+            </thead>
+            <tbody class="o_portal_report_tbody">
+                <tr t-foreach="withholding.withholding_line_ids" t-as="l">
+                    <td>
+                    	<span t-field="withholding.type_document_id.name"/>
+                    </td>
+                    <td class="hidden">
+                    	<span t-field="withholding.tmpl_entity"/><span t-field="withholding.tmpl_emission"/><span t-field="withholding.tmpl_number"/>
+                    </td>
+                    <td class="text-right">
+						<span t-field="withholding.tmpl_invoice_date"/>
+                    </td>
+                    <td class="text-right">
+                        <span t-esc="time.strftime('%m/%Y',time.strptime(withholding.date_withholding,'%Y-%m-%d'))"/>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="l.amount_base"
+                            t-options='{"widget": "monetary", "display_currency": withholding.currency_id}'/>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="l.name"/>
+                    </td>
+                    <td class="text-right">
+                        <span t-field="l.tax_id.amount"/>
+                    </td>
+                    <td class="text-right" id="subtotal">
+                        <span t-field="l.amount"
+                            t-options='{"widget": "monetary", "display_currency": withholding.currency_id}'/>
+                    </td>
+                </tr>
+                <tr t-foreach="range(max(2-len(withholding.withholding_line_ids),0))" t-as="l">
+                    <td t-translation="off">&amp;nbsp;</td>
+                    <td class="hidden"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p t-if="withholding.comment">
+            <span t-field="withholding.comment"/>
+        </p>
+    </template>
+	
+	
+	<template id="portal_withholding_error" name="Withholding error/warning display">
+        <div class="row mr16">
+            <div t-attf-class="'col-md-12 mr16 ml16 alert alert-dismissable' #{'alert-danger' if error else 'alert-warning'}">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                <t t-if="error == 'generic'" name="generic">
+                    There was an error processing this page.
+                </t>
+            </div>
+        </div>
+    </template>
+
+    <template id="portal_withholding_success" name="Withholding success display">
+        <div class="row mr16">
+            <div class="col-md-12 mr16 ml16 alert alert-dismissable alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            </div>
+        </div>
+    </template>
+	
+</odoo>

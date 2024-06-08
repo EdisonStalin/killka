@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	<!-- Resume Locker -->
+		<record id="view_locker_statement_form" model="ir.ui.view">
+            <field name="name">form.locker.statement.form</field>
+            <field name="model">form.locker.statement</field>
+            <field name="arch" type="xml">
+                <form string="Locker">
+                	<sheet>
+		    			<div class="oe_button_box" name="button_box">
+	                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+	                        </button>
+	                    </div>
+	                    <group>
+	                    	<group>
+	                    		<field name="name"/>
+	                    		<field name="locker"/>
+	                    		<field name="refund_locker"/>
+	                    	</group>
+	                    	<group>
+	                    		<field name="form_id"/>
+	                    		<field name="type"/>
+	                    	</group>
+	                    </group>
+                	</sheet>
+                </form>
+            </field>
+		</record>
+    	
+		<!-- Resume and Letters -->
+		<record id="view_statement_form_tree" model="ir.ui.view">
+            <field name="name">form.statement.form.tree</field>
+            <field name="model">form.statement</field>
+            <field name="arch" type="xml">
+                <tree string="Statement Form" decoration-muted="not active">
+                    <field name="code"/>
+                    <field name="name"/>                    
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="view_statement_form" model="ir.ui.view">
+		    <field name="name">form.statement.form</field>
+		    <field name="model">form.statement</field>
+		    <field name="arch" type="xml">
+		    	<form>
+		    		<sheet>
+		    			<div class="oe_button_box" name="button_box">
+	                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+	                        </button>
+	                    </div>
+	                    <group>
+	                        <group>
+	                            <field name="name"/>
+	                        </group>
+	                        <group>
+	                            <field name="code"/>
+	                        </group>
+	                    </group>
+	                    <notebook>
+                        	<page string="Statement Locker">
+                        		<field name="locker_line_ids" context="{'default_form_id': active_id}">
+                        			<tree string="Locker">
+	                                    <field name="name"/>
+	                                    <field name="locker"/>
+	                                    <field name="refund_locker"/>
+	                                    <field name="type"/>
+	                                    <field name="form_id" invisible="1"/>
+	                                    <field name="active" widget="boolean_toggle"/>
+                                	</tree>
+                        		</field>
+                        	</page>
+                        </notebook>
+		    		</sheet>
+		    	</form>
+		    </field>
+		</record>		    
+    	
+		<record id="action_form_statement" model="ir.actions.act_window">
+		    <field name="name">Statement Form</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">form.statement</field>
+		    <field name="view_type">form</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_statement_form_tree"/>
+		</record>
+    	
+    	<menuitem action="action_form_statement" id="menu_action_form_statement" 
+    		parent="oe_statement_sri.menu_sri_statement" groups="account.group_account_manager,account.group_account_user" sequence="2"/>
+    	
+    </data>
+</odoo>    

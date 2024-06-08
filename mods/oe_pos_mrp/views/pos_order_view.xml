@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+        
+        <record id="view_pos_pos_form_inherit_oe_pos_mrp" model="ir.ui.view">
+            <field name="name">pos.order.form.inherit.oe_pos_mrp</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+            
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="to_make_mrp"/>
+                    <field name="mrp_production_id"/>
+                </xpath>
+                
+            </field>
+        </record>
+        
+    </data>
+</odoo>

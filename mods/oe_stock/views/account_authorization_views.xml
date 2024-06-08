@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+		<record id="view_authorization_form_inherit_oe_stock" model="ir.ui.view">
+            <field name="name">account.authorization.form.inherit.oe_stock</field>
+            <field name="model">account.authorization</field>
+            <field name="inherit_id" ref="oe_account.view_authorization_form"/>
+            <field name="arch" type="xml">
+				
+				<xpath expr="//field[@name='issue']" position="after">
+            		<field name="picking_type_id" groups="stock.group_stock_manager" 
+            			options="{'no_create': True}" domain="[('code', '=', 'outgoing')]"/>
+            	</xpath>
+            	    	            	            	
+            </field>
+		</record>            
+    
+    </data>
+</odoo>

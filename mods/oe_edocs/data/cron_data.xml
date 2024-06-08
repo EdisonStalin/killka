@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data noupdate="1">
+
+		<record id="ir_cron_sent_sri" model="ir.cron">
+            <field name="name">Sent Document to SRI</field>
+            <field name="model_id" ref="model_account_invoice"/>
+            <field name="state">code</field>
+            <field name="code">
+# Available variables:
+#----------------------
+# params 1: sent automatic of email
+# params 2: sent of documents to SRI
+model.automatic_sent_to_sri(True, True)
+            </field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">20</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="DateTime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field eval="False" name="doall"/>
+            <field name="priority">2</field>
+            <field name="active" eval="0"/>
+        </record>
+
+		<record id="ir_cron_authorization_sri" model="ir.cron">
+            <field name="name">Verify XML Document Authorization</field>
+            <field name="model_id" ref="model_res_company"/>
+            <field name="state">code</field>
+            <field name="code">model.review_document_xml()</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="DateTime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field eval="False" name="doall" />
+            <field name="priority">4</field>
+            <field name="active" eval="1"/>
+        </record>
+
+    </data>
+</odoo>

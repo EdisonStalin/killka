@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+		
+		<menuitem id="menu_setting_tax_main" parent="account.account_account_menu"
+			name="Taxes" groups="account.group_account_user" sequence="1"/>
+		
+		<record id="view_tax_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.tax.tree.inherit.oe_account</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_tree"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='description']" position="after">
+            	    <field name="form_code_ats"/>
+            		<field name="tag_ids" widget="many2many_tags"/>
+            		<field name="amount"/>
+            		<field name="account_id" groups="account.group_account_user"/>
+            		<field name="refund_account_id" groups="account.group_account_user"/>
+            	</xpath>
+            	
+            </field>
+		</record>            
+
+		<record id="view_account_tax_search_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.tax.search.inherit.oe_account</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_account_tax_search"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='name']" position="attributes">
+            		<attribute name="filter_domain">['|', '|', ('name','ilike',self), ('description','ilike',self), ('form_code_ats','ilike',self)]</attribute>
+            	</xpath>
+            
+				<xpath expr="//group/filter[2]" position="after">
+            		<filter string="Group of Taxes" domain="[]" context="{'group_by':'tax_group_id'}"/>
+            	</xpath>
+            	
+            </field>
+		</record>
+
+		<record id="view_tax_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.tax.form.inherit.oe_account</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='name']" position="after">
+				    <field name="form_code_ats" required="1"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='type_tax_use']" position="before">
+            		<field name="module"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='tax_group_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//page[1]/group[1]/group[2]" position="after">
+					<group string="Distribution for Invoices">
+					    <field name="invoice_repartition_line_ids" nolabel="1" context="{'default_company_id': company_id}"/>
+					</group>
+					<group string="Distribution for Credit Notes">
+					    <field name="refund_repartition_line_ids" nolabel="1" context="{'default_company_id': company_id}"/>
+					</group>
+            	</xpath>
+            	
+            </field>
+		</record>
+		
+
+    	<!-- Taxes Group -->
+    	
+		<record id="view_tax_group_form_tree" model="ir.ui.view">
+            <field name="name">account.tax.group.tree.oe_account</field>
+            <field name="model">account.tax.group</field>
+            <field name="arch" type="xml">
+                <tree string="Taxes group" create="false" decoration-muted="not active">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="code"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+    	
+    	<record id="action_tax_group_form" model="ir.actions.act_window">
+            <field name="name">Taxes Group</field>
+            <field name="res_model">account.tax.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain" eval="False"/> <!-- Force empty -->
+            <field name="view_id" ref="view_tax_group_form_tree"/>
+        </record>
+        
+        <menuitem action="account.action_tax_form" id="account.menu_action_tax_form"
+        	parent="menu_setting_tax_main" sequence="1"/>
+        
+        <menuitem action="action_tax_group_form" id="menu_action_tax_group_form"
+        	parent="menu_setting_tax_main" groups="account.group_account_user" sequence="4"/>
+		
+		<menuitem action="account.account_tag_action" id="menu_action_account_tag_form"
+			parent="menu_setting_tax_main" groups="account.group_account_user" sequence="5"/>
+		
+		<menuitem action="account.action_account_tax_template_form" id="menu_action_tax_template_form"
+        	parent="menu_setting_tax_main" sequence="6"/>
+
+    </data>
+</odoo>   

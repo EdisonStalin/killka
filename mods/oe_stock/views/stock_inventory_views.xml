@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+    <record id="stock_inventory_line_tree" model="ir.ui.view">
+        <field name="name">stock.inventory.line.tree.oe_stock</field>
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="stock.stock_inventory_line_tree"/>
+        <field name="arch" type="xml">
+			
+			<xpath expr="//field[@name='product_id']" position="after">
+				<field name="product_code"/>
+			</xpath>
+
+        </field>
+    </record>
+
+    <record id="stock_inventory_line_tree2" model="ir.ui.view">
+        <field name="name">stock.inventory.line.tree2.oe_stock</field>
+        <field name="model">stock.inventory.line</field>
+        <field name="inherit_id" ref="stock.stock_inventory_line_tree2"/>
+        <field name="arch" type="xml">
+			
+			<xpath expr="//field[@name='product_id']" position="after">
+				<field name="product_code"/>
+			</xpath>
+
+        </field>
+    </record>
+
+
+    <record id="view_inventory_form" model="ir.ui.view">
+        <field name="name">stock.inventory.form.oe_stock2</field>
+        <field name="model">stock.inventory</field>
+        <field name="inherit_id" ref="stock.view_inventory_form"/>
+        <field name="arch" type="xml">
+			
+			<xpath expr="//button[@name='action_inventory_line_tree']" position="attributes">
+				<attribute name="states">confirm,done</attribute>
+				<attribute name="groups">stock.group_stock_user,stock.group_stock_manager</attribute>
+			</xpath>
+			
+			<xpath expr="//field[@name='location_id']" position="attributes">
+				<attribute name="domain">[('usage','not in',['supplier','view','customer'])]</attribute>
+				<attribute name="options">{'no_create': True}</attribute>
+			</xpath>
+
+			<xpath expr="//field[@name='filter']" position="after">
+				<field name="file" class="oe_inline" filename="filename" placeholder="Choose a file to import..."
+					attrs="{'invisible': [('filter','!=','file')], 'required': [('filter','=','file')]}"/>
+				<field name="filename" class="oe_inline" readonly="1"/>
+				<field name="barcode" default_focus="1" attrs="{'invisible': [('filter','in',['none','product','partial'])]}"/>
+			</xpath>
+			
+			<xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='product_id']" position="after">
+				<field name="barcode"/>
+				<field name="product_code"/>
+			</xpath>
+
+        </field>
+    </record>
+
+</odoo>

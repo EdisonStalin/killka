@@ -1,0 +1,15 @@
+///
+/// This file regroups the odoo LESS mixins. They are available in every asset bundle.
+///
+
+// ------------------------------------------------------------------
+// Text overflow
+// ------------------------------------------------------------------
+.o-text-overflow(@display: inline-block, @max-width: 100%) {
+    display: @display;
+    //max-width: @max-width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top; // To update display context changed by overflow:hidden
+}

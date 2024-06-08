@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_barcode_multi_sale_manager,product.barcode.multi.sale.manager,product_multiple_barcodes.model_product_barcode_multi,point_of_sale.group_pos_manager,1,1,1,1
+access_account_cash_rounding_user,account.cash.rounding.user,account.model_account_cash_rounding,point_of_sale.group_pos_user,1,1,1,1
+access_account_cash_rounding_manager,account.cash.rounding.manager,account.model_account_cash_rounding,point_of_sale.group_pos_manager,1,1,1,1

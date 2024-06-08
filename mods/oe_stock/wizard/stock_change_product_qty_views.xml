@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+		<record id="view_change_product_quantity_inherit_oe_stock" model="ir.ui.view">
+            <field name="name">stock.change.product.qty.inherit.oe_stock</field>
+            <field name="model">stock.change.product.qty</field>
+            <field name="inherit_id" ref="stock.view_change_product_quantity"/>
+            <field name="arch" type="xml">
+            
+          		<xpath expr="//field[@name='location_id']" position="attributes">
+	    			<attribute name="options">{'no_create': True}</attribute>
+	    		</xpath>
+	    		
+	    		<xpath expr="//field[@name='new_quantity']" position="after">
+	    			<field name="reason"/>
+	    		</xpath>
+	    		
+            </field>
+		</record>
+
+    </data>
+</odoo>    

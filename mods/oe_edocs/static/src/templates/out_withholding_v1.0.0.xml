@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comprobanteRetencion id="comprobante" version="1.0.0">
+  <infoTributaria>
+    <ambiente>{{ ambiente }}</ambiente>
+    <tipoEmision>{{ tipoEmision }}</tipoEmision>
+    <razonSocial>{{ razonSocial }}</razonSocial>{% if nombreComercial %}
+    <nombreComercial>{{ nombreComercial }}</nombreComercial>{% endif %}
+    <ruc>{{ ruc }}</ruc>
+    <claveAcceso>{{ claveAcceso }}</claveAcceso>
+    <codDoc>{{ codDoc }}</codDoc>
+    <estab>{{ estab }}</estab>
+    <ptoEmi>{{ ptoEmi }}</ptoEmi>
+    <secuencial>{{ secuencial }}</secuencial>
+    <dirMatriz>{{ dirMatriz }}</dirMatriz>{% if agenteRetencion %}
+    <agenteRetencion>{{ agenteRetencion }}</agenteRetencion>{% endif %}{% if regimenMicroempresas %}
+    <regimenMicroempresas>{{ regimenMicroempresas }}</regimenMicroempresas>{% endif %}{% if contribuyenteRimpe %}
+    <contribuyenteRimpe>{{ contribuyenteRimpe }}</contribuyenteRimpe>{% endif %}
+  </infoTributaria>
+  <infoCompRetencion>
+    <fechaEmision>{{ fechaEmision }}</fechaEmision>{% if dirEstablecimiento %}
+    <dirEstablecimiento>{{ dirEstablecimiento }}</dirEstablecimiento>{% endif %}{% if contribuyenteEspecial %}
+	<contribuyenteEspecial>{{ contribuyenteEspecial }}</contribuyenteEspecial>{% endif %}
+    <obligadoContabilidad>{{ obligadoContabilidad }}</obligadoContabilidad>
+    <tipoIdentificacionSujetoRetenido>{{ tipoIdentificacionSujetoRetenido }}</tipoIdentificacionSujetoRetenido>
+    <razonSocialSujetoRetenido>{{ razonSocialSujetoRetenido }}</razonSocialSujetoRetenido>
+    <identificacionSujetoRetenido>{{ identificacionSujetoRetenido }}</identificacionSujetoRetenido>
+    <periodoFiscal>{{ periodoFiscal }}</periodoFiscal>
+  </infoCompRetencion>
+	<impuestos>{% for tax in impuestos: %}
+	  <impuesto>
+	    <codigo>{{ tax.codigo }}</codigo>
+	    <codigoRetencion>{{ tax.codigoRetencion }}</codigoRetencion>
+	    <baseImponible>{{ tax.baseImponible }}</baseImponible>
+	    <porcentajeRetener>{{ tax.porcentajeRetener }}</porcentajeRetener>
+	    <valorRetenido>{{ tax.valorRetenido }}</valorRetenido>
+	    <codDocSustento>{{ tax.codDocSustento }}</codDocSustento>
+	    <numDocSustento>{{ tax.numDocSustento }}</numDocSustento>{# factura proveedor #}
+	    <fechaEmisionDocSustento>{{ tax.fechaEmisionDocSustento }}</fechaEmisionDocSustento>
+	  </impuesto>{% endfor %}
+	</impuestos>{% if infoAdicional %}
+	<infoAdicional>{% for item in infoAdicional %}
+		{{ item }}{% endfor %}
+	</infoAdicional>{% endif %}
+</comprobanteRetencion>

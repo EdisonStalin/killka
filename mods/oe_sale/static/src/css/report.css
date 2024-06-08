@@ -1,0 +1,19 @@
+.report-table {
+	background-color: red;
+    > thead > tr > th {
+    	border-bottom: 2px solid black;
+    	border-top: 2px solid black;
+    }
+    > tbody {
+		> tr {
+			border-bottom: 1px solid black;
+			border-top: 1px solid black;        
+			page-break-inside: avoid !important;
+		}
+		
+		> tr:last-child {
+			border-bottom: 2px solid black;
+			border-top: 1px solid black;
+		}
+	}
+}

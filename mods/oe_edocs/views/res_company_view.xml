@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<!--record model="ir.ui.view" id="view_res_company_pivot">
+            <field name="name">res.company.pivot</field>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <pivot string="Company" display_quantity="true">
+                    <field name="name"/>
+                    <field name="state_signer"/>
+                    <field name="number_limit" type="measure"/>
+                    <field name="number_sent" type="measure"/>
+                </pivot>
+            </field>
+        </record-->
+
+
+		<record model="ir.ui.view" id="view_company_tree_inherit_oe_edocs">
+			<field name="name">res.company.tree.inherit.oe_edocs</field>
+			<field name="model">res.company</field>
+			<field name="inherit_id" ref="base.view_company_tree"/>
+			<field name="arch" type="xml">
+				
+				<xpath expr="//tree" position="attributes">
+					<attribute name="decoration-danger">state_signer == 'expired'</attribute>
+					<attribute name="decoration-success">state_signer == 'valid'</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="enable_signer"/>
+					<field name="due_signer"/>
+					<field name="state_signer"/>
+					<field name="environment"/>
+				</xpath>
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="view_company_form_inherit_g3_edocs">
+			<field name="name">res.company.form.inherit.oe_edocs</field>
+			<field name="model">res.company</field>
+			<field name="inherit_id" ref="base.view_company_form"/>
+			<field name="arch" type="xml">
+
+				<xpath expr="//notebook" position="inside">
+					<page string="Settings D.E.">
+						<header>
+							<button string="Check Signature" type="object" name="action_check_signature" class="oe_highlight"/>
+							<field name="state_signer" widget="statusbar" />
+						</header>	
+						<field name="environment" invisible='1'/>
+						<div class="oe_button_box" name="button_box">
+							<button name="toggle_environment_value"
+									attrs="{'invisible': [('environment', '=', 'test')]}"
+									class="oe_stat_button"
+									type="object" icon="fa-globe">
+								<div class="o_stat_info o_field_widget">
+									<span class="o_stat_text">Environment</span>
+									<span class="text-success">Production </span>
+								</div>
+							</button>
+							<button name="toggle_environment_value"
+									attrs="{'invisible': [('environment', '=', 'prod')]}"
+									class="oe_stat_button"
+									type="object" icon="fa-globe">
+								<div class="o_stat_info o_field_widget">
+									<span class="o_stat_text">Environment</span>
+									<span class="o_warning_text">Test </span>
+								</div>
+							</button>
+						</div>
+						<group>						
+							<group>
+								<field name="signed_digital" string="Electronic Signature" filename="filename" widget="binary"/>
+								<field name="filename" invisible="1"/>								
+								<field name="password_signed" attrs="{'required': [('signed_digital', '!=', False)]}" password="True"/>
+								<field name="sender_name"/>						
+							</group>
+							<group>
+								<field name="enable_signer"/>
+								<field name="due_signer"/>
+								<field name="name_issuer"/>
+								<field name="name_subject"/>
+							</group>
+						</group>
+					</page>
+				</xpath>
+
+			</field>
+		</record>
+
+
+		<!--record id="base.action_res_company_form" model="ir.actions.act_window">
+			<field name="view_mode">tree,kanban,form,pivot</field>
+		</record-->
+
+	</data>
+</odoo>   

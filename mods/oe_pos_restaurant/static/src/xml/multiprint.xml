@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+	<t t-extend="NameWrapped">
+		<t t-jquery="t > line" t-operation="replace">
+            <p name="line_restaurant">
+                <left><t t-esc="wrapped_line"/></left>
+                <right><t t-esc="wrapped_line_extra"/></right>
+            </p>
+        </t>
+	</t>
+	
+</templates>

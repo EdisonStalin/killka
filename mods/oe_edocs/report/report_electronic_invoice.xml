@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<template id="report_invoice_document_electronic">
+			<t t-if="not o" t-set="o" t-value="doc"/>
+	
+	        <t t-if="not company">
+	            <!-- Multicompany -->
+	            <t t-if="company_id">
+	                <t t-set="company" t-value="company_id"/>
+	            </t>
+	            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+	                <t t-set="company" t-value="o.company_id.sudo()"/>
+	            </t>
+	            <t t-else="else">
+	                <t t-set="company" t-value="res_company"/>
+	            </t>
+	        </t>
+			<div class="page">
+				<!-- Hearder t-attf-class="#{'o_'+company.external_report_layout+'_header'}" t-attf-class="{{'o_'+company.external_report_layout+'_header'}}" t-attf-class="#{'o_'+o_report_class+'_header'}"-->
+				<!--t t-set="o_report_class" t-value="company.external_report_layout"/-->
+				<t t-set="establishment" t-value="o.establishment_id"/>
+				<div class="header o_background_header">
+					<div class="row">
+		                <div class="col-xs-5 row_left">
+		                	<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company._get_logo_report(establishment))"/>
+		                </div>
+		                <div class="col-xs-1"/>
+		                <div class="col-xs-6 row_right">
+		                    <ul class="list-unstyled">
+		                        <li>
+		                        	<h5>
+		                        		<strong><t t-if="company.country_id.vat_label" t-esc="company.country_id.vat_label" id="inv_tax_id_label"/>
+		                        		<t t-else="">Tax ID</t> </strong><span t-field="company.vat"/>
+		                        	</h5>
+		                        </li>
+		                        <li><h3><span t-field="o.type_document_id.short_name"/></h3></li>
+		                        <li t-if="o.state == 'cancel'"><h3> Cancelled</h3></li>
+		                        <li><h4><strong>No. </strong><span t-field="o.name"/></h4></li>
+		                    </ul>
+		                </div>
+					</div>
+				</div>
+
+				<!-- Content t-attf-class="#{'o_report_layout_'+company.external_report_layout}" t-attf-class="{{'o_report_layout_'+company.external_report_layout}}" t-attf-class="#{'o_report_layout_'+o_layout_class}"
+					#{o_report_class == 'clean' ? 'o_clean_header' : 'o_background_header'}"-->
+				<div class="article o_report_layout_background">
+					<!-- Hearder 2 -->
+					<div class="row">
+						<div class="col-xs-5 row_left" name="company_address">
+							<ul class="list-unstyled">
+								<li><h4 t-field="company.name"/></li>
+								<li>
+									<strong>Nombre Comercial: </strong>
+									<span t-if="establishment" t-field="establishment.name"/>
+									<span t-if="company.comercial_name and not establishment" t-field="company.comercial_name"/>
+								</li>
+								<li>
+									<strong>Main Address: </strong>
+									<span class="company_address" t-esc="company.partner_id._display_address(without_company=True)"/>
+								</li>
+								<li t-if="establishment">
+									<strong>Second Address: </strong>
+									<span t-esc="establishment._display_address()"/>
+								</li>
+								<li t-if="company.phone">
+									<strong>Phone: </strong>
+									<span t-if="not establishment" t-field="company.phone"/>
+									<span t-if="establishment" t-field="establishment.phone"/>
+								</li>
+								<li t-if="company.email">
+									<strong>Email: </strong>
+									<span t-if="not establishment" t-field="company.email"/>
+									<span t-if="establishment" t-field="establishment.email"/>
+								</li>
+								<li>
+									<strong>Obliged to keep accounting: </strong>
+									<span t-if="company.partner_id.check_accounting">SI</span>
+									<span t-if="not company.partner_id.check_accounting">NO</span>
+								</li>
+								<li>
+									<t t-if="company.partner_id.property_account_position_id.agent">
+										<strong>Withholding Agent Resolution No.: </strong>
+										<p>
+											<span>NAC-DNCRASC20-</span>
+											<span t-field="company.partner_id.property_account_position_id.code"/>
+										</p>
+									</t>
+								</li>
+								<li>
+									<t t-if="company.partner_id.property_account_position_id.option in ('micro','rimpe')">
+										<span t-field="company.partner_id.property_account_position_id"/>
+									</t>
+								</li>
+								<li t-if="company.company_registry">
+									<strong>Special Taxpayer SI Resolution: </strong>
+									<span t-field="company.company_registry"/>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-1"/>
+						<div class="col-xs-6 row_right">
+							<ul t-if="o.is_electronic" class="list-unstyled">
+								<li t-if="o.authorization"><h4>Authorization</h4></li>
+								<li t-if="not o.authorization"><h4>Pre authorization</h4></li>
+								<li>
+									<strong>Number: </strong>
+									<span t-field="o.access_key"/>
+								</li>
+								<li>
+									<strong>Date: </strong>
+									<t t-set="date_auth" t-value="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+									<t t-if="o.authorization_date">
+										<!--t t-set="date_auth" t-value="time.strftime('%d %b %Y %H:%M',time.strptime(o.authorization_date,'%d/%m/%Y %H:%M:%S'))"/-->
+										<span t-field="o.authorization_date"/>
+									</t>
+									<span t-esc="date_auth"/>
+								</li>
+								<li>
+									<strong>Ambient: </strong>
+									<span t-esc="o.environment"/>
+								</li>
+								<li>
+									<strong>Emission: </strong>
+									<span t-if="o.emission_code == '1'">NORMAL</span>
+									<span t-if="o.emission_code == '2'">INDISPONIBLE</span>
+								</li>
+								<li><strong>Access Key: </strong></li>
+								<li class="access_key">
+									<img t-if="o.access_key" t-att-src="'data:image/svg+xml;base64,%s' % to_text(o._get_barcode())"/>
+									<span t-if="o.access_key" t-field="o.access_key"/>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- Hearder 3 -->
+					<div class="row row_header">
+						<div class="col-xs-6">
+							<ul class="list-unstyled">
+								<li>
+									<strong>Business Name/Name: </strong>
+									<span t-field="o.partner_id.name" style="font-weight: bold;"/>
+								</li>
+								<li>
+									<strong>Emission Date: </strong>
+									<span t-field="o.date_invoice" t-field-options='{"format": "d MMMM y"}'/>
+								</li>
+								<t t-if="not o.partner_invoice_id" t-set="partner_id" t-value="o.partner_id"/>
+								<t t-if="o.partner_invoice_id" t-set="partner_id" t-value="o.partner_invoice_id"/>
+								<li>
+									<strong>Address: </strong>
+									<span t-esc="partner_id._display_address(without_company=True)"/>
+								</li>
+								<li>
+									<strong>Phone: </strong>
+									<span t-if="partner_id.phone" t-field="partner_id.phone"/>
+									<span t-if="partner_id.mobile"> - </span>
+									<span t-if="partner_id.mobile" t-field="partner_id.mobile"/>
+								</li>
+								<li>
+									<strong>Email: </strong>
+									<span t-if="partner_id.email" t-field="partner_id.email"/>
+								</li>
+							</ul>
+						</div>
+						<div class="col-xs-6">
+							<ul class="list-unstyled">
+								<li>
+									<strong>Identificar: </strong>
+									<span t-field="o.partner_id.vat"/>
+								</li>
+								<li t-if="o.date_due">
+									<strong>Date Due: </strong>
+									<span t-field="o.date_due" t-field-options='{"format": "d MMMM y"}'/>
+								</li>
+								<li t-if="o.payment_term_id">
+									<strong>Term: </strong>
+									<span t-field="o.payment_term_id.name"/>
+								</li>
+								<t t-set="vendor_id" t-value="o.user_id.partner_id"/>
+								<li t-if="vendor_id">
+									<strong>Sale Vendor: </strong><span t-field="vendor_id.firstname"/> <span t-if="vendor_id.lastname" t-field="vendor_id.lastname"/>
+								</li>
+								<t t-if="o.type in ['out_refund', 'in_refund']">
+									<li>
+										<strong>Modified voucher: Invoice </strong>
+										<span t-field="o.refund_invoice_id"/>
+									</li>
+									<li>
+										<strong>Invoice Date: </strong>
+										<span t-field="o.refund_invoice_id.date_invoice" t-field-options='{"format": "d MMMM y"}'/>
+									</li>
+									<li>
+										<strong>Reason: </strong>
+										<span t-field="o.reason"/>
+									</li>
+			                    </t>
+							</ul>
+							<!--table class="table table-condensed" style="font-size: 6.5pt; border: none;">
+								<tr>
+									<td style="vertical-align: text-top;">Payment Method</td>
+									<td style="text-align: right !important;">Value</td>
+								</tr>
+								<t t-foreach="o._get_payments()" t-as="payment">
+									<td>
+										<span t-esc="payment['formaPago']"/>
+									</td>
+									<td style="text-align: right !important;">
+										<span t-esc="payment['total']"/>
+									</td>
+								</t>						
+							</table-->
+						</div>
+					</div>
+					
+					<!-- Details -->
+					<!-- Is there a discount on at least one line? -->
+					<table class="table table-condensed" name="invoice_line_table">
+						<thead>
+							<tr style="text-transform: uppercase;">
+								<t t-if="o.type_document_id.code != '05'">
+									<th style="width:100px; vertical-align: text-top;">Code</th>
+									<th style="width:200px; vertical-align: text-top;">Description</th>
+									<th class="text-right" style="width:10px; text-align: right !important; vertical-align: text-top;">Quantity</th>
+									<th class="text-right" style="width:90px; text-align: right !important; vertical-align: text-top;">Unit Price</th>
+									<th t-if="o.amount_discount" class="text-right" style="width:40px; text-align: right !important; vertical-align: text-top;">Disc.</th>
+									<th class="text-right" style="width:60px; vertical-align: text-top;">Total</th>
+								</t>
+								<t t-if="o.type_document_id.code == '05'">
+									<th style="width:300px;">Reason of Modification</th>
+									<th class="text-right" style="width:200px;">Amount of Modification</th>
+								</t>
+							</tr>
+						</thead>
+						<tbody class="invoice_tbody">
+						   	<tr t-foreach="o.invoice_line_ids" t-as="l">
+						   		<!--t t-if="l.product_id != o.env.ref('oe_product.product_product_tip')"-->
+						   		<t t-if="o.type_document_id.code != '05'">
+							   		<td style="width:100px;"><span t-if="l._get_view_product()" t-esc="l._get_name_line_product()"/></td>
+							   		<td style="width:200px;"><span t-field="l.name"/></td>
+							   		<td class="text-center" style="width:10px; text-align: center !important;">
+							   			<span t-field="l.quantity"/>
+										<!--t t-set="quantity" t-value="l.quantity-int(l.quantity)"/>
+										<span t-if="quantity > 0" t-esc="'{0:,.2f}'.format(l.quantity)"/>
+										<span t-if="quantity == 0" t-esc="int(l.quantity)"/>
+										<span t-field="l.uom_id" groups="product.group_uom"/-->
+									</td>
+								   <td class="text-center" style="width:90px; text-align: center !important;">
+									   <span t-field="l.price_unit" t-options='{"display_currency": o.currency_id}'/>
+								   </td>
+								   <td t-if="o.amount_discount" class="text-center" style="width:50px; text-align: center !important;">
+								   		<span t-field="l.discount"/>
+								   		<!--t t-set="discount" t-value="l.discount-int(l.discount)"/>
+									   	<span t-if="discount > 0" t-esc="'{0:,.2f}'.format(l.discount)"/>
+									   	<span t-if="discount == 0" t-esc="int(l.discount)"/--> %
+								   </td>
+								   <td class="text-right" id="subtotal" style="width:60px; text-align: right !important;">
+									   <span t-field="l.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+								   </td>
+								</t>
+								<t t-if="o.type_document_id.code == '05'">
+									<td style="width:300px;"><span t-field="l.name"/></td>
+									<td class="text-right" id="subtotal" style="width:200px;">
+									   <span t-field="l.price_subtotal" t-options='{"display_currency": o.currency_id}'/>
+								   </td>
+								</t>
+								<!--/t-->
+						   	</tr>
+						</tbody>
+	   				</table>
+	   				
+	   				<!-- Refund -->
+					<div t-if="o.is_refund" class="row row_header">
+						<div class="col-xs-4"/>
+						<div class="col-xs-4 pull-center">
+							<h5>REFUND INFORMATION</h5>
+						</div>
+					</div>
+					
+					<!-- Refund Details -->
+
+					<table t-if="o.is_refund" class="table table-condensed" name="invoice_line_table">
+						<thead>
+							<tr style="text-transform: uppercase;">
+								<th style="width:60px; vertical-align: text-top;">VAT</th>
+								<th style="width:80px; vertical-align: text-top;">Document</th>
+								<th style="width:80px; vertical-align: text-top;">N° Document</th>
+								<th style="width:80px; vertical-align: text-top;">Date of issue</th>
+								<th style="width:80px; vertical-align: text-top;">Authorization</th>
+								<th class="text-right" style="width:60px; vertical-align: text-top;">Subtotal</th>
+								<th class="text-right" style="width:60px; vertical-align: text-top;">Taxes</th>
+								<!--th class="text-right" style="width:60px; vertical-align: text-top;">Total</th-->
+							</tr>
+						</thead>
+						<tbody class="invoice_tbody">
+						   	<tr t-foreach="o.refund_ids" t-as="l">
+								<td style="width:60px;"><span t-field="l.partner_id.vat"/></td>
+								<td style="width:60px;"><span t-field="l.type_document_id.name"/></td>
+								<td style="width:60px;"><span t-field="l.name"/></td>
+								<td style="width:60px;"><span t-field="l.date_invoice"/></td>
+								<td style="width:60px;">
+									<span t-if="not l.is_electronic" t-field="l.authorization_id.name"/>
+									<span t-if="l.is_electronic" t-field="l.authorization_number"/>
+								</td>
+								<td class="text-right" style="width:60px; text-align: right !important;">
+									<span t-field="l.amount_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+								</td>
+								<td class="text-right" style="width:60px; text-align: right !important;">
+									<span t-field="l.amount_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+								</td>
+								<!--td class="text-right" style="width:60px; text-align: right !important;">
+									<span t-field="l.total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+								</td-->
+						   	</tr>
+						</tbody>
+	   				</table>
+					
+					<!-- Refund Total -->
+					<div t-if="o.is_refund" class="row row_header">
+						<t t-set="refund" t-value="o._refunds()"/>
+						<ul class="list-unstyled">
+							<li>
+								<strong>Refund Document Code: </strong>
+								<span t-esc="refund['codDocReembolso']"/>
+							</li>
+							<li>
+								<strong>Total Taxable Base Refund: </strong>
+								<span t-esc="refund['totalBaseImponibleReembolso']"/>
+							</li>
+							<li>
+								<strong>Total Tax Refund: </strong>
+								<span t-esc="refund['totalImpuestoReembolso']"/>
+							</li>
+							<li>
+								<strong>Total Refund Vouchers: </strong>
+								<span t-esc="refund['totalComprobantesReembolso']"/>
+							</li>
+						</ul>
+					</div>
+					
+					<!-- Footer -->
+	   				<div class="clearfix">
+						<div id="total" class="row">
+							<div class="col-xs-6 row_left">
+								<h5>ADDITIONAL INFORMATION</h5>
+								<t t-if="len(o.line_info_ids) &gt; 0">
+									<t t-foreach="o.line_info_ids" t-as="line_info">
+										<ul class="list-unstyled">
+											<li>
+												<span style="color:#080808" t-esc="line_info.name"/>  <span style="text-align: right !important;" t-esc="line_info.value_tag"/>
+											</li>
+										</ul>
+									</t>
+								</t>
+								<span style="font-size:8.32pt;" t-field="o.comment" t-options='{"widget": "html"}'/>
+								<table class="table table-condensed" style="font-size: 7.5pt;">
+									<t t-foreach="o.payment_method_ids" t-as="payment">
+										<tr>
+											<td>
+												<strong>Term: </strong>
+												<span t-field="payment.days"/>
+												<span> day(s)</span>
+											</td>
+											<td>
+												<strong>Date Due: </strong>
+												<span t-field="payment.date_due"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<strong>Payment Method: </strong>
+											</td>
+											<td style="text-align: right !important;">
+												<span t-field="payment.method_id.name"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<strong>Value: </strong>
+											</td>
+											<td style="text-align: right !important;">
+												<span t-field="payment.amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+											</td>
+										</tr>
+									</t>						
+								</table>
+							</div>
+							<div class="col-xs-1"/>
+							<div class="col-xs-5 row_right">
+								<table class="table table-condensed" style="border: none;">
+									<t t-foreach="o._get_tax_amount_by_group()" t-as="amount_by_group">
+										<t t-if="amount_by_group[6] in ['iva', 'iva0', 'nobiva', 'exiva']">
+											<tr>
+												<td>Subtotal
+													<span style="color:#080808" t-esc="amount_by_group[0]"/>
+													<span style="color:#080808" t-if="amount_by_group[6] == 'iva'" t-esc="int(amount_by_group[1])"/>
+													<span t-if="amount_by_group[6] in ['iva','iva0']"> %</span>
+												</td>
+												<td style="text-align: right !important;">
+													<span t-esc="amount_by_group[5]"/>
+												</td>
+											</tr>
+										</t>
+									</t>
+									<tr>
+										<td>Subtotal without taxes</td>
+										<td style="text-align: right !important;">
+											<span t-field="o.subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+										</td>
+									</tr>
+									<tr t-if="o.amount_discount">
+										<td>Discount</td>
+										<td style="text-align: right !important;">
+											<span t-field="o.amount_discount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+										</td>
+									</tr>
+									<t t-foreach="o._get_tax_amount_by_group()" t-as="amount_by_group">
+										<t t-if="amount_by_group[6] in ['ice', 'iva', 'irbpnr']">
+											<tr>
+												<td>
+													<span style="color:#080808" t-esc="amount_by_group[0]"/>
+													<span style="color:#080808" t-if="amount_by_group[6] == 'iva'" t-esc="int(amount_by_group[1])"/>
+												</td>
+												<td style="text-align: right !important;">
+													<span t-esc="amount_by_group[4]"/>
+												</td>
+											</tr>
+										</t>
+									</t>
+									<tr t-if="o.total_tip">
+										<td>Tip <span t-esc="o.tip_rate"/>%</td>
+										<td style="text-align: right !important;">
+											<span t-field="o.total_tip" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+										</td>
+									</tr>
+									<tr>
+										<td>Total</td>
+										<td style="text-align: right !important;">
+											<span t-field="o.total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+										</td>
+									</tr>
+									<t t-if="o.withholding_count >= 1" t-foreach="o._get_tax_amount_by_group()" t-as="amount_by_group">
+										<t t-if="amount_by_group[6] in ['renta']">
+											<tr>
+												<td>
+													<span style="color:#080808" t-esc="amount_by_group[0]"/>
+												</td>
+												<td style="text-align: right !important;">
+													<span t-esc="amount_by_group[4]"/>
+												</td>
+											</tr>
+										</t>
+									</t>
+									<tr t-if="o.withholding_count >= 1">
+										<td>Total</td>
+										<td style="text-align: right !important;">
+											<span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+	   				</div>
+				</div>
+			</div>
+			
+			<!-- Transport Permit -->
+			<div t-if="o.substitute_permit" class="page">
+				<p style="page-break-after:always;"></p>
+				<t t-if="o.substitute_permit">
+					<!-- Hearder -->
+					<div class="header o_background_header">
+						<div class="row">
+			                <div class="col-xs-5 row_left">
+			                	<img t-if="company.logo" style="max-height: 120px;max-width: 400px;" t-att-src="'data:image/png;base64,%s' % to_text(company.logo_report)"/>
+			                </div>
+			                <div class="col-xs-1"/>
+			                <div class="col-xs-6 row_right">
+			                    <ul class="list-unstyled">
+			                        <li>
+			                        	<h5>
+			                        		<strong><t t-if="company.country_id.vat_label" t-esc="company.country_id.vat_label" id="inv_tax_id_label"/>
+			                        		<t t-else="">Tax ID</t> </strong><span t-field="company.vat"/>
+			                        	</h5>
+			                        </li>
+			                        <li><h3>TRANSPORT PERMIT</h3></li>
+			                        <li t-if="o.state == 'cancel'"><h3> Cancelled</h3></li>
+			                        <li><h4><strong>No. </strong><span t-field="o.name"/></h4></li>
+			                    </ul>
+			                </div>
+						</div>
+					</div>
+					<!-- Content -->
+					<div class="article o_report_layout_background">
+						<!-- Hearder 2 -->
+						<div class="row">
+							<div class="col-xs-5 row_left" name="company_address">
+								<ul class="list-unstyled">
+									<li><h6 t-field="company.name"/></li>
+									<li><h6 t-if="company.comercial_name" t-field="company.comercial_name"/></li>
+									<li>
+										<strong>Main Address: </strong>
+										<span class="company_address" t-esc="company.partner_id._display_address(without_company=True)"/>
+									</li>
+									<li t-if="o.authorization_id.establishment_id">
+										<strong>Second Address: </strong>
+										<span t-esc="o.authorization_id.establishment_id._display_address()"/>
+									</li>
+									<li>
+										<strong>Phone: </strong>
+										<span t-if="company.phone" t-field="company.phone"/>
+									</li>
+									<li>
+										<strong>Email: </strong>
+										<span t-if="company.email" t-field="company.email"/>
+									</li>
+									<li>
+										<strong>Obliged to keep accounting: </strong>
+										<span t-if="company.partner_id.check_accounting">SI</span>
+										<span t-if="not company.partner_id.check_accounting">NO</span>
+									</li>
+									<li>
+										<t t-if="company.partner_id.property_account_position_id.agent">
+											<strong>Withholding Agent Resolution No.: </strong>
+											<p>
+												<span>NAC-DNCRASC20-</span>
+												<span t-field="company.partner_id.property_account_position_id.code"/>
+											</p>
+										</t>
+									</li>
+									<li>
+										<t t-if="company.partner_id.property_account_position_id.option in ('micro','rimpe')">
+											<span t-field="company.partner_id.property_account_position_id"/>
+										</t>
+									</li>
+									<li t-if="company.company_registry">
+										<strong>Special Taxpayer SI Resolution: </strong>
+										<span t-field="company.company_registry"/>
+									</li>
+								</ul>
+							</div>
+							<div class="col-xs-1"/>
+							<div class="col-xs-6 row_right">
+								<ul t-if="o.is_electronic" class="list-unstyled">
+									<li t-if="o.authorization"><h4>Authorization</h4></li>
+									<li t-if="not o.authorization"><h4>Pre authorization</h4></li>
+									<li>
+										<strong>Number: </strong>
+										<span t-esc="o.access_key"/>
+									</li>
+									<li>
+										<strong>Date: </strong>
+										<t t-set="date_auth" t-value="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+										<t t-if="o.authorization_date">
+											<!--t t-set="date_auth" t-value="time.strftime('%d %b %Y %H:%M',time.strptime(o.authorization_date,'%d/%m/%Y %H:%M:%S'))"/-->
+											<span t-field="o.authorization_date"/>
+										</t>
+										<span t-esc="date_auth"/>
+									</li>
+									<li>
+										<strong>Ambient: </strong>
+										<span t-esc="o.environment"/>
+									</li>
+									<li>
+										<strong>Emission: </strong>
+										<span t-if="o.emission_code == '1'">NORMAL</span>
+										<span t-if="o.emission_code == '2'">INDISPONIBLE</span>
+									</li>
+									<li><strong>Access Key: </strong></li>
+									<li class="access_key">
+										<img t-if="o.access_key" t-att-src="'data:image/svg+xml;base64,%s' % to_text(o._get_barcode())"/>
+										<span t-if="o.access_key" t-field="o.access_key"/>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<!-- Hearder 3 -->
+						<t t-foreach="o.transport_permit_ids[0]" t-as="l">
+							<div class="row row_header">
+								<div class="col-xs-6">
+									<ul class="list-unstyled">
+										<li>
+											<strong>Business Name/Name: </strong>
+											<span t-field="l.partner_id.name" style="font-weight: bold;"/>
+										</li>
+										<li>
+											<strong>Emission Date: </strong>
+											<span t-field="o.date_invoice" t-field-options='{"format": "d MMMM y"}'/>
+										</li>
+										<t t-set="partner_id" t-value="l.partner_id"/>
+										
+										<li>
+											<strong>Destination Address: </strong>
+											<span t-esc="o.partner_invoice_id._display_address1(without_company=True)"/>
+										</li>
+									</ul>
+								</div>
+								<div class="col-xs-6">
+									<ul class="list-unstyled">
+										<li>
+											<strong>Identificar: (Driver)</strong>
+											<span t-field="l.partner_id.vat"/>
+										</li>
+										<li>
+											<strong>License Plate: </strong>
+											<strong t-field="l.license_plate"/>
+										</li>
+										<li>
+											<strong>Address Starting: </strong>
+											<span t-field="l.address_starting"/>
+										</li>
+										<li>
+											<strong>Date Initial: </strong>
+											<span t-field="l.date_transport" t-field-options='{"format": "d MMMM y"}'/>
+										</li>
+										<li>
+											<strong>Date Finish: </strong>
+											<span t-field="l.date_due" t-field-options='{"format": "d MMMM y"}'/>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<table class="table table-condensed">
+								<thead>
+									<tr style="text-transform: uppercase;">
+										<th style="width:200px; vertical-align: text-top;">Transfer Reason</th>
+										<th style="width:100px; vertical-align: text-top;">Route</th>
+										<th style="width:60px; vertical-align: text-top;">Customs Document</th>
+										<th style="width:50px; vertical-align: text-top;">Business Store Code</th>
+									</tr>
+								</thead>
+								<tbody class="invoice_tbody">
+							   		<tr t-foreach="l.transport_permit_line_ids" t-as="lx">
+							   			<td style="width:200px;"><span t-esc="lx.reason"/></td>
+									   	<td style="width:100px;"><span t-field="lx.route"/></td>
+									   	<td style="width:60px;"><span t-field="lx.customs_document"/></td>
+									   	<td style="width:50px;"><span t-field="lx.code_destination_business"/></td>
+							   		</tr>
+							   	</tbody>
+							</table>
+						</t>
+						
+						<!-- Hearder 4 -->
+						<table class="table table-condensed" name="invoice_line_table">
+							<thead>
+								<tr style="text-transform: uppercase;">
+									<th style="width:60px; vertical-align: text-top;">Code</th>
+									<th style="width:240px; vertical-align: text-top;">Description</th>
+									<th class="text-right" style="width:10px; text-align: right !important; vertical-align: text-top;">Quantity</th>
+								</tr>
+							</thead>
+							<tbody class="invoice_tbody">
+							   	<tr t-foreach="o.invoice_line_ids" t-as="l">
+							   		<td style="width:60px;">
+							   			<span t-if="l._get_view_product()" t-esc="l._get_name_line_product()"/>
+							   		</td>
+							   		<td style="width:240px;"><span t-field="l.name"/></td>
+							   		<td class="text-center" style="width:10px; text-align: center !important;">
+							   			<span t-field="l.quantity"/>
+									</td>
+							   	</tr>
+							</tbody>
+		   				</table>
+					</div>
+				</t>
+			</div>
+			
+			<t t-call="oe_edocs.footer_text"/>
+			
+		</template>
+
+
+		<template id="report_electronic_invoice">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="oe_edocs.report_invoice_document_electronic" t-lang="o.partner_id.lang"/>
+				</t>
+			</t>
+		</template>
+
+	</data>
+</odoo>

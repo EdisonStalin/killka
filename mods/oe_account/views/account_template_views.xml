@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+		<!-- Chart of Accounts Templates -->
+		<record id="view_account_chart_template_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.chart.template.form.inherit.oe_account</field>
+            <field name="model">account.chart.template</field>
+            <field name="inherit_id" ref="account.view_account_chart_template_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='company_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='parent_id']" position="attributes">
+            		<attribute name="options">{'no_create': True}</attribute>
+            		<attribute name="required">1</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='transfer_account_id']" position="attributes">
+					<attribute name="required">0</attribute>
+            		<attribute name="options">{'no_create': True}</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='visible']" position="attributes">
+					<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='complete_tax_set']" position="attributes">
+					<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='tax_template_ids']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='tax_template_ids']" position="after">
+            		<notebook>
+            			<page string="Default Accounts">
+            				<field name="account_ids" colspan="4" nolabel="1"/>
+            			</page>
+	            		<page string="Default Taxes">
+	            			<field name="tax_template_ids" colspan="4" nolabel="1" context="{'active_test': True}"/>
+	            		</page>
+            		</notebook>
+            	</xpath>
+            	
+            </field>
+		</record>
+		
+    	<!-- Account Templates -->
+    	
+		<record id="view_account_template_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.account.template.form.inherit.oe_account</field>
+            <field name="model">account.account.template</field>
+            <field name="inherit_id" ref="account.view_account_template_tree"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='user_type_id']" position="attributes">
+            		<attribute name="invisible">0</attribute>
+            	</xpath>
+            	
+            </field>
+        </record>
+        
+		<!-- Taxes Template -->
+
+		<record id="view_account_tax_template_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.tax.template.form.inherit.oe_account</field>
+            <field name="model">account.tax.template</field>
+            <field name="inherit_id" ref="account.view_account_tax_template_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='name']" position="after">
+				    <field name="form_code_ats" required="1"/>
+					<field name="tag_ids" domain="[('applicability', '!=', 'accounts')]"
+            	    	widget="many2many_tags" context="{'default_applicability': 'taxes'}"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='type_tax_use']" position="before">
+            		<field name="module"/>
+            	</xpath>
+            	
+            	<!--xpath expr="//field[@name='tax_group_id']" position="attributes">
+            		<attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+            	</xpath-->
+            	
+            	<!--xpath expr="//page[1]/group[1]/group[2]" position="after">
+					<group string="Distribution for Invoices">
+					    <field name="invoice_repartition_line_ids" nolabel="1" context="{'default_company_id': company_id}"/>
+					</group>
+					<group string="Distribution for Credit Notes">
+					    <field name="refund_repartition_line_ids" nolabel="1" context="{'default_company_id': company_id}"/>
+					</group>
+            	</xpath-->
+            	
+            </field>
+		</record>
+
+		<record id="view_account_tax_template_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.tax.template.tree.inherit.oe_account</field>
+            <field name="model">account.tax.template</field>
+            <field name="inherit_id" ref="account.view_account_tax_template_tree"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='description']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='description']" position="after">
+            	    <field name="type_tax_use"/>
+            	    <field name="form_code_ats"/>
+            	    <field name="tag_ids" domain="[('applicability', '!=', 'accounts')]"
+            	    	widget="many2many_tags" context="{'default_applicability': 'taxes'}"/>
+            		<field name="tax_group_id"/>
+            		<field name="amount"/>
+            		<field name="account_id" groups="account.group_account_user"/>
+            		<field name="refund_account_id" groups="account.group_account_user"/>
+            		<field name="active" widget="boolean_toggle"/>
+            	</xpath>
+            	
+            </field>
+		</record>
+
+		<record id="view_account_tax_template_search_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.tax.template.search.inherit.oe_account</field>
+            <field name="model">account.tax.template</field>
+            <field name="inherit_id" ref="account.view_account_tax_template_search"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='name']" position="attributes">
+            		<attribute name="filter_domain">['|', '|', ('name','ilike',self), ('description','ilike',self), ('form_code_ats','ilike',self)]</attribute>
+            	</xpath>
+            
+				<xpath expr="//field[@name='chart_template_id']" position="after">
+					<group expand="0" string="Group By">
+	            		<filter name="group_by_chart_template" string="Chart of Accounts Templates"
+	            			domain="[]" context="{'group_by':'chart_template_id'}"/>
+	            		<filter name="group_by_tax_group" string="Group of Taxes"
+	            			domain="[]" context="{'group_by':'tax_group_id'}"/>
+            		</group>
+            	</xpath>
+            	
+            </field>
+		</record>
+		
+		<record id="account.action_account_tax_template_form" model="ir.actions.act_window">
+			<field name="context">{'search_default_group_by_chart_template': 1, 'search_default_group_by_tax_group': 1}</field>
+		</record>
+    
+	</data>
+</odoo>

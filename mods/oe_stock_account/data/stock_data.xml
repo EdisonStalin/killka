@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data noupdate="1">
+    
+    	<record id="stock_account.allow_zero_cost" model="ir.config_parameter">
+            <field name="key">stock_account.allow_zero_cost</field>
+            <field name="value">False</field>
+        </record>
+        
+	</data>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<record id="account_report_balance_view_excel_report" model="ir.ui.view">
+	    <field name="name">Trial Balance in Excel</field>
+	    <field name="model">account.balance.report</field>
+	    <field name="inherit_id" ref="account.account_report_balance_view"/>
+	    <field name="arch" type="xml">
+	        
+	        <xpath expr="/form/footer/button[1]" position="after">
+	            <button name="check_report_excel" string="Print in Excel" type="object" class="oe_highlight"/>
+	        </xpath>
+	        
+	    </field>
+	</record>
+
+</odoo>

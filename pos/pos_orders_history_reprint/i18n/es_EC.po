@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_orders_history_reprint
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-20 05:10+0000\n"
+"PO-Revision-Date: 2020-11-20 05:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:43
+#, python-format
+msgid "% discount"
+msgstr "% descuento"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:127
+#, python-format
+msgid "Back"
+msgstr "Regresar"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:106
+#, python-format
+msgid "Change:"
+msgstr "Cambio:"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:76
+#, python-format
+msgid "Discount:"
+msgstr "Descuento:"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/js/screens.js:258
+#: code:addons/pos_orders_history_reprint/static/src/js/screens.js:272
+#, python-format
+msgid "No Ticket."
+msgstr "No tiene Recibo."
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/js/screens.js:211
+#, python-format
+msgid "No XML Receipt."
+msgstr "No tiene Recibo XML."
+
+#. module: pos_orders_history_reprint
+#: model:base.automation,name:pos_orders_history_reprint.rule_new_receipt
+#: model:ir.actions.server,name:pos_orders_history_reprint.rule_new_receipt_ir_actions_server
+msgid "Notify POS about new receipt."
+msgstr "Notificar al POS sobre un nuevo recibo."
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:22
+#, python-format
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:133
+#, python-format
+msgid "Print Receipt"
+msgstr "Imprimir Recibo"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_receipt
+msgid "Receipt"
+msgstr "Recibo"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_receipt_type
+msgid "Receipt Type"
+msgstr "Tipo de recibo"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_xml_receipt_pos_reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:11
+#, python-format
+msgid "Reprint"
+msgstr "Re-imprimir"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,field_description:pos_orders_history_reprint.field_pos_config_reprint_orders
+msgid "Reprint Orders"
+msgstr "Órdenes de reimpresión"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model.fields,help:pos_orders_history_reprint.field_pos_config_reprint_orders
+msgid "Reprint paid POS Orders with POS interface"
+msgstr "Reimpresión de pedidos de POS pagados con interfaz POS"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:58
+#, python-format
+msgid "Subtotal:"
+msgstr "Subtotal:"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/js/screens.js:259
+#: code:addons/pos_orders_history_reprint/static/src/js/screens.js:273
+#, python-format
+msgid "There is no Ticket for the order."
+msgstr "No hay ticket para el pedido."
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/js/screens.js:212
+#, python-format
+msgid "There is no XML receipt for the order."
+msgstr "No hay recibo XML para el pedido."
+
+#. module: pos_orders_history_reprint
+#: selection:pos.xml_receipt,receipt_type:0
+msgid "Ticket"
+msgstr "Ticket"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:84
+#, python-format
+msgid "Total:"
+msgstr "Total:"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:23
+#, python-format
+msgid "User:"
+msgstr "Vendedor:"
+
+#. module: pos_orders_history_reprint
+#. openerp-web
+#: code:addons/pos_orders_history_reprint/static/src/xml/main.xml:42
+#, python-format
+msgid "With a"
+msgstr "con"
+
+#. module: pos_orders_history_reprint
+#: selection:pos.xml_receipt,receipt_type:0
+msgid "XML"
+msgstr "XML"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model,name:pos_orders_history_reprint.model_pos_config
+msgid "pos.config"
+msgstr "Configuración POS"
+
+#. module: pos_orders_history_reprint
+#: model:ir.model,name:pos_orders_history_reprint.model_pos_xml_receipt
+msgid "pos.xml_receipt"
+msgstr "pos.xml_receipt"
+

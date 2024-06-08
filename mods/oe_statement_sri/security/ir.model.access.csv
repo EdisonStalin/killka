@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ats_statement_user,ats.statement.user,model_ats_statement,account.group_account_user,1,1,1,1
+access_ats_statement_invoice,ats.statement.invoice,model_ats_statement,account.group_account_invoice,1,1,1,1
+access_ats_statement_line_user,ats.statement.line.user,model_ats_statement_line,account.group_account_user,1,1,1,1
+access_ats_statement_line_invoice,ats.statement.line.invoice,model_ats_statement_line,account.group_account_invoice,1,1,1,1
+access_statement_form_manager_form,statement.form.manager_form,oe_account.model_statement_form,oe_account.group_manager_form,1,1,1,1
+access_statement_form_line_manager_form,statement.form.line.manager_form,oe_account.model_statement_form_line,oe_account.group_manager_form,1,1,1,1

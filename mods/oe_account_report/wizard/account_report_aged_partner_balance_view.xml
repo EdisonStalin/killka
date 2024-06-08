@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+	<record id="account_aged_balance_view_inherit_oe_account_report" model="ir.ui.view">
+		<field name="name">account.aged.trial.balance.inherit.oe_account_report</field>
+		<field name="model">account.aged.trial.balance</field>
+		<field name="inherit_id" ref="account.account_aged_balance_view"/>
+		<field name="arch" type="xml">
+			
+			<xpath expr="//field[@name='target_move']" position="after">
+				<field name="show_move_line_details"/>
+			</xpath>
+			
+			<xpath expr="//field[@name='journal_ids']" position="after">
+				<group>
+					<field name="partner_ids" widget="many2many_tags" options="{'no_create': True}"/>
+				</group>
+               	<group col="4">
+					<field name="receivable_accounts_only"/>
+                   	<field name="payable_accounts_only"/>
+               	</group>
+				<group>
+					<field name="account_ids" widget="many2many_tags" options="{'no_create': True}"/>
+				</group>
+			</xpath>
+			
+			<xpath expr="/form/footer/button[@name='check_report']" position="before">
+				<button name="button_export_html" string="View" type="object" class="oe_highlight"/>
+				or
+			</xpath>
+			
+			<xpath expr="/form/footer/button[@name='check_report']" position="after">
+				or
+				<button name="button_export_xlsx" string="Export XLSX" type="object" class="oe_highlight"/>
+				or
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

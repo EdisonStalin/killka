@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+<!-- Cambiar estructura html -->
+	<template id="index" name="oe_pos POS Index" inherit_id="point_of_sale.index">
+		<!-- Cambiar <title> de Odoo a App EcuaOnline -->
+		<xpath expr="//title" position="replace">
+			<title>POS</title>
+		</xpath>
+
+		<!-- Cambiar favicon -->
+		<xpath expr="//link[contains(@rel, 'icon')]" position="replace"/>
+		<xpath expr="//link[contains(@rel, 'icon')]" position="replace"/>
+		<xpath expr="//link[contains(@rel, 'icon')]" position="replace"/>
+		<xpath expr="//link[contains(@rel, 'icon')]" position="replace"/>
+		<xpath expr="//link[contains(@rel, 'icon')]" position="replace"/>
+		<xpath expr="//link[contains(@rel, 'icon')]" position="replace"/>
+		<xpath expr="//link[@type='image/x-icon']" position="attributes">
+			<attribute name="href">/oe_web/static/src/img/favicon.ico</attribute>
+		</xpath>
+
+	</template>
+
+</odoo>

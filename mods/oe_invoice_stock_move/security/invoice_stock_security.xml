@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+	<data noupdate="0">
+		
+		<record id="group_invoice_stock_move" model="res.groups">
+	        <field name="name">Inventory movement on invoices</field>
+	        <field name="category_id" ref="base.module_category_hidden"/>
+	        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+	    </record>
+
+	</data>
+	
+</odoo>

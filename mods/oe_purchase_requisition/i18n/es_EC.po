@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_purchase_requisition
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-05 19:44+0000\n"
+"PO-Revision-Date: 2022-10-05 19:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "<strong>Approval Date:</strong>"
+msgstr "<strong>Fecha de aprobación:</strong>"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Fecha de Pedido:</strong>"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "<strong>Our Order Reference:</strong>"
+msgstr "<strong>Nuestra Referencia de Pedido:</strong>"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Dirección de Envío:</strong>"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "<strong>Supplier Data:</strong>"
+msgstr "<strong>Datos de proveedor:</strong>"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.view_purchase_requisition_form_inherit_oe_purchase_requisition
+msgid "Add Products"
+msgstr "Agregar Productos"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "Aprobado By:"
+msgstr "Aprobado Por:"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_available_qty
+msgid "Available Qty"
+msgstr "Cant. disponible"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_currency_id
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,help:oe_purchase_requisition.field_purchase_requisition_line_last_cost
+msgid "Current Last Cost"
+msgstr "Costo Promedio"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_discount
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: oe_purchase_requisition
+#: selection:purchase.requisition.line,type_discount:0
+msgid "Fixed"
+msgstr "Fijo"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_last_cost
+msgid "Last Cost"
+msgstr "Ultimo precio"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "Made By:"
+msgstr "Elaborado Por:"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "Name:"
+msgstr "Nombre:"
+
+#. module: oe_purchase_requisition
+#: selection:purchase.requisition.line,type_discount:0
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: oe_purchase_requisition
+#: model:ir.model,name:oe_purchase_requisition.model_purchase_requisition
+msgid "Purchase Requisition"
+msgstr "Requisición"
+
+#. module: oe_purchase_requisition
+#: model:ir.model,name:oe_purchase_requisition.model_purchase_requisition_line
+msgid "Purchase Requisition Line"
+msgstr "Línea de Requisición"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_price_subtotal
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_price_tax
+msgid "Tax"
+msgstr "IVA diferente 0%"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_amount_tax
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_taxes_id
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_amount_total
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_price_total
+msgid "Total"
+msgstr "Total"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_line_type_discount
+msgid "Type Discount"
+msgstr "Tipo Descuento"
+
+#. module: oe_purchase_requisition
+#: model:ir.model.fields,field_description:oe_purchase_requisition.field_purchase_requisition_amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Base IVA diferente 0%"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "Vendor:"
+msgstr "Proveedor:"
+
+#. module: oe_purchase_requisition
+#: model:ir.ui.view,arch_db:oe_purchase_requisition.report_purchaserequisitions_inherit_oe_purchase_requisition
+msgid "____________"
+msgstr "____________"
+

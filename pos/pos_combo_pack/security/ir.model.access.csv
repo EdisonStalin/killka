@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_pack,access.product.pack,model_product_pack,,1,1,1,1
+access_pos_order_line_combo,access.pos.order.line.combo,model_pos_order_line_combo,,1,1,1,1
+access_product_extra_topping,access.product.extra.topping,model_product_extra_topping,,1,1,1,1
+access_pos_order_line_own,access.pos.order.line.own,model_pos_order_line_own,,1,1,1,1
+access_fix_product_pack,access.fix.product.pack,model_fix_product_pack,,1,1,1,1

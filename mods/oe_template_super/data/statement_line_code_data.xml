@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+	
+		<!-- RESUMEN DE VENTAS Y OTRAS OPERACIONES DEL PERÍODO QUE DECLARA -->
+
+		<record model="account.account.tag" id="tax_tag_401">
+			<field name="name">401</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_411">
+			<field name="name">411</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_421">
+			<field name="name">421</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_402">
+			<field name="name">402</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_412">
+			<field name="name">412</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_422">
+			<field name="name">422</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_423">
+			<field name="name">423</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_424">
+			<field name="name">424</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_403">
+			<field name="name">403</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_413">
+			<field name="name">413</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_404">
+			<field name="name">404</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_414">
+			<field name="name">414</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_405">
+			<field name="name">405</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_415">
+			<field name="name">415</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_406">
+			<field name="name">406</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_416">
+			<field name="name">416</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_407">
+			<field name="name">407</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_417">
+			<field name="name">417</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_408">
+			<field name="name">408</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_418">
+			<field name="name">418</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_409">
+			<field name="name">409</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_419">
+			<field name="name">419</field>
+			<field name="sequence">2</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_429">
+			<field name="name">429</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_431">
+			<field name="name">431</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_441">
+			<field name="name">441</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_442">
+			<field name="name">442</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_443">
+			<field name="name">443</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_453">
+			<field name="name">453</field>
+			<field name="sequence">3</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_434">
+			<field name="name">434</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_444">
+			<field name="name">444</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_454">
+			<field name="name">454</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<!-- LIQUIDACIÓN DEL IVA EN EL MES -->
+		
+		<record model="account.account.tag" id="tax_tag_480">
+			<field name="name">480</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_481">
+			<field name="name">481</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_482">
+			<field name="name">482</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_483">
+			<field name="name">483</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_484">
+			<field name="name">484</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_485">
+			<field name="name">485</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_499">
+			<field name="name">499</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<!-- RESUMEN DE ADQUISICIONES Y PAGOS DEL PERÍODO QUE DECLARA -->
+		<!-- Purchase -->
+		
+		<record model="account.account.tag" id="tax_tag_500">
+			<field name="name">500</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_510">
+			<field name="name">510</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_520">
+			<field name="name">520</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_501">
+			<field name="name">501</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_511">
+			<field name="name">511</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_521">
+			<field name="name">521</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_502">
+			<field name="name">502</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_512">
+			<field name="name">512</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_522">
+			<field name="name">522</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_503">
+			<field name="name">503</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_513">
+			<field name="name">513</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_523">
+			<field name="name">523</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_504">
+			<field name="name">504</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_514">
+			<field name="name">514</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_524">
+			<field name="name">524</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_505">
+			<field name="name">505</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_515">
+			<field name="name">515</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_525">
+			<field name="name">525</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_526">
+			<field name="name">526</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_527">
+			<field name="name">527</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_506">
+			<field name="name">506</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_516">
+			<field name="name">516</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_507">
+			<field name="name">507</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_517">
+			<field name="name">517</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_508">
+			<field name="name">508</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_518">
+			<field name="name">518</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_509">
+			<field name="name">509</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_519">
+			<field name="name">519</field>
+			<field name="sequence">2</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_529">
+			<field name="name">529</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_531">
+			<field name="name">531</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_541">
+			<field name="name">541</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_532">
+			<field name="name">532</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_542">
+			<field name="name">542</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_543">
+			<field name="name">543</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_544">
+			<field name="name">544</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_554">
+			<field name="name">554</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_535">
+			<field name="name">535</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_545">
+			<field name="name">545</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_555">
+			<field name="name">555</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_563">
+			<field name="name">563</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_564">
+			<field name="name">564</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_invoice</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<!-- AGENTE DE RETENCIÓN DEL IMPUESTO AL VALOR AGREGADO -->
+		
+		<record model="account.account.tag" id="tax_tag_721">
+			<field name="name">721</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_723">
+			<field name="name">723</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_725">
+			<field name="name">725</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_727">
+			<field name="name">727</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_729">
+			<field name="name">729</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_731">
+			<field name="name">731</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_799">
+			<field name="name">799</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_800">
+			<field name="name">800</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">out_withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_801">
+			<field name="name">801</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_withholding</field>
+			<field name="applicability">taxes</field>
+			<field name="country_id" ref="base.ec"/>
+		</record>
+		
+	</data>
+</odoo>	

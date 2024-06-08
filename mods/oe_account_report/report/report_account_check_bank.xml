@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<template id="report_account_check_bank">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="oe_web.internal_layout_clear">
+						<t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+						<div class="page">
+							<t t-set="line1" t-value="o.journal_id.bank_id.line_ids.filtered(lambda l: l.code_line=='order')"/>
+							<t t-set="line2" t-value="o.journal_id.bank_id.line_ids.filtered(lambda l: l.code_line=='amount')"/>
+							<t t-set="line3" t-value="o.journal_id.bank_id.line_ids.filtered(lambda l: l.code_line=='sum')"/>
+							<t t-set="line4" t-value="o.journal_id.bank_id.line_ids.filtered(lambda l: l.code_line=='sum2')"/>
+							<t t-set="line5" t-value="o.journal_id.bank_id.line_ids.filtered(lambda l: l.code_line=='date')"/>
+							<div class="row">
+								<p t-attf-style="top: {{ line1.margin_top }}mm; left: {{ line1.margin_left }}mm; 
+									width: {{ line1.width_line }}mm; background-color: {{ line1.color }}; position:absolute;">
+									<span t-field="o.pay_to"/>
+								</p>
+								<p t-attf-style="top: {{ line2.margin_top }}mm; left: {{ line2.margin_left }}mm;
+									width: {{ line2.width_line }}mm; background-color: {{ line2.color }}; position:absolute;">
+									<span t-field="o.amount" t-field-options="{'widget':'False'}"/>
+								</p>
+								<p t-attf-style="top: {{ line3.margin_top }}mm; left: {{ line3.margin_left }}mm;
+									width: {{ line3.width_line }}mm; background-color: {{ line3.color }}; position:absolute;">
+									<span t-field="o.check_amount_in_words"/>
+								</p>
+								<p t-attf-style="top: {{ line4.margin_top }}mm; left: {{ line4.margin_left }}mm;
+									width: {{ line4.width_line }}mm; background-color: {{ line4.color }}; position:absolute;">
+									<span t-field="o.check_amount_in_words2"/>
+								</p>
+								<p t-attf-style="top: {{ line5.margin_top }}mm; left: {{ line5.margin_left }}mm;
+									width: {{ line5.width_line }}mm; background-color: {{ line5.color }}; position:absolute;">
+									<span t-field="o.company_id.city"/>, <span t-field="o.payment_date" t-field-options='{"format": "d MMMM y"}'/>
+								</p>
+							</div>
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+	
+	</data>
+</odoo>	

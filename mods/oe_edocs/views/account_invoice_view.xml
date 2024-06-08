@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<record id="view_account_invoice_filter_inherit_oe_edocs" model="ir.ui.view">
+            <field name="name">account.invoice.select.inherit.oe_edocs</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+            
+				<xpath expr="//filter[@name='late']" position="after">
+					<filter name="authorized" string="Authorized by SRI" domain="[('authorization','=',True)]"/>
+                    <filter name="not_authorized" string="Not authorized by SRI" domain="[('authorization','=',False)]"/>
+            	</xpath>
+
+				<xpath expr="//filter[@name='status']" position="after">
+					<filter name="message_state" string="SRI status" context="{'group_by':'message_state'}"/>
+				</xpath>
+
+            </field>
+		</record>
+
+
+		<record id="view_invoice_tree_inherit_oe_edocs" model="ir.ui.view">
+			<field name="name">account.invoice.tree.inherit.oe_edocs</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_tree"/>
+			<field name="arch" type="xml">
+
+				<xpath expr="//field[@name='state']" position="before">
+					<field name="message_state" string="SRI status"/>
+				</xpath>
+
+			</field>
+		</record>
+
+
+		<record id="view_invoice_form_inherit_oe_edocs" model="ir.ui.view">
+			<field name="name">account.invoice.form.inherit.oe_edocs</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_form"/>
+			<field name="arch" type="xml">
+				
+				<xpath expr="//field[@name='has_outstanding']" position="after">
+					<div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('message_state', 'not in', ['RECIBIDA', 'EN PROCESO'])]}">
+	                    <bold><a class="alert-link" href="#outstanding" role="button">verify which document was authorized by SRI</a></bold>. Remember that the SRI has a period of 72 hours to authorize the document.
+	                </div>
+	                <div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}">
+	                    Perform the electronic document<strong> cancellation</strong> on the <bold><a class="alert-link" href="https://srienlinea.sri.gob.ec/sri-en-linea/#/inicio/NAT" target="_blank" role="button">SRI</a></bold> platform
+	                </div>
+				</xpath>
+				
+				<xpath expr="//header/button[@name='action_invoice_open']" position="attributes">
+					<attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+				</xpath>
+				
+				<xpath expr="//header/button[@name='action_invoice_draft']" position="attributes">
+					<attribute name="attrs">{'invisible': ['|', ('authorization', '=', True)]}</attribute>
+					<attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+				</xpath>
+
+				<xpath expr="//header/button[@name='invoice_print']" position="after">
+					<button name="action_send_to_sri" string="Send to SRI" type="object" states="open,paid"
+						attrs="{'invisible': ['|', '|', ('received', '=', True), ('is_electronic', '=', False)]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_validate_to_sri" string="Validate with SRI" type="object" states="open,paid"
+						attrs="{'invisible': ['|', '|', '|', ('authorization', '=', True), ('received', '=', False), ('is_electronic', '=', False)]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_restore_doc" string="Restore" type="object" 
+						attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_transport_permit" string="Create Transport Permit" type="object" 
+						attrs="{'invisible': ['|',('state', 'in', ['cancel']),('type','!=','out_invoice')]}"
+						groups="oe_edocs.group_transport_permit"/>
+				</xpath>
+				
+				<xpath expr="//header/field[@name='state']" position="attributes">
+					<attribute name="statusbar_visible">draft,open</attribute>
+				</xpath>
+            
+				<xpath expr="//label" position="replace">
+					<div class="label label-warning" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('received', '=', False)]}">SRI: RECEIVED</div>
+					<div class="label label-success" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('authorization', '=', False)]}">SRI: <field name="message_state" readonly="1"/></div>
+				</xpath>
+				
+				<xpath expr="//div[@name='button_box']" position="inside">
+					<button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_views_transport_permit"
+						attrs="{'invisible': [('transport_count', '=', 0)]}">
+						<field name="transport_count" widget="statinfo" string="Transport Permit"/>
+					</button>
+            	</xpath>
+
+
+
+            	<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="partner_invoice_id" string="Invoice Address" attrs="{'invisible': [('substitute_permit', '=', False)], 'required': [('substitute_permit', '=', True)]}"
+						context="{'search_default_customer':1, 'default_company_type': 'person', 'default_parent_id': partner_id, 'default_type': 'invoice', 
+							'form_view_ref': 'oe_base.view_res_partner_simple_type_form', 'tree_view_ref': 'oe_base.view_res_partner_simple_type_form'}"
+						options='{"no_quick_create": True}'/>
+            	</xpath>
+            	
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="substitute_permit" attrs="{'invisible': [('type','!=','out_invoice')], 'readonly': [('state', '!=', 'draft')]}"
+						groups="oe_edocs.group_transport_permit"/>
+					<field name="received" invisible="1"/>
+					<field name="authorization" invisible="1"/>
+				</xpath>
+				
+            	<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
+					<attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+            	</xpath>
+
+				<xpath expr="//page[@name='other_info']" position="after">
+					<page string="Transport Permit" name="transport_permit" attrs="{'invisible': [('substitute_permit', '=', False)]}">
+            			<field name="transport_permit_ids" attrs="{'readonly': [('transport_permit_ids', '&gt;', 1), ('state', '!=', 'draft')]}"
+            				context="{'default_invoice_id': active_id, 'default_date_transport': date_invoice}">
+							<tree>
+	                            <field name="partner_id" string="Driver"/>
+	                            <field name="address_starting"/>
+	                            <field name="license_plate"/>
+	                            <field name="date_transport"/>
+	                            <field name="date_due"/>
+	                            <field name="state" invisible="1"/>
+	                            <field name="type" invisible="1"/>
+	                        </tree>
+							<form string="Transport Permit">
+								<sheet>
+									<group>
+										<group>
+	                                        <field name="partner_id" string="Driver"
+	                                        	context="{'default_driver': True, 'default_is_customer': False, 'default_is_validation_vat': True}"/>
+	                                        <field name="address_starting"/>
+	                                        <field name="license_plate"/>
+                                        </group>
+	                                    <group>
+											<field name="date_transport"/>
+	                                        <field name="date_due"/>
+	                                        <field name="invoice_id" invisible="1"/>
+	                                        <field name="state" invisible="1"/>
+	                                    </group>
+                                	</group>
+                                	<notebook>
+                                		<page string="Relocated">
+                                			<field name="transport_permit_line_ids"
+                                				context="{'default_invoice_id': active_id, 'default_type': 'out_transport'}">
+		                                		<tree editable="bottom">
+		                                			<field name="sequence" widget="handle"/>
+		                                			<field name="invoice_id" invisible="1"/>
+		                                			<field name="transport_permit_id" invisible="1"/>
+		                                			<field name="reason" required="1"/>
+		                                			<field name="route"/>
+		                                			<field name="customs_document"/>
+		                                			<field name="code_destination_business"/>                                			
+		                                		</tree>
+		                                	</field>
+                                		</page>
+                                		<page string="Products">
+											<field name="transport_permit_line_details_ids"
+												context="{'default_invoice_id': active_id, 'default_type': 'out_transport'}">
+												<tree editable="bottom">
+		                                			<field name="sequence" widget="handle"/>
+		                                			<field name="product_id"/>
+		                                			<field name="name"/>
+		                                			<field name="code_main" invisible="1"/>
+		                                			<field name="code_assistant" invisible="1"/>
+		                                			<field name="quantity"/>                              			
+		                                		</tree>
+                                			</field>
+                                		</page>
+                                	</notebook>
+								</sheet>
+							</form>
+            			</field>
+					</page>
+				</xpath>
+
+			</field>
+		</record>		
+
+        <record id="view_invoice_form_inherit_oe_account_inherit_oe_edocs" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit.oe_account.inherit.oe_edocs</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="oe_account.view_invoice_form_inherit_oe_account"/>
+            <field name="arch" type="xml">
+				
+                <xpath expr="//field[@name='statement_tax_line_ids']" position="before">
+					<header>
+						<button name="action_generate_xml" string="Generate XML" type="object" 
+							attrs="{'invisible': ['|',('is_electronic', '=', False), ('authorization', '=', False)]}"/>
+					</header>
+					<group string="SRI Info">
+						<group>
+							<field name="received"/>
+							<field name="authorization"/>
+							<field name="authorization_number" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="access_key" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+						</group>
+						<group>
+							<field name="environment" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="authorization_date" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="message_state" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+						</group>
+					</group>
+                </xpath>
+                
+                <xpath expr="//field[@name='statement_tax_line_ids']" position="after">
+					<field name="edi_document_ids" attrs="{'invisible': [('edi_document_ids', '=', 0)]}">
+						<tree string="History lines" edit="false" create="false">
+							<field name="sequence" invisible="1"/>
+							<field name="company_id" invisible="1"/>
+							<field name="invoice_id" invisible="1"/>
+							<field name="code"/>
+							<field name="type"/>
+							<field name="date_action"/>
+							<field name="message"/>
+							<field name="add_information"/>
+						</tree>
+					</field>
+                </xpath>
+                
+            </field>
+        </record>
+
+        <record id="invoice_form_cancel_inherit_oe_edocs" model="ir.ui.view">
+            <field name="name">invoice.form.cancel.inherit.oe_edocs</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_invoice_cancel']" position="attributes">
+                    <attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="invoice_form_cancel_refund_inherit_oe_edocs" model="ir.ui.view">
+            <field name="name">invoice.form.cancel.refund.inherit.oe_edocs</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="oe_account.invoice_form_cancel_inherit_oe_account"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_invoice_cancel'][2]" position="attributes">
+                    <attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+                </xpath>
+            </field>
+        </record>
+
+	</data>
+</odoo>

@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hspl_user_simulation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-29 15:30+0000\n"
+"PO-Revision-Date: 2021-07-29 15:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hspl_user_simulation
+#: model:ir.ui.view,arch_db:hspl_user_simulation.user_simulation_wizard_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: hspl_user_simulation
+#: model:ir.ui.view,arch_db:hspl_user_simulation.user_simulation_wizard_view
+msgid "Login"
+msgstr "Iniciar Sesión"
+
+#. module: hspl_user_simulation
+#: code:addons/hspl_user_simulation/wizard/user_simulation_wizard.py:61
+#, python-format
+msgid "Only employee can access this database. Please contact the administrator."
+msgstr "Solo el empleado puede acceder a esta base de datos. Por favor contacte al administrador."
+
+#. module: hspl_user_simulation
+#. openerp-web
+#: code:addons/hspl_user_simulation/static/src/xml/widget.xml:6
+#, python-format
+msgid "Simulate User"
+msgstr "Simular Usuario"
+
+#. module: hspl_user_simulation
+#: model:ir.model.fields,field_description:hspl_user_simulation.field_user_simulation_wizard_user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: hspl_user_simulation
+#. openerp-web
+#: code:addons/hspl_user_simulation/static/src/js/user_simulation.js:21
+#: model:ir.actions.act_window,name:hspl_user_simulation.action_user_simulation
+#: model:ir.ui.view,arch_db:hspl_user_simulation.user_simulation_wizard_view
+#: model:res.groups,name:hspl_user_simulation.group_user_simulation
+#, python-format
+msgid "User Simulation"
+msgstr "Simulación de Usuario"
+
+#. module: hspl_user_simulation
+#: model:ir.model,name:hspl_user_simulation.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: hspl_user_simulation
+#: code:addons/hspl_user_simulation/wizard/user_simulation_wizard.py:58
+#, python-format
+msgid "Wrong login/password"
+msgstr "Usuario o Contraseña incorrectos"
+
+#. module: hspl_user_simulation
+#: model:ir.model,name:hspl_user_simulation.model_user_simulation_wizard
+msgid "user simulation wizard"
+msgstr "Asistente de Simulación"
+

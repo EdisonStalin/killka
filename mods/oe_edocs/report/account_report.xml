@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+		<report
+			id="account.account_invoices"
+			model="account.invoice"
+			string="Document"
+			report_type="qweb-pdf"
+			name="oe_edocs.report_electronic_invoice"
+			file="oe_edocs.report_electronic_invoice"			
+			print_report_name="(object._get_printed_report_name())"
+			attachment=""
+			groups="account.group_account_invoice,oe_edocs.group_account_invoice_electronic"
+		/>
+
+		<record id="account.account_invoices" model="ir.actions.report">
+			<field name="paperformat_id" ref="base.paperformat_euro"/>
+		</record>
+
+		<report
+			id="account_withholdings_electronics"
+			model="account.withholding"
+			string="Document"
+			report_type="qweb-pdf"
+			name="oe_edocs.report_electronic_withholding"
+			file="oe_edocs.report_electronic_withholding"			
+			print_report_name="(object._get_printed_report_name())"
+			attachment=""
+			groups="account.group_account_invoice,oe_edocs.group_account_invoice_electronic"
+		/>
+
+		<record id="account_withholdings_electronics" model="ir.actions.report">
+			<field name="paperformat_id" ref="base.paperformat_euro"/>
+		</record>
+
+		<report
+			id="account_transport_permit_electronics"
+			model="transport.permit"
+			string="Transport Permit"
+			report_type="qweb-pdf"
+			name="oe_edocs.report_transport_permit"
+			file="oe_edocs.report_transport_permit"			
+			print_report_name="(object._get_printed_report_name())"
+			groups="account.group_account_invoice,oe_edocs.group_account_invoice_electronic"
+		/>
+
+		<record id="account_transport_permit_electronics" model="ir.actions.report">
+			<field name="paperformat_id" ref="base.paperformat_euro"/>
+		</record>
+
+	</data>
+</odoo>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_pos_order_filter_inherit_oe_pos">
+            <field name="name">pos.order.list.select</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="before">
+                    <filter icon="terp-go-month" string="Month" domain="[('date_order','&lt;=',(datetime.date.today()+relativedelta(day=31)).strftime('%%Y-%%m-%%d')),('date_order','&gt;=',(datetime.date.today()-relativedelta(day=1)).strftime('%%Y-%%m-%%d'))]" name="mounth"/>
+                    <filter icon="terp-go-month" string="Previous Month" domain="[('date_order','&lt;=',(datetime.date.today()- relativedelta(day=31, months=1)).strftime('%%Y-%%m-%%d')),('date_order','&gt;=',(datetime.date.today()- relativedelta(day=1,months=1)).strftime('%%Y-%%m-%%d'))]" name="previous_mounth"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_pos_order_tree_inherit_oe_pos" model="ir.ui.view">
+            <field name="name">pos.order.tree.inherit.oe_pos</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+            
+                <xpath expr="//tree" position="attributes">
+                	<attribute name="create">1</attribute>
+                	<attribute name="decoration-warning">picking_id==False</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            
+                <xpath expr="//field[@name='pos_reference']" position="after">
+                    <field name="return_ref"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='amount_total']" position="after">
+                	<field name="amount_paid"/>
+                </xpath>
+                
+			    <xpath expr="//field[@name='state']" position="after">
+			    	<field name="to_invoice"/>
+                    <field name="invoice_id"/>
+                    <field name="picking_id" invisible="1"/>
+                </xpath>
+                
+            </field>
+        </record>
+        
+        <record id="view_pos_pos_form_inherit_oe_pos" model="ir.ui.view">
+            <field name="name">pos.order.form.inherit.oe_pos</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+            
+            	<xpath expr="//button[@name='action_pos_order_invoice']" position="attributes">
+            		<attribute name="attrs">{'invisible':['|',('to_invoice','=',False),('state','not in',['paid','done'])]}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='action_pos_order_invoice']" position="after">
+            		<button name="create_picking" string="Deliver Order" type="object" 
+            			attrs="{'invisible': [('picking_id','!=',False)]}"/>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='action_view_invoice']" position="attributes">
+            		<attribute name="attrs">{'invisible':[('to_invoice','=',False)]}</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='action_view_invoice']" position="after">
+                    <button name="action_view_refund" string="Refund" type="object"
+                        class="oe_stat_button" icon="fa-pencil-square-o"
+                        attrs="{'invisible':['|', ('state','!=','invoiced'), ('return_status', '=', 'nothing_return')]}">
+                    </button>
+					<button name="action_view_generate_refund" string="Credit Note" type="object"
+                        class="oe_stat_button" icon="fa-pencil-square-o"
+                        attrs="{'invisible':['|', ('state','!=','invoiced'), ('return_ref', '=', False)]}">
+                    </button>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='pos_reference']" position="attributes">
+            		<attribute name="required">1</attribute>
+            	</xpath>
+            	
+                <xpath expr="//field[@name='pos_reference']" position="after">
+                	<field name="to_invoice"/>
+                    <field name="invoice_id" attrs="{'invisible': [('to_invoice','=',False)]}"/>
+                    <field name="return_ref"/>
+                    <field name="return_status"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_unit']" position="attributes">
+                	<attribute name="widget"></attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='lines']/tree/field[@name='discount']" position="attributes">
+                	<attribute name="widget"></attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='lines']/tree/field[@name='tax_ids_after_fiscal_position']" position="attributes">
+                	<attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='lines']/tree/field[@name='tax_ids']" position="attributes">
+                	<attribute name="invisible">0</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='amount_tax']" position="after">
+                	<field name="details_tax" widget="boolean_toggle"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='amount_tax']" position="before">
+                	<field name="subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_base_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </xpath>
+                
+            </field>
+        </record>
+        
+		<record id="pos_order_view_form_inherit_cash_rounding_inherit_oe_pos" model="ir.ui.view">
+	        <field name="name">pos.order.form.inherit.cash_rounding.inherit.oe_pos</field>
+	        <field name="model">pos.order</field>
+	        <field name="inherit_id" ref="pos_cash_rounding.pos_order_view_form_inherit_cash_rounding"/>
+	        <field name="arch" type="xml">
+	        
+				<xpath expr="//button[@name='%(point_of_sale.action_pos_payment)d']" position="attributes">
+            		<attribute name="states"></attribute>
+            		<attribute name="attrs">{'invisible': [('amount_paid','==','amount_total')]}</attribute>
+            	</xpath>
+	        
+	        </field>
+	    </record>
+
+        <record id="invoice_create_action_server" model="ir.actions.server">
+            <field name="name">Create Invoice</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_pos_order"/>
+            <field name="binding_model_id" ref="model_pos_order"/>
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    action = records.action_pos_order_invoice()
+            </field>
+        </record>
+
+        <record id="invoice_approved_action_server" model="ir.actions.server">
+            <field name="name">Approve Invoice</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_pos_order"/>
+            <field name="binding_model_id" ref="model_pos_order"/>
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    action = records.action_approved_invoice()
+            </field>
+        </record>
+
+    </data>
+</odoo>

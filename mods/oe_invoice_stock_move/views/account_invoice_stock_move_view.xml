@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+
+		<record id="view_account_invoice_refund_inherit_oe_account_invoice_stock" model="ir.ui.view">
+            <field name="name">account.invoice.refund.form.inherit.oe_account_invoice_stock</field>
+            <field name="model">account.invoice.refund</field>
+            <field name="inherit_id" ref="account.view_account_invoice_refund"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='description']" position="before">
+            		<field name="picking_type_id" invisible="0" groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+            	</xpath>
+
+            </field>
+		</record>
+
+
+		<record id="customer_account_invoice_stock_view" model="ir.ui.view">
+	        <field name="name">account.invoice.form.inherit.oe_account_invoice_stock</field>
+	        <field name="model">account.invoice</field>
+	        <field name="inherit_id" ref="account.invoice_form"/>
+	        <field name="arch" type="xml">
+	            <xpath expr="//header" position="inside">
+	                <button name="action_stock_transfer" string="Transfer" type="object"  class="oe_highlight"
+	                     attrs="{'invisible':['|', '|', ('invoice_picking_id', '!=', False), ('state', '!=', 'open'), ('type', '=', 'out_refund')]}"
+	                     groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+	                <button name="action_stock_back" string="Transfer Back" type="object"  class="oe_highlight"
+	                     attrs="{'invisible':['|', '|', ('invoice_picking_id', '!=', False), ('state', '!=', 'open'), ('type', '=', 'out_invoice')]}"
+	                     groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+	            </xpath>
+	            
+	            <xpath expr="//field[@name='move_id']" position="after">
+	                <field name="picking_transfer_id" readonly="1" domain="[('code', '=', 'outgoing')]"
+	                	options="{'no_create': True}" groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+	                <field name="invoice_picking_id" options="{'no_create': True}"
+	                	groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+	            </xpath>
+	            
+	            <xpath expr="//div[@name='button_box']" position="inside">
+					<button type="object"
+					    name="action_view_picking" states="open,paid"
+					    class="oe_stat_button" attrs="{'invisible':[('picking_count', '=', 0)]}"
+					    icon="fa-truck" groups="oe_invoice_stock_move.group_invoice_stock_move">
+					    <field name="picking_count"  string="Shipment" widget="statinfo"/>
+					</button>
+	            </xpath>
+        	</field>
+        </record>
+
+
+        <record id="supplier_account_invoice_stock_view" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.inherit.oe_account_invoice_stock</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="action_stock_receive" string="Receive"  class="oe_highlight"
+						type="object"  attrs="{'invisible':['|', '|', ('invoice_picking_id', '!=', False), ('state', '!=', 'open'), ('type', '=', 'in_refund')]}"
+						groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+                    <button name="action_stock_back" string="Receive Back" type="object"  class="oe_highlight"
+	                     attrs="{'invisible':['|', '|', ('invoice_picking_id', '!=', False), ('state', '!=', 'open'), ('type', '=', 'in_invoice')]}"
+	                     groups="oe_invoice_stock_move.group_invoice_stock_move"/>        
+                </xpath>
+                
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="picking_type_id" domain="[('code', '=', 'incoming')]" options="{'no_create': True}"
+                    	groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+                    <field name="invoice_picking_id" options="{'no_create': True}"
+                    	groups="oe_invoice_stock_move.group_invoice_stock_move"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+		<record id="view_invoice_supplier_form_inherit2_account_invoice_stock" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.inherit2.oe_account_invoice_stock</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="oe_account.view_invoice_supplier_form_inherit_oe_account"/>
+            <field name="arch" type="xml">
+            	
+				<xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+	                <button type="object" name="action_view_picking"
+	                    class="oe_stat_button" attrs="{'invisible':[('picking_count', '=', 0)]}"
+	                    icon="fa-truck" groups="oe_invoice_stock_move.group_invoice_stock_move">
+	                    <field name="picking_count"  string="Shipment" widget="statinfo"/>
+	                </button>
+                </xpath>
+            	
+            </field>
+		</record>            
+
+  </data>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<!--report id="action_report_account_bank_statement" 
+	    model="account.bank.statement"
+	    string="Bank Statement"
+	    report_type="xlsx"
+	    name="oe_account.bank_statement" 
+	    file="oe_account.bank_statement"
+	    attachment_use="False"/-->
+
+</odoo>

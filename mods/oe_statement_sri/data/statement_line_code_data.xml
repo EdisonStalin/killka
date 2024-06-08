@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+	
+		<record model="statement.form.line.code" id="code_line_sale_401">
+			<field name="name">401</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_411">
+			<field name="name">411</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_421">
+			<field name="name">421</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_402">
+			<field name="name">402</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_412">
+			<field name="name">412</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_422">
+			<field name="name">422</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_423">
+			<field name="name">423</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_424">
+			<field name="name">424</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_403">
+			<field name="name">403</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_413">
+			<field name="name">413</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_404">
+			<field name="name">404</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_414">
+			<field name="name">414</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_405">
+			<field name="name">405</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_415">
+			<field name="name">415</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_406">
+			<field name="name">406</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_416">
+			<field name="name">416</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_407">
+			<field name="name">407</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_417">
+			<field name="name">417</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_408">
+			<field name="name">408</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_418">
+			<field name="name">418</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_409">
+			<field name="name">409</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_419">
+			<field name="name">419</field>
+			<field name="sequence">2</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_429">
+			<field name="name">429</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_431">
+			<field name="name">431</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_441">
+			<field name="name">441</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_442">
+			<field name="name">442</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_443">
+			<field name="name">443</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_453">
+			<field name="name">453</field>
+			<field name="sequence">3</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_434">
+			<field name="name">434</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">out_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_444">
+			<field name="name">444</field>
+			<field name="sequence">2</field>
+			<field name="document_type">out_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_454">
+			<field name="name">454</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_480">
+			<field name="name">480</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_481">
+			<field name="name">481</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_482">
+			<field name="name">482</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_sale_483">
+			<field name="name">483</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_484">
+			<field name="name">484</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_485">
+			<field name="name">485</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_sale_499">
+			<field name="name">499</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+		</record>
+
+		<!-- Purchase -->
+		
+		<record model="statement.form.line.code" id="code_line_purchase_500">
+			<field name="name">500</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_510">
+			<field name="name">510</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_520">
+			<field name="name">520</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_501">
+			<field name="name">501</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_511">
+			<field name="name">511</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_521">
+			<field name="name">521</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_502">
+			<field name="name">502</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_512">
+			<field name="name">512</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_522">
+			<field name="name">522</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_503">
+			<field name="name">503</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_513">
+			<field name="name">513</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_523">
+			<field name="name">523</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_504">
+			<field name="name">504</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_514">
+			<field name="name">514</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_524">
+			<field name="name">524</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+
+		<record model="statement.form.line.code" id="code_line_purchase_505">
+			<field name="name">505</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_515">
+			<field name="name">515</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_525">
+			<field name="name">525</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_526">
+			<field name="name">526</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_527">
+			<field name="name">527</field>
+			<field name="sequence">3</field>
+			<field name="type">generated_tax</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_506">
+			<field name="name">506</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_516">
+			<field name="name">516</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_507">
+			<field name="name">507</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_517">
+			<field name="name">517</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_508">
+			<field name="name">508</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_518">
+			<field name="name">518</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_509">
+			<field name="name">509</field>
+			<field name="sequence">1</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_519">
+			<field name="name">519</field>
+			<field name="sequence">2</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_529">
+			<field name="name">529</field>
+			<field name="sequence">3</field>
+			<field name="type">total_amount</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_531">
+			<field name="name">531</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_541">
+			<field name="name">541</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_532">
+			<field name="name">532</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_invoice</field>
+		</record>
+		
+		<record model="statement.form.line.code" id="code_line_purchase_542">
+			<field name="name">542</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">in_refund</field>
+		</record>		
+	</data>
+</odoo>	

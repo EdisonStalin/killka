@@ -1,0 +1,2659 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_account_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-16 13:24+0000\n"
+"PO-Revision-Date: 2022-12-16 13:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+msgid "&gt; 120 d."
+msgstr "&gt; 120 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "+                                Customer Outstanding Statement at"
+msgstr "+                                Declaración Pendiente Cliente en"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "+                                Supplier Outstanding Statement at"
+msgstr "+                                Declaración Pendiente Proveedor en"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "+120 Days Due"
+msgstr "+120 Días Vencidos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+msgid "1 - 30 d."
+msgstr "1 - 30 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "1-30 Days Due"
+msgstr "1-30 Días Vencidos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+msgid "10"
+msgstr "10"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "30-60 Days Due"
+msgstr "30-60 Días Vencidos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+msgid "31 - 60 d."
+msgstr "31 - 60 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "60-90 Days Due"
+msgstr "60-90 Días Vencidos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+msgid "61 - 90 d."
+msgstr "61 - 90 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "90-120 Days Due"
+msgstr "90-120 Días Vencidos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+msgid "91 - 120 d."
+msgstr "91 - 120 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+msgid "<b>Taxes summary</b>"
+msgstr "<b>Resumen de Impuestos</b>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Authorization: </strong>"
+msgstr "<strong>Autorización: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Bank Name: </strong>"
+msgstr "<strong>Nombre de Banco: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "<strong>Closing Date</strong>:<br/>"
+msgstr "<strong>Fecha de cierre</strong>:<br/>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+msgid "<strong>Company:</strong>"
+msgstr "<strong>Compañía:</strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Customer: </strong>"
+msgstr "<strong>Contacto: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Date: </strong>"
+msgstr "<strong>Fecha: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "<strong>Ending Balance</strong>:<br/>"
+msgstr "<strong>Resumen final</strong>:<br/>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+msgid "<strong>From</strong>"
+msgstr "<strong>Desde</strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Journal Entrie</strong>"
+msgstr "<strong>Asiento Contable</strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Journal: </strong>"
+msgstr "<strong>Diario: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "<strong>Journal</strong>:<br/>"
+msgstr "<strong>Diario</strong>:<br/>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Notes: </strong>"
+msgstr "<strong>Notas: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>N° Check: </strong>"
+msgstr "<strong>N° Cheque: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>N° Document: </strong>"
+msgstr "<strong>N° Documento: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>N° Voucher: </strong>"
+msgstr "<strong>N° Comprobante: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "<strong>Opening Date</strong>:<br/>"
+msgstr "<strong>Fecha de apertura</strong>:<br/>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Origin: </strong>"
+msgstr "<strong>Documento origen: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Partner: </strong>"
+msgstr "<strong>Empresa: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Payment Amount: </strong>"
+msgstr "<strong>Importe del pago: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Payment Date: </strong>"
+msgstr "<strong>Fecha de Pago: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Reference: </strong>"
+msgstr "<strong>Referencia: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "<strong>Starting Balance</strong>:<br/>"
+msgstr "<strong>Balance de inicio</strong>:<br/>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "<strong>Statement Name</strong>:<br/>"
+msgstr "<strong>Conciliación</strong>:<br/>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Tax Support: </strong>"
+msgstr "<strong>Sustento: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "<strong>The partner doesn't have due entries.</strong>"
+msgstr "<strong>La Cliente o Proveedor no tiene entradas vencidas.</strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Vendor: </strong>"
+msgstr "<strong>Proveedor: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Voucher Expense</strong>"
+msgstr "<strong>Comprobante de Egreso</strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "<strong>Voucher Income</strong>"
+msgstr "<strong>Comprobante de Ingreso</strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "<strong>Voucher type: </strong>"
+msgstr "<strong>Comprobante: </strong>"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+msgid "<strong>to </strong>"
+msgstr "<strong>hasta </strong>"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:65
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:21
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:27
+#: model:ir.model,name:oe_account_report.model_account_account
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_account
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_account
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_account
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_account
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+#: model:ir.ui.view,arch_db:oe_account_report.report_tax
+#, python-format
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_aged_trial_balance
+msgid "Account Aged Trial balance Report"
+msgstr "Reporte de Balance de Comprobación por Antiguedad"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_account_code
+msgid "Account Code"
+msgstr "Código Cuenta"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_common_report
+msgid "Account Common Report"
+msgstr "Contabilidad. Informe común"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_move
+msgid "Account Entry"
+msgstr "Asiento Contable"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:35
+#, python-format
+msgid "Account Name"
+msgstr "Nombre de Cuenta"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_print_journal
+msgid "Account Print Journal"
+msgstr "Contabilidad. Imprimir diario"
+
+#. module: oe_account_report
+#: selection:account.complementary.report,report_options:0
+#: model:ir.actions.report,name:oe_account_report.action_report_account_complementary
+msgid "Account State"
+msgstr "Estado Cuenta"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+msgid "Account State Report"
+msgstr "Informe de Estado de Cuenta"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_account_type
+msgid "Account Type"
+msgstr "Tipo de Cuenta"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:84
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Account balance at 0 filter"
+msgstr "Filtar Balance de Cuentas en 0"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_account_type
+msgid "Account type"
+msgstr "Tipos de Cuenta"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_accounting_report
+msgid "Accounting Report"
+msgstr "Informe Financiero"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_group_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_group_compute_account_ids
+msgid "Accounts"
+msgstr "Cuentas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_centralize
+msgid "Activate centralization"
+msgstr "Activar la Centralización"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Affected Transactions"
+msgstr "Transacción realizadas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_age_120_days
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_age_120_days
+msgid "Age 120 Days"
+msgstr "120 Días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_age_30_days
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_age_30_days
+msgid "Age 30 Days"
+msgstr "30 Días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_age_60_days
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_age_60_days
+msgid "Age 60 Days"
+msgstr "60 Días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_age_90_days
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_age_90_days
+msgid "Age 90 Days"
+msgstr "90 Días"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+msgid "Age ≤ 120\n"
+"                        d."
+msgstr "Días ≤ 120\n"
+"                        d."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:48
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:103
+#, python-format
+msgid "Age ≤ 120 d."
+msgstr "Días ≤ 120 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+msgid "Age ≤ 30\n"
+"                        d."
+msgstr "Días ≤ 30\n"
+"                        d."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:30
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:82
+#, python-format
+msgid "Age ≤ 30 d."
+msgstr "Días ≤ 30 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+msgid "Age ≤ 60\n"
+"                        d."
+msgstr "Días ≤ 60\n"
+"                        d."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:36
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:89
+#, python-format
+msgid "Age ≤ 60 d."
+msgstr "Días ≤ 60 d."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+msgid "Age ≤ 90\n"
+"                        d."
+msgstr "Días ≤ 90\n"
+"                        d."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:42
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:96
+#, python-format
+msgid "Age ≤ 90 d."
+msgstr "Días ≤ 90 d."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:12
+#: model:ir.actions.client,name:oe_account_report.action_report_aged_partner_balance
+#: model:ir.actions.report,name:oe_account_report.action_report_aged_partner_balance_html
+#: model:ir.actions.report,name:oe_account_report.action_report_aged_partner_balance_qweb
+#, python-format
+msgid "Aged Partner Balance"
+msgstr "Saldos Vencidos de Cliente o Proveedor"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_base
+msgid "Aged Partner Balance -"
+msgstr "Balance Cliente/Proveedor -"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.action_report_aged_partner_balance_xlsx
+msgid "Aged Partner Balance XLSX"
+msgstr "Saldo de empresas vencidos XLSX"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Aging Report at"
+msgstr "Informe de vencimiento"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.customer_outstanding_statement_wizard_view
+msgid "Aging details can be shown in the report, expressed in aging                 buckets (30 days due, ...), so the customer or vendor can review how much is open, due or overdue."
+msgstr "Los detalles de antigüedad se pueden mostrar en el informe, expresados ​​en intervalos de antigüedad (30 días de vencimiento, ...), para que el cliente o proveedor pueda revisar cuánto está abierto, vencido o vencido."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/wizard/account_report_print_journal.py:20
+#, python-format
+msgid "All"
+msgstr "Todos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:60
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:52
+#: selection:report_journal_ledger,move_target:0
+#, python-format
+msgid "All Entries"
+msgstr "Todos los asientos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:69
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:61
+#: selection:report_journal_ledger,move_target:0
+#, python-format
+msgid "All Posted Entries"
+msgstr "Todos los asiento aprobados"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:123
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:81
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_filters
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "All entries"
+msgstr "Todos asientos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:123
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:80
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_filters
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "All posted entries"
+msgstr "Todos los asientos aprobados"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Amount"
+msgstr "Total"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+msgid "Amount Cur."
+msgstr "Monto en Moneda Cur."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:79
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_amount_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_amount_currency
+#, python-format
+msgid "Amount Currency"
+msgstr "Monto en moneda"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_amount_residual
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_amount_residual
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_amount_residual
+msgid "Amount Residual"
+msgstr "Saldo pendiente"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_amount_residual_currency
+msgid "Amount Residual Currency"
+msgstr "Saldo pendiente moneda"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_amount_total_due
+msgid "Amount Total Due"
+msgstr "Monto total vencido"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_amount_total_due_currency
+msgid "Amount Total Due Currency"
+msgstr "Monto total vencido moneda"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:59
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#, python-format
+msgid "Amount cur."
+msgstr "Monto Actual"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:72
+#, python-format
+msgid "Analytical Accounts"
+msgstr "Cuentas analíticas"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:154
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:82
+#, python-format
+msgid "Approve:"
+msgstr "Aprobados:"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "Approved By:"
+msgstr "Por Aprrobar:"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "Aprobado By:"
+msgstr "Aprobado Por:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:80
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:106
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:130
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:68
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+#, python-format
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Balance Due"
+msgstr "Balance vencido"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Bank balance at"
+msgstr "Resumen bancario"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+msgid "Base Amount"
+msgstr "Monto base"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:116
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_base_balance
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_base_balance
+#, python-format
+msgid "Base Balance"
+msgstr "Monto de Balance"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:110
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_base_credit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_base_credit
+#, python-format
+msgid "Base Credit"
+msgstr "Monto crédito"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:104
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_base_debit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_base_debit
+#, python-format
+msgid "Base Debit"
+msgstr "Monto débito"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_tax_report_based_on
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_based_on
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_filters
+msgid "Based On"
+msgstr "Monto en"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:26
+#, python-format
+msgid "Based on"
+msgstr "Monto en"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "Beneficiary By:"
+msgstr "Beneficiario:"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.customer_outstanding_statement_wizard_view
+#: model:ir.ui.view,arch_db:oe_account_report.finance_xls_output_view
+msgid "Cancel"
+msgstr "Anular"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_centralize
+msgid "Centralize"
+msgstr "Centralizar"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:88
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Centralize filter"
+msgstr "Centralizar filtro"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_account_centralized
+msgid "Centralized"
+msgstr "Centralizar"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger.py:1371
+#, python-format
+msgid "Centralized Entries"
+msgstr "Centralizar asiento"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.account_check_bank
+msgid "Check Bank"
+msgstr "Banco de cheques"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_group_group_child_ids
+msgid "Child Groups"
+msgstr "Grupo hijos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:16
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_code
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_code
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_code
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_code
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_code
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_code
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_base
+#, python-format
+msgid "Code"
+msgstr "Código"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:162
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_company_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_company_id
+#, python-format
+msgid "Company"
+msgstr "Compañía"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_company_currency_id
+msgid "Company Currency"
+msgstr "Moneda de la Compañía"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_complementary_report
+#: model:ir.ui.menu,name:oe_account_report.menu_account_complementary_report
+msgid "Complementary Report"
+msgstr "Complementarios"
+
+#. module: oe_account_report
+#: model:ir.actions.act_window,name:oe_account_report.action_account_complementary_report
+msgid "Complementary Reports"
+msgstr "Reportes Complementarios"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+msgid "Cost\n"
+"                            center"
+msgstr "Centro de \n"
+"                            costo"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_cost_center
+msgid "Cost Center"
+msgstr "centro de costo"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:27
+#, python-format
+msgid "Cost center"
+msgstr "Centro de costo"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_create_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_create_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:79
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:40
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:63
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:67
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_credit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_credit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_credit
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+#, python-format
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_cumul_age_120_days
+msgid "Cumul Age 120 Days"
+msgstr "Acumulado en 120 días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_cumul_age_30_days
+msgid "Cumul Age 30 Days"
+msgstr "Acumulado en 30 días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_cumul_age_60_days
+msgid "Cumul Age 60 Days"
+msgstr "Acumulado en 60 días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_cumul_age_90_days
+msgid "Cumul Age 90 Days"
+msgstr "Acumulado en 90 días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_cumul_amount_residual
+msgid "Cumul Amount Residual"
+msgstr "Monto Acumulado Pendiente"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_cumul_balance
+msgid "Cumul Balance"
+msgstr "Balance Acumulado"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_cumul_current
+msgid "Cumul Current"
+msgstr "Monto Acumulado Actual"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_cumul_older
+msgid "Cumul Older"
+msgstr "Monto Acumulado Anterior"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:46
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#, python-format
+msgid "Cumul. Bal."
+msgstr "Balance Acumulado"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:55
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#, python-format
+msgid "Cur."
+msgstr "Actual"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:105
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:73
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_currency_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_currency_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_currency_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_currency_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_currency_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_currency_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_currency_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_currency_id
+#, python-format
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_currency_name
+msgid "Currency Name"
+msgstr "Nombre de la moneda"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:24
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:75
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_current
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_current
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#, python-format
+msgid "Current"
+msgstr "Actual"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Current Due"
+msgstr "Vencimiento actual"
+
+#. module: oe_account_report
+#: selection:account.complementary.report,type_partner:0
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_customer_outstanding_statement_wizard
+msgid "Customer Outstanding Statement Wizard"
+msgstr "Asistente para estados de cuenta pendientes del cliente"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "Customer:"
+msgstr "Cliente:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:62
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:18
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:22
+#: code:addons/oe_account_report/wizard/account_report_print_journal.py:29
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_date
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_date_at
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_date_at
+msgid "Date At"
+msgstr "Fecha a"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_date_due
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_date_due
+msgid "Date Due"
+msgstr "Fecha vencimiento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_date_end
+msgid "Date End"
+msgstr "Fecha fin"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_date_from
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_date_from
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_date_from
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_filters
+msgid "Date From"
+msgstr "Fecha Inicio la Obra"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_date_to
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_date_to
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_date_to
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_filters
+msgid "Date To"
+msgstr "Fecha Termina la Obra"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:50
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:42
+#, python-format
+msgid "Date To:"
+msgstr "Fecha hasta:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:121
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_filters
+#, python-format
+msgid "Date at filter"
+msgstr "Filtro de fechas"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:24
+#, python-format
+msgid "Date from"
+msgstr "Fecha de"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:47
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:39
+#, python-format
+msgid "Date from:"
+msgstr "Fecha de:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:75
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:166
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Date range filter"
+msgstr "Filtro rango de fechas"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:25
+#, python-format
+msgid "Date to"
+msgstr "Fecha hasta"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Date:"
+msgstr "Fecha:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:78
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:34
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:57
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:66
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_debit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_debit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_debit
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+#, python-format
+msgid "Debit"
+msgstr "Débito"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:77
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:104
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:129
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:99
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+#, python-format
+msgid "Description"
+msgstr "Descripción"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_tax_report_tax_detail
+msgid "Detail Taxes"
+msgstr "Detalle de Impuestos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Difference"
+msgstr "Diferencia"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_account_financial_report_abstract_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_account_financial_report_abstract_report_xlsx_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_account_state_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_aged_partner_balance_xlsx_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_general_ledger_xlsx_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_journal_ledger_xlsx_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_vat_report_xlsx_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_statement_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_display_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: oe_account_report
+#: model:ir.model.fields,help:oe_account_report.field_account_report_general_ledger_foreign_currency
+msgid "Display foreign currency for move lines, unless account currency is not setup through chart of accounts will display initial and final balance in that currency."
+msgstr "Mostrar moneda extranjera para líneas de movimiento, a menos que la moneda de la cuenta no esté configurada a través del plan de cuentas mostrará el saldo inicial y final en esa moneda."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+msgid "Document"
+msgstr "Documento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_filter_partners_non_due
+msgid "Don't show partners with no due entries"
+msgstr "No mostrar socios sin entradas vencidas"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+msgid "Due\n"
+"                        date"
+msgstr "Fecha\n"
+"                        vencida"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Due Date"
+msgstr "Fecha vencimiento"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:68
+#, python-format
+msgid "Due date"
+msgstr "Fecha vencimiento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_date_to
+msgid "End Date"
+msgstr "Fecha Final"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Ending Balance"
+msgstr "Balance final"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:185
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_ending_cumul
+#, python-format
+msgid "Ending balance"
+msgstr "Balance final"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:174
+#, python-format
+msgid "Entries sorted by"
+msgstr "Ordenar asientos por"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:63
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:19
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:17
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_entry
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_entry
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_entry
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_entry
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#, python-format
+msgid "Entry"
+msgstr "Asiento"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/wizard/account_report_print_journal.py:28
+#, python-format
+msgid "Entry number"
+msgstr "Número asiento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_xls_output
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_report_xls_output
+#: model:ir.ui.view,arch_db:oe_account_report.finance_xls_output_view
+msgid "Excel Output"
+msgstr "Salida de Excel"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.customer_outstanding_statement_wizard_view
+msgid "Export PDF"
+msgstr "Exportar PDF"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_aged_balance_view_inherit_oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_print_journal_view_inherit_oe_account_report
+msgid "Export XLSX"
+msgstr "Exportar XLSX"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_name
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_report_name
+msgid "File Name"
+msgstr "Nombre del archivo"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_filter_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_filter_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_filter_account_ids
+msgid "Filter Account"
+msgstr "Filtrar Cuenta"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_filter_analytic_tag_ids
+msgid "Filter Analytic Tag"
+msgstr "Filtrar Etiqueta Analitica"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_aged_trial_balance_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_balance_report_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_common_account_report_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_common_journal_report_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_common_partner_report_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_common_report_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_print_journal_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_partner_ledger_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_tax_report_analytic_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_report_analytic_account_ids
+msgid "Filter Analytical Accounts"
+msgstr "Filtrar cuentas analíticas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_filter_cost_center_ids
+msgid "Filter Cost Center"
+msgstr "Filtar Centro de costos"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_filter_journal_ids
+msgid "Filter Journal"
+msgstr "Filtrar diarios"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_filter_partner_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_filter_partner_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_filter_partner_ids
+msgid "Filter Partner"
+msgstr "Filtrar empresas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_aged_trial_balance_account_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_account_ids
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+msgid "Filter accounts"
+msgstr "Filtrar cuentas"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+msgid "Filter analytic tags"
+msgstr "Filtrar etiquetas analíticas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_analytic_tag_ids
+msgid "Filter analytical accounts"
+msgstr "Filtrar cuentas analíticas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_cost_center_ids
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+msgid "Filter cost centers"
+msgstr "Filtrar centros de costos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+msgid "Filter journals"
+msgstr "Filtrar diarios"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_aged_trial_balance_partner_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_partner_ids
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+msgid "Filter partners"
+msgstr "Filtar empresas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_final_amount_residual
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_final_amount_residual
+msgid "Final Amount Residual"
+msgstr "Total Monto Pendiente"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_final_amount_residual_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_final_amount_residual_currency
+msgid "Final Amount Residual Currency"
+msgstr "Total Monto Pendiente Moneda"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_final_amount_total_due
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_final_amount_total_due
+msgid "Final Amount Total Due"
+msgstr "Total Monto Pendiente Vencido"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_final_amount_total_due_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_final_amount_total_due_currency
+msgid "Final Amount Total Due Currency"
+msgstr "Total Monto Pendiente Vencido Moneda"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_final_balance
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_final_balance
+msgid "Final Balance"
+msgstr "Total Balance"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_final_balance_foreign_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_final_balance_foreign_currency
+msgid "Final Balance Foreign Currency"
+msgstr "Total Balance Moneda Saldo"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_final_credit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_final_credit
+msgid "Final Credit"
+msgstr "Total Crédito"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_final_debit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_final_debit
+msgid "Final Debit"
+msgstr "Total débito"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:36
+#, python-format
+msgid "Financial"
+msgstr "Financiero"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:161
+#, python-format
+msgid "Financial.xls"
+msgstr "Reporte Financiero.xls"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_print_journal_foreign_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_foreign_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_foreign_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_foreign_currency
+msgid "Foreign Currency"
+msgstr "Moneda Extranjera"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_state.py:114
+#, python-format
+msgid "Form content is missing, this report cannot be printed."
+msgstr "Falta el contenido del formulario, este informe no se puede imprimir."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+msgid "From:"
+msgstr "De:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:76
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:167
+#, python-format
+msgid "From: %s To: %s"
+msgstr "De: %s Hasta: %s"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_fy_start_date
+msgid "Fy Start Date"
+msgstr "Fecha de inicio del año fiscal"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:12
+#: model:ir.actions.client,name:oe_account_report.action_report_general_ledger
+#: model:ir.actions.report,name:oe_account_report.action_report_general_ledger_html
+#: model:ir.actions.report,name:oe_account_report.action_report_general_ledger_qweb
+#, python-format
+msgid "General Ledger"
+msgstr "Libro Mayor"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_base
+msgid "General Ledger -"
+msgstr "Libro Mayor -"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_report_general_ledger
+msgid "General Ledger Report"
+msgstr "Reporte del Libro Mayor"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.action_report_general_ledger_xlsx
+msgid "General Ledger XLSX"
+msgstr "Libro Mayor XLSX"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_group_option
+msgid "Group Option"
+msgstr "Grupo Opciones"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_print_journal_group_option
+msgid "Group entries by"
+msgstr "Agrupar asiento por"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:85
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Hide"
+msgstr "Ocultar"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_hide_account_at_0
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_hide_account_at_0
+msgid "Hide Account At 0"
+msgstr "Ocultar cuenta con 0"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_hide_account_at_0
+msgid "Hide account ending balance at 0"
+msgstr "Ocultar el monto de la cuenta en 0"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_account_financial_report_abstract_id
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_id
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_account_financial_report_abstract_report_xlsx_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_account_state_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_aged_partner_balance_xlsx_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_general_ledger_xlsx_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_journal_ledger_xlsx_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_vat_report_xlsx_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_statement_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oe_account_report
+#: model:ir.model.fields,help:oe_account_report.field_account_account_centralized
+msgid "If flagged, no details will be displayed in the General Ledger report (the webkit one only), only centralized amounts per period."
+msgstr "Si está marcado, no se mostrarán detalles en el informe del libro mayor (solo en el webkit), solo montos centralizados por período."
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_show_aging_buckets
+msgid "Include Aging Buckets"
+msgstr "Incluir cubos de vencimiento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_initial_balance
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_initial_balance
+msgid "Initial Balance"
+msgstr "Balance inicial"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_initial_balance_foreign_currency
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_initial_balance_foreign_currency
+msgid "Initial Balance Foreign Currency"
+msgstr "Balance inicial moneda"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_initial_credit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_initial_credit
+msgid "Initial Credit"
+msgstr "Crédito inicial"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_initial_debit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_initial_debit
+msgid "Initial Debit"
+msgstr "Dédito inicial"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:174
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#, python-format
+msgid "Initial balance"
+msgstr "Balance inicial"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_is_partner_account
+msgid "Is Partner Account"
+msgstr "Es una cuenta de socio"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:64
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:20
+#: code:addons/oe_account_report/wizard/account_report_print_journal.py:35
+#: model:ir.actions.client,name:oe_account_report.action_report_journal_ledger
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_journal
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_journal
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_journal_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_journal
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#, python-format
+msgid "Journal"
+msgstr "Diario"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.journal_entries_moce_print_id
+msgid "Journal Entries"
+msgstr "Asiento contable"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:11
+#: model:ir.actions.report,name:oe_account_report.action_report_journal_ledger_qweb
+#, python-format
+msgid "Journal Ledger"
+msgstr "Libro mayor de diario"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_base
+msgid "Journal Ledger -"
+msgstr "Libro mayor de diario -"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.action_report_journal_ledger_xlsx
+msgid "Journal Ledger XLSX"
+msgstr "Libro mayor de diario XLSX"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:178
+#, python-format
+msgid "Journals"
+msgstr "Diarios"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_label
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_label
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_label
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_label
+msgid "Label"
+msgstr "Descripción"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "Lable"
+msgstr "Descripción"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_account_financial_report_abstract___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_account_financial_report_abstract_report_xlsx___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_account_state___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_aged_partner_balance_xlsx___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_general_ledger_xlsx___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_journal_ledger_xlsx___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_report_vat_report_xlsx___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_oe_account_report_statement___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax___last_update
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_write_uid
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_accounting_finance_report_output_wizard_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_write_date
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_group_level
+msgid "Level"
+msgstr "Nivel"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_line_ids
+msgid "Line"
+msgstr "Linea"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "Made By:"
+msgstr "Elaborado Por:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:152
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:80
+#, python-format
+msgid "Makes:"
+msgstr "Elaborado:"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_matching_number
+msgid "Matching Number"
+msgstr "Número Coincidente"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_move_id
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+msgid "Move"
+msgstr "Movimiento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_move_line_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_move_line_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_move_line_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_move_line_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_move_line_ids
+msgid "Move Line"
+msgstr "Registro de movimiento"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_target
+msgid "Move Target"
+msgstr "Move Target"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal
+msgid "Moves"
+msgstr "Movimientos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:76
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:103
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:128
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:94
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:65
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:17
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_name
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_base
+#, python-format
+msgid "Name"
+msgstr "Nombre"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "Name:"
+msgstr "Nombre:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:18
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_net
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_net
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_base
+#, python-format
+msgid "Net"
+msgstr "Neto"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:89
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:93
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:97
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "No"
+msgstr "No"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_tax
+msgid "No Documents"
+msgstr "No Documentos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/wizard/account_report_print_journal.py:36
+#, python-format
+msgid "No group"
+msgstr "No agrupar"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger.py:696
+#: code:addons/oe_account_report/report/account_general_ledger.py:1075
+#: code:addons/oe_account_report/report/open_items.py:305
+#: code:addons/oe_account_report/report/open_items.py:554
+#, python-format
+msgid "No partner allocated"
+msgstr "Ningún empresa asignado"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/wizard/account_report_print_journal.py:22
+#, python-format
+msgid "Not Posted"
+msgstr "No aprobado"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+msgid "Not due"
+msgstr "No vencido"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_customer_outstanding_statement_wizard_number_partner_ids
+msgid "Number Partner"
+msgstr "Número empresa"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:54
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:110
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_older
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_older
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#, python-format
+msgid "Older"
+msgstr "Anterior"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_only_posted_moves
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_only_posted_moves
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_only_posted_moves
+msgid "Only Posted Moves"
+msgstr "Solo asientos aprobados"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_aged_trial_balance_payable_accounts_only
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_payable_accounts_only
+msgid "Only accounts payable"
+msgstr "Solo cuentas a pagar"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_aged_trial_balance_receivable_accounts_only
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_receivable_accounts_only
+msgid "Only accounts receivable"
+msgstr "Solo cuentas a cobrar"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Open Amount"
+msgstr "Monto Aprobado"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_open_items_id
+msgid "Open Items"
+msgstr "Items Aprobados"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Original Amount"
+msgstr "Monto original"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Outstanding Statement"
+msgstr "Declaración Pendientes"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:18
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:66
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:25
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:42
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_partner_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_partner
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_partner
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_partner_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_partner
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_partner
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_partner_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_partner
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_partner_id
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#, python-format
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_partner_ending_cumul
+msgid "Partner\n"
+"                    cumul aged balance"
+msgstr "Balance Acumulado\n"
+"                    de empresa"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:171
+#, python-format
+msgid "Partner Initial balance"
+msgstr "Partner Initial balance"
+
+#. module: oe_account_report
+#: model:ir.actions.act_window,name:oe_account_report.customer_outstanding_statement_wizard_action
+msgid "Partner Outstanding Statement"
+msgstr "Declaración pendiente de empresa"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:223
+#, python-format
+msgid "Partner cumul aged balance"
+msgstr "Blance acumulado de empresa"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:182
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_ending_cumul
+#, python-format
+msgid "Partner ending balance"
+msgstr "Balance final de empresa"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Partner ref:"
+msgstr "Referencia empresa:"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_partner_ids
+msgid "Partners"
+msgstr "Empresas"
+
+#. module: oe_account_report
+#: selection:customer.outstanding.statement.wizard,account_type:0
+msgid "Payable"
+msgstr "A pagar"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Pending Transactions"
+msgstr "Transacción pendientes"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Pending balance at"
+msgstr "Balance pendiente"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_percent_age_120_days
+msgid "Percent Age 120 Days"
+msgstr "Porcentaje en 120 Días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_percent_age_30_days
+msgid "Percent Age 30 Days"
+msgstr "Porcentaje en 30 Días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_percent_age_60_days
+msgid "Percent Age 60 Days"
+msgstr "Porcentaje en 60 Días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_percent_age_90_days
+msgid "Percent Age 90 Days"
+msgstr "Porcentaje en 90 Días"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_percent_current
+msgid "Percent Current"
+msgstr "Porcentaje actual"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_percent_older
+msgid "Percent Older"
+msgstr "Porcentaje anterior"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:166
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:208
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_account_ending_cumul
+#, python-format
+msgid "Percents"
+msgstr "Porcentajes"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.finance_xls_output_view
+msgid "Please save file as .xls excel format"
+msgstr "Guarde el archivo como formato de Excel .xls"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/wizard/account_report_print_journal.py:21
+#, python-format
+msgid "Posted"
+msgstr "Aprobados"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_balance_view_excel_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_finance_view_excel_report
+msgid "Print in Excel"
+msgstr "Exportar en Excel"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:43
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:35
+#, python-format
+msgid "Printing Date: %s"
+msgstr "Printing Date: %s"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "R.U.C./C.I.:"
+msgstr "R.U.C./C.I.:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:33
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#, python-format
+msgid "Rec."
+msgstr "Rec."
+
+#. module: oe_account_report
+#: selection:customer.outstanding.statement.wizard,account_type:0
+msgid "Receivable"
+msgstr "A cobrar"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:156
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:84
+#, python-format
+msgid "Receives:"
+msgstr "Recibidos:"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+msgid "Ref -\n"
+"                        Label"
+msgstr "Etiqueta -\n"
+"                        Referencia"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:67
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:26
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:47
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#, python-format
+msgid "Ref - Label"
+msgstr "Etiqueta referencia"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Reference"
+msgstr "Comprobante"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "Reference number"
+msgstr "Número de referencia"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_report_options
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_account_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_account_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_account_report_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_report_id
+msgid "Report"
+msgstr "Reporte"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_partner_report_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_report_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_partner_report_account_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_partner_report_account_id
+msgid "Report Account"
+msgstr "Reporte de cuentas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_report_journal_ledger_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_report_journal_ledger_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_report_journal_ledger_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_journal_ledger_ids
+msgid "Report Journal Ledger"
+msgstr "Reporte libro mayor de diario"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_journal_ledger_tax_line_ids
+msgid "Report Journal Ledger Tax Line"
+msgstr "Reporte de libro mayor por linea impuestos"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_report_move_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_report_move_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_move_ids
+msgid "Report Move"
+msgstr "Reporte de asientos"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_report_move_line_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_move_line_ids
+msgid "Report Move Line"
+msgstr "Reporte de apuntes"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_line_report_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_move_line_report_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_report_partner_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_open_items_move_line_report_partner_id
+msgid "Report Partner"
+msgstr "Reporte empresas"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_report_tax_id
+msgid "Report Tax"
+msgstr "Reporte impuestos"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_report_tax_line_ids
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_ids
+msgid "Report Tax Line"
+msgstr "Reporte linea de impuestos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:19
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:69
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_lines_header
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_move_lines
+#, python-format
+msgid "Residual"
+msgstr "Saldo"
+
+#. module: oe_account_report
+#: model:ir.model.fields,help:oe_account_report.field_accounting_finance_report_output_wizard_name
+#: model:ir.model.fields,help:oe_account_report.field_accounting_report_name
+msgid "Save report as .xls format"
+msgstr "Guardar reporte como formato .xls"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:85
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Show"
+msgstr "Mostrar"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_show_analytic_tags
+msgid "Show Analytic Tags"
+msgstr "Mostrar etiqueta analitica"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_show_cost_center
+msgid "Show Cost Center"
+msgstr "Mostrar centro de costo"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_aged_partner_balance_show_move_line_details
+msgid "Show Move Line Details"
+msgstr "Mostrar asiento detallado"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:92
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_show_analytic_tags
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Show analytic tags"
+msgstr "Mostrar etiquetas analiticas"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:96
+#: model:ir.model.fields,field_description:oe_account_report.field_account_report_general_ledger_foreign_currency
+#, python-format
+msgid "Show foreign currency"
+msgstr "Mostrar moneda"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_aged_trial_balance_show_move_line_details
+msgid "Show move line details"
+msgstr "Mostrar asiento detallado"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_sort_option
+msgid "Sort Option"
+msgstr "Opción ordenar"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_state
+msgid "Source"
+msgstr "Origen"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_date_from
+msgid "Start Date"
+msgstr "Fecha Inicio"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.action_report_account_statement
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Bank Reconciliation"
+msgstr "Conciliación Bancaria"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.action_print_customer_outstanding_statement
+msgid "Statement Action to PDF"
+msgstr "Acción de declaración a PDF"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+msgid "Subtotal without taxes"
+msgstr "Subtotal sin impuesto"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_statement
+msgid "Summary"
+msgstr "Resumen"
+
+#. module: oe_account_report
+#: selection:account.complementary.report,type_partner:0
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:30
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_tags
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#, python-format
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_financial_report_xlsx.py:53
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:45
+#, python-format
+msgid "Target Moves:"
+msgstr "Asiento:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:122
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:79
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:170
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_filters
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Target moves filter"
+msgstr "Filtrar asientos"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:19
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_tax_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_tax_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_tax_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_tax
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_tax_id
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_tax
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_tax_ids
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_base
+#, python-format
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_all_taxes
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_taxes
+msgid "Tax Amount"
+msgstr "Monto de impuesto"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:134
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_tax_balance
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_tax_balance
+#, python-format
+msgid "Tax Balance"
+msgstr "Balance impuesto"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_tax_code
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_tax_code
+msgid "Tax Code"
+msgstr "Código impuesto"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:128
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_tax_credit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_tax_credit
+#, python-format
+msgid "Tax Credit"
+msgstr "Crédito impuesto"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:122
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_tax_debit
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_tax_debit
+#, python-format
+msgid "Tax Debit"
+msgstr "Dédito impuesto"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_tax_detail
+msgid "Tax Detail"
+msgstr "Detalle de impuesto"
+
+#. module: oe_account_report
+#: selection:account.tax.report,based_on:0
+#: selection:report_vat_report,based_on:0
+msgid "Tax Groups"
+msgstr "Agrupar impuesto"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_journal_tax_line_tax_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_report_tax_line_tax_name
+msgid "Tax Name"
+msgstr "Nombre del impuesto"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_tax_report
+msgid "Tax Report"
+msgstr "Reporte de Impuestos"
+
+#. module: oe_account_report
+#: selection:account.tax.report,based_on:0
+#: selection:report_vat_report,based_on:0
+msgid "Tax Tags"
+msgstr "Etiquetas Impuesto"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:22
+#: code:addons/oe_account_report/report/account_journal_ledger_xlsx.py:52
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_lines
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+#, python-format
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_move_line_taxes_description
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_move_line_taxes_description
+msgid "Taxes Description"
+msgstr "Descripción de impuesto"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_taxgroup_id
+msgid "Taxgroup"
+msgstr "Agrupar Impuesto"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtag_taxtag_id
+msgid "Taxtag"
+msgstr "Agrupar Etiqueta"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_vat_report_taxtags_ids
+msgid "Taxtags"
+msgstr "Agrupar Etiquetas"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.customer_outstanding_statement_wizard_view
+msgid "The outstanding statement provides details of all partner's outstanding         receivables and payables up to a particular date. This includes all unpaid invoices, unclaimed         refunds and outstanding payments. The list is displayed in chronological order and is         split by currencies."
+msgstr "El estado de cuenta pendiente proporciona detalles de todas las cuentas por cobrar y por pagar pendientes de los socios hasta una fecha en particular. Esto incluye todas las facturas impagas, reembolsos no reclamados y pagos pendientes. La lista se muestra en orden cronológico y está dividida por monedas."
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+msgid "To:"
+msgstr "A:"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:159
+#: code:addons/oe_account_report/report/account_aged_partner_balance_xlsx.py:201
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_aged_partner_balance_account_ending_cumul
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:29
+#, python-format
+msgid "Trial Balance"
+msgstr "Balance"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_balance_report
+msgid "Trial Balance Report"
+msgstr "Reporte de Balance de Comprobación"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_complementary_report_type_partner
+msgid "Type Partner"
+msgstr "Tipo de contacto"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_report_general_ledger_unaffected_earnings_account
+msgid "Unaffected Earnings Account"
+msgstr "Cuenta de ganancias no afectada"
+
+#. module: oe_account_report
+#: model:ir.model.fields,help:oe_account_report.field_account_report_general_ledger_hide_account_at_0
+msgid "Use this filter to hide an account or a partner with an ending balance at 0. If partners are filtered, debits and credits totals will not match the trial balance."
+msgstr "Utilice este filtro para ocultar una cuenta o un socio con un saldo final en 0. Si se filtran los socios, los totales de débitos y créditos no coincidirán con el saldo de prueba."
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_vat_report_xlsx.py:11
+#: model:ir.actions.client,name:oe_account_report.action_report_vat_report
+#: model:ir.actions.report,name:oe_account_report.action_report_vat_report_html
+#: model:ir.actions.report,name:oe_account_report.action_report_vat_report_qweb
+#, python-format
+msgid "VAT Report"
+msgstr "Reporte impuestos"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_vat_report_base
+msgid "VAT Report -"
+msgstr "Reporte impuesto -"
+
+#. module: oe_account_report
+#: model:ir.actions.report,name:oe_account_report.action_report_vat_report_xlsx
+msgid "VAT Report XLSX"
+msgstr "Reporte impuesto XLSX"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "Vendor:"
+msgstr "Proveedor:"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_aged_balance_view_inherit_oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_print_journal_view_inherit_oe_account_report
+msgid "View"
+msgstr "Ver"
+
+#. module: oe_account_report
+#: model:ir.model.fields,field_description:oe_account_report.field_account_print_journal_with_account_name
+#: model:ir.model.fields,field_description:oe_account_report.field_report_journal_ledger_with_account_name
+msgid "With Account Name"
+msgstr "Con Nombre Cuenta"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_accounting_finance_report_output_wizard
+msgid "Wizard to store the Excel output"
+msgstr "Asistente para almacenar la salida de Excel"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:89
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:93
+#: code:addons/oe_account_report/report/account_general_ledger_xlsx.py:97
+#: model:ir.ui.view,arch_db:oe_account_report.report_general_ledger_filters
+#, python-format
+msgid "Yes"
+msgstr "Si"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_account_move
+#: model:ir.ui.view,arch_db:oe_account_report.report_payment_receipt
+msgid "________________"
+msgstr "________________"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_group
+msgid "account.group"
+msgstr "account.group"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_account_financial_report_abstract
+msgid "account_financial_report_abstract"
+msgstr "account_financial_report_abstract"
+
+#. module: oe_account_report
+#: code:addons/oe_account_report/report/account_report_trial_balance.py:64
+#, python-format
+msgid "code"
+msgstr "código"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.statement_document
+msgid "in"
+msgstr "en"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_aged_balance_view_inherit_oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_general_ledger_view_inherit_oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.account_report_print_journal_view_inherit_oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.customer_outstanding_statement_wizard_view
+msgid "or"
+msgstr "o"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_account_report_financial
+msgid "report.account.report_financial"
+msgstr "report.account.report_financial"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_account_financial_report_abstract_report_xlsx
+msgid "report.account_financial_report.abstract_report_xlsx"
+msgstr "report.account_financial_report.abstract_report_xlsx"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_oe_account_report_report_account_state
+msgid "report.oe_account_report.report_account_state"
+msgstr "report.oe_account_report.report_account_state"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_oe_account_report_report_aged_partner_balance_xlsx
+msgid "report.oe_account_report.report_aged_partner_balance_xlsx"
+msgstr "report.oe_account_report.report_aged_partner_balance_xlsx"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_oe_account_report_report_general_ledger_xlsx
+msgid "report.oe_account_report.report_general_ledger_xlsx"
+msgstr "report.oe_account_report.report_general_ledger_xlsx"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_oe_account_report_report_journal_ledger_xlsx
+msgid "report.oe_account_report.report_journal_ledger_xlsx"
+msgstr "report.oe_account_report.report_journal_ledger_xlsx"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_oe_account_report_report_vat_report_xlsx
+msgid "report.oe_account_report.report_vat_report_xlsx"
+msgstr "report.oe_account_report.report_vat_report_xlsx"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_oe_account_report_statement
+msgid "report.oe_account_report.statement"
+msgstr "report.oe_account_report.statement"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_aged_partner_balance
+msgid "report_aged_partner_balance"
+msgstr "report_aged_partner_balance"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_aged_partner_balance_account
+msgid "report_aged_partner_balance_account"
+msgstr "report_aged_partner_balance_account"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_aged_partner_balance_line
+msgid "report_aged_partner_balance_line"
+msgstr "report_aged_partner_balance_line"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_aged_partner_balance_move_line
+msgid "report_aged_partner_balance_move_line"
+msgstr "report_aged_partner_balance_move_line"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_aged_partner_balance_partner
+msgid "report_aged_partner_balance_partner"
+msgstr "report_aged_partner_balance_partner"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_general_ledger
+msgid "report_general_ledger"
+msgstr "report_general_ledger"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_general_ledger_account
+msgid "report_general_ledger_account"
+msgstr "report_general_ledger_account"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_general_ledger_move_line
+msgid "report_general_ledger_move_line"
+msgstr "report_general_ledger_move_line"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_general_ledger_partner
+msgid "report_general_ledger_partner"
+msgstr "report_general_ledger_partner"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_journal_ledger
+msgid "report_journal_ledger"
+msgstr "report_journal_ledger"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_journal_ledger_journal
+msgid "report_journal_ledger_journal"
+msgstr "report_journal_ledger_journal"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_journal_ledger_journal_tax_line
+msgid "report_journal_ledger_journal_tax_line"
+msgstr "report_journal_ledger_journal_tax_line"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_journal_ledger_move
+msgid "report_journal_ledger_move"
+msgstr "report_journal_ledger_move"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_journal_ledger_move_line
+msgid "report_journal_ledger_move_line"
+msgstr "report_journal_ledger_move_line"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_journal_ledger_report_tax_line
+msgid "report_journal_ledger_report_tax_line"
+msgstr "report_journal_ledger_report_tax_line"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_open_items
+msgid "report_open_items"
+msgstr "report_open_items"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_open_items_account
+msgid "report_open_items_account"
+msgstr "report_open_items_account"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_open_items_move_line
+msgid "report_open_items_move_line"
+msgstr "report_open_items_move_line"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_open_items_partner
+msgid "report_open_items_partner"
+msgstr "report_open_items_partner"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_vat_report
+msgid "report_vat_report"
+msgstr "report_vat_report"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_vat_report_tax
+msgid "report_vat_report_tax"
+msgstr "report_vat_report_tax"
+
+#. module: oe_account_report
+#: model:ir.model,name:oe_account_report.model_report_vat_report_taxtag
+msgid "report_vat_report_taxtag"
+msgstr "report_vat_report_taxtag"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal
+msgid "to"
+msgstr "hasta"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+msgid "width: 23.24%;"
+msgstr "width: 23.24%;"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+msgid "width: 23.78%;"
+msgstr "width: 23.78%;"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+msgid "width: 38.92%;"
+msgstr "width: 38.92%;"
+
+#. module: oe_account_report
+#: model:ir.ui.view,arch_db:oe_account_report.report_journal_ledger_journal_table_header
+msgid "width: 8.11%;"
+msgstr "width: 8.11%;"
+

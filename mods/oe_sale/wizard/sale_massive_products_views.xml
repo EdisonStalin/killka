@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+        <record id="view_sale_massive_products_form" model="ir.ui.view">
+            <field name="name">sale.massive.products</field>
+            <field name="model">sale.massive.products</field>
+            <field name="arch" type="xml">
+                <form string="Add Products">
+                    <group>
+                    	<group>
+                    		<field name="categ_id" options="{'no_create': True}"/>
+                    		<field name="type_request" readonly="1"/>
+                    	</group>
+                    	<group>
+                    		<p>SELECT A CATEGORY IF YOU WANT TO FILTER THE PRODUCTS OF THAT CATEGORY. 
+                    		LEAVE EMPTY IF YOU WANT TO SEE ALL PRODUCTS</p>
+                        </group>
+                    </group>
+                    <group>
+                    	<group>
+            				<field name="product_qty"/>
+                            <field name="price_unit" invisible="1"/>
+                    	</group>
+                    	<group>
+                    		<field name="warehouse_id" required="1" options="{'no_create': True}"/>
+                    		<field name="account_analytic_id" colspan="2" 
+                    		groups="purchase.group_analytic_accounting" options="{'no_create': True}"/>
+                    		<field name="taxes_id" widget="many2many_tags" domain="[('type_tax_use','=','purchase')]"
+								context="{'default_type_tax_use': 'purchase'}" options="{'no_create': True}"/>
+                    	</group>
+                    </group>
+                    <field name="line_products" nolabel="1" widget="many2many" context="{'search_default_filter_to_purchase': 1,
+                    	'search_default_categ_id': categ_id, 'default_warehouse_id': warehouse_id}"
+                    	options="{'reload_on_button': True, 'always_reload': True, 'no_quick_create': True, 'no_create': True, 'no_open': True}">
+                    	<tree string="Products" editable="bottom">
+                    		<field name="default_code"/>
+							<field name="name"/>
+                			<field name="categ_id"/>
+                			<field name="type"/>
+                			<field name="qty_available"/>
+                			<field name="uom_id" options="{'no_open': True, 'no_create': True}" groups="product.group_uom"/>
+                			<!--field name="case_method"/-->
+                			<!--field name="avarage_cost"/-->
+                			<field name="last_cost"/>
+                			<field name="standard_price"/>
+                    	</tree>
+                    </field>
+                    <footer>
+                        <button name="add_products" string="Add Products" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+		<record id="action_sale_massive_products" model="ir.actions.act_window">
+            <field name="name">Add Products</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.massive.products</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sale_massive_products_form"/>
+            <field name="target">new</field>
+        </record>
+
+	</data>
+</odoo>	

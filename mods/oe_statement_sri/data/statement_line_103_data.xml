@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+
+		<record model="statement.form" id="data_statement_form_103">
+			<field name="name">FORMULARIO 103</field>
+			<field name="code">103</field>
+			<field name="sequence">1</field>
+			<field name="type_period">yearly</field>
+			<!--field name="action_id" ref="oe_statement_sri.action_statement_form_report"/-->
+			<field name="context">{'group_by': ['group_id', 'line_id', 'code_id']}</field>
+			<field name="description">DECLARACIÓN DE RETENCIONES EN LA FUENTE DEL IMPUESTO A LA RENTA</field>
+		</record>
+		
+	</data>
+</odoo>	

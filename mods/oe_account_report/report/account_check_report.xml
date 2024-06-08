@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+		
+		<report
+			id="account_check_bank"
+			model="account.payment"
+			string="Check Bank"
+			report_type="qweb-pdf"
+			name="oe_account_report.report_account_check_bank"
+			file="oe_account_report.report_account_check_bank"			
+			print_report_name="(object._get_printed_report_name())"
+			menu="False"
+		/>
+		
+	</data>
+</odoo>

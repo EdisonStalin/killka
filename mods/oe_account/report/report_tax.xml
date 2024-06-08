@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+    	<template id="report_tax" inherit_id="account.report_tax">
+    	
+	    	<xpath expr="//table/thead/tr/th[1]" position="before">
+				<th>Locker</th>
+			</xpath>
+			
+			<xpath expr="//table/thead/tr/th[2]" position="after">
+				<th>Code</th>
+				<th>Account</th>
+			</xpath>
+			
+			<xpath expr="//table/tr[1]/td[1]" position="before">
+				<td><span t-esc="line.get('locker')"/></td>
+			</xpath>
+			
+			<xpath expr="//table/tr[1]/td[2]" position="after">
+				<td><span t-esc="line.get('code')"/></td>
+				<td><span t-esc="line.get('account')"/></td>
+			</xpath>
+
+			<xpath expr="//table/tr[3]/td[1]" position="before">
+				<td><span t-esc="line.get('locker')"/></td>
+			</xpath>
+			
+			<xpath expr="//table/tr[3]/td[2]" position="after">
+				<td><span t-esc="line.get('code')"/></td>
+				<td><span t-esc="line.get('account')"/></td>
+			</xpath>
+    	</template>
+    
+    </data>
+</odoo>

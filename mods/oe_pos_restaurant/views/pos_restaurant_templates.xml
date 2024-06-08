@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<template id="assets" name="oe_pos_restaurant assets" inherit_id="point_of_sale.assets">
+		<xpath expr="." position="inside">			
+			<!-- LESS -->
+			<!--link rel="stylesheet" href="/oe_pos/static/src/less/oe_pos.less"/-->
+
+			<!-- JS -->
+			<script type="text/javascript" src="/oe_pos_restaurant/static/src/js/multiprint.js"></script>
+			
+		</xpath>
+		
+		<xpath expr="//link[@id='pos-stylesheet']" position="after">
+			<!-- CSS -->
+			<link rel="stylesheet" href="/oe_pos_restaurant/static/src/css/restaurant.css"/>
+		</xpath>
+		
+	</template>
+
+</odoo>

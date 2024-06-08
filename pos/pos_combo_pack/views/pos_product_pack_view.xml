@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_combo" model="ir.ui.view">
+        <field name="name">product.template.combo.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/div[@class='oe_title']/div[@name='options']" position="inside">
+                <field name="is_pack"/>
+                <label for="is_pack"/>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page[@name='sales']" position="inside">
+            	<group attrs="{'invisible':[('is_pack','=',False)]}">
+                    <group string="Selective product pack">
+                        <field name="product_pack_id" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_categ_id" options="{'no_create': True}"/>
+                                <field name="is_extra"/>
+                                <field name="default_product_id" options="{'no_create': True}" 
+                                	domain="[('available_in_pos', '=', True), ('pos_categ_id', '=', product_categ_id)]"/>
+                                <field name="product_quantity"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Fix product pack">
+                        <field name="product_fix_pro_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="product_p_id" options="{'no_create': True}"  domain="[('available_in_pos','=',True)]"/>
+                                <field name="product_quantity"/>
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="product_template_form_view_topping" model="ir.ui.view">
+        <field name="name">product.template.topping.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/div[@class='oe_title']/div[@name='options']" position="inside">
+                <field name="is_extra"/>
+                <label for="is_extra"/>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page[@name='sales']" position="inside">
+                <group>
+                    <group string="Extra" attrs="{'invisible':[('is_extra','=',False)]}">
+                        <field name="product_extra_id" nolabel="1">
+                            <tree editable="bottom" string="Taxes">
+                                <field name="product_categ_id"/>
+                                <field name="multi_selection"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <!--Record rule for product for current company only-->
+    <!--<record id="product_based_company" model="ir.rule">
+        <field name="name">Product company</field>
+        <field name="model_id" ref="model_product_template"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>-->
+
+</odoo>

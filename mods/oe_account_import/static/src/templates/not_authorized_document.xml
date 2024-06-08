@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<autorizacion>
+  <estado>{{ estado }}</estado>
+  <numeroAutorizacion>{{ numeroAutorizacion }}</numeroAutorizacion>
+  <fechaAutorizacion>{{ fechaAutorizacion }}</fechaAutorizacion>
+  <ambiente>{{ ambiente }}</ambiente>
+  <comprobante><![CDATA[{{ comprobante }}]]></comprobante>
+  <mensajes>{% for item in mensajes %}
+  	<mensaje>
+		<identificador>{{ item['identificador'] }}</identificador>
+		<mensaje>{{ item['mensaje'] }}</mensaje>
+		<tipo>{{ item['tipo'] }}</tipo>
+  	</mensaje>{% endfor %}
+  </mensajes>
+</autorizacion>

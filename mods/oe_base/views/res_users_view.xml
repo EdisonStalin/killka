@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+    	<record id="base.change_password_wizard_action" model="ir.actions.act_window" forcecreate="0">
+    		<field name="groups_id" eval="[(4, ref('oe_base.group_admin'))]"/>
+		</record>
+		
+		<!-- Users Extension -->
+		<record id="view_users_tree_inherit_oe_base" model="ir.ui.view">
+            <field name="name">res.users.tree.inherit.oe_base</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+
+            	<xpath expr="//field[@name='login_date']" position="after">
+            		<field name="active"/>
+            	</xpath>
+            
+            </field>
+    	</record>
+
+		<record id="view_users_form_inherit_oe_base" model="ir.ui.view">
+            <field name="name">res.users.form.inherit.oe_base</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+
+            	<xpath expr="//field[@name='action_id']" position="attributes">
+            		<attribute name="domain">[('type', '=', 'ir.actions.act_window')]</attribute>
+            		<attribute name="options">{'no_create': True, 'no_edit': True}</attribute>
+            	</xpath>
+            
+            </field>
+    	</record>
+    	
+    	<menuitem action="base.action_res_groups" id="base.menu_action_res_groups" parent="base.menu_users" groups="base.group_no_one,group_admin_extra" sequence="3"/>
+    	
+    </data>
+</odoo>    

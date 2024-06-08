@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<template id="portal_my_invoices" inherit_id="account.portal_my_invoices">
+		<xpath expr="//table[hasclass('o_portal_my_doc_table')]/thead/tr/th[6]" position="after">
+			<th>XML</th>
+		</xpath>
+	</template>
+
+	<template id="portal_invoice_page" inherit_id="account.portal_invoice_page">
+        
+        <xpath expr="//div[@id='o_portal_account_actions']" position="replace">
+			<div class="col-md-6 col-sm-6 col-xs-8 hidden-print" id="o_portal_account_actions">
+			    <a target="_blank" t-att-href="'/my/invoices/pdf/%s?%s' % (invoice.id, keep_query())" style="width:20%;" class="pull-right" title="Download PDF">
+			        <i class="fa fa-download fa-2x" aria-hidden="true"/>
+			        <strong>PDF</strong>
+			    </a>
+				<a t-if="invoice.authorization" target="_blank" t-att-href="'/my/invoices/xml/%s?%s' % (invoice.id, keep_query())" style="width:20%;" class="pull-right" title="Download XML">
+			        <i class="fa fa-download fa-2x" aria-hidden="true"/>
+			        <strong>XML</strong>
+			    </a>
+			</div>
+        </xpath>
+        
+    </template>
+
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+
+	<record id="accounting_tax_report_view_inherit_oe_account_report" model="ir.ui.view">
+		<field name="name">account.tax.report.inherit.oe_account_report</field>
+		<field name="model">account.tax.report</field>
+		<field name="inherit_id" ref="account.accounting_tax_report_view"/>
+		<field name="arch" type="xml">
+			
+			<xpath expr="//field[@name='date_to']" position="after">
+				<field name="tax_detail" invisible="1"/>
+	            <field name="based_on" widget="radio" invisible="1"/>
+			</xpath>
+	
+			<!--xpath expr="/form/footer/button[@name='check_report']" position="before">
+				<button name="button_export_html" string="View" type="object" class="oe_highlight"/>
+				or
+			</xpath>
+			
+			<xpath expr="/form/footer/button[@name='check_report']" position="after">
+				or
+				<button name="button_export_xlsx" string="Export XLSX" type="object" class="oe_highlight"/>
+				or
+			</xpath-->
+		
+		</field>
+	</record>
+	
+
+</odoo>

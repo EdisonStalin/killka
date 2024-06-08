@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+<!-- Quitar menús de oe admin -->
+    	<record model="ir.ui.menu" id="mail.mail_channel_menu_root_chat" forcecreate="0">
+			<field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+			<field name="sequence">160</field>
+		</record>
+		<record model="ir.ui.menu" id="mail.menu_message_subtype" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="mail.menu_mail_activity_type" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="mail.menu_mail_message" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="mail.menu_mail_mail" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="mail.menu_email_templates" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+	</data>
+</odoo>

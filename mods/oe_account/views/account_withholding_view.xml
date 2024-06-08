@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+        <record id="view_withholding_line_calendar" model="ir.ui.view">
+            <field name="name">account.withholding.calendar</field>
+            <field name="model">account.withholding</field>
+            <field name="arch" type="xml">
+                <calendar string="Withholdings" date_start="date_withholding" color="journal_id">
+                    <field name="partner_id"/>
+                    <field name="amount_total"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_withholding_pivot">
+            <field name="name">account.withholding.pivot</field>
+            <field name="model">account.withholding</field>
+            <field name="arch" type="xml">
+                <pivot string="Withholdings" display_quantity="true">
+                    <field name="partner_id"/>
+                    <field name="amount_total" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_withholding_graph">
+            <field name="name">account.withholding.graph</field>
+            <field name="model">account.withholding</field>
+            <field name="arch" type="xml">
+                <graph string="Withholdings">
+                    <field name="partner_id"/>
+                    <field name="amount_total" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+		<record id="view_account_withholding_filter" model="ir.ui.view">
+            <field name="name">account.withholding.select</field>
+            <field name="model">account.withholding</field>
+            <field name="arch" type="xml">
+                <search string="Search Withholding">
+                    <field name="number" string="General" filter_domain="['|','|', ('name','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                    <filter name="approved" string="Approved" domain="[('state', '=', 'approved')]"/>
+                    <separator/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id" string="Salesperson" domain="[('share','=', False)]"/>
+                    <separator/>
+                    <filter domain="[('user_id','=',uid)]" help="My Withholding"/>
+                    <separator/>
+                    <filter string="My Activities" name="activities_my" domain="[('activity_ids.user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter string="Late Activities" name="activities_overdue"
+                        domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                        help="Show all records which has next action date is before today"/>
+                    <filter string="Today Activities" name="activities_today"
+                        domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Future Activities" name="activities_upcoming_all"
+                        domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
+                        ]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_partner_id" string="Partner" context="{'group_by':'partner_id'}"/>
+                        <filter string="Salesperson" context="{'group_by':'user_id'}"/>
+                        <filter name="status" string="Status" context="{'group_by':'state'}"/>
+                        <separator/>
+                        <filter string="Withholding Date" context="{'group_by':'date_withholding'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+        <record id="view_withholding_line_form" model="ir.ui.view">
+            <field name="name">account.withholding.line.form</field>
+            <field name="model">account.withholding.line</field>
+            <field name="arch" type="xml">
+                <form string="Withholding Line">
+                    <field name="partner_id" invisible="1"/>
+                    <field name="withholding_type" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                    <group>
+                    	<group>
+	                    	<field name="name"/>
+	                        <field name="tmpl_invoice_number" string="Invoice" attrs="{'invisible':[('withholding_type', '=', 'in_withholding')], 
+	                        	'required':[('withholding_type', '=', 'out_withholding')]}" />
+	                        <field name="invoice_id" domain="[('partner_id', '=', parent.partner_id), ('state', '=', 'open'), ('type', '=', 'out_invoice')]"
+	                    		attrs="{'invisible':[('withholding_type', '=', 'out_withholding')], 'required':[('withholding_type', '=', 'out_withholding')]}"
+	                    		options="{'no_create': True}"/>
+	                        <field name="tmpl_invoice_date" required="1"/>
+	                        <field name="livelihood_id"/>
+	                        <field name="tax_id" options="{'no_create': True, 'no_open': True}"	
+	                        	domain="[('tax_group_id.type', '=', name), ('type_tax_use', 'in', ['none', 'purchase']), ('amount', '&lt;=', 0)]"/>
+	                        <field name="account_id" options="{'no_create': True, 'no_open': True}" 
+	                        	domain="[('reconcile', '=', False), ('deprecated', '=', False)]" groups="account.group_account_user"/>
+	                        <field name="amount_base"/>
+	                        <field name="amount"/>
+	                        <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+		<!-- Account Sale Withholding -->
+
+		<record id="view_withholding_sale_tree" model="ir.ui.view">
+            <field name="name">account.withholding.sale.tree.oe_account</field>
+            <field name="model">account.withholding</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Withholdings">
+                    <field name="name"/>
+                    <field name="partner_id" groups="base.group_user" string="Customer"/>
+                    <field name="date_withholding"/>
+                    <field name="origin"/>
+                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    <field name="type_document_id"/>
+                    <field name="state"/>
+                    <field name="type" invisible="context.get('type',True)"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_withholding_sale_form" model="ir.ui.view">
+            <field name="name">account.withholding.sale.form.oe_account</field>
+            <field name="model">account.withholding</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Withholding Sale">
+                <header>
+                        <button name="action_withholding_approved" type="object" states="draft" string="Validate" class="oe_highlight" groups="account.group_account_invoice"/>
+                        <button name="action_withholding_cancel" states="approved" string="Set to Cancel" type="object" groups="account.group_account_invoice"/>
+                        <button name="action_withholding_draft" states="cancel" string="Set to Draft" type="object" groups="account.group_account_invoice"/>
+                        
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approved,cancel" />
+                </header>
+                <div groups="account.group_account_invoice" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
+                    You have <bold><a class="alert-link" href="#outstanding" role="button">this withholding</a></bold> without applying to an invoice. You can assign them to retain an invoice.
+                </div>
+                <field name="has_outstanding" invisible="1"/>
+                <sheet string="Withholding Sale">
+					<div class="oe_button_box" name="button_box">
+					    <button class="oe_stat_button" name="button_journal_entries"
+					            string="Journal Items" type="object"
+					            groups="account.group_account_user"
+					            attrs="{'invisible':[('move_line_ids','=',[])]}" icon="fa-bars"/>
+					    <field name="move_line_ids" invisible="1"/>
+					</div>
+                    <div>
+                    	<div class="label label-warning" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('received', '=', False)]}">SRI: RECEIVED</div>
+						<div class="label label-success" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('authorization', '=', False)]}">SRI: <field name="message_state" readonly="1"/></div>
+                        <h1 class="mt0">
+                            <field name="name" class="oe_inline"  attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                            <div  attrs="{'invisible': ['|', ('sequence_number_next_prefix','=',False), ('state','!=','draft')]}">
+                                <field name="sequence_number_next_prefix" class="oe_inline"/>
+                                <field name="sequence_number_next" readonly="1" class="oe_inline"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <field name="type" invisible="1"/>
+                    <group>
+                        <group>
+                        	<field string="Client" name="partner_id" attrs="{'readonly': [('state', '!=', 'draft')]}" 
+                        		domain="[('customer', '=', True), ('type', '!=', 'delivery')]"
+                        		context="{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company', 'default_is_validation_vat': True}"
+                        		options='{"always_reload": True, "no_quick_create": True}'/>
+                        	<field name="date_withholding" required="1"/>
+                        	<field name="number" required="1" string="Number" attrs="{'readonly': ['|', ('manual_sequence','=',False),('state','!=','draft')]}"/>
+                        </group>
+                        <group>
+                        	<field name="type_document_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="reference" string="Client Reference"/>                            
+                            <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                            <field name="company_currency_id" invisible="1"/>
+                            <field name="is_electronic" attrs="{'readonly': [('state', 'in', ['approved','cancel'])]}"/>
+                        	<field name="authorization_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"
+		            			context="{'default_type': 'external','default_type_document_id': type_document_id,
+		            				'default_partner_id': partner_id, 'default_is_electronic': is_electronic, 'default_manual_sequence': True,
+		            				'form_view_ref': 'oe_account.view_authorization_external_form', 'tree_view_ref': 'oe_account.view_authorization_form_external_tree'}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details">
+                        	<field name="withholding_line_ids">
+                        		<tree string="Bill lines" editable="bottom">
+                        			<field name="sequence" widget="handle"/>
+                        			<field name="name"/>
+                        			<field name="tmpl_invoice_number" invisible="1" string="Invoice"/>                        			
+                        			<field name="invoice_id" required="1" domain="[('partner_id', '=', parent.partner_id), ('state', '=', 'open'), ('type', '=', 'out_invoice')]" 
+                        				options="{'no_create': True}"/>
+                        			<field name="partner_id" invisible="1"/>
+                        			<field name="tmpl_invoice_date" required="1"/>
+                        			<field name="livelihood_id"/>
+                        			<field name="tax_id" options="{'no_create': True}" required="1"
+                        				domain="[('tax_group_id.type', '=', name), ('type_tax_use', '=','sale'), ('amount', '&lt;=', 0)]"/>
+                        			<field name="tax_tag_ids" readonly="1" required="1" widget="many2many_tags" width="0.5"
+                        				force_save="1" string="Tax Grids" groups="oe_account.group_manager_form"
+                    					options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+                        			<field name="account_id" options="{'no_create': True}" 
+                        				domain="[('reconcile', '=', False), ('deprecated', '=', False)]" groups="account.group_account_user"/>
+                                    <field name="account_analytic_id" groups="analytic.group_analytic_accounting"
+                                        domain="[('company_id', '=', parent.company_id)]" context="{'default_partner_id': parent.partner_id}"/>
+                                    <field name="analytic_tag_ids" groups="analytic.group_analytic_accounting" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                    <field name="type_withhold" widget="radio"/>
+                                    <field name="amount_tax"/>
+                                    <field name="amount_base"/>
+                                    <field name="amount"/>
+                                    <field name="currency_id" invisible="1"/>
+                        		</tree>
+                        	</field>
+                        	<group>
+								<group>
+			                        <div class="oe_inline">
+					            		<label for="comment" string="Observations"/>
+										<field name="comment" placeholder="Observations..."/>
+			                        </div>
+								</group>                     	
+								<group class="oe_subtotal_footer oe_right">
+									<field name="amount_base_iva"/>
+									<field name="amount_iva"/>
+									<field name="amount_base_renta"/>
+									<field name="amount_renta"/>
+									<field name="amount_base_isd"/>
+            						<field name="amount_isd"/>
+            						<field name="amount_refund" style="color:green;" attrs="{'invisible': [('amount_refund','=',0)]}"/>
+                                    <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                    <field name="invoices_widget" colspan="2" nolabel="1" widget="payment"/>
+                                    <field name="residual" class="oe_subtotal_footer_separator" attrs="{'invisible': [('state', '=', 'draft')]}"
+                                    	groups="account.group_account_invoice"/>
+                                    <field name="outstanding_credits_debits_widget" colspan="2" nolabel="1" widget="payment" attrs="{'invisible': [('state', 'not in', 'approved')]}"/>
+                                    <field name="move_reconciled" invisible="1"/>
+                                </group>
+							</group>
+                        </page>
+                        <page string="Other Info" name="other_info">
+                            <group>
+                                <group>
+                                	<field name="journal_id" required="1"/>
+                                	<field name="account_id" required="1"/>
+                                	<field name="origin" string="Invoice" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                                	<field name="document_type"/>
+                                    <field name="user_id" string="Responsible"/>
+                                    <field name="move_name"/>
+                                </group>
+                                <group>
+                                    <field name="manual_sequence" invisible="1"/>
+                                    <field name="move_id" groups="account.group_account_user" attrs="{'invisible': [('move_id', '=', False)]}"/>
+                                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                </group>
+                            </group>
+                        </page>
+						<page string="SRI Info" name="sri_info" attrs="{'invisible': [('is_electronic', '=', False)]}">
+							<group>
+								<group>
+									<field name="received" attrs="{'invisible': [('is_electronic', '=', False)]}"/>
+									<field name="authorization" attrs="{'invisible': [('is_electronic', '=', False)]}"/>
+									<field name="authorization_number" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+									<field name="access_key" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+								</group>
+								<group>
+									<field name="environment" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+									<field name="authorization_date" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+									<field name="message_state" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+								</group>
+							</group>
+						    <field name="statement_tax_line_ids">
+						        <tree string="Statement">
+						            <field name="form_id"/>
+						            <field name="name"/>
+						            <field name="tax_group_id"/>
+						            <field name="base"/>
+						            <field name="percentage"/>
+						            <field name="amount"/>
+						            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+						            <field name="currency_id" invisible="1" force_save="1"/>
+						        </tree>
+						    </field>
+						</page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+		
+
+		<record id="action_withholding_sale_form" model="ir.actions.act_window">
+            <field name="name">Sale Withholding</field>
+            <field name="res_model">account.withholding</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph,pivot</field>
+            <field name="view_id" ref="view_withholding_sale_tree"/>
+            <field name="domain">[('type','=','in_withholding'), ('document_type','=','withhold')]</field>
+            <field name="context">{'type':'in_withholding', 'default_document_type': 'withhold'}</field>
+            <field name="search_view_id" ref="view_account_withholding_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a sale withholding.
+              </p><p>
+                App EcuaOnline electronic withholding allows to ease and fasten the
+                collection of client withholdings. Your vendor receives the
+                withholding by email and he import it
+                in his own system.
+              </p><p>
+                The discussions with your vendor are automatically displayed at
+                the bottom of each withholding.
+              </p>
+            </field>
+        </record>
+
+  
+		<record id="action_withholding_in_tree_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_withholding_sale_tree"/>
+            <field name="act_window_id" ref="action_withholding_sale_form"/>
+        </record>
+
+        <record id="action_withholding_in_tree_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_withholding_sale_form"/>
+            <field name="act_window_id" ref="action_withholding_sale_form"/>
+        </record>
+
+
+    	<menuitem action="action_withholding_sale_form" id="menu_action_withholding_sale" parent="account.menu_finance_receivables_documents" sequence="3"
+    		groups="account.group_account_invoice,account.group_account_manager"/>
+
+		<!-- Account Purchase Withholding -->
+    	
+		<record id="view_withholding_purchase_tree" model="ir.ui.view">
+            <field name="name">account.withholding.purchase.tree.oe_account</field>
+            <field name="model">account.withholding</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Withholdings">
+                    <field name="name"/>
+                    <field name="partner_id" groups="base.group_user" string="Vendor"/>
+                    <field name="date_withholding"/>
+                    <field name="origin"/>
+                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    <field name="type_document_id"/>
+                    <field name="state"/>
+                    <field name="type" invisible="context.get('type',True)"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_withholding_purchase_form" model="ir.ui.view">
+            <field name="name">account.withholding.purchase.form.oe_account</field>
+            <field name="model">account.withholding</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Withholding Purchase">
+                <header>
+                		<button name="action_withholding_sent" type="object" string="Send by Email" attrs="{'invisible':['|',('sent','=',True), ('state', 'in', ('draft', 'cancel'))]}" class="oe_highlight o_invoice_send" groups="base.group_user"/>                        
+                        <button name="action_withholding_sent" type="object" string="Send by Email" attrs="{'invisible':['|',('sent','=',False), ('state', 'in', ('draft', 'cancel'))]}" groups="base.group_user"/>                        
+                        <button name="action_withholding_approved" type="object" states="draft" string="Validate" class="oe_highlight" groups="account.group_account_invoice"/>
+                        <button name="action_withholding_cancel" states="approved" string="Set to Cancel" type="object" groups="account.group_account_invoice"/>
+                        <button name="action_withholding_draft" states="cancel" string="Set to Draft" type="object" groups="account.group_account_invoice"/>
+                        
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approved,cancel" />
+                </header>
+                <div groups="account.group_account_invoice" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
+                    You have <bold><a class="alert-link" href="#outstanding" role="button">this withholding</a></bold> without applying to an invoice. You can assign them to retain an invoice.
+                </div>
+                <field name="has_outstanding" invisible="1"/>
+                <sheet string="Withholding Purchase">
+					<div class="oe_button_box" name="button_box">
+					    <button class="oe_stat_button" name="button_journal_entries"
+					            string="Journal Items" type="object"
+					            groups="account.group_account_user"
+					            attrs="{'invisible':[('move_line_ids','=',[])]}" icon="fa-bars"/>
+					    <field name="move_line_ids" invisible="1"/>
+					</div>
+                    <div name="title">
+                        <h1 class="mt0">
+                            <field name="name" class="oe_inline"  attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                            <div  attrs="{'invisible': ['|', ('sequence_number_next_prefix','=',False), ('state','!=','draft')]}">
+                                <field name="sequence_number_next_prefix" class="oe_inline"/>
+                                <field name="sequence_number_next" readonly="1" class="oe_inline"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <field name="type" invisible="1"/>
+                    <field name="sent" invisible="1"/>
+                    <group>
+                        <group>
+                        	<field string="Vendor" name="partner_id" attrs="{'readonly': [('state', '!=', 'draft')]}" 
+                        		domain="[('supplier', '=', True), ('type', '!=', 'delivery')]"
+                        		context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1, 'default_company_type': 'company', 'default_is_validation_vat': True}"/>
+                        	<field name="date_withholding"/>
+                        	<field name="number" required="1" string="Number" attrs="{'readonly': ['|', ('manual_sequence','=',False),('state','!=','draft')]}"/>
+                        </group>
+                        <group>
+                        	<field name="type_document_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="origin" string="Document" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                            <field name="reference" string="Vendor Reference"/>                            
+                            <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                            <field name="company_currency_id" invisible="1"/>
+                            <field name="is_electronic" attrs="{'readonly': [('state', 'in', ['approved','cancel'])]}"/>
+                        	<field name="authorization_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1" options="{'no_create': True}"
+		            			context="{'default_type': 'internal','default_type_document_id': type_document_id,
+		            				'default_partner_id': partner_id, 'default_is_electronic': is_electronic,
+		            				'form_view_ref': 'oe_account.view_authorization_form', 'tree_view_ref': 'oe_account.view_authorization_form_tree'}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Details">
+                        	<field name="withholding_line_ids">
+                        		<tree string="Bill lines" editable="bottom">
+                        			<field name="sequence" widget="handle" />
+                        			<field name="name"/>
+                        			<field name="invoice_id" options="{'no_create': True}"
+                        				domain="[('partner_id', '=', parent.partner_id), ('state', '=', 'open'), ('type', '=', 'in_invoice')]"/>
+                        			<field name="tmpl_invoice_number" string="No Document" required="1"/>
+                        			<field name="partner_id" invisible="1"/>
+                        			<field name="tmpl_invoice_date" required="1"/>
+                        			<field name="livelihood_id"/>
+                        			<field name="tax_id" options="{'no_create': True}"	required="1"
+                        				domain="[('tax_group_id.type', '=', name),('type_tax_use','=','purchase'),('amount','&lt;=',0)]"/>
+                        			<field name="tax_tag_ids" readonly="1" required="1" widget="many2many_tags" width="0.5"
+                        				force_save="1" string="Tax Grids" groups="oe_account.group_manager_form"
+                    					options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+                        			<field name="account_id" options="{'no_create': True}"
+                        				domain="[('reconcile', '=', False), ('deprecated', '=', False)]" groups="account.group_account_user"/>
+                                    <field name="account_analytic_id" groups="analytic.group_analytic_accounting"
+                                        domain="[('company_id', '=', parent.company_id)]" context="{'default_partner_id': parent.partner_id}"/>
+                                    <field name="analytic_tag_ids" groups="analytic.group_analytic_accounting" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                    <field name="type_withhold" widget="radio"/>
+                                    <field name="amount_tax"/>
+                                    <field name="amount_base"/>
+                                    <field name="amount"/>
+                                    <field name="currency_id" invisible="1"/>
+                        		</tree>
+                        	</field>
+                        	<group>
+								<group>
+			                        <div class="oe_inline">
+			                        	<h2><label for="line_info_ids" string="Additional Information"/></h2>
+										<field name="line_info_ids" nolabel="1" widget="one2many_list" 
+					            			mode="tree" context="{'default_withholding_id': id}">
+					            			<tree string="Information Additional Lines" editable="bottom">
+					            				<field name="sequence" widget="handle"/>
+					            				<field name="withholding_id" invisible="1"/>
+					            				<field name="name" required="1"/>
+					            				<field name="value_tag" required="1"/>
+					            			</tree>
+					            		</field>
+					            		<label for="comment" string="Observations"/>
+										<field name="comment" placeholder="Observations..."/>
+			                        </div>
+								</group>
+								<group class="oe_subtotal_footer oe_right">
+									<field name="amount_base_iva"/>
+									<field name="amount_iva"/>
+									<field name="amount_base_renta"/>
+									<field name="amount_renta"/>
+									<field name="amount_base_isd"/>
+	           						<field name="amount_isd"/>
+	                                <field name="amount_total" class="oe_subtotal_footer_separator"/>
+	                                <field name="invoices_widget" colspan="2" nolabel="1" widget="payment"/>
+	                                <field name="residual" class="oe_subtotal_footer_separator" attrs="{'invisible': [('state', '=', 'draft')]}"
+                                    	groups="account.group_account_invoice"/>
+									<field name="outstanding_credits_debits_widget" colspan="2" nolabel="1" widget="payment" attrs="{'invisible': [('state', 'not in', 'open')]}"/>                                    	
+                                    <field name="move_reconciled" invisible="1"/>
+	                            </group>
+                        	</group>
+                        </page>
+                        <page string="Other Info" name="other_info">
+                            <group>
+                                <group>
+                                	<field name="document_type"/>
+                                    <field name="user_id" string="Responsible" options="{'no_create': True}"/>
+                                    <field name="name" readonly="1"/>
+                                    <field name="move_name" invisible="1"/>
+                                </group>
+                                <group>
+                                	<field domain="[('company_id', '=', company_id), ('internal_type', '=', 'payable'), ('deprecated', '=', False)]"
+                                		name="account_id" groups="account.group_account_user" options="{'no_create': True}"/>
+                                    <field name="move_id" groups="account.group_account_user" attrs="{'invisible': [('move_id', '=', False)]}"/>
+                                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                    <field name="manual_sequence" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="SRI Info" name="sri_info">
+						    <field name="statement_tax_line_ids">
+						        <tree string="Statement">
+						            <field name="form_id"/>
+						            <field name="name"/>
+						            <field name="tax_group_id"/>
+						            <field name="base"/>
+						            <field name="percentage"/>
+						            <field name="amount"/>
+						            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+						            <field name="currency_id" invisible="1" force_save="1"/>
+						        </tree>
+						    </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+       
+        
+        <record id="action_withholding_purchase_form" model="ir.actions.act_window">
+            <field name="name">Purchase Withholding</field>
+            <field name="res_model">account.withholding</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph,pivot</field>
+            <field name="view_id" ref="view_withholding_purchase_tree"/>
+            <field name="domain">[('type','=','out_withholding'), ('document_type','=','withhold')]</field>
+            <field name="context">{'type':'out_withholding', 'default_type':'out_withholding', 'default_document_type': 'withhold'}</field>
+            <field name="search_view_id" ref="view_account_withholding_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a purchase withholding.
+              </p><p>
+                App EcuaOnline electronic withholding allows to ease and fasten the
+                collection of vendor withholdings. Your vendor receives the
+                withholding by email and he import it
+                in his own system.
+              </p><p>
+                The discussions with your vendor are automatically displayed at
+                the bottom of each withholding.
+              </p>
+            </field>
+        </record>
+        
+
+		<record id="action_withholding_out_tree_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_withholding_purchase_tree"/>
+            <field name="act_window_id" ref="action_withholding_purchase_form"/>
+        </record>
+
+        <record id="action_withholding_out_tree_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_withholding_purchase_form"/>
+            <field name="act_window_id" ref="action_withholding_purchase_form"/>
+        </record>
+
+
+    	<menuitem action="action_withholding_purchase_form" id="menu_action_withholding_purchase" parent="account.menu_finance_payables_documents" sequence="2"/>
+    
+    </data>
+</odoo>    

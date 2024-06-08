@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<templates>
+	
+	<t t-extend="ImportView">
+		<t t-jquery="input[name=file]">
+			this.attr('accept', this.attr('accept') + ', .xml, .txt');
+		</t>
+	</t>
+	
+</templates>

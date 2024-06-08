@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+      
+        <report
+            id="action_report_account_complementary"
+            model="account.complementary.report"
+            string="Account State"
+            report_type="qweb-pdf"
+            name="oe_account_report.report_account_state"
+            file="oe_account_report.report_account_state"
+            />
+        
+	</data>
+</odoo>	        

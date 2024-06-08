@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+	
+		<record id="export_account_payment" model="ir.exports">
+            <field name="name">Actualizar Pagos</field>
+            <field name="resource">account.payment</field>
+            <field name="export_fields" eval="[(5, 0), (0, 0, {'name': 'partner_id/id'}), (0, 0, {'name': 'partner_id/display_name'}),
+            	(0, 0, {'name': 'journal_id/id'}), (0, 0, {'name': 'journal_id/display_name'}),
+            	(0, 0, {'name': 'value_property_id/id'}), (0, 0, {'name': 'payment_date'}), (0, 0, {'name': 'communication'}),
+            	(0, 0, {'name': 'document_number'}), (0, 0, {'name': 'is_advance'}), (0, 0, {'name': 'amount'}), (0, 0, {'name': 'state'})]"/>
+        </record>
+	
+	</data>
+</odoo>

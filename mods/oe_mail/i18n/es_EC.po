@@ -1,0 +1,210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-03 18:35+0000\n"
+"PO-Revision-Date: 2021-09-03 18:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/js/systray.js:69
+#, python-format
+msgid " has now the permission to send you native notifications on this device."
+msgstr " tiene ahora el permiso para enviarle notificaciones nativas en este dispositivo."
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/js/systray.js:67
+#, python-format
+msgid " will not have the permission to send native notifications on this device."
+msgstr " no tendrá permiso para enviar notificaciones nativas en este dispositivo."
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_search_inherit_oe_mail
+msgid "Act. next 6 months"
+msgstr "Actuar. próximos 6 meses"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_search_inherit_oe_mail
+msgid "Act. next month"
+msgstr "Actuar. próximo mes"
+
+#. module: oe_mail
+#: model:ir.actions.act_window,name:oe_mail.action_open_activities
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_graph_view
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_pivot_view
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: oe_mail
+#: model:ir.model,name:oe_mail.model_mail_activity
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_form
+msgid "Activity"
+msgstr "Actividades"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_form
+msgid "Activity Form"
+msgstr "Formulario de Actividad"
+
+#. module: oe_mail
+#: model:ir.model.fields,help:oe_mail.field_mail_activity_done
+msgid "Activity has been carried out"
+msgstr "Se ha realizado la actividad"
+
+#. module: oe_mail
+#: model:ir.model.fields,field_description:oe_mail.field_mail_activity_calendar_event_id_partner_ids
+msgid "Attendees"
+msgstr "Asistentes"
+
+#. module: oe_mail
+#: model:ir.model,name:oe_mail.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/xml/systray.xml:23
+#, python-format
+msgid "Continue"
+msgstr "Continuar"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_form
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_tree
+msgid "Document"
+msgstr "Documento"
+
+#. module: oe_mail
+#: model:ir.model.fields,field_description:oe_mail.field_mail_activity_done
+msgid "Done"
+msgstr "Realizado"
+
+#. module: oe_mail
+#: model:ir.model.fields,field_description:oe_mail.field_mail_activity_date_done
+msgid "Done date"
+msgstr "Fecha de realizado"
+
+#. module: oe_mail
+#: model:ir.model.fields,field_description:oe_mail.field_mail_activity_duration
+msgid "Duration"
+msgstr "Duración"
+
+#. module: oe_mail
+#: model:ir.model,name:oe_mail.model_mail_thread
+msgid "Email Thread"
+msgstr "Hilo de mensajes"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_form
+msgid "Log a note..."
+msgstr "Registrar una nota..."
+
+#. module: oe_mail
+#: model:ir.model,name:oe_mail.model_mail_message
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/xml/systray.xml:22
+#, python-format
+msgid "Not thanks"
+msgstr "No gracias"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/xml/systray.xml:9
+#, python-format
+msgid "Notification"
+msgstr "Notificación de Escritorio"
+
+#. module: oe_mail
+#: model:ir.model.fields,field_description:oe_mail.field_mail_activity_res_model_id_name
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_search_inherit_oe_mail
+msgid "Origin"
+msgstr "Origen"
+
+#. module: oe_mail
+#: model:ir.model.fields,help:oe_mail.field_mail_activity_partner_id
+msgid "Partner-related data of the user"
+msgstr "Datos del usuario relativos a la empresa"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/js/systray.js:67
+#, python-format
+msgid "Permission denied"
+msgstr "Permiso Denegado"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/js/systray.js:69
+#, python-format
+msgid "Permission granted"
+msgstr "Permiso Concedido"
+
+#. module: oe_mail
+#: model:ir.model.fields,field_description:oe_mail.field_mail_activity_partner_id
+msgid "Related Partner"
+msgstr "Empresa relacionada"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_search_inherit_oe_mail
+msgid "Show activities scheduled for next 6 months."
+msgstr "Muestre las actividades programadas para los próximos 6 meses."
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_search_inherit_oe_mail
+msgid "Show activities scheduled for next month."
+msgstr "Mostrar actividades programadas para el próximo mes."
+
+#. module: oe_mail
+#: model:ir.model.fields,field_description:oe_mail.field_mail_activity_calendar_event_id_start
+msgid "Start"
+msgstr "Iniciar"
+
+#. module: oe_mail
+#: model:ir.model.fields,help:oe_mail.field_mail_activity_calendar_event_id_start
+msgid "Start date of an event, without time for full days events"
+msgstr "Fecha de inicio del evento, sin horas para eventos de día completo"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_form
+msgid "Start meeting"
+msgstr "Iniciar Reunión"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_search_inherit_oe_mail
+msgid "User"
+msgstr "Usuario"
+
+#. module: oe_mail
+#: model:ir.ui.view,arch_db:oe_mail.mail_activity_view_form
+msgid "e.g. Discuss proposal"
+msgstr "por ejemplo, discusión de una propuesta"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/xml/systray.xml:19
+#, python-format
+msgid "enable desktop notifications"
+msgstr "habilitar notificaciones en escritorio"
+
+#. module: oe_mail
+#. openerp-web
+#: code:addons/oe_mail/static/src/xml/systray.xml:19
+#, python-format
+msgid "needs your permission to"
+msgstr "necesita tu permiso para"
+

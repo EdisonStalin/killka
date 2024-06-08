@@ -1,0 +1,1305 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_statement_sri
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-19 18:47+0000\n"
+"PO-Revision-Date: 2022-10-19 18:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:153
+#: code:addons/oe_statement_sri/wizard/form_103.py:154
+#: code:addons/oe_statement_sri/wizard/form_104.py:153
+#: code:addons/oe_statement_sri/wizard/form_104.py:154
+#, python-format
+msgid "(+) AJUSTE POR IVA DEVUELTO E IVA RECHAZADO IMPUTABLE AL CRÉDITO TRIBUTARIO EN EL MES"
+msgstr "(+) AJUSTE POR IVA DEVUELTO E IVA RECHAZADO IMPUTABLE AL CRÉDITO TRIBUTARIO EN EL MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:152
+#: code:addons/oe_statement_sri/wizard/form_104.py:152
+#, python-format
+msgid "(+) AJUSTE POR IVA DEVUELTO O DESCONTADO EN ADQUISICIONES EFECTUADAS EN ZONAS AFECTADAS - LEY DE SOLIDARIDAD"
+msgstr "(+) AJUSTE POR IVA DEVUELTO O DESCONTADO EN ADQUISICIONES EFECTUADAS EN ZONAS AFECTADAS - LEY DE SOLIDARIDAD"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:151
+#: code:addons/oe_statement_sri/wizard/form_104.py:151
+#, python-format
+msgid "(+) AJUSTE POR IVA DEVUELTO O DESCONTADO POR ADQUISICIONES EFECTUADAS CON MEDIO ELECTRÓNICO"
+msgstr "(+) AJUSTE POR IVA DEVUELTO O DESCONTADO POR ADQUISICIONES EFECTUADAS CON MEDIO ELECTRÓNICO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:155
+#: code:addons/oe_statement_sri/wizard/form_104.py:155
+#, python-format
+msgid "(+) AJUSTE POR IVA DEVUELTO POR OTRAS INSTITUCIONES DEL SECTOR PÚBLICO IMPUTABLE AL CRÉDITO TRIBUTARIO EN EL MES"
+msgstr "(+) AJUSTE POR IVA DEVUELTO POR OTRAS INSTITUCIONES DEL SECTOR PÚBLICO IMPUTABLE AL CRÉDITO TRIBUTARIO EN EL MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:145
+#: code:addons/oe_statement_sri/wizard/form_104.py:145
+#, python-format
+msgid "(-) COMPENSACIÓN DE IVA POR VENTAS  EFECTUADAS EN  ZONAS AFECTADAS LEY DE SOLIDARIDAD"
+msgstr "(-) COMPENSACIÓN DE IVA POR VENTAS  EFECTUADAS EN  ZONAS AFECTADAS LEY DE SOLIDARIDAD"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:144
+#: code:addons/oe_statement_sri/wizard/form_104.py:144
+#, python-format
+msgid "(-) COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS CON MEDIO ELECTRÓNICO"
+msgstr "(-) COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS CON MEDIO ELECTRÓNICO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:150
+#: code:addons/oe_statement_sri/wizard/form_104.py:150
+#, python-format
+msgid "(-)RETENCIONES EN LA FUENTE DE IVA QUE LE HAN SIDO EFECTUADAS EN ESTE PERÍODO"
+msgstr "(-)RETENCIONES EN LA FUENTE DE IVA QUE LE HAN SIDO EFECTUADAS EN ESTE PERÍODO"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,type:0
+msgid "107"
+msgstr "107"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:83
+#: code:addons/oe_statement_sri/wizard/form_104.py:83
+#, python-format
+msgid "31"
+msgstr "31"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:40
+#: code:addons/oe_statement_sri/wizard/form_104.py:40
+#, python-format
+msgid "ADQUISICIONES EXENTAS DEL PAGO DE IVA"
+msgstr "ADQUISICIONES EXENTAS DEL PAGO DE IVA"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:30
+#: code:addons/oe_statement_sri/wizard/form_104.py:30
+#, python-format
+msgid "ADQUISICIONES LOCALES DE ACTIVOS FIJOS GRAVADOS TARIFA DIFERENTE DE CERO(CON DERECHO A CRÉDITO TRIBUTARIO)"
+msgstr "ADQUISICIONES LOCALES DE ACTIVOS FIJOS GRAVADOS TARIFA DIFERENTE DE CERO(CON DERECHO A CRÉDITO TRIBUTARIO)"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:39
+#: code:addons/oe_statement_sri/wizard/form_104.py:39
+#, python-format
+msgid "ADQUISICIONES NO OBJETO DE IVA"
+msgstr "ADQUISICIONES NO OBJETO DE IVA"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:37
+#: code:addons/oe_statement_sri/wizard/form_104.py:37
+#, python-format
+msgid "ADQUISICIONES REALIZADAS A CONTRIBUYENTES RISE"
+msgstr "ADQUISICIONES REALIZADAS A CONTRIBUYENTES RISE"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:29
+#: code:addons/oe_statement_sri/wizard/form_104.py:29
+#, python-format
+msgid "ADQUISICIONES Y PAGOS (EXCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA DIFERENTE DE CERO (CON DERECHO A CRÉDITO TRIBUTARIO)"
+msgstr "ADQUISICIONES Y PAGOS (EXCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA DIFERENTE DE CERO (CON DERECHO A CRÉDITO TRIBUTARIO)"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:36
+#: code:addons/oe_statement_sri/wizard/form_104.py:36
+#, python-format
+msgid "ADQUISICIONES Y PAGOS (INCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA 0%"
+msgstr "ADQUISICIONES Y PAGOS (INCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA 0%"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,type:0
+#: model:ir.actions.act_window,name:oe_statement_sri.action_sri_statement_form
+#: model:ir.ui.menu,name:oe_statement_sri.menu_action_sri_statement_form
+msgid "ATS"
+msgstr "ATS"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "ATS Generate"
+msgstr "Generar ATS"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_id
+msgid "ATS Statement"
+msgstr "Declaración ATS"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "ATS XML Generate"
+msgstr "Generar XML"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,type_period:0
+msgid "Annual"
+msgstr "Anual"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "April"
+msgstr "Abril"
+
+#. module: oe_statement_sri
+#: model:ir.model,name:oe_statement_sri.model_ats_statement
+msgid "Ats the statement"
+msgstr "Declaración ATS"
+
+#. module: oe_statement_sri
+#: model:ir.model,name:oe_statement_sri.model_ats_statement_line
+msgid "Ats the statement details"
+msgstr "Detalle de declaración ATS"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Attach a file"
+msgstr "Adjuntar un archivo"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_attachment_ids
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "August"
+msgstr "Agosto"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_authorization
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_authorization_id
+msgid "Authorization"
+msgstr "Autorización"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:85
+#: code:addons/oe_statement_sri/wizard/form_104.py:85
+#, python-format
+msgid "Año"
+msgstr "Año"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Base amount"
+msgstr "Monto base"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:141
+#: code:addons/oe_statement_sri/wizard/form_103.py:143
+#: code:addons/oe_statement_sri/wizard/form_104.py:141
+#: code:addons/oe_statement_sri/wizard/form_104.py:143
+#, python-format
+msgid "CRÉDITO TRIBUTARIO APLICABLE EN ESTE PERÍODO"
+msgstr "CRÉDITO TRIBUTARIO APLICABLE EN ESTE PERÍODO"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,state:0
+msgid "Cancelled"
+msgstr "Anulado"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/models/ats_statement.py:160
+#, python-format
+msgid "Check the following contact %s does not have the identification data %s or other data entered."
+msgstr "Revise el siguiente contacto %s no tiene ingresado los datos de identificación %s o otros datos."
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_company_type
+msgid "Company Type"
+msgstr "Tipo de compañía"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_create_uid
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_create_date
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,type:0
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Customer Credit Note"
+msgstr "Nota de crédito de venta"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_refund_out_id
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_refund_out_ids
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Customer Credit Notes"
+msgstr "Notas de crédito de venta"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,type:0
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Customer Invoice"
+msgstr "Factura de venta"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_invoice_out_ids
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_invoice_out_id
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Customer Invoices"
+msgstr "Facturas de venta"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:89
+#: code:addons/oe_statement_sri/wizard/form_104.py:89
+#, python-format
+msgid "Cédula de identidad o no. de pasaporte del representante legal"
+msgstr "Cédula de identidad o no. de pasaporte del representante legal"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:170
+#: code:addons/oe_statement_sri/wizard/form_104.py:170
+#, python-format
+msgid "DEVOLUCIÓN PROVISIONAL DE IVA MEDIANTE COMPENSACIÓN CON RETENCIONES EFECTUADAS "
+msgstr "DEVOLUCIÓN PROVISIONAL DE IVA MEDIANTE COMPENSACIÓN CON RETENCIONES EFECTUADAS "
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_date
+msgid "Date of issue"
+msgstr "Fecha de emisión"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "December"
+msgstr "Diciembre"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_display_name
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_name
+msgid "Document"
+msgstr "Documento"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+msgid "Done"
+msgstr "Realizado"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Donwload:"
+msgstr "Descargar:"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,state:0
+#: selection:ats.statement.line,state:0
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+msgid "Draft statement"
+msgstr "Draft statement"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:22
+#: code:addons/oe_statement_sri/wizard/form_104.py:22
+#, python-format
+msgid "EXPORTACIONES DE BIENES"
+msgstr "EXPORTACIONES DE BIENES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:23
+#: code:addons/oe_statement_sri/wizard/form_104.py:23
+#, python-format
+msgid "EXPORTACIONES DE SERVICIOS Y/O DERECHOS"
+msgstr "EXPORTACIONES DE SERVICIOS Y/O DERECHOS"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_date_end
+msgid "End Date"
+msgstr "Fecha Final"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_entity
+msgid "Entity"
+msgstr "Establecimiento"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_error
+msgid "Error"
+msgstr "Error"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:140
+#: code:addons/oe_statement_sri/wizard/form_104.py:140
+#, python-format
+msgid "FACTOR DE PROPORCIONALIDAD PARA CRÉDITO TRIBUTARIO"
+msgstr "FACTOR DE PROPORCIONALIDAD PARA CRÉDITO TRIBUTARIO"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "February"
+msgstr "Febrero"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_firstname
+msgid "First name"
+msgstr "Primer Nombre"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/models/ats_statement.py:179
+#, python-format
+msgid "Fix errors:"
+msgstr "Lista de incidentes:"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_ice
+msgid "ICE"
+msgstr "ICE"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_base_ice
+msgid "ICE Base"
+msgstr "Base ICE"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_id
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:33
+#: code:addons/oe_statement_sri/wizard/form_104.py:33
+#, python-format
+msgid "IMPORTACIONES DE BIENES (EXCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA DIFERENTE DE CERO"
+msgstr "IMPORTACIONES DE BIENES (EXCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA DIFERENTE DE CERO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:35
+#: code:addons/oe_statement_sri/wizard/form_104.py:35
+#, python-format
+msgid "IMPORTACIONES DE BIENES (INCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA 0%"
+msgstr "IMPORTACIONES DE BIENES (INCLUYE ACTIVOS FIJOS) GRAVADOS TARIFA 0%"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:32
+#: code:addons/oe_statement_sri/wizard/form_103.py:34
+#: code:addons/oe_statement_sri/wizard/form_104.py:32
+#: code:addons/oe_statement_sri/wizard/form_104.py:34
+#, python-format
+msgid "IMPORTACIONES DE SERVICIOS Y/O DERECHOS GRAVADOS TARIFA DIFERENTE DE CERO"
+msgstr "IMPORTACIONES DE SERVICIOS Y/O DERECHOS GRAVADOS TARIFA DIFERENTE DE CERO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:175
+#: code:addons/oe_statement_sri/wizard/form_104.py:175
+#, python-format
+msgid "IMPUESTO"
+msgstr "IMPUESTO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:112
+#: code:addons/oe_statement_sri/wizard/form_104.py:112
+#, python-format
+msgid "IMPUESTO A LIQUIDAR DEL MES ANTERIOR"
+msgstr "IMPUESTO A LIQUIDAR DEL MES ANTERIOR"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:114
+#: code:addons/oe_statement_sri/wizard/form_104.py:114
+#, python-format
+msgid "IMPUESTO A LIQUIDAR EN EL PRÓXIMO MES"
+msgstr "IMPUESTO A LIQUIDAR EN EL PRÓXIMO MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:113
+#: code:addons/oe_statement_sri/wizard/form_104.py:113
+#, python-format
+msgid "IMPUESTO A LIQUIDAR EN ESTE MES"
+msgstr "IMPUESTO A LIQUIDAR EN ESTE MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:142
+#: code:addons/oe_statement_sri/wizard/form_104.py:142
+#, python-format
+msgid "IMPUESTO CAUSADO"
+msgstr "IMPUESTO CAUSADO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:28
+#: code:addons/oe_statement_sri/wizard/form_104.py:28
+#, python-format
+msgid "INGRESOS POR REEMBOLSO COMO INTERMEDIARIO/VALORES FACTURADOS POR OPERADORAS DE TRANSPORTE (INFORMATIVO)"
+msgstr "INGRESOS POR REEMBOLSO COMO INTERMEDIARIO/VALORES FACTURADOS POR OPERADORAS DE TRANSPORTE (INFORMATIVO)"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:174
+#: code:addons/oe_statement_sri/wizard/form_104.py:174
+#, python-format
+msgid "INTERÉS"
+msgstr "INTERÉS"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:179
+#: code:addons/oe_statement_sri/wizard/form_104.py:179
+#, python-format
+msgid "INTERÉS POR MORA"
+msgstr "INTERÉS POR MORA"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:45
+#: code:addons/oe_statement_sri/wizard/form_104.py:45
+#, python-format
+msgid "IVA GENERADO EN LA DIFERENCIA ENTRE ADQUISICIONES Y NOTAS DE CRÉDITO CON DISTINTA TARIFA (AJUSTE EN NEGATIVO AL CRÉDITO"
+msgstr "IVA GENERADO EN LA DIFERENCIA ENTRE ADQUISICIONES Y NOTAS DE CRÉDITO CON DISTINTA TARIFA (AJUSTE EN NEGATIVO AL CRÉDITO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:44
+#: code:addons/oe_statement_sri/wizard/form_104.py:44
+#, python-format
+msgid "IVA GENERADO EN LA DIFERENCIA ENTRE ADQUISICIONES Y NOTAS DE CRÉDITO CON DISTINTA TARIFA (AJUSTE EN POSITIVO AL CRÉDITO"
+msgstr "IVA GENERADO EN LA DIFERENCIA ENTRE ADQUISICIONES Y NOTAS DE CRÉDITO CON DISTINTA TARIFA (AJUSTE EN POSITIVO AL CRÉDITO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:17
+#: code:addons/oe_statement_sri/wizard/form_104.py:17
+#, python-format
+msgid "IVA GENERADO EN LA DIFERENCIA ENTRE VENTAS Y NOTAS DE CREDITO CON DISTINTA TARIFA (AJUSTE A FAVOR)"
+msgstr "IVA GENERADO EN LA DIFERENCIA ENTRE VENTAS Y NOTAS DE CREDITO CON DISTINTA TARIFA (AJUSTE A FAVOR)"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:16
+#: code:addons/oe_statement_sri/wizard/form_104.py:16
+#, python-format
+msgid "IVA GENERADO EN LA DIFERENCIA ENTRE VENTAS Y NOTAS DE CREDITO CON DISTINTA TARIFA (AJUSTE A PAGAR)"
+msgstr "IVA GENERADO EN LA DIFERENCIA ENTRE VENTAS Y NOTAS DE CREDITO CON DISTINTA TARIFA (AJUSTE A PAGAR)"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:161
+#: code:addons/oe_statement_sri/wizard/form_104.py:161
+#, python-format
+msgid "IVA PRESUNTIVO DE SALAS DE JUEGO (BINGO MECÁNICOS) Y OTROS JUEGOS DE AZAR"
+msgstr "IVA PRESUNTIVO DE SALAS DE JUEGO (BINGO MECÁNICOS) Y OTROS JUEGOS DE AZAR"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_l10n_latam_identification_type_id
+msgid "Identification Type"
+msgstr "Tipo identificación"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Informant"
+msgstr "Informante"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_is_electronic
+msgid "Is electronic"
+msgstr "Es electrónico"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_issue
+msgid "Issue"
+msgstr "Emisión"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "January"
+msgstr "Enero"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "July"
+msgstr "Julio"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "June"
+msgstr "Junio"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,help:oe_statement_sri.field_ats_statement_line_date
+msgid "Keep empty to use the current date"
+msgstr "Dejarlo vacío para utilizar la fecha actual."
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement___last_update
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_write_uid
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_write_date
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_lastname
+msgid "Last name"
+msgstr "Apellido"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:182
+#: code:addons/oe_statement_sri/wizard/form_104.py:182
+#, python-format
+msgid "MEDIANTE CHEQUE, DÉBITO BANCARIO, EFECTIVO U OTRAS FORMAS DE PAGO"
+msgstr "MEDIANTE CHEQUE, DÉBITO BANCARIO, EFECTIVO U OTRAS FORMAS DE PAGO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:183
+#: code:addons/oe_statement_sri/wizard/form_104.py:183
+#, python-format
+msgid "MEDIANTE COMPENSACIONES"
+msgstr "MEDIANTE COMPENSACIONES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:184
+#: code:addons/oe_statement_sri/wizard/form_104.py:184
+#, python-format
+msgid "MEDIANTE NOTAS DE CRÉDITO"
+msgstr "MEDIANTE NOTAS DE CRÉDITO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:185
+#: code:addons/oe_statement_sri/wizard/form_104.py:185
+#, python-format
+msgid "MEDIANTE TÍTULOS DEL BANCO CENTRAL (TBC)"
+msgstr "MEDIANTE TÍTULOS DEL BANCO CENTRAL (TBC)"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:176
+#: code:addons/oe_statement_sri/wizard/form_103.py:180
+#: code:addons/oe_statement_sri/wizard/form_104.py:176
+#: code:addons/oe_statement_sri/wizard/form_104.py:180
+#, python-format
+msgid "MULTA"
+msgstr "MULTA"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "March"
+msgstr "Marzo"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "May"
+msgstr "Mayo"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:84
+#: code:addons/oe_statement_sri/wizard/form_104.py:84
+#, python-format
+msgid "Mes"
+msgstr "Mes"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_list_month
+msgid "Month"
+msgstr "Month"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,type_period:0
+msgid "Monthly"
+msgstr "Mensual"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:186
+#: code:addons/oe_statement_sri/wizard/form_103.py:188
+#: code:addons/oe_statement_sri/wizard/form_103.py:190
+#: code:addons/oe_statement_sri/wizard/form_104.py:186
+#: code:addons/oe_statement_sri/wizard/form_104.py:188
+#: code:addons/oe_statement_sri/wizard/form_104.py:190
+#, python-format
+msgid "N/C No"
+msgstr "N/C No"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:42
+#: code:addons/oe_statement_sri/wizard/form_104.py:42
+#, python-format
+msgid "NOTAS DE CRÉDITO TARIFA  DIFERENTE DE CERO POR COMPENSAR PRÓXIMO MES"
+msgstr "NOTAS DE CRÉDITO TARIFA  DIFERENTE DE CERO POR COMPENSAR PRÓXIMO MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:26
+#: code:addons/oe_statement_sri/wizard/form_103.py:41
+#: code:addons/oe_statement_sri/wizard/form_104.py:26
+#: code:addons/oe_statement_sri/wizard/form_104.py:41
+#, python-format
+msgid "NOTAS DE CRÉDITO TARIFA 0% POR COMPENSAR PRÓXIMO MES"
+msgstr "NOTAS DE CRÉDITO TARIFA 0% POR COMPENSAR PRÓXIMO MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:27
+#: code:addons/oe_statement_sri/wizard/form_104.py:27
+#, python-format
+msgid "NOTAS DE CRÉDITO TARIFA DIFERENTE DE CERO POR COMPENSAR PRÓXIMO MES"
+msgstr "NOTAS DE CRÉDITO TARIFA DIFERENTE DE CERO POR COMPENSAR PRÓXIMO MES"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_name
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_no_apply_tax
+msgid "No Apply Tax"
+msgstr "No Aplica Impuesto"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:87
+#: code:addons/oe_statement_sri/wizard/form_104.py:87
+#, python-format
+msgid "No ID Sujeto Pasivo/Representante Legal"
+msgstr "No ID Sujeto Pasivo/Representante Legal"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_no_oject_tax
+msgid "No Object Tax"
+msgstr "No Objeto IVA"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "November"
+msgstr "Noviembre"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_number
+msgid "Number"
+msgstr "Número"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:86
+#: code:addons/oe_statement_sri/wizard/form_104.py:86
+#, python-format
+msgid "N° Formulario que sustituye"
+msgstr "N° Formulario que sustituye"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:31
+#: code:addons/oe_statement_sri/wizard/form_104.py:31
+#, python-format
+msgid "OTRAS ADQUISICIONES Y PAGOS GRAVADOS TARIFA DIFERENTE DE CERO (SIN DERECHO A CRÉDITO TRIBUTARIO)"
+msgstr "OTRAS ADQUISICIONES Y PAGOS GRAVADOS TARIFA DIFERENTE DE CERO (SIN DERECHO A CRÉDITO TRIBUTARIO)"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "October"
+msgstr "Octubre"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:177
+#: code:addons/oe_statement_sri/wizard/form_104.py:177
+#, python-format
+msgid "PAGO DIRECTO EN CUENTA ÚNICA DEL TESORO NACIONAL (Uso Exclusivo para Instituciones y Empresas del Sector Público Autorizadas)"
+msgstr "PAGO DIRECTO EN CUENTA ÚNICA DEL TESORO NACIONAL (Uso Exclusivo para Instituciones y Empresas del Sector Público Autorizadas)"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:173
+#: code:addons/oe_statement_sri/wizard/form_104.py:173
+#, python-format
+msgid "PAGO PREVIO"
+msgstr "PAGO PREVIO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:43
+#: code:addons/oe_statement_sri/wizard/form_104.py:43
+#, python-format
+msgid "PAGOS NETOS POR REEMBOLSO COMO INTERMEDIARIO / VALORES FACTURADOS POR SOCIOS A OPERADORAS DE TRANSPORTE"
+msgstr "PAGOS NETOS POR REEMBOLSO COMO INTERMEDIARIO / VALORES FACTURADOS POR SOCIOS A OPERADORAS DE TRANSPORTE"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:146
+#: code:addons/oe_statement_sri/wizard/form_103.py:156
+#: code:addons/oe_statement_sri/wizard/form_104.py:146
+#: code:addons/oe_statement_sri/wizard/form_104.py:156
+#, python-format
+msgid "POR ADQUISICIONES E IMPORTACIONES"
+msgstr "POR ADQUISICIONES E IMPORTACIONES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:148
+#: code:addons/oe_statement_sri/wizard/form_104.py:148
+#, python-format
+msgid "POR COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS CON MEDIO  ELECTRÓNICO"
+msgstr "POR COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS CON MEDIO  ELECTRÓNICO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:158
+#: code:addons/oe_statement_sri/wizard/form_104.py:158
+#, python-format
+msgid "POR COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS CON MEDIO ELECTRÓNICO"
+msgstr "POR COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS CON MEDIO ELECTRÓNICO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:149
+#: code:addons/oe_statement_sri/wizard/form_103.py:159
+#: code:addons/oe_statement_sri/wizard/form_104.py:149
+#: code:addons/oe_statement_sri/wizard/form_104.py:159
+#, python-format
+msgid "POR COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS EN ZONAS AFECTADAS  LEY DE SOLIDARIDAD"
+msgstr "POR COMPENSACIÓN DE IVA POR VENTAS EFECTUADAS EN ZONAS AFECTADAS  LEY DE SOLIDARIDAD"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:147
+#: code:addons/oe_statement_sri/wizard/form_103.py:157
+#: code:addons/oe_statement_sri/wizard/form_104.py:147
+#: code:addons/oe_statement_sri/wizard/form_104.py:157
+#, python-format
+msgid "POR RETENCIONES EN LA FUENTE DE IVA QUE LE HAN SIDO EFECTUADAS"
+msgstr "POR RETENCIONES EN LA FUENTE DE IVA QUE LE HAN SIDO EFECTUADAS"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,state:0
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,type:0
+msgid "Payroll"
+msgstr "Nómina"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_type_period
+msgid "Period"
+msgstr "Periodo"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_withholding_out_ids
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Purchase Withholding"
+msgstr "Retención de compra"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_withhold_in_id
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Purchase Withholdings"
+msgstr "Retenciones de compra"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,type:0
+msgid "Purchase withholding"
+msgstr "Retención de compra"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:90
+#: code:addons/oe_statement_sri/wizard/form_104.py:90
+#, python-format
+msgid "RAZÓN SOCIAL O APELLIDOS Y NOMBRES COMPLETOS"
+msgstr "RAZÓN SOCIAL O APELLIDOS Y NOMBRES COMPLETOS"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:163
+#: code:addons/oe_statement_sri/wizard/form_104.py:163
+#, python-format
+msgid "RETENCIÓN DEL 10%"
+msgstr "RETENCIÓN DEL 10%"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:168
+#: code:addons/oe_statement_sri/wizard/form_104.py:168
+#, python-format
+msgid "RETENCIÓN DEL 100%"
+msgstr "RETENCIÓN DEL 100%"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:164
+#: code:addons/oe_statement_sri/wizard/form_104.py:164
+#, python-format
+msgid "RETENCIÓN DEL 20%"
+msgstr "RETENCIÓN DEL 20%"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:165
+#: code:addons/oe_statement_sri/wizard/form_104.py:165
+#, python-format
+msgid "RETENCIÓN DEL 30%"
+msgstr "RETENCIÓN DEL 30%"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:166
+#: code:addons/oe_statement_sri/wizard/form_104.py:166
+#, python-format
+msgid "RETENCIÓN DEL 50%"
+msgstr "RETENCIÓN DEL 50%"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:167
+#: code:addons/oe_statement_sri/wizard/form_104.py:167
+#, python-format
+msgid "RETENCIÓN DEL 70%"
+msgstr "RETENCIÓN DEL 70%"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:88
+#: code:addons/oe_statement_sri/wizard/form_104.py:88
+#, python-format
+msgid "RUC Contador"
+msgstr "RUC Contador"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:193
+#: code:addons/oe_statement_sri/wizard/form_103.py:195
+#: code:addons/oe_statement_sri/wizard/form_104.py:193
+#: code:addons/oe_statement_sri/wizard/form_104.py:195
+#, python-format
+msgid "Resolución No"
+msgstr "Resolución No"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,state:0
+msgid "Reviewed"
+msgstr "Revisado"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+msgid "Reviewed statement"
+msgstr "Declaración revisado"
+
+#. module: oe_statement_sri
+#: model:ir.ui.menu,name:oe_statement_sri.menu_sri_statement
+msgid "SRI Statements"
+msgstr "Declaraciones SRI"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:160
+#: code:addons/oe_statement_sri/wizard/form_104.py:160
+#, python-format
+msgid "SUBTOTAL A PAGAR"
+msgstr "SUBTOTAL A PAGAR"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_withholding_in_ids
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Sale Withholding"
+msgstr "Retención de venta"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_invoice_in_id
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Sale Withholdings"
+msgstr "Retenciones de venta"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,type:0
+msgid "Sale withholding"
+msgstr "Retención de venta"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+msgid "Search statement"
+msgstr "Buscar declaración"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,type_period:0
+msgid "Semester 1"
+msgstr "Semestre 1"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,type_period:0
+msgid "Semester 2"
+msgstr "Semestre 2"
+
+#. module: oe_statement_sri
+#: selection:ats.statement,list_month:0
+msgid "September"
+msgstr "Septiembre"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Set of draft"
+msgstr "Cambiar a borrador"
+
+#. module: oe_statement_sri
+#: model:ir.ui.menu,name:oe_statement_sri.menu_setting_sri_statement
+msgid "Setting SRI Statements"
+msgstr "Ajuste de declaración"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_date_start
+msgid "Start Date"
+msgstr "Fecha Inicio"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_state
+msgid "State"
+msgstr "Estado"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_form_tree
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Statement"
+msgstr "Declaración"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_work_id
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_work_ids
+msgid "Statement Work"
+msgstr "Declaración trabajo"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ids
+msgid "Statement line"
+msgstr "Linea de declaración"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_ats_statement_filter
+msgid "States"
+msgstr "Estados"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:38
+#: code:addons/oe_statement_sri/wizard/form_104.py:38
+#, python-format
+msgid "TOTAL ADQUISICIONES Y PAGOS"
+msgstr "TOTAL ADQUISICIONES Y PAGOS"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:172
+#: code:addons/oe_statement_sri/wizard/form_104.py:172
+#, python-format
+msgid "TOTAL CONSOLIDADO DE IMPUESTO AL VALOR AGREGADO"
+msgstr "TOTAL CONSOLIDADO DE IMPUESTO AL VALOR AGREGADO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:115
+#: code:addons/oe_statement_sri/wizard/form_104.py:115
+#, python-format
+msgid "TOTAL IMPUESTO A LIQUIDAR EN ESTE MES"
+msgstr "TOTAL IMPUESTO A LIQUIDAR EN ESTE MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:178
+#: code:addons/oe_statement_sri/wizard/form_104.py:178
+#, python-format
+msgid "TOTAL IMPUESTO A PAGAR"
+msgstr "TOTAL IMPUESTO A PAGAR"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:162
+#: code:addons/oe_statement_sri/wizard/form_104.py:162
+#, python-format
+msgid "TOTAL IMPUESTO A PAGAR POR PERCEPCION"
+msgstr "TOTAL IMPUESTO A PAGAR POR PERCEPCION"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:171
+#: code:addons/oe_statement_sri/wizard/form_104.py:171
+#, python-format
+msgid "TOTAL IMPUESTO A PAGAR POR RETENCIÓN"
+msgstr "TOTAL IMPUESTO A PAGAR POR RETENCIÓN"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:111
+#: code:addons/oe_statement_sri/wizard/form_104.py:111
+#, python-format
+msgid "TOTAL IMPUESTO GENERADO"
+msgstr "TOTAL IMPUESTO GENERADO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:169
+#: code:addons/oe_statement_sri/wizard/form_104.py:169
+#, python-format
+msgid "TOTAL IMPUESTO RETENIDO"
+msgstr "TOTAL IMPUESTO RETENIDO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:181
+#: code:addons/oe_statement_sri/wizard/form_104.py:181
+#, python-format
+msgid "TOTAL PAGADO"
+msgstr "TOTAL PAGADO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:109
+#: code:addons/oe_statement_sri/wizard/form_104.py:109
+#, python-format
+msgid "TOTAL TRANSFERENCIAS GRAVADAS TARIFA DIFERENTE DE CERO A CONTADO ESTE MES"
+msgstr "TOTAL TRANSFERENCIAS GRAVADAS TARIFA DIFERENTE DE CERO A CONTADO ESTE MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:110
+#: code:addons/oe_statement_sri/wizard/form_104.py:110
+#, python-format
+msgid "TOTAL TRANSFERENCIAS GRAVADAS TARIFA DIFERENTE DE CERO A CRÉDITO ESTE MES"
+msgstr "TOTAL TRANSFERENCIAS GRAVADAS TARIFA DIFERENTE DE CERO A CRÉDITO ESTE MES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:24
+#: code:addons/oe_statement_sri/wizard/form_104.py:24
+#, python-format
+msgid "TOTAL VENTAS Y OTRAS OPERACIONES"
+msgstr "TOTAL VENTAS Y OTRAS OPERACIONES"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:25
+#: code:addons/oe_statement_sri/wizard/form_104.py:25
+#, python-format
+msgid "TRANSFERENCIAS NO OBJETO O EXENTAS DE IVA"
+msgstr "TRANSFERENCIAS NO OBJETO O EXENTAS DE IVA"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_tax
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_tax_id
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_untaxed_0
+msgid "Tax Base 0"
+msgstr "Base IVA 0%"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,help:oe_statement_sri.field_ats_statement_line_vat
+msgid "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
+msgstr "Número de identificación fiscal. Llénelo si la compañía está sujeta a impuestos. Usado por algunos documentos legales."
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_tax_support_id
+msgid "Tax Support"
+msgstr "Sustento del Comprobante"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/models/ats_statement.py:277
+#, python-format
+msgid "The company has not registered the RUC"
+msgstr "La empresa no ha registrado el RUC"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/models/ats_statement.py:278
+#, python-format
+msgid "The company has not registered the business name"
+msgstr "La empresa no ha registrado el nombre comercial."
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,help:oe_statement_sri.field_ats_statement_line_error
+msgid "The text of the last error that happened during statement operation."
+msgstr "The text of the last error that happened during statement operation."
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,help:oe_statement_sri.field_ats_statement_line_l10n_latam_identification_type_id
+msgid "The type of identification"
+msgstr "El tipo de identificación"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_total
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total"
+msgstr "Total"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total ICE"
+msgstr "Total ICE"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total No Apply"
+msgstr "Total no aplica"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total No Object"
+msgstr "Total no objecto"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total Taxes"
+msgstr "Total Impuestos"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total base ICE"
+msgstr "Total base ICE"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total with Taxes"
+msgstr "Total con impuestos"
+
+#. module: oe_statement_sri
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Total without Taxes"
+msgstr "Total sin impuesto"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_type
+msgid "Type Statement"
+msgstr "Tipo de declaración"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_type_vat
+msgid "Type Vat"
+msgstr "Tipo Documento"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Monto base"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_vat
+msgid "VAT"
+msgstr "RUC"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:21
+#: code:addons/oe_statement_sri/wizard/form_104.py:21
+#, python-format
+msgid "VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA 0% QUE DAN DERECHO A CRÉDITO TRIBUTARIO"
+msgstr "VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA 0% QUE DAN DERECHO A CRÉDITO TRIBUTARIO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:19
+#: code:addons/oe_statement_sri/wizard/form_104.py:19
+#, python-format
+msgid "VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA 0% QUE NO DAN DERECHO A CRÉDITO TRIBUTARIO"
+msgstr "VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA 0% QUE NO DAN DERECHO A CRÉDITO TRIBUTARIO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:15
+#: code:addons/oe_statement_sri/wizard/form_104.py:15
+#, python-format
+msgid "VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA DIFERENTE DE CERO"
+msgstr "VENTAS DE ACTIVOS FIJOS GRAVADAS TARIFA DIFERENTE DE CERO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:20
+#: code:addons/oe_statement_sri/wizard/form_104.py:20
+#, python-format
+msgid "VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA 0% QUE DAN DERECHO A CRÉDITO TRIBUTARIO"
+msgstr "VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA 0% QUE DAN DERECHO A CRÉDITO TRIBUTARIO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:18
+#: code:addons/oe_statement_sri/wizard/form_104.py:18
+#, python-format
+msgid "VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA 0% QUE NO DAN DERECHO A CRÉDITO TRIBUTARIO"
+msgstr "VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA 0% QUE NO DAN DERECHO A CRÉDITO TRIBUTARIO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:14
+#: code:addons/oe_statement_sri/wizard/form_104.py:14
+#, python-format
+msgid "VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA DIFERENTE DE CERO"
+msgstr "VENTAS LOCALES (EXCLUYE ACTIVOS FIJOS) GRAVADAS TARIFA DIFERENTE DE CERO"
+
+#. module: oe_statement_sri
+#: code:addons/oe_statement_sri/wizard/form_103.py:187
+#: code:addons/oe_statement_sri/wizard/form_103.py:189
+#: code:addons/oe_statement_sri/wizard/form_103.py:191
+#: code:addons/oe_statement_sri/wizard/form_103.py:192
+#: code:addons/oe_statement_sri/wizard/form_103.py:194
+#: code:addons/oe_statement_sri/wizard/form_103.py:196
+#: code:addons/oe_statement_sri/wizard/form_103.py:197
+#: code:addons/oe_statement_sri/wizard/form_104.py:187
+#: code:addons/oe_statement_sri/wizard/form_104.py:189
+#: code:addons/oe_statement_sri/wizard/form_104.py:191
+#: code:addons/oe_statement_sri/wizard/form_104.py:192
+#: code:addons/oe_statement_sri/wizard/form_104.py:194
+#: code:addons/oe_statement_sri/wizard/form_104.py:196
+#: code:addons/oe_statement_sri/wizard/form_104.py:197
+#, python-format
+msgid "Valor USD"
+msgstr "Valor USD"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,type:0
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Vendor Bill"
+msgstr "Factura de proveedor"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_invoice_in_ids
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_refund_in_id
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Vendor Bills"
+msgstr "Facturas de proveedor"
+
+#. module: oe_statement_sri
+#: selection:ats.statement.line,type:0
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Vendor Credit Note"
+msgstr "Nota de crédito de proveedor"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_ats_withhold_out_id
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_refund_in_ids
+#: model:ir.ui.view,arch_db:oe_statement_sri.view_sri_statement_form
+msgid "Vendor Credit Notes"
+msgstr "Notas de crédito de proveedor"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_type_document_id
+msgid "Voucher type"
+msgstr "Tipo comprobante"
+
+#. module: oe_statement_sri
+#: model:ir.model.fields,field_description:oe_statement_sri.field_ats_statement_line_withholding_id
+msgid "Withholding"
+msgstr "Retención"
+

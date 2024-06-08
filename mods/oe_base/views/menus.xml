@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+<!-- Menús para oe admin -->
+		<record model="ir.ui.menu" id="base.menu_administration" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('oe_base.group_admin'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="base.menu_mail_servers" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('oe_base.group_admin'))]"/>
+		</record>
+
+<!-- Ocultar admin del oe admin -->
+		<record model="ir.actions.act_window" id="base.action_res_users" forcecreate="0">
+			<field name="domain" eval="&quot;['|', ('id', '!=', &quot; + str(ref('base.user_root')) + &quot;), ('id', '=', uid)]&quot;"/>
+		</record>
+
+<!-- Quitar menús de oe admin -->
+		<record model="ir.ui.menu" id="base.menu_translation" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="base.next_id_6" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="base.next_id_2" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="base.next_id_9" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="base.menu_ir_property" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+		<record model="ir.ui.menu" id="resource.menu_resource_config" forcecreate="0">
+			<field name="groups_id" eval="[(4, ref('base.group_system'))]"/>
+		</record>
+
+	</data>
+</odoo>

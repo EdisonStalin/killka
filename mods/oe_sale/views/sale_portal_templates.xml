@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<templates>
+	
+	<!--template id="portal_order_page_inherit" inherit="sale.portal_order_page">
+		<t t-jquery="t.signLabel" t-operation="replace">
+			<t t-set="signLabel" t-value="'Acceptar Orden'"/>
+		</t>
+	</template-->
+	
+</templates>

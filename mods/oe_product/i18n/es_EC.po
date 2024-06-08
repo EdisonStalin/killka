@@ -1,0 +1,241 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-10 05:21+0000\n"
+"PO-Revision-Date: 2022-09-10 05:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_category_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_coat
+msgid "Coat"
+msgstr "Saco"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_product_combo_product_ids
+#: model:ir.model.fields,field_description:oe_product.field_product_template_combo_product_ids
+msgid "Combo Item"
+msgstr "Producto"
+
+#. module: oe_product
+#: model:ir.ui.view,arch_db:oe_product.product_template_only_form_view_inherit_oe_product
+msgid "Combo Items"
+msgstr "Lista Productos"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_product_is_combo
+#: model:ir.model.fields,field_description:oe_product.field_product_template_is_combo
+msgid "Combo Product"
+msgstr "Auxiliar/Kit Producto"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: oe_product
+#: model:ir.model.fields,help:oe_product.field_product_product_last_cost
+#: model:ir.model.fields,help:oe_product.field_product_template_last_cost
+msgid "Current Last Cost"
+msgstr "Costo Promedio"
+
+#. module: oe_product
+#: model:ir.model.fields,help:oe_product.field_product_combo_uom_id
+msgid "Default Unit of Measure used for all stock operation."
+msgstr "Unidad de medida por defecto utilizada para todas las operaciones de inventario."
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: oe_product
+#: model:ir.model.fields,help:oe_product.field_product_product_is_combo
+#: model:ir.model.fields,help:oe_product.field_product_template_is_combo
+msgid "Enable the option for the product to display a list"
+msgstr "Habilite la opción para que el producto muestre una lista"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_product_filename_product
+#: model:ir.model.fields,field_description:oe_product.field_product_template_filename_product
+msgid "Filename"
+msgstr "Nombre de archivo"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_game
+msgid "Game"
+msgstr "Juego"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_global
+msgid "Global"
+msgstr "Global"
+
+#. module: oe_product
+#: code:addons/oe_product/models/product_template.py:53
+#, python-format
+msgid "Go to Internal Categories"
+msgstr "Ir a categorias internas"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oe_product
+#: model:ir.model.fields,help:oe_product.field_product_category_active
+msgid "If unchecked, it will allow you to hide the category without removing it."
+msgstr "Si no está marcado, le permitirá ocultar la categoría sin eliminarla."
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_product_template_id
+msgid "Item"
+msgstr "Producto"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_product_last_cost
+#: model:ir.model.fields,field_description:oe_product.field_product_template_last_cost
+msgid "Last Cost"
+msgstr "Ultimo Precio"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_lote
+msgid "Lote"
+msgstr "Lote"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_month
+msgid "Month(s)"
+msgstr "Mes(es)"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_category_prefix
+msgid "Prefix"
+msgstr "Prefijo"
+
+#. module: oe_product
+#: model:ir.model.fields,help:oe_product.field_product_category_prefix
+msgid "Prefix value of the record for the sequence"
+msgstr "Valor del prefijo del registro para la secuencia"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_product_history_price_ids
+#: model:ir.model.fields,field_description:oe_product.field_product_template_history_price_ids
+#: model:ir.ui.view,arch_db:oe_product.product_template_only_form_view_inherit_oe_product
+msgid "Price History"
+msgstr "Precio historico"
+
+#. module: oe_product
+#: model:ir.model,name:oe_product.model_product_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_product_id
+#: model:ir.model.fields,field_description:oe_product.field_product_price_history_product_tmpl_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: oe_product
+#: model:ir.model,name:oe_product.model_product_category
+msgid "Product Category"
+msgstr "Categoría producto"
+
+#. module: oe_product
+#: model:ir.model,name:oe_product.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: oe_product
+#: model:ir.model,name:oe_product.model_product_combo
+msgid "Product packs"
+msgstr "Paquete producto"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_price
+msgid "Product price"
+msgstr "Precio"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_product_quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_roll
+msgid "Roll"
+msgstr "Rollo"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_uom_id
+msgid "Unit of Measure"
+msgstr "Unidad de Medida"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_product_template_id
+#: model:ir.model.fields,field_description:oe_product.field_product_template_template_id
+msgid "Use template"
+msgstr "Usar plantilla"
+
+#. module: oe_product
+#: code:addons/oe_product/models/product_template.py:52
+#, python-format
+msgid "You must define at least one product category in order to be able to create products."
+msgstr "Debe definir al menos una categoría de producto para poder crear productos."
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_product_sheet_product_id
+#: model:ir.model.fields,field_description:oe_product.field_product_template_sheet_product_id
+msgid "file"
+msgstr "Hoja Producto"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_square_meter
+msgid "m2"
+msgstr "m2"
+
+#. module: oe_product
+#: model:product.uom,name:oe_product.product_uom_cubic_meter
+msgid "m3"
+msgstr "m3"
+
+#. module: oe_product
+#: model:ir.model.fields,field_description:oe_product.field_product_combo_name
+msgid "name"
+msgstr "Nombre"
+
+#. module: oe_product
+#: model:ir.model,name:oe_product.model_product_price_history
+msgid "product.price.history"
+msgstr "product.price.history"
+

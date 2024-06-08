@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	
+	<record id="accounting_complementary_report_view" model="ir.ui.view">
+        <field name="name">Complementary Reports</field>
+        <field name="model">account.complementary.report</field>
+        <field name="inherit_id" ref="account.account_common_report_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='target_move']" position="replace">
+                	<field name="report_options" widget="radio"/>
+                	<field name="type_partner" widget="radio"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='date_from']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('report_options', '=', 'account_state')]}</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='date_to']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='journal_ids']" position="replace">
+                	<field name="partner_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                </xpath>
+                
+            </data>
+        </field>
+    </record>
+	
+	<record id="action_account_complementary_report" model="ir.actions.act_window">
+        <field name="name">Complementary Reports</field>
+        <field name="res_model">account.complementary.report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="accounting_complementary_report_view"/>
+        <field name="context">{}</field>
+        <field name="target">new</field>
+    </record>
+	
+	
+	<menuitem id="menu_account_complementary_report" name="Complementary Report" action="action_account_complementary_report" parent="account.menu_finance_legal_statement" groups="account.group_account_manager,account.group_account_user"/>
+	
+</odoo>

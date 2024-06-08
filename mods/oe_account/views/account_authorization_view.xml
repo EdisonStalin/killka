@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+		<record id="view_authorization_search" model="ir.ui.view">
+            <field name="name">account.authorization.search</field>
+            <field name="model">account.authorization</field>
+            <field name="arch" type="xml">
+                <search string="Search authorization">
+                    <field name="name" filter_domain="[('name','ilike',self)]" string="Authorization"/>
+                    <field name="partner_id" string="Owner"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <separator/>
+                    <filter name="active" string="Active" domain="[('active','=',True)]" help="Show active authorization"/>
+                    <filter name="inactive" string="Inactive" domain="[('active','=',False)]" help="Show inactive authorization"/>
+                    <group string="Group By">
+                        <filter name="group_by_partner" string="Owner" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter name="group_by_company" string="Company" domain="[]" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    
+    
+		<!-- Authorization Internal-->
+    	
+		<record id="view_authorization_form_tree" model="ir.ui.view">
+            <field name="name">account.authorization.tree</field>
+            <field name="model">account.authorization</field>
+            <field name="arch" type="xml">
+                <tree string="Authorization" decoration-muted="not active">
+                    <field name="type" invisible="1"/>
+                    <field name="name"/>
+                    <field name="entity"/>
+                    <field name="issue"/>
+                    <field name="establishment_id"/>
+                    <field name="type_document_id"/>
+                    <field name="is_electronic"/>
+                    <field name="manual_sequence"/>
+                    <field name="number_since"/>
+                    <field name="number_next_actual"/>
+                    <field name="number_to"/>
+                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+  
+    
+		<record id="view_authorization_form" model="ir.ui.view">
+            <field name="name">account.authorization.form</field>
+            <field name="model">account.authorization</field>
+            <field name="arch" type="xml">
+				<form string="Authorization Internal">
+                    <sheet>
+						<div class="oe_button_box" name="button_box">
+	                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+	                        </button>
+	                    </div>
+	                    <div class="oe_title">                            
+                            <h1><field name="name" placeholder="Authorization" required="1"/></h1>          	
+                        </div>
+						<group>
+	                        <group>
+	                        	<field name="type" options="{'horizontal': true}" widget="radio"/> 
+	                        	<field name="id" invisible="1"/>
+	                        	<field name="establishment_id" options="{'no_create': True}"/>
+	                            <field name="is_electronic"/>
+	                            <field name="expires" attrs="{'invisible': [('is_electronic', '=', True)], 'required': [('is_electronic', '=', False)]}"/>
+	                            <field name="entity"/>
+	                            <field name="issue"/>
+	                        </group>
+	                        <group>
+	                            <field name="partner_id" domain="['|', ('customer', '=', True), ('id', '=', %(base.main_partner)d), ('type', '!=', 'delivery')]" 
+	                            	readonly="1" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+	                            <field name="type_document_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"
+	                            	domain="[('type', 'in', ['out', 'both'])]"/>
+	                            <field name="check_start" groups="base.group_system"/>
+	                            <field name="number_since" attrs="{'invisible': [('is_electronic', '=', True), ('check_start', '=', False)], 
+		                            'required': ['|', ('is_electronic', '=', False), ('check_start', '=', True)],
+		                            'readonly': [('is_electronic', '=', True), ('check_start', '=', False)]}"/>
+	                            <field name="number_to" attrs="{'invisible': [('is_electronic', '=', True), ('check_start', '=', False)], 
+		                            'required': ['|', ('is_electronic', '=', False), ('check_start', '=', True)],
+		                            'readonly': [('is_electronic', '=', True)]}"/>
+	                            <field name="number_next_actual"/>
+	                            <field name="manual_sequence"/>
+	                            <field name="sequence_id" attrs="{'invisible':[('id', '=', False)]}" groups="base.group_system"/>
+	                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+	                        </group>
+	                    </group>
+						<group>
+		                    <group>
+		                        <div class="oe_inline">
+		                        	<h2><label for="line_info_ids" string="Additional Information"/></h2>
+									<field name="line_info_ids" nolabel="1" widget="one2many_list" 
+				            			mode="tree" context="{'default_invoice_id': id}">
+				            			<tree string="Information Additional Lines" editable="bottom">
+				            				<field name="sequence" widget="handle"/>
+				            				<field name="authorization_id" invisible="1"/>
+				            				<field name="name" required="1"/>
+				            				<field name="value_tag"/>
+				            			</tree>
+				            		</field>
+		                        </div>
+							</group>
+							<group>
+							 	<div class="oe_inline" style="width: 100px;">
+									<label for="comment" string="Observations"/>
+									<field name="comment" placeholder="Observations..."/>
+								</div>
+	                    	</group>
+						</group>
+                    </sheet>
+					<div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="activity_ids" widget="mail_activity"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+            	</form>
+            </field>
+		</record> 
+		
+		
+		<record id="action_authorization_form" model="ir.actions.act_window">
+            <field name="name">Authorization Internal</field>
+            <field name="res_model">account.authorization</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','internal')]</field>
+            <field name="context">{'search_default_type': 'internal', 'default_type': 'internal'}</field>
+            <field name="view_id" ref="view_authorization_form_tree"/>
+        </record>
+
+
+        <record id="action_authorization_form_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_authorization_form_tree"/>
+            <field name="act_window_id" ref="action_authorization_form"/>
+        </record>
+
+
+        <record id="action_authorization_form_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_authorization_form"/>
+            <field name="act_window_id" ref="action_authorization_form"/>
+        </record>
+
+
+        <menuitem action="action_authorization_form" id="menu_action_authorization_form" 
+        	parent="account.menu_finance_receivables_master_data" sequence="101"
+        	groups="account.group_account_invoice,account.group_account_manager"/>
+    	
+    	
+    	<!-- Authorization External -->
+    	
+		<record id="view_authorization_form_external_tree" model="ir.ui.view">
+            <field name="name">account.authorization.external.tree</field>
+            <field name="model">account.authorization</field>
+            <field name="arch" type="xml">
+                <tree string="Authorization" decoration-muted="not active">
+                    <field name="type" invisible="1"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="entity"/>
+                    <field name="issue"/>
+                    <field name="establishment_id"/>
+                    <field name="type_document_id"/>
+                    <field name="is_electronic"/>
+                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+    	
+    	<record id="view_authorization_external_form" model="ir.ui.view">
+            <field name="name">account.authorization.external.form</field>
+            <field name="model">account.authorization</field>
+            <field name="arch" type="xml">
+				<form string="Authorization External">
+                    <sheet>
+						<div class="oe_button_box" name="button_box">
+	                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+	                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+	                        </button>
+	                    </div>
+	                    <div class="oe_title">
+                            <h1><field name="name" placeholder="Authorization" required="1"/></h1>
+                        </div>
+						<group>
+	                        <group>
+	                        	<field name="type" options="{'horizontal': true}" widget="radio"/> 
+	                            <field name="is_electronic"/>
+	                            <field name="expires" attrs="{'invisible': [('is_electronic', '=', True)], 'required': [('is_electronic', '=', False)]}"/>
+	                            <field name="entity"/>
+	                            <field name="issue"/>
+	                        </group>
+	                        <group>
+	                            <field name="partner_id" domain="['|', ('supplier', '=', True), ('id', '=', %(base.main_partner)d), ('type', '!=', 'delivery')]"
+	                            	options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+	                            <field name="type_document_id" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+	                            <field name="manual_sequence"/>
+	                            <field name="number_since" attrs="{'invisible': [('is_electronic', '=', True)], 'required': [('is_electronic', '=', False)]}"/>
+	                            <field name="number_to" attrs="{'invisible': [('is_electronic', '=', True)], 'required': [('is_electronic', '=', False)]}"/>
+	                            <field name="sequence_id" attrs="{'invisible': [('type', '!=', 'internal')], 'required': [('type', '=', 'internal')]}"/>
+	                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+	                        </group>
+	                    </group>
+						<div>
+	                        <field name="comment" placeholder="Additional notes..."/>
+	                    </div>
+                    </sheet>
+					<div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="activity_ids" widget="mail_activity"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+            	</form>
+            </field>
+		</record>
+
+    	
+    	<record id="action_authorization_external_form" model="ir.actions.act_window">
+            <field name="name">Authorization External</field>
+            <field name="res_model">account.authorization</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','external')]</field>
+            <field name="context">{'search_default_type': 'external', 'default_type': 'external'}</field>
+            <field name="view_id" ref="view_authorization_form_external_tree"/>
+        </record>
+        
+        <record id="action_authorization_external_form_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_authorization_form_external_tree"/>
+            <field name="act_window_id" ref="action_authorization_external_form"/>
+        </record>
+        
+        <record id="action_authorization_external_form_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_authorization_external_form"/>
+            <field name="act_window_id" ref="action_authorization_external_form"/>
+        </record>
+        
+        <menuitem action="action_authorization_external_form" id="menu_action_authorization_external_form"
+        	parent="account.menu_finance_payables_master_data" sequence="102"
+        	groups="account.group_account_invoice,account.group_account_manager"/>
+    	
+    
+    </data>
+</odoo>

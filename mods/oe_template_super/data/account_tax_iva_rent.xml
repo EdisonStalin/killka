@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+		<!-- Account Tax Purchase -->
+		<record id="tax_group_ret_0" model="account.tax.template">
+			<field name="name">Retención IVA 0%</field>
+			<field name="form_code_ats">7</field>
+			<field name="code_form_id" ref="tax_tag_721"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_721')])]"/>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107018"/>
+			<field name="account_id" ref="20107018"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107018'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107018'),
+                    'tag_ids': [ref('tax_tag_721')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107018'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107018'),
+                    'tag_ids': [ref('tax_tag_721')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_0_NPR" model="account.tax.template">
+			<field name="name">No procede retención</field>
+			<field name="form_code_ats">8</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107018"/>
+			<field name="account_id" ref="20107018"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_10" model="account.tax.template">
+			<field name="name">Retención IVA 10%</field>
+			<field name="form_code_ats">9</field>
+			<field name="code_form_id" ref="tax_tag_721"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_721')])]"/>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-10</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107012"/>
+			<field name="account_id" ref="20107012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_721')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_721')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_iva_20" model="account.tax.template">
+			<field name="name">Retención IVA 20%</field>
+			<field name="form_code_ats">10</field>
+			<field name="code_form_id" ref="tax_tag_723"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_723')])]"/>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-20</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107013"/>
+			<field name="account_id" ref="20107013"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_723')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_723')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_30" model="account.tax.template">
+			<field name="name">Retención IVA 30%</field>
+		   	<field name="form_code_ats">1</field>
+		   	<field name="code_form_id" ref="tax_tag_725"/>
+		   	<field name="tag_ids" eval="[(6,0,[ref('tax_tag_725')])]"/>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-30</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107014"/>
+			<field name="account_id" ref="20107014"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107014'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107014'),
+                    'tag_ids': [ref('tax_tag_725')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107014'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107014'),
+                    'tag_ids': [ref('tax_tag_725')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_50" model="account.tax.template">
+			<field name="name">Retención IVA 50%</field>
+			<field name="form_code_ats">11</field>
+			<field name="code_form_id" ref="tax_tag_727"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_727')])]"/>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-50</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107015"/>
+			<field name="account_id" ref="20107015"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107015'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_727')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107015'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107015'),
+                    'tag_ids': [ref('tax_tag_727')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_70" model="account.tax.template">
+			<field name="name">Retención IVA 70%</field>
+			<field name="form_code_ats">2</field>
+			<field name="code_form_id" ref="tax_tag_729"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_729')])]"/>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-70</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107016"/>
+			<field name="account_id" ref="20107016"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107016'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107016'),
+                    'tag_ids': [ref('tax_tag_729')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107016'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107016'),
+                    'tag_ids': [ref('tax_tag_729')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_100" model="account.tax.template">
+			<field name="name">Retención IVA 100%</field>
+			<field name="form_code_ats">3</field>
+			<field name="code_form_id" ref="tax_tag_731"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_731')])]"/>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-100</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107017'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107017'),
+                    'tag_ids': [ref('tax_tag_731')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107017'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107017'),
+                    'tag_ids': [ref('tax_tag_731')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_isd_5" model="account.tax.template">
+			<field name="name">Retención ISD 5%</field>
+			<field name="form_code_ats">4580</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-5</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_isd_6"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_iva_12" model="account.tax.template">
+			<field name="name">12% (Retención de IVA presuntivo por Editores a Margen de Comercialización Voceadores)</field>
+			<field name="form_code_ats">4</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-12</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_iva_100" model="account.tax.template">
+			<field name="name">100% (Retención IVA Venta Periódicos y/o Revistas a Distribuidores)</field>
+			<field name="form_code_ats">5</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-100</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_iva_100" model="account.tax.template">
+			<field name="name">100% (Retención Iva Venta de Periódicos y/o Revistas a Voceadores)</field>
+			<field name="form_code_ats">6</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-100</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_327" model="account.tax.template">
+			<field name="name">Retención 0.002 (2 por mil)</field>
+			<field name="form_code_ats">327</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-0.002</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_328" model="account.tax.template">
+			<field name="name">Retención 0.003 (3 por mil)</field>
+			<field name="form_code_ats">328</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-0.003</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+	</data>
+	
+	<data noupdate="0">
+			<record id="tax_group_ret_0_sale" model="account.tax.template">
+			<field name="name">Retención IVA 0%</field>
+			<field name="form_code_ats">7</field>
+			<field name="code_form_id" ref="tax_tag_721"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_721')])]"/>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107018"/>
+			<field name="account_id" ref="20107018"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107018'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107018'),
+                    'tag_ids': [ref('tax_tag_721')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107018'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107018'),
+                    'tag_ids': [ref('tax_tag_721')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_0_NPR_sale" model="account.tax.template">
+			<field name="name">No procede retención</field>
+			<field name="form_code_ats">8</field>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">0</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107018"/>
+			<field name="account_id" ref="20107018"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_10_sale" model="account.tax.template">
+			<field name="name">Retención IVA 10%</field>
+			<field name="form_code_ats">9</field>
+			<field name="code_form_id" ref="tax_tag_723"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_723')])]"/>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-10</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107012"/>
+			<field name="account_id" ref="20107012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_723')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_723')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_iva_20_sale" model="account.tax.template">
+			<field name="name">Retención IVA 20%</field>
+			<field name="form_code_ats">10</field>
+			<field name="code_form_id" ref="tax_tag_723"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_723')])]"/>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-20</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107013"/>
+			<field name="account_id" ref="20107013"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_723')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107012'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_723')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_30_sale" model="account.tax.template">
+			<field name="name">Retención IVA 30%</field>
+		   	<field name="form_code_ats">1</field>
+		   	<field name="code_form_id" ref="tax_tag_725"/>
+		   	<field name="tag_ids" eval="[(6,0,[ref('tax_tag_725')])]"/>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-30</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107014"/>
+			<field name="account_id" ref="20107014"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107014'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107014'),
+                    'tag_ids': [ref('tax_tag_725')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107014'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107014'),
+                    'tag_ids': [ref('tax_tag_725')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_50_sale" model="account.tax.template">
+			<field name="name">Retención IVA 50%</field>
+			<field name="form_code_ats">11</field>
+			<field name="code_form_id" ref="tax_tag_727"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_727')])]"/>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-50</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107015"/>
+			<field name="account_id" ref="20107015"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107015'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107012'),
+                    'tag_ids': [ref('tax_tag_727')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107015'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107015'),
+                    'tag_ids': [ref('tax_tag_727')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_70_sale" model="account.tax.template">
+			<field name="name">Retención IVA 70%</field>
+			<field name="form_code_ats">2</field>
+			<field name="code_form_id" ref="tax_tag_729"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_729')])]"/>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-70</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107016"/>
+			<field name="account_id" ref="20107016"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107016'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107016'),
+                    'tag_ids': [ref('tax_tag_729')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107016'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107016'),
+                    'tag_ids': [ref('tax_tag_729')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_100_sale" model="account.tax.template">
+			<field name="name">Retención IVA 100%</field>
+			<field name="form_code_ats">3</field>
+			<field name="code_form_id" ref="tax_tag_731"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tax_tag_731')])]"/>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-100</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="1"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107017'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107017'),
+                    'tag_ids': [ref('tax_tag_731')],
+                })]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'base',
+                    'account_id': ref('20107017'),
+                }),
+                (0,0, {
+                    'factor_percent': 100,
+                    'repartition_type': 'tax',
+                    'account_id': ref('20107017'),
+                    'tag_ids': [ref('tax_tag_731')],
+                })]"/>
+		</record>
+
+		<record id="tax_group_ret_isd_5_sale" model="account.tax.template">
+			<field name="name">Retención ISD 5%</field>
+			<field name="form_code_ats">4580</field>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-5</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_isd_6"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_iva_12_sale" model="account.tax.template">
+			<field name="name">12% (Retención de IVA presuntivo por Editores a Margen de Comercialización Voceadores)</field>
+			<field name="form_code_ats">4</field>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-12</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_iva_100_sale" model="account.tax.template">
+			<field name="name">100% (Retención IVA Venta Periódicos y/o Revistas a Distribuidores)</field>
+			<field name="form_code_ats">5</field>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-100</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_iva_100" model="account.tax.template">
+			<field name="name">100% (Retención Iva Venta de Periódicos y/o Revistas a Voceadores)</field>
+			<field name="form_code_ats">6</field>
+			<field name="type_tax_use">purchase</field>
+			<field name="amount">-100</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_iva_2"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_327_sale" model="account.tax.template">
+			<field name="name">Retención 0.002 (2 por mil)</field>
+			<field name="form_code_ats">327</field>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-0.002</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record id="tax_group_ret_328_sale" model="account.tax.template">
+			<field name="name">Retención 0.003 (3 por mil)</field>
+			<field name="form_code_ats">328</field>
+			<field name="type_tax_use">sale</field>
+			<field name="amount">-0.003</field>
+			<field name="amount_type">percent</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_renta_1"/>
+			<field name="refund_account_id" ref="20107017"/>
+			<field name="account_id" ref="20107017"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+	
+	</data>
+	
+</odoo>	

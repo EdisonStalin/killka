@@ -1,0 +1,217 @@
+<templates>
+    <t t-name="kw_matrix_widget_template">
+        <div style="overflow:auto;">
+            <t t-if="kw_matrix_data">
+
+            <t t-if="'class' in kw_matrix_data">
+                <t t-set="kw_matrix_data_class" t-value="kw_matrix_data.class"/>
+            </t>
+            <t t-else="">
+                <t t-set="kw_matrix_data_class">table table-striped table-hover</t>
+            </t>
+
+            <table t-attf-class="{{kw_matrix_data_class}}">
+                <t t-if="'header' in kw_matrix_data">
+                    <t t-set="kw_matrix_data_header" t-value="kw_matrix_data.header"/>
+                    <t t-if="'class' in kw_matrix_data_header">
+                        <t t-set="kw_matrix_data_header_class" t-value="kw_matrix_data.header.class"/>
+                    </t>
+                    <t t-else="">
+                        <t t-set="kw_matrix_data_header_class">thead-light</t>
+                    </t>
+                    <t t-if="'trs' in kw_matrix_data_header">
+                        <thead t-attf-class="{{kw_matrix_data_header_class}}">
+                            <t t-foreach="kw_matrix_data_header.trs"
+                               t-as="kw_matrix_tr">
+                                <tr>
+                                    <t t-if="'tds' in kw_matrix_tr">
+                                        <t t-foreach="kw_matrix_tr.tds"
+                                           t-as="kw_matrix_td">
+                                            <t t-if="'class' in kw_matrix_td">
+                                                <t t-set="kw_matrix_td_class"
+                                                   t-value="kw_matrix_td.class"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="kw_matrix_td_class"></t>
+                                            </t>
+                                            <t t-if="'style' in kw_matrix_td">
+                                                <t t-set="kw_matrix_td_style"
+                                                   t-value="kw_matrix_td.style"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="kw_matrix_td_style"></t>
+                                            </t>
+                                            <t t-if="'colspan' in kw_matrix_td">
+                                                <t t-set="kw_matrix_td_colspan"
+                                                   t-value="kw_matrix_td.colspan"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="kw_matrix_td_colspan">
+                                                    1
+                                                </t>
+                                            </t>
+                                            <t t-if="'rowspan' in kw_matrix_td">
+                                                <t t-set="kw_matrix_td_rowspan"
+                                                   t-value="kw_matrix_td.rowspan"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="kw_matrix_td_rowspan">
+                                                    1
+                                                </t>
+                                            </t>
+                                            <t t-if="'data' in kw_matrix_td">
+                                                <t t-set="kw_matrix_td_data"
+                                                   t-value="kw_matrix_td.data"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-set="kw_matrix_td_data"></t>
+                                            </t>
+                                            <th t-attf-class="{{kw_matrix_td_class}}"
+                                                t-attf-style="{{kw_matrix_td_style}}"
+                                                t-attf-data-matrix="{{kw_matrix_td_data}}"
+                                                t-attf-colspan="{{kw_matrix_td_colspan}}"
+                                                t-attf-rowspan="{{kw_matrix_td_rowspan}}">
+                                                <t t-esc="kw_matrix_td.value"/>
+                                            </th>
+                                        </t>
+                                    </t>
+                                </tr>
+                            </t>
+                        </thead>
+                    </t>
+                </t>
+
+                <t t-if="'body' in kw_matrix_data">
+                    <t t-set="kw_matrix_data_body" t-value="kw_matrix_data.body"/>
+                    <t t-if="'class' in kw_matrix_data_body">
+                        <t t-set="kw_matrix_data_body_class" t-value="kw_matrix_data.body.class"/>
+                    </t>
+                    <t t-else="">
+                        <t t-set="kw_matrix_data_body_class"> </t>
+                    </t>
+                    <t t-if="'trs' in kw_matrix_data_body">
+                        <tbody t-attf-class="{{kw_matrix_data_body_class}}">
+                            <t t-foreach="kw_matrix_data_body.trs" t-as="kw_matrix_tr">
+                                <tr>
+                                    <t t-foreach="kw_matrix_tr.tds" t-as="kw_matrix_td">
+                                        <t t-if="'class' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_class" t-value="kw_matrix_td.class"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_class"> </t>
+                                        </t>
+                                        <t t-if="'style' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_style"
+                                               t-value="kw_matrix_td.style"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_style"></t>
+                                        </t>
+                                        <t t-if="'data' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_data"
+                                               t-value="kw_matrix_td.data"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_data"></t>
+                                        </t>
+                                        <t t-if="'colspan' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_colspan"
+                                               t-value="kw_matrix_td.colspan"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_colspan">
+                                                1
+                                            </t>
+                                        </t>
+                                        <t t-if="'rowspan' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_rowspan"
+                                               t-value="kw_matrix_td.rowspan"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_rowspan">
+                                                1
+                                            </t>
+                                        </t>
+                                        <td t-attf-class="{{kw_matrix_td_class}}"
+                                            t-attf-style="{{kw_matrix_td_style}}"
+                                            t-attf-data-matrix="{{kw_matrix_td_data}}"
+                                            t-attf-colspan="{{kw_matrix_td_colspan}}"
+                                            t-attf-rowspan="{{kw_matrix_td_rowspan}}">
+                                            <t t-esc="kw_matrix_td.value"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </t>
+                </t>
+
+                <t t-if="'footer' in kw_matrix_data">
+                    <t t-set="kw_matrix_data_footer" t-value="kw_matrix_data.footer"/>
+                    <t t-if="'class' in kw_matrix_data_footer">
+                        <t t-set="kw_matrix_data_footer_class" t-value="kw_matrix_data.footer.class"/>
+                    </t>
+                    <t t-else="">
+                        <t t-set="kw_matrix_data_footer_class"> </t>
+                    </t>
+                    <t t-if="'trs' in kw_matrix_data_footer">
+                        <tfoot t-attf-class="{{kw_matrix_data_footer_class}}">
+                            <t t-foreach="kw_matrix_data_footer.trs" t-as="kw_matrix_tr">
+                                <tr>
+                                    <t t-foreach="kw_matrix_tr.tds" t-as="kw_matrix_td">
+                                        <t t-if="'class' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_class" t-value="kw_matrix_td.class"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_class"> </t>
+                                        </t>
+                                        <t t-if="'style' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_style" t-value="kw_matrix_td.style"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_style"> </t>
+                                        </t>
+                                        <t t-if="'data' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_data"
+                                               t-value="kw_matrix_td.data"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_data"></t>
+                                        </t>
+
+                                        <t t-if="'colspan' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_colspan"
+                                               t-value="kw_matrix_td.colspan"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_colspan">
+                                                1
+                                            </t>
+                                        </t>
+                                        <t t-if="'rowspan' in kw_matrix_td">
+                                            <t t-set="kw_matrix_td_rowspan"
+                                               t-value="kw_matrix_td.rowspan"/>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="kw_matrix_td_rowspan">
+                                                1
+                                            </t>
+                                        </t>
+                                        <th t-attf-class="{{kw_matrix_td_class}}"
+                                            t-attf-style="{{kw_matrix_td_style}}"
+                                            t-attf-data-matrix="{{kw_matrix_td_data}}"
+                                            t-attf-colspan="{{kw_matrix_td_colspan}}"
+                                            t-attf-rowspan="{{kw_matrix_td_rowspan}}">
+                                            <t t-esc="kw_matrix_td.value"/>
+                                        </th>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tfoot>
+                    </t>
+                </t>
+            </table>
+            </t>
+        </div>
+    </t>
+</templates>

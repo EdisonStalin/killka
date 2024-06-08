@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+    	<record id="view_account_invoice_report_search_inherit_oe_account" model="ir.ui.view">
+        	<field name="name">account.invoice.report.search.oe_account</field>
+        	<field name="model">account.invoice.report</field>
+        	<field name="inherit_id" ref="account.view_account_invoice_report_search"/>
+        	<field name="arch" type="xml">
+        		
+        		<xpath expr="//field[@name='partner_id']" position="before">
+        			<filter string="Is electronic" domain="[('is_electronic','=',True)]"/>
+        			<filter string="Not is electronic" domain="[('is_electronic','=',False)]"/>
+        		</xpath>
+        		
+        		<xpath expr="//group/filter[@name='partner_id']" position="after">
+        			<filter string="Type Document" name="type_document_id" context="{'group_by':'type_document_id'}"/>
+        			<filter string="Payment Method" name="method_id" context="{'group_by':'method_id'}"/>
+        			<filter string="State on SRI" name="message_state" context="{'group_by':'message_state'}"/>
+        		</xpath>
+        		
+        	</field>
+        </record>
+
+    </data>
+</odoo>

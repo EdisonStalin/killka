@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+        <record id="account_invoice_cancel" model="ir.actions.server">
+            <field name="name">Set to Cancel</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_invoice"/>
+            <field name="binding_model_id" ref="model_account_invoice"/>
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    action = records.action_invoice_cancel()
+            </field>
+        </record>
+
+
+        <record id="account_invoice_draft" model="ir.actions.server">
+            <field name="name">Set to Draft</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_invoice"/>
+            <field name="binding_model_id" ref="model_account_invoice"/>
+            <field name="state">code</field>
+            <field name="code">
+if records:
+    action = records.action_invoice_draft()
+            </field>
+        </record>
+
+    </data>
+</odoo>

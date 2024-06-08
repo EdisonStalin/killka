@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+		<record id="account_journal_dashboard_kanban_view_inherit_oe_account" model="ir.ui.view">
+		    <field name="name">account.journal.dashboard.kanban.inherit.oe_account</field>
+		    <field name="model">account.journal</field>
+		    <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+		    <field name="arch" type="xml">
+				
+				<xpath expr="//div[hasclass('o_kanban_card_header_title')]/div[hasclass('o_secondary')]/field[@name='type']" position='after'>
+					<field name="establishment_id"/>
+				</xpath>
+				
+				<xpath expr="//t[@t-name='JournalBodySalePurchase']/div[hasclass('o_kanban_primary_right')]/div[hasclass('row')][2]" position='after'>
+					<div class="row">
+	                    <div class="col-xs-6">
+	                        <a type="object" t-if="journal_type == 'sale'" name="open_action"
+	                        context="{'search_default_paid':1}" id="account_dashboard_sale_pay_link">
+	                            <t t-esc="dashboard.number_paid"/> Payments received
+	                        </a>
+	
+	                        <a type="object" t-if="journal_type == 'purchase'" name="open_action"
+	                        context="{'search_default_paid':1}" id="account_dashboard_purchase_pay_link">
+	                            <t t-esc="dashboard.number_paid"/> Payments made
+	                        </a>
+	                    </div>
+	                    <div class="col-xs-6 text-right">
+	                        <span><t t-esc="dashboard.sum_paid"/></span>
+	                    </div>
+                    </div>
+
+				</xpath>
+				
+		    </field>
+		</record>
+    
+	</data>
+</odoo>

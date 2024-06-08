@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+    	<!-- Inherit: Account Account -->
+    	<!--record id="view_account_form_inherit" model="ir.ui.view">
+        	<field name="name">account.account.form.inherit.oe_account</field>
+        	<field name="model">account.account</field>
+        	<field name="inherit_id" ref="account.view_account_form"/>
+        	<field name="arch" type="xml">
+	            
+	            <xpath expr="//field[@name='deprecated']" position="before">
+					<field name="form_id" options="{'no_create': True, 'no_open': True}" 
+						groups="oe_statement_sri.group_manager_form"/>
+					<field name="form_line_id" options="{'no_create': True, 'no_open': True}" 
+						groups="oe_statement_sri.group_manager_form"
+						attrs="{'required': [('form_id','!=',False)]}"/>
+					<field name="code_form_id" options="{'no_create': True}" 
+						groups="oe_statement_sri.group_manager_form"
+						domain="[('statement_line_id','=',form_line_id)]"
+						attrs="{'required': [('form_line_id','!=',False)]}"/>
+	            </xpath>
+                
+        	</field>
+        </record-->
+
+    </data>
+</odoo>    

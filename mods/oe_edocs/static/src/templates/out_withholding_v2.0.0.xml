@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comprobanteRetencion id="comprobante" version="2.0.0">
+  <infoTributaria>
+    <ambiente>{{ ambiente }}</ambiente>
+    <tipoEmision>{{ tipoEmision }}</tipoEmision>
+    <razonSocial>{{ razonSocial }}</razonSocial>{% if nombreComercial %}
+    <nombreComercial>{{ nombreComercial }}</nombreComercial>{% endif %}
+    <ruc>{{ ruc }}</ruc>
+    <claveAcceso>{{ claveAcceso }}</claveAcceso>
+    <codDoc>{{ codDoc }}</codDoc>
+    <estab>{{ estab }}</estab>
+    <ptoEmi>{{ ptoEmi }}</ptoEmi>
+    <secuencial>{{ secuencial }}</secuencial>
+    <dirMatriz>{{ dirMatriz }}</dirMatriz>{% if agenteRetencion %}
+    <agenteRetencion>{{ agenteRetencion }}</agenteRetencion>{% endif %}{% if regimenMicroempresas %}
+    <regimenMicroempresas>{{ regimenMicroempresas }}</regimenMicroempresas>{% endif %}{% if contribuyenteRimpe %}
+    <contribuyenteRimpe>{{ contribuyenteRimpe }}</contribuyenteRimpe>{% endif %}
+  </infoTributaria>
+  <infoCompRetencion>
+    <fechaEmision>{{ fechaEmision }}</fechaEmision>{% if dirEstablecimiento %}
+    <dirEstablecimiento>{{ dirEstablecimiento }}</dirEstablecimiento>{% endif %}{% if contribuyenteEspecial %}
+	<contribuyenteEspecial>{{ contribuyenteEspecial }}</contribuyenteEspecial>{% endif %}
+    <obligadoContabilidad>{{ obligadoContabilidad }}</obligadoContabilidad>
+    <tipoIdentificacionSujetoRetenido>{{ tipoIdentificacionSujetoRetenido }}</tipoIdentificacionSujetoRetenido>
+    <tipoSujetoRetenido>{{ tipoSujetoRetenido }}</tipoSujetoRetenido>
+    <parteRel>{{ parteRel }}</parteRel>
+    <razonSocialSujetoRetenido>{{ razonSocialSujetoRetenido }}</razonSocialSujetoRetenido>
+    <identificacionSujetoRetenido>{{ identificacionSujetoRetenido }}</identificacionSujetoRetenido>
+    <periodoFiscal>{{ periodoFiscal }}</periodoFiscal>
+  </infoCompRetencion>
+	<docsSustento>
+		<docSustento>
+			<codSustento>{{ codSustento }}</codSustento>
+		   	<codDocSustento>{{ tax.codDocSustento }}</codDocSustento>
+		    <numDocSustento>{{ tax.numDocSustento }}</numDocSustento>{# factura proveedor #}
+		    <fechaEmisionDocSustento>{{ tax.fechaEmisionDocSustento }}</fechaEmisionDocSustento>
+		    <fechaRegistroContable>{{ fechaRegistroContable }}</fechaRegistroContable>
+		    <numAutDocSustento>{{ numAutDocSustento }}</numAutDocSustento>
+		    <pagoLocExt>{{ pagoLocExt }}</pagoLocExt>
+		    <tipoRegi>{{ tipoRegi }}</tipoRegi>
+		    <paisEfecPago>{{ paisEfecPago }}</paisEfecPago>
+		    <aplicConvDobTrib>{{ aplicConvDobTrib }}</aplicConvDobTrib>
+		    <pagExtSujRetNorLeg>{{ pagExtSujRetNorLeg }}</pagExtSujRetNorLeg>
+		    <pagoRegFis>{{ pagoRegFis }}</pagoRegFis>
+		    <totalComprobantesReembolso>{{ totalComprobantesReembolso }}</totalComprobantesReembolso>
+		    <totalBaseImponibleReembolso>{{ totalBaseImponibleReembolso }}</totalBaseImponibleReembolso>
+		    <totalImpuestoReembolso>{{ totalImpuestoReembolso }}</totalImpuestoReembolso>
+		    <totalSinImpuestos>{{ totalSinImpuestos }}</totalSinImpuestos>
+		    <importeTotal>{{ importeTotal }}</importeTotal>
+		    <impuestosDocSustento>
+		        <impuestoDocSustento>
+		            <codImpuestoDocSustento>{{ codImpuestoDocSustento }}</codImpuestoDocSustento>
+		            <codigoPorcentaje>{{ codigoPorcentaje }}</codigoPorcentaje>
+		            <baseImponible>{{ baseImponible }}</baseImponible>
+		            <tarifa>{{ tarifa }}</tarifa>
+		            <valorImpuesto>{{ valorImpuesto }}</valorImpuesto>
+		        </impuestoDocSustento>
+		        <impuestoDocSustento>
+		            <codImpuestoDocSustento>{{ codImpuestoDocSustento }}</codImpuestoDocSustento>
+		            <codigoPorcentaje>{{ codigoPorcentaje }}</codigoPorcentaje>
+		            <baseImponible>{{ baseImponible }}</baseImponible>
+		            <tarifa>{{ tarifa }}</tarifa>
+		            <valorImpuesto>{{ valorImpuesto }}</valorImpuesto>
+		        </impuestoDocSustento>
+		    </impuestosDocSustento>
+		    <retenciones>{% for tax in impuestos: %}
+		        <retencion>
+				    <codigo>{{ tax.codigo }}</codigo>
+				    <codigoRetencion>{{ tax.codigoRetencion }}</codigoRetencion>
+				    <baseImponible>{{ tax.baseImponible }}</baseImponible>
+				    <porcentajeRetener>{{ tax.porcentajeRetener }}</porcentajeRetener>
+				    <valorRetenido>{{ tax.valorRetenido }}</valorRetenido>
+		            <dividendos>
+		                <fechaPagoDiv>{{ fechaPagoDiv }}</fechaPagoDiv>
+		                <imRentaSoc>{{ imRentaSoc }}</imRentaSoc>
+		                <ejerFisUtDiv>{{ ejerFisUtDiv }}</ejerFisUtDiv>
+		            </dividendos>
+		            <compraCajBanano>
+		                <numCajBan>{{ numCajBan }}</numCajBan>
+		                <precCajBan>{{ precCajBan }}</precCajBan>
+		            </compraCajBanano>
+		        </retencion>{% endfor %}
+		    </retenciones>
+		    <reembolsos>
+		        <reembolsoDetalle>
+		            <tipoIdentificacionProveedorReembolso>{{ tipoIdentificacionProveedorReembolso }}</tipoIdentificacionProveedorReembolso>
+		            <identificacionProveedorReembolso>{{ identificacionProveedorReembolso }}</identificacionProveedorReembolso>
+		            <codPaisPagoProveedorReembolso>{{ codPaisPagoProveedorReembolso }}</codPaisPagoProveedorReembolso>
+		            <tipoProveedorReembolso>{{ tipoProveedorReembolso }}</tipoProveedorReembolso>
+		            <codDocReembolso>{{ codDocReembolso }}</codDocReembolso>
+		            <estabDocReembolso>{{ estabDocReembolso }}</estabDocReembolso>
+		            <ptoEmiDocReembolso>{{ ptoEmiDocReembolso }}</ptoEmiDocReembolso>
+		            <secuencialDocReembolso>{{ secuencialDocReembolso }}</secuencialDocReembolso>
+		            <fechaEmisionDocReembolso>{{ fechaEmisionDocReembolso }}</fechaEmisionDocReembolso>
+		            <numeroAutorizacionDocReemb>{{ numeroAutorizacionDocReemb }}</numeroAutorizacionDocReemb>
+		            <detalleImpuestos>
+		                <detalleImpuesto>
+		                    <codigo>{{ codigo }}</codigo>
+		                    <codigoPorcentaje>{{ codigoPorcentaje }}</codigoPorcentaje>
+		                    <tarifa>{{ tarifa }}</tarifa>
+		                    <baseImponibleReembolso>{{ baseImponibleReembolso }}</baseImponibleReembolso>
+		                    <impuestoReembolso>{{ impuestoReembolso }}</impuestoReembolso>
+		                </detalleImpuesto>
+		                <detalleImpuesto>
+		                    <codigo>{{ codigo }}</codigo>
+		                    <codigoPorcentaje>{{ codigoPorcentaje }}</codigoPorcentaje>
+		                    <tarifa>{{ tarifa }}</tarifa>
+		                    <baseImponibleReembolso>{{ baseImponibleReembolso }}</baseImponibleReembolso>
+		                    <impuestoReembolso>{{ impuestoReembolso }}</impuestoReembolso>
+		                </detalleImpuesto>
+		            </detalleImpuestos>
+		        </reembolsoDetalle>
+		    </reembolsos>
+		    <pagos>
+		        <pago>
+		            <formaPago>{{ formaPago }}</formaPago>
+		            <total>{{ total }}</total>
+		        </pago>
+		    </pagos>
+		</docSustento>
+	</docsSustento>{% if infoAdicional %}
+	<infoAdicional>{% for item in infoAdicional %}
+		{{ item }}{% endfor %}
+	</infoAdicional>{% endif %}
+</comprobanteRetencion>

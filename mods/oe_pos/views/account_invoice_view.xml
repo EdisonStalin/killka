@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+		<record id="view_invoice_form_inherit_oe_pos" model="ir.ui.view">
+            <field name="name">account.invoice.form.inherit.oe_pos</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+				
+				<xpath expr="//page[@name='other_info']/group/group[2]/field[@name='name']" position="after">
+            		<field name="order_id" readonly="1" attrs="{'invisible': [('order_id', '=', False)]}"/>
+            		<field name="create_order_id" readonly="1" attrs="{'invisible': [('create_order_id', '=', False)]}"/>
+            	</xpath>
+            
+            </field>
+		</record>
+		
+		<menuitem action="oe_account.action_authorization_form" id="menu_pos_action_authorization_form"
+        	parent="point_of_sale.menu_point_config_product" sequence="10" groups="point_of_sale.group_pos_manager"/>
+		
+	</data>
+</odoo>

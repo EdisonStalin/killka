@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_quant_manager,stock.quant manager,stock.model_stock_quant,stock.group_stock_manager,1,1,0,0
+access_stock_quant_user,stock.quant user,stock.model_stock_quant,stock.group_stock_user,1,1,0,0
+access_stock_move_basic,stock.move basic,stock.model_stock_move,oe_stock.group_stock_user_basic,1,1,1,1
+access_stock_warehouse_orderpoint_basic,stock.warehouse.orderpoint basic,stock.model_stock_warehouse_orderpoint,oe_stock.group_stock_user_basic,1,0,0,0
+access_stock_inventory_line_basic,stock.inventory.line basic,stock.model_stock_inventory_line,oe_stock.group_stock_user_basic,1,1,1,0
+access_stock_picking_basic,stock.picking basic,stock.model_stock_picking,oe_stock.group_stock_user_basic,1,1,1,1
+access_stock_production_lot_basic,stock.production.lot basic,stock.model_stock_production_lot,oe_stock.group_stock_user_basic,1,1,1,1
+access_stock_inventory_basic,stock.inventory basic,stock.model_stock_inventory,oe_stock.group_stock_user_basic,1,1,1,0
+access_product_product_stock_basic,product_product_stock_basic,product.model_product_product,oe_stock.group_stock_user_basic,1,1,1,1
+access_product_template_stock_basic,product.template stock basic,product.model_product_template,oe_stock.group_stock_user_basic,1,1,1,1
+access_product_pricelist_user_basic,product.pricelist user_basic,product.model_product_pricelist,oe_stock.group_stock_user_basic,1,1,1,1
+access_product_pricelist_item_stock_user_basic,product.pricelist.item user_basic,product.model_product_pricelist_item,oe_stock.group_stock_user_basic,1,1,1,1
+access_stock_quant_history_manager,stock.quant.history.manager,model_stock_quant_history,stock.group_stock_manager,1,1,1,1
+access_stock_quant_history_user,stock.quant.history.user,model_stock_quant_history,stock.group_stock_user,1,1,1,1
+access_stock_quant_history_basic,stock.quant.history.basic,model_stock_quant_history,oe_stock.group_stock_user_basic,1,1,0,0

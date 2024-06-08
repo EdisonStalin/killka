@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+	
+		<!-- Purchase Clearance -->
+
+		<record id="invoice_purchase_clearance_tree_inherit_oe_edocs" model="ir.ui.view">
+			<field name="name">account.invoice.purchase.clearance.tree.inherit.oe_edocs</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="oe_account.invoice_purchase_clearance_tree"/>
+			<field name="arch" type="xml">
+
+				<xpath expr="//field[@name='state']" position="after">
+					<field name="message_state" string="SRI status"/>
+				</xpath>
+
+			</field>
+		</record>
+
+
+		<record id="invoice_purchase_clearance_form_inherit_oe_edocs" model="ir.ui.view">
+			<field name="name">account.invoice.purchase.clearance.inherit.oe_edocs</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="oe_account.invoice_purchase_clearance_form"/>
+			<field name="arch" type="xml">
+				
+				<xpath expr="//field[@name='has_outstanding']" position="after">
+					<div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('message_state', 'not in', ['RECIBIDA', 'EN PROCESO'])]}">
+	                    <bold><a class="alert-link" href="#outstanding" role="button">verify which document was authorized by SRI</a></bold>. Remember that the SRI has a period of 72 hours to authorize the document.
+	                </div>
+	                <div groups="oe_edocs.group_account_invoice_electronic" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}">
+	                    Perform the electronic document<strong> cancellation</strong> on the <bold><a class="alert-link" href="https://srienlinea.sri.gob.ec/sri-en-linea/#/inicio/NAT" target="_blank" role="button">SRI</a></bold> platform
+	                </div>
+				</xpath>
+				
+				<xpath expr="//header/button[@name='action_invoice_open']" position="attributes">
+					<attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+				</xpath>
+				
+				<xpath expr="//header/button[@name='action_invoice_draft']" position="attributes">
+					<attribute name="attrs">{'invisible': ['|', ('authorization', '=', True)]}</attribute>
+					<attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+				</xpath>
+				
+				<xpath expr="///header/button[@name='action_invoice_cancel']" position="attributes">
+                    <attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+                </xpath>
+                
+                <xpath expr="//header/button[@name='%(account.action_account_invoice_payment)d']" position="after">
+					<button name="action_send_to_sri" string="Send to SRI" type="object"
+						attrs="{'invisible': ['|', '|', '|', ('is_electronic', '=', False), ('state', 'in', ['draft','cancel']), ('authorization', '=', True), ('message_state', 'in', ['RECIBIDA', 'EN PROCESO'])]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_validate_to_sri" string="Validate with SRI" type="object"
+						attrs="{'invisible': [('message_state', 'not in', ['RECIBIDA', 'EN PROCESO'])]}"
+						context="{'mode_cron': False}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+					<button name="action_restore_doc" string="Restore" type="object" 
+						attrs="{'invisible': ['|', '|', ('is_electronic', '=', False), ('authorization', '=', False), ('state', 'not in', ['cancel'])]}"
+						groups="oe_edocs.group_account_invoice_electronic"/>
+				</xpath>
+				
+                <xpath expr="//header/field[@name='state']" position="attributes">
+					<attribute name="statusbar_visible">draft,open</attribute>
+				</xpath>
+
+				<xpath expr="//div[@name='title']" position="after">
+					<div class="label label-warning" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('received', '=', False)]}">SRI: RECEIVED</div>
+					<div class="label label-success" style="float: initial" attrs="{'invisible': ['|',('is_electronic', '=', False),('authorization', '=', False)]}">SRI: <field name="message_state" readonly="1"/></div>
+				</xpath>
+
+				<xpath expr="//field[@name='date_due']" position="after">
+					<field name="received" attrs="{'invisible': [('received', '=', False)]}"/>
+					<field name="authorization" attrs="{'invisible': [('authorization', '=', False)]}"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="attributes">
+					<attribute name="groups">account.group_account_invoice,oe_edocs.group_account_invoice_electronic</attribute>
+            	</xpath>
+            
+                <xpath expr="//field[@name='statement_tax_line_ids']" position="before">
+					<header>
+						<button name="action_generate_xml" string="Generate XML" type="object" 
+							attrs="{'invisible': ['|',('is_electronic', '=', False), ('authorization', '=', False)]}"/>
+					</header>
+					<group string="SRI Info">
+						<group>
+							<field name="received"/>
+							<field name="authorization"/>
+							<field name="authorization_number" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="access_key" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+						</group>
+						<group>
+							<field name="environment" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="authorization_date" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+							<field name="message_state" attrs="{'required': ['&amp;',('is_electronic', '=', True),('authorization', '=', True)]}"/>
+						</group>
+					</group>
+                </xpath>
+                
+                <xpath expr="//field[@name='statement_tax_line_ids']" position="after">
+					<field name="edi_document_ids" attrs="{'invisible': [('edi_document_ids', '=', 0)]}">
+						<tree string="History lines" edit="false" create="false">
+							<field name="sequence" invisible="1"/>
+							<field name="company_id" invisible="1"/>
+							<field name="invoice_id" invisible="1"/>
+							<field name="code"/>
+							<field name="type"/>
+							<field name="date_action"/>
+							<field name="message"/>
+							<field name="add_information"/>
+						</tree>
+					</field>
+                </xpath>
+				
+			</field>
+		</record>
+	
+	
+	</data>
+</odoo>

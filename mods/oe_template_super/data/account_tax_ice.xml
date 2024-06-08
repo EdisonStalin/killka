@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+		<record model="account.tax.template" id="imp_ice_3023">
+			<field name="name">Productos del tabaco y sucedáneos del tabaco</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="form_code_ats">3023</field>
+			<field name="amount">150</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3610">
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="name">Perfumes y aguas de tocador</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">20</field>
+			<field name="form_code_ats">3610</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3620">
+			<field name="name">Videojuegos</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">35</field>
+			<field name="form_code_ats">3620</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3630">
+			<field name="name">Armas de fuego, armas deportivas y municiones excepto aquellas adquiridas por la fuerza pública</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">300</field>
+			<field name="form_code_ats">3630</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3640">
+			<field name="name">Focos incandescentes excepto aquellos utilizados como insumos automotrices</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">100</field>
+			<field name="form_code_ats">3640</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3670">
+			<field name="name">Cocinas, calefones y otros de uso doméstico a gas SRI</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">100</field>
+			<field name="form_code_ats">3670</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3770">
+			<field name="name">Cocinas, calefones y otros de uso doméstico a gas SENAE</field>
+			<field name="amount">100</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="form_code_ats">3770</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3073">
+			<field name="name">Vehículos motorizados cuyo precio de venta al público sea de hasta USD 20.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">5</field>
+			<field name="form_code_ats">3073</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3072">
+			<field name="name">Camionetas, furgonetas, camiones, y vehículos de rescate cuyo precio de venta al público sea de hasta USD 30.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">5</field>
+			<field name="form_code_ats">3072</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3074">
+			<field name="name">Vehículos motorizados, excepto camionetas, furgonetas, camiones y vehículos de rescate, cuyo precio de venta al público sea superior a USD 20.000 y de hasta USD 30.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">10</field>
+			<field name="form_code_ats">3074</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3075">
+			<field name="name">Vehículos motorizados, cuyo precio de venta al público sea superior a USD 30.000 y de hasta USD 40.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">15</field>
+			<field name="form_code_ats">3075</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3077">
+			<field name="name">Vehículos motorizados, cuyo precio de venta al público sea superior a USD 40.000 y de hasta USD 50.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">20</field>
+			<field name="form_code_ats">3077</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3078">
+			<field name="name">Vehículos motorizados cuyo precio de venta al público sea superior a USD 50.000 y de hasta USD 60.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">25</field>
+			<field name="form_code_ats">3078</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3079">
+			<field name="name">Vehículos motorizados cuyo precio de venta al público sea superior a USD 60.000 y de hasta USD 70.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">30</field>
+			<field name="form_code_ats">3079</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3080">
+			<field name="name">Vehículos motorizados cuyo precio de venta al público sea superior a USD 70.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">35</field>
+			<field name="form_code_ats">3080</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3171">
+			<field name="name">Vehículos híbridos o eléctricos cuyo precio de venta al público sea de hasta USD 35.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">20</field>
+			<field name="form_code_ats">3171</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3172">
+			<field name="name">Vehículos híbridos o eléctricos cuyo precio de venta al público sea superior a USD 35.000 y de hasta USD 40.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">8</field>
+			<field name="form_code_ats">3172</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3173">
+			<field name="name">Vehículos híbridos o eléctricos cuyo precio de venta al público sea superior a USD 40.000 y de hasta USD 50.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">14</field>
+			<field name="form_code_ats">3173</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3174">
+			<field name="name">Vehículos híbridos o eléctricos cuyo precio de venta al público sea superior a USD 50.000 y de hasta USD 60.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">20</field>
+			<field name="form_code_ats">3174</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3175">
+			<field name="name">Vehículos híbridos o eléctricos cuyo precio de venta al público sea superior a USD 60.000 y de hasta USD 70.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">26</field>
+			<field name="form_code_ats">3175</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3176">
+			<field name="name">Vehículos híbridos o eléctricos cuyo precio de venta al público sea superior a USD 70.000</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">28</field>
+			<field name="form_code_ats">3176</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3081">
+			<field name="name">Aviones, avionetas y helicópteros excepto aquellas destinadas al transporte comercial de pasajeros, carga y servicios; motos acuáticas, tricares, cuadrones, yates y barcos de recreo</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">15</field>
+			<field name="form_code_ats">3081</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3092">
+			<field name="name">Servicios de televisión pagada</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">15.0</field>
+			<field name="form_code_ats">3092</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3650">
+			<field name="name">Servicios de casinos, salas de juego (bingo - mecánicos) y otros juegos de azar</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">35.0</field>
+			<field name="form_code_ats">3650</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3093">
+			<field name="name">Servicios de Telefonía</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">15.0</field>
+			<field name="form_code_ats">3093</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3680">
+			<field name="name">Fundas Plásticas</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.04</field>
+			<field name="form_code_ats">3680</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3681">
+			<field name="name">Servicios de telefonía móvil personas naturales</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">10</field>
+			<field name="form_code_ats">3681</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3660">
+			<field name="name">Las cuotas, membresías, afiliaciones, acciones y similares que cobren a sus miembros y usuarios los Clubes Sociales, para prestar sus servicios, cuyo monto en su conjunto supere los US $1.500 anuales</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">35.0</field>
+			<field name="form_code_ats">3660</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3011">
+			<field name="name">Cigarrillos rubio</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.16</field>
+			<field name="form_code_ats">3011</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3542">
+			<field name="name">Cigarrillos rubio SENAE</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.16</field>
+			<field name="form_code_ats">3542</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3021">
+			<field name="name">Cigarrillos negros</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.16</field>
+			<field name="form_code_ats">3021</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3543">
+			<field name="name">Cigarrillos negros SENAE</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.16</field>
+			<field name="form_code_ats">3543</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3031">
+			<field name="name">Bebidas alcohólicas, distintas a la cerveza</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">75.0</field>
+			<field name="form_code_ats">3031</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3041">
+			<field name="name">Cerveza Industrial</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">12.0</field>
+			<field name="form_code_ats">3041</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3043">
+			<field name="name">Cerveza artesanal</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">75.0</field>
+			<field name="form_code_ats">3043</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3545">
+			<field name="name">Cerveza artesanal SENAE</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">75.0</field>
+			<field name="form_code_ats">3545</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3054">
+			<field name="name">Bebidas Gaseosas con bajo contenido de azúcar</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">10.0</field>
+			<field name="form_code_ats">3054</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3553">
+			<field name="name">Bebidas Gaseosas con bajo contenido de azúcar SENAE</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">10.0</field>
+			<field name="form_code_ats">3553</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3053">
+			<field name="name">Bebidas Gaseosas con alto contenido de azúcar</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.18</field>
+			<field name="form_code_ats">3053</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3552">
+			<field name="name">Bebidas Gaseosas con alto contenido de azúcar SENAE</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.18</field>
+			<field name="form_code_ats">3552</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3101">
+			<field name="name">Bebidas energizantes</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">10.0</field>
+			<field name="form_code_ats">3101</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3601">
+			<field name="name">Bebidas energizantes SENAE</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">10.0</field>
+			<field name="form_code_ats">3601</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3111">
+			<field name="name">Bebidas no alcohólicas</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.18</field>
+			<field name="form_code_ats">3111</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3602">
+			<field name="name">Bebidas no alcohólicas SENAE</field>
+			<field name="amount_type">fixed</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">0.18</field>
+			<field name="form_code_ats">3602</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3531">
+			<field name="name">Bebida alcohólica SENAE</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">75.0</field>
+			<field name="form_code_ats">3531</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+
+		<record model="account.tax.template" id="imp_ice_3541">
+			<field name="name">Cerveza Industrial SENAE</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">all</field>
+			<field name="amount">75.0</field>
+			<field name="form_code_ats">3541</field>
+			<field name="tax_group_id" ref="oe_account.tax_group_ice_3"/>
+			<field name="refund_account_id" ref="10105012"/>
+			<field name="account_id" ref="10105012"/>
+			<field name="chart_template_id" ref="ec_chart_template_super_company"/>
+			<field name="active" eval="0"/>
+		</record>
+	</data>
+</odoo>

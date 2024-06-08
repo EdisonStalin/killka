@@ -1,0 +1,94 @@
+@charset "UTF-8";
+// Cambios del backend
+
+// barra de notificación de requerimiento de permiso de notificar
+.o_mail_annoying_notification_bar {
+	background-color: @odoo-brand-green;
+}
+
+// flecha
+.oe_view_nocontent .oe_view_nocontent_create::before {
+	background-image: url(/oe_web/static/src/img/view_empty_arrow.png);
+}
+
+// sombra en los links
+a:hover {
+	text-shadow: 0 0 3px currentColor !important;
+}
+
+// table líneas hover
+.o_data_row:hover {
+	background-color: #fafafa !important;
+}
+
+// m2o botón editar
+.o_field_widget.o_field_many2one .o_external_button {
+	color: @odoo-brand-primary;
+}
+
+// input requerido
+.o_required_modifier.o_input, .o_required_modifier .o_input {
+	background-color: #c8c8c8 !important;
+}
+
+// button box icon
+.o_form_view .oe_button_box .oe_stat_button .o_button_icon {
+	color: @odoo-brand-primary;
+}
+
+// búsqueda filtro/grupo
+.o_searchview .o_searchview_facet {
+	background-color: @odoo-color-silver;
+}
+
+// tree view filas impares
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+	background-color: @odoo-color-silver;
+}
+
+// botones
+.btn-primary:active,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.btn-primary:focus,
+.oe_highlight:active,
+.oe_highlight:active:focus,
+.oe_highlight:active:hover,
+.oe_highlight:focus {
+	background-color: @odoo-brand-primary-light;
+	border-color: @odoo-brand-primary-light;
+}
+.btn-primary:hover,
+.btn-primary[disabled],
+.btn-primary[disabled]:focus,
+.oe_highlight:hover,
+.oe_highlight[disabled],
+.oe_highlight[disabled]:focus {
+	background-color: @odoo-brand-primary-dark;
+	border-color: @odoo-brand-primary-dark;
+}
+
+//Ancho maximo de tags many2many
+.o_field_widget.o_field_many2manytags .badge .o_badge_text {
+	max-width: 90px;
+}
+//Ancho minimo de many2many
+.o_list_view .o_list_text {
+	min-width: 250px;
+}
+
+// Statusbar
+.o_form_view .o_form_statusbar .o_statusbar_status .o_arrow_button.btn-primary.disabled {
+	background-color: #e2e2e2;
+}
+
+td.o_many2one_cell {
+    .many2one_clickable {
+        margin-left: 0.5em;
+        visibility: hidden;
+    }
+
+    &:hover a.many2one_clickable {
+        visibility: visible;
+    }
+}

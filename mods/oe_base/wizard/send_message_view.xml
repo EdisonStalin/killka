@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+        <record id="send_msg_wizard" model="ir.ui.view">
+            <field name="name">message.wizard.form</field>
+            <field name="model">message.wizard</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Send Message">
+                    <group>
+                        <field name="user_id"/>
+                        <field name="mobile"/>
+                    </group>
+                    <group>
+                        <field name="message"/>
+                    </group>
+                    <footer>
+                        <button name="send_message" string="Send" type="object" class="oe_highlight"/>
+                        <button name="cancel" string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<templates xml:space="preserve">
+
+	<t t-extend="DashboardShare">
+		<t t-jquery=".user-heading > h3" t-operation="replace">
+			<h3><span style="word-spacing: -100%">
+					<span style="color: #004949">App</span>
+					<span style="color: #f7b234"> </span>
+					<span style="color: #003838">EcuaOnline</span>
+				</span>
+				1.0 (basado en Odoo 11.0 VC)
+			</h3>
+		</t>
+		<t t-jquery=".user-heading + div" t-operation="replace"/>
+	</t>
+
+</templates>

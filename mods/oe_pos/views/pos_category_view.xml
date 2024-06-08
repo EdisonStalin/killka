@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+        <record id="product_pos_category_form_view_inherit_oe_pos" model="ir.ui.view">
+            <field name="name">pos.category.form.inherit</field>
+            <field name="model">pos.category</field>
+            <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+            <field name="arch" type="xml">
+            
+				<xpath expr="//field[@name='sequence']" position="after">
+                    <field name="not_view_pos"/>
+                </xpath>
+            
+            </field>
+		</record>
+		
+		
+		<record id="product_pos_category_tree_view_inherit_oe_pos" model="ir.ui.view">
+            <field name="name">pos.category.tree.inherit</field>
+            <field name="model">pos.category</field>
+            <field name="inherit_id" ref="point_of_sale.product_pos_category_tree_view"/>
+            <field name="arch" type="xml">
+            
+				<xpath expr="//field[@name='display_name']" position="after">
+                    <field name="not_view_pos"/>
+                </xpath>
+            
+            </field>
+		</record>
+		
+	</data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+		
+		<record id="view_mail_form_inherit_oe_mail" model="ir.ui.view">
+            <field name="name">mail.mail.form.inherit.oe_mail</field>
+            <field name="model">mail.mail</field>
+            <field name="inherit_id" ref="mail.view_mail_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='recipient_ids']" position='replace'>
+            		<field name="recipient_ids" options="{'no_create': True}">
+            			<tree>
+            				<field name="vat"/>
+            				<field name="name"/>
+            				<field name="phone"/>
+            				<field name="mobile"/>
+            				<field name="email"/>
+            			</tree>
+            		</field>
+            	</xpath>
+            	
+            </field>
+    	</record>
+		
+		
+	</data>
+</odoo>

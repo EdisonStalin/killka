@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+
+	    <!-- Purchase Orders -->
+		<record model="ir.ui.view" id="purchase_order_tree_inherit_oe_purchase">
+            <field name="name">purchase.order.tree.inherit.oe_purchase</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+				
+				<xpath expr="//field[@name='amount_untaxed']" position="attributes">
+					<attribute name="string">Subtotal without tax</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='amount_untaxed']" position="after">
+            		<field name="amount_tax" sum="Total Taxes" widget="monetary"/>
+            	</xpath>
+            	
+            </field>
+        </record>
+
+		<record id="purchase_order_form_inherit_oe_purchase" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit.oe_purchase</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+            
+            	<xpath expr="//button[@name='action_rfq_send']" position="after">
+            		<button name="%(oe_purchase.action_purchase_massive_products)d" type="action" states="draft"
+            			string="Add Products" context="{'default_type_request': 'order'}"/>
+            	</xpath>
+            	
+            	<!-- Details -->
+            	
+				<xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+					<field name="available_qty" readonly="1" force_save="1"/>
+					<field name="last_cost" readonly="1" force_save="1"/>
+					<field name="type_discount" widget="radio"/>
+					<field name="discount"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="after">
+					<field name="available_qty" readonly="1" force_save="1"/>
+					<field name="last_cost" force_save="1"/>
+					<field name="type_discount" widget="radio"/>
+					<field name="discount"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='amount_untaxed']" position="attributes">
+					<attribute name="string">Subtotal without tax</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='amount_untaxed']" position="before">
+					<field name="details_tax" widget="boolean_toggle"/>
+				</xpath>
+				
+				<xpath expr="//field[@name='amount_untaxed']" position="after">
+					<field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+					<field name="amount_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+					<field name="base_taxed_0" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+					<field name="base_taxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				</xpath>
+				
+            </field>
+		</record>
+
+		<!-- Order Line -->
+
+        <record model="ir.ui.view" id="view_purchase_order_line_pivot">
+            <field name="name">purchase.order.line.pivot</field>
+            <field name="model">purchase.order.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Purchase Order Line" display_quantity="true">
+                    <field name="product_id"/>
+                    <field name="price_total" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_purchase_order_line_graph">
+            <field name="name">purchase.order.line.graph</field>
+            <field name="model">purchase.order.line</field>
+            <field name="arch" type="xml">
+                <graph string="Purchase Order Line">
+                    <field name="product_id"/>
+                    <field name="price_total" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+
+		<record model="ir.ui.view" id="purchase_order_line_tree_inherit_oe_purchase">
+			<field name="name">purchase.order.line.tree.inherit.oe_purchase</field>
+			<field name="model">purchase.order.line</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+			<field name="arch" type="xml">
+				
+				<xpath expr="//field[@name='price_unit']" position="after">
+					<field name="available_qty" readonly="1" force_save="1"/>
+					<field name="last_cost" readonly="1" force_save="1"/>
+					<field name="type_discount"/>
+					<field name="discount"/>
+				</xpath>
+
+				<xpath expr="//field[@name='price_unit']" position="attributes">
+					<attribute name="sum">Unit Price</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='price_subtotal']" position="attributes">
+					<attribute name="sum">Subtotal Price</attribute>
+				</xpath>
+
+				<xpath expr="//field[@name='price_subtotal']" position="after">
+					<field name="price_tax" sum="Price Tax"/>
+					<field name="price_total" sum="Price Total"/>
+				</xpath>
+			
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="purchase_order_line_form2_inherit_oe_purchase">
+			<field name="name">purchase.order.line.form2.inherit.oe_purchase</field>
+			<field name="model">purchase.order.line</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_form2"/>
+			<field name="arch" type="xml">
+				
+				<xpath expr="//field[@name='price_unit']" position="after">
+					<field name="available_qty" readonly="1" force_save="1"/>
+					<field name="last_cost" readonly="1" force_save="1"/>
+					<field name="type_discount"/>
+					<field name="discount"/>
+					<field name="price_subtotal"/>
+					<field name="price_tax"/>
+					<field name="price_total"/>
+				</xpath>
+			
+			</field>
+		</record>
+		
+        <record id="action_purchase_order_line" model="ir.actions.act_window">
+            <field name="name">Purchase Order Line</field>
+            <field name="res_model">purchase.order.line</field>
+            <field name="view_type">form</field>
+        	<field name="view_mode">tree,form</field>
+        	<field name="domain">[]</field>
+        	<field name="view_id" ref="purchase.purchase_order_line_tree"/>
+            <field name="search_view_id" ref="purchase.purchase_order_line_search"/>
+        </record>
+
+        
+	</data>
+</odoo>

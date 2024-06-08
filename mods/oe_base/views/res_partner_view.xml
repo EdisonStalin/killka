@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    	
+    	<record id="view_partner_tree_inherit_oe_base" model="ir.ui.view">
+            <field name="name">res.partner.tree.inherit.oe_base</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//field[@name='display_name']" position="replace">
+            		<field name="company_type"/>
+            		<field name="l10n_latam_identification_type_id"/>
+            		<field name="vat"/>
+            		<field name="name"/>
+            		<field name="comercial_name"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='phone']" position="before">
+            		<field name="mobile"/>
+            	</xpath>
+            	
+            </field>
+        </record>
+    	
+		<record id="view_partner_simple_form_inherit_oe_base" model="ir.ui.view">
+            <field name="name">res.partner.simplified.form.inherit.oe_base</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+            
+            	<xpath expr="//h1" position="replace">
+            		<field name="firstname" default_focus="1" placeholder="Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+            		<div attrs="{'invisible': [('is_company','=', True)]}">
+            			<field name="lastname" placeholder="Lastname"/>
+            		</div>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='function']" position="before">
+					<label name="label_vat" for="vat"/>
+                    <div name="amount_div" class="o_row">
+                        <field name="is_validation_vat"/>
+                        <field name="l10n_latam_identification_type_id" options="{'no_open': True, 'no_create': True}"
+            				attrs="{'required': [('is_validation_vat', '=', True)]}"/>
+                        <field name="vat" attrs="{'required': [('is_validation_vat', '=', True)]}"/>                        
+                    </div>
+            	</xpath>
+            	
+            </field>
+		</record>
+    	
+    	<record id="view_partner_form_inherit_oe_base" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.oe_base</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                        	
+            	<xpath expr="//field[@name='name']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            		<attribute name="attrs">{}</attribute>
+            	</xpath>
+            
+            	<xpath expr="//field[@name='name']" position="after">
+            		<field name="firstname" default_focus="1" placeholder="Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+            		<div attrs="{'invisible': ['|', '&amp;', ('is_company','=', True),('parent_id', '=', False),('company_name', '!=', False),('company_name', '!=', '')]}">
+            			<field name="lastname" placeholder="Lastname"/>
+            		</div>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='vat']" position="replace"/>
+            	
+            	<xpath expr="//field[@name='type']" position="after">
+            		<field name="comercial_name"/>
+					<label name="label_vat" for="vat"/>
+                    <div name="amount_div" class="o_row">
+                        <field name="is_validation_vat"/>
+                        <field name="l10n_latam_identification_type_id" options="{'no_open': True, 'no_create': True}"
+            				attrs="{'required': [('is_validation_vat', '=', True)]}"/>
+                        <field name="vat" attrs="{'required': [('is_validation_vat', '=', True)]}"/>                        
+                    </div>
+            	</xpath>
+
+            	<xpath expr="//field[@name='email']" position="attributes">
+            		<attribute name="required">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='lang']" position="attributes">
+            		<attribute name="invisible">1</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//notebook/page[@name='internal_notes']" position="replace"/>
+            	
+            	<xpath expr="//notebook/page[1]" position="attributes">
+            		<attribute name="autofocus">False</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//notebook/page[1]" position="before">
+					<page name='internal_notes' string="Internal Notes">
+	                    <field name="comment" placeholder="Internal note..."/>
+	                </page>
+            	</xpath>
+            	
+				<xpath expr="//notebook/page/field[@name='child_ids']" position="attributes">
+					<attribute name="context">{'default_parent_id': active_id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_lang': lang,}</attribute>
+				</xpath>
+
+            	<xpath expr="//notebook/page/field[@name='child_ids']/form/sheet/group/group[2]/field[@name='name']" position="replace">
+            		<field name="firstname" string="Contact Name" required="1"/>
+            		<field name="comercial_name"/>
+					<label name="label_vat" for="vat"/>
+                    <div name="amount_div" class="o_row">
+                        <field name="is_validation_vat"/>
+                        <field name="l10n_latam_identification_type_id" options="{'no_open': True, 'no_create': True}"
+            				attrs="{'required': [('is_validation_vat', '=', True)]}"/>
+                        <field name="vat" attrs="{'required': [('is_validation_vat', '=', True)]}"/>                        
+                    </div>
+            	</xpath>
+            	
+            </field>
+		</record>
+
+
+        <record id="view_res_partner_filter_inherit_oe_base" model="ir.ui.view">
+            <field name="name">res.partner.select.inherit.oe_base</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+
+				<xpath expr="//field[@name='name']" position="attributes">
+					<attribute name="filter_domain">['|','|',('name', 'ilike', self),('vat', 'ilike', self),('comercial_name', 'ilike', self)]</attribute>
+				</xpath>
+				
+				<xpath expr="//field[@name='name']" position="after">
+					<field name="vat"/>
+					<field name="firstname"/>
+					<field name="lastname"/>
+					<field name="comercial_name"/>
+					<field name="email"/>
+					<field name="mobile"/>
+					<field name="phone"/>
+				</xpath>
+				
+            </field>
+		</record>
+    	
+    	
+        <record id="view_res_partner_simple_type_form" model="ir.ui.view">
+            <field name="name">res.partner.simple.type.form.oe_base</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form string="Contact">
+                	<sheet>
+	                    <field name="is_company" invisible="1"/>
+	                    <field name="type" required="1" widget="radio" options="{'horizontal': true}"/>
+	                    <hr/>
+	                    <group>
+	                        <group attrs="{'invisible': [('type','=', 'contact')]}">
+	                            <label for="street" string="Address"/>
+	                            <div>
+	                                <div class="o_address_format" name="div_address">
+	                                    <field name="street" placeholder="Street..." class="o_address_street" attrs="{'required': [('type', 'in', ['delivery', 'invoice'])]}"/>
+	                                    <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+	                                    <field name="city" placeholder="City" class="o_address_city"/>
+	                                    <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}' context="{'country_id': country_id, 'zip': zip}"/>
+	                                    <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+	                                    <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+	                                </div>
+	                            </div>
+	                        </group>
+	                        <group>
+	                        	<field name="parent_id" readonly="1"/>
+	                            <field name="firstname" string="Contact Name" required="1"/>
+								<label name="label_vat" for="vat"/>
+			                    <div name="amount_div" class="o_row">
+			                        <field name="is_validation_vat"/>
+			                        <field name="l10n_latam_identification_type_id" options="{'no_open': True, 'no_create': True}"
+			            				attrs="{'required': [('is_validation_vat', '=', True)]}"/>
+			                        <field name="vat" attrs="{'required': [('is_validation_vat', '=', True)]}"/>                        
+			                    </div>
+	                            <field name="title" placeholder="e.g. Mr."
+	                                attrs="{'invisible': [('type','!=', 'contact')]}"/>
+	                            <field name="function" placeholder="e.g. Sales Director"
+	                                attrs="{'invisible': [('type','!=', 'contact')]}"/>
+	                            <field name="email"/>
+	                            <field name="phone" widget="phone"/>
+	                            <field name="mobile" widget="phone"/>
+	                            <field name="comment" placeholder="internal note..."/>
+	                        </group>
+	                    </group>
+	                    <field name="supplier" invisible="True"/>
+	                    <field name="customer" invisible="True"/>
+	                    <field name="lang" invisible="True"/>
+	                    <field name="image" invisible="True"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    	<record id="base.action_partner_customer_form" model="ir.actions.act_window">
+    		<field name="context">{'default_customer':1, 'search_default_customer':1, 'default_company_type': 'company','default_is_company': 1, 'default_is_validation_vat': 1}</field>
+		</record>
+    
+        <record id="base.action_partner_supplier_form" model="ir.actions.act_window">
+    		<field name="context">{'search_default_supplier': 1,'default_customer': 0,'default_supplier': 1, 'default_company_type': 'company', 'default_is_validation_vat': 1}</field>
+		</record>
+    
+		<record id="filter_customer_without_mail" model="ir.filters">
+            <field name="name">Customer without mail</field>
+            <field name="model_id">res.partner</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[('customer', '=', 1), ('parent_id', '=', False)]</field>
+            <field name="context">{}</field>
+            <field name="sort">["email"]</field>
+            <field name="action_id" ref="base.action_partner_customer_form"/>
+        </record>
+
+		<record id="filter_customer_without_mobile" model="ir.filters">
+            <field name="name">Customer without mobile</field>
+            <field name="model_id">res.partner</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[('customer', '=', 1), ('parent_id', '=', False)]</field>
+            <field name="context">{}</field>
+            <field name="sort">["mobile"]</field>
+            <field name="action_id" ref="base.action_partner_customer_form"/>
+        </record>
+
+		<record id="filter_supplier_without_mail" model="ir.filters">
+            <field name="name">Supplier without mail</field>
+            <field name="model_id">res.partner</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[('supplier', '=', 1), ('parent_id', '=', False)]</field>
+            <field name="context">{}</field>
+            <field name="sort">["email"]</field>
+            <field name="action_id" ref="base.action_partner_supplier_form"/>
+        </record>
+
+		<record id="filter_supplier_without_mobile" model="ir.filters">
+            <field name="name">Supplier without mobile</field>
+            <field name="model_id">res.partner</field>
+            <field name="user_id" eval="False"/>
+            <field name="domain">[('supplier', '=', 1), ('parent_id', '=', False)]</field>
+            <field name="context">{}</field>
+            <field name="sort">["mobile"]</field>
+            <field name="action_id" ref="base.action_partner_supplier_form"/>
+        </record>
+
+    </data>
+</odoo>    

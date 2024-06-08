@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data noupdate="0">
+	
+		<record model="account.account.tag" id="tax_tag_301">
+			<field name="name">301</field>
+			<field name="sequence">1</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_303">
+			<field name="name">303</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_304">
+			<field name="name">304</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_305">
+			<field name="name">305</field>
+			<field name="sequence">3</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_307">
+			<field name="name">307</field>
+			<field name="sequence">4</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_308">
+			<field name="name">308</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_309">
+			<field name="name">309</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_310">
+			<field name="name">310</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_311">
+			<field name="name">311</field>
+			<field name="sequence">5</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_312">
+			<field name="name">312</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_313">
+			<field name="name">313</field>
+			<field name="sequence">6</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_314">
+			<field name="name">314</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_315">
+			<field name="name">315</field>
+			<field name="sequence">7</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_317">
+			<field name="name">317</field>
+			<field name="sequence">8</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_319">
+			<field name="name">319</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_320">
+			<field name="name">320</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_322">
+			<field name="name">322</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_323">
+			<field name="name">323</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_324">
+			<field name="name">324</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_325">
+			<field name="name">325</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_326">
+			<field name="name">326</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_327">
+			<field name="name">327</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_328">
+			<field name="name">328</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_329">
+			<field name="name">329</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_330">
+			<field name="name">330</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_331">
+			<field name="name">331</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_332">
+			<field name="name">332</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_333">
+			<field name="name">333</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_334">
+			<field name="name">334</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_335">
+			<field name="name">335</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_336">
+			<field name="name">336</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_337">
+			<field name="name">337</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_338">
+			<field name="name">338</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_339">
+			<field name="name">339</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_340">
+			<field name="name">340</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_341">
+			<field name="name">341</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_342">
+			<field name="name">342</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_343">
+			<field name="name">343</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_344">
+			<field name="name">344</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_345">
+			<field name="name">345</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_346">
+			<field name="name">346</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_348">
+			<field name="name">348</field>
+			<field name="sequence">2</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_349">
+			<field name="name">349</field>
+			<field name="sequence">24</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_350">
+			<field name="name">350</field>
+			<field name="sequence">9</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_351">
+			<field name="name">351</field>
+			<field name="sequence">9</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_353">
+			<field name="name">353</field>
+			<field name="sequence">10</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_361">
+			<field name="name">361</field>
+			<field name="sequence">11</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_363">
+			<field name="name">363</field>
+			<field name="sequence">12</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_365">
+			<field name="name">365</field>
+			<field name="sequence">13</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_367">
+			<field name="name">367</field>
+			<field name="sequence">14</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_369">
+			<field name="name">369</field>
+			<field name="sequence">15</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_371">
+			<field name="name">371</field>
+			<field name="sequence">16</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_373">
+			<field name="name">373</field>
+			<field name="sequence">17</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_381">
+			<field name="name">381</field>
+			<field name="sequence">18</field>
+			<field name="type">sum_lines</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_399">
+			<field name="name">399</field>
+			<field name="sequence">19</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_3120">
+			<field name="name">3120</field>
+			<field name="sequence">19</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_3400">
+			<field name="name">3400</field>
+			<field name="sequence">19</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_3440">
+			<field name="name">3440</field>
+			<field name="sequence">19</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">withholding</field>
+		</record>
+
+		<record model="account.account.tag" id="tax_tag_3380">
+			<field name="name">3380</field>
+			<field name="sequence">19</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<!--record model="account.account.tag" id="tax_tag_401">
+			<field name="name">401</field>
+			<field name="sequence">20</field>
+			<field name="type">total_amount</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_403">
+			<field name="name">403</field>
+			<field name="sequence">21</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_405">
+			<field name="name">405</field>
+			<field name="sequence">22</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+		</record>
+		
+		<record model="account.account.tag" id="tax_tag_407">
+			<field name="name">407</field>
+			<field name="sequence">23</field>
+			<field name="type">sum_locker</field>
+			<field name="document_type">withholding</field>
+		</record-->
+		
+	</data>
+</odoo>	

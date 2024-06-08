@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+        <record id="view_pos_session_form_inherit_oe_pos" model="ir.ui.view">
+            <field name="name">pos.session.form.view.inherit.oe_pos</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+            
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="authorization_id" readonly="1"/>
+                    <field name="check_refund" invisible="1"/>
+                    <field name="refund_authorization_id" readonly="1" attrs="{'invisible': [('check_refund','=',False)], 'required': [('check_refund','=',True)]}"/>
+                </xpath>
+				
+				<xpath expr="//field[@name='statement_ids']/tree/field[@name='total_entry_encoding']" position="attributes">
+					<attribute name="sum">Transactions Subtotal</attribute>
+				</xpath>
+
+				<xpath expr="//field[@name='statement_ids']/tree/field[@name='balance_end_real']" position="attributes">
+					<attribute name="sum">Ending Balance</attribute>
+				</xpath>
+
+            </field>
+        </record>
+        
+    </data>
+</odoo>

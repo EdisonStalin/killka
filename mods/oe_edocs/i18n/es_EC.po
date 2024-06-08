@@ -1,0 +1,2211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_edocs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-21 04:23+0000\n"
+"PO-Revision-Date: 2022-10-21 04:23+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_state
+msgid " * The 'Draft' status is used when a user is encoding a new and unconfirmed transport permit.\n"
+" * The 'Approved' status is used when user creates transport permit, an transport permit number is generated.\n"
+" * The 'Cancelled' status is used when user cancel transport permit."
+msgstr " * El 'Borrador' estado se usa cuando un usuario está codificando un guía de remisión nuevo y no confirmado.\n"
+" * El 'Aprovado' estado se usa cuando el usuario crea un guía de remisión y se genera un número de guía de remisión.\n"
+" * El 'Anulada' estado se usa cuando el usuario anula la guía de remisión."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid ". Remember that the SRI has a period of 72 hours to authorize the document."
+msgstr ". Recuerde que el SRI tiene un período de 72 horas para autorizar el documento."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "000-000-000000"
+msgstr "000-000-000000"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.portal_invoice_page
+msgid "<i class=\"fa fa-download fa-2x\" aria-hidden=\"true\"/>\n"
+"			        <strong>PDF</strong>"
+msgstr "<i class=\"fa fa-download fa-2x\" aria-hidden=\"true\"/>\n"
+"			        <strong>PDF</strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.portal_invoice_page
+msgid "<i class=\"fa fa-download fa-2x\" aria-hidden=\"true\"/>\n"
+"			        <strong>XML</strong>"
+msgstr "<i class=\"fa fa-download fa-2x\" aria-hidden=\"true\"/>\n"
+"			        <strong>XML</strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_company_form_inherit_g3_edocs
+msgid "<span class=\"o_stat_text\">Environment</span>\n"
+"									<span class=\"o_warning_text\">Test </span>"
+msgstr "<span class=\"o_stat_text\">Ambiente SRI</span>\n"
+"									<span class=\"o_warning_text\">Pruebas </span>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_company_form_inherit_g3_edocs
+msgid "<span class=\"o_stat_text\">Environment</span>\n"
+"									<span class=\"text-success\">Production </span>"
+msgstr "<span class=\"o_stat_text\">Ambiente SRI</span>\n"
+"									<span class=\"text-success\">Producción </span>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<span> day(s)</span>"
+msgstr "<span> día(s)</span>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<span>NAC-DNCRASC20-</span>"
+msgstr "<span>NAC-DNCRASC20-</span>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Access Key: </strong>"
+msgstr "<strong>Clave de Acceso: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Address Starting: </strong>"
+msgstr "<strong>Dirección partida: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Address: </strong>"
+msgstr "<strong>Dirección: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Ambient: </strong>"
+msgstr "<strong>Ambiente: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Authorization Number: </strong>"
+msgstr "<strong>Numero de autorización: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Business Name/Name: </strong>"
+msgstr "<strong>Razón Social/Nombre y apellido: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Business Store Code: </strong>"
+msgstr "<strong>Código de tienda comercial: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Business name: </strong>"
+msgstr "<strong>Nombre comercial: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Customs Document: </strong>"
+msgstr "<strong>Documento aduanero: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Date Due: </strong>"
+msgstr "<strong>Fecha vencimiento: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Date Finish: </strong>"
+msgstr "<strong>Fecha finaliza: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Date Initial: </strong>"
+msgstr "<strong>Fecha inicio: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Date: </strong>"
+msgstr "<strong>Fecha: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Destination Address: </strong>"
+msgstr "<strong>Dirección de destino: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Destination: </strong>"
+msgstr "<strong>Destinatario: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Email: </strong>"
+msgstr "<strong>Correo: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Emission Date: </strong>"
+msgstr "<strong>Fecha de emisión: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Emission: </strong>"
+msgstr "<strong>Emisión: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Identificar: (Driver)</strong>"
+msgstr "<strong>Identificación: (Transportista)</strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Identificar: </strong>"
+msgstr "<strong>Identificación: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Invoice Date: </strong>"
+msgstr "<strong>Fecha factura: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>License Plate: </strong>"
+msgstr "<strong>Placa: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Main Address: </strong>"
+msgstr "<strong>Dirección Matriz: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Modified voucher: Invoice </strong>"
+msgstr "<strong>Comprobante que se modifica: Factura </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>No. </strong>"
+msgstr "<strong>No. </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Number: </strong>"
+msgstr "<strong>Número: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Obliged to keep accounting: </strong>"
+msgstr "<strong>Obligado a llevar contabilidad: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Payment Method: </strong>"
+msgstr "<strong>Método de Pago: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Phone: </strong>"
+msgstr "<strong>Teléfono: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Reason Transfer: </strong>"
+msgstr "<strong>Motivo: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Reason: </strong>"
+msgstr "<strong>Razón de modificación: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Refund Document Code: </strong>"
+msgstr "<strong>Codigo Documento Reembolso: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Responsible: </strong>"
+msgstr "<strong>Responsable: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Route: </strong>"
+msgstr "<strong>Ruta: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Sale Vendor: </strong>"
+msgstr "<strong>Asesor/Vendedor: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Second Address: </strong>"
+msgstr "<strong>Dirección Sucursal: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Special Taxpayer SI Resolution: </strong>"
+msgstr "<strong>Contribuyente especial N°: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Term: </strong>"
+msgstr "<strong>Terminos: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Total Refund Vouchers: </strong>"
+msgstr "<strong>Total Comprobantes Reembolso: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Total Tax Refund: </strong>"
+msgstr "<strong>Total Impuesto Reembolso: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Total Taxable Base Refund: </strong>"
+msgstr "<strong>Total Base Imponible Reembolso: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Value: </strong>"
+msgstr "<strong>Monto: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Vat (addressee): </strong>"
+msgstr "<strong>RUC/CI (Transportista): </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "<strong>Voucher of Sale: Invoice </strong>"
+msgstr "<strong>Comprobante de Venta: Factura </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "<strong>Withholding Agent Resolution No.: </strong>"
+msgstr "<strong>Withholding Agent Resolution No.: </strong>"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "<strong>Withholding Agent Resolution No.: </strong>\n"
+"										<span style=\"font-size:8pt;\">NAC-DNCRASC20-</span>"
+msgstr "<strong>Agente de Retención Resolución No.: </strong>\n"
+"										<span style=\"font-size:8pt;\">NAC-DNCRASC20-</span>"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/res_company.py:124
+#, python-format
+msgid "A consumed more than 90% of your package."
+msgstr "A consume más del 90% de tu paquete."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "ADDITIONAL INFORMATION"
+msgstr "Información Adicional"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_batch_access_key
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_access_key
+msgid "Access code generated by the company to be validated"
+msgstr "Código de acceso generado por la empresa para ser validado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_access_key
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_access_key
+msgid "Access key"
+msgstr "Clave de Acceso"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_date_action
+msgid "Action"
+msgstr "Acción"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_additional_info
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_comment
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Additional Information"
+msgstr "Información Adicional"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_add_information
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_add_information
+msgid "Additional information"
+msgstr "Información Adicional"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_address_starting
+msgid "Address Starting"
+msgstr "Punto de Partida"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_addressee_id
+msgid "Addressee"
+msgstr "Punto de Partida"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Amount Rent"
+msgstr "Monto Retenido"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Amount of Modification"
+msgstr "Monto modificado"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+#: selection:transport.permit,state:0
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_attachment_id
+msgid "Attachment"
+msgstr "Adjunto"
+
+#. module: oe_edocs
+#: selection:code.validation.document,type_validation:0
+#: model:ir.model,name:oe_edocs.model_account_authorization
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_authorization_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_authorization_id
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Authorization"
+msgstr "Autorización"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_authorization_date
+msgid "Authorization date"
+msgstr "Fecha Autorización"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_authorization_date
+msgid "Authorization date validated by SRI"
+msgstr "Fecha autorizado por SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_authorization_number
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_authorization_number
+msgid "Authorization number validated by SRI"
+msgstr "Número de autorizado por SRI"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+msgid "Authorized"
+msgstr "Autorizado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_authorization
+#: model:ir.ui.view,arch_db:oe_edocs.account_journal_dashboard_kanban_view_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_account_invoice_filter_inherit_oe_edocs
+msgid "Authorized by SRI"
+msgstr "Autorizado por SRI"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+msgid "Auxiliary Code"
+msgstr "Código Auxiliar"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Base Amount"
+msgstr "Monto base"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_batch_id
+#: model:ir.model.fields,field_description:oe_edocs.field_account_refund_invoice_batch_id
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_batch_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_batch_id
+msgid "Batch"
+msgstr "Lote"
+
+#. module: oe_edocs
+#: model:res.groups,name:oe_edocs.group_account_invoice_electronic
+msgid "Billing Electronic"
+msgstr "Documentos Electrónicos"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_code_destination_business
+msgid "Business Destination Code"
+msgstr "Cod. Establecimiento Destino"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Business Store Code"
+msgstr "Cod. Establecimiento Destino"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_code_destination_business
+msgid "Business destination code"
+msgstr "Cód. Establecimiento Destino"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.account_invoice_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.account_withholding_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.transport_permit_sent_view
+msgid "Cancel"
+msgstr "Anular"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+#: selection:transport.permit,state:0
+msgid "Cancelled"
+msgstr "Anulado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_name_issuer
+msgid "Certificate issued by"
+msgstr "Certificado emitido por"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_company_form_inherit_g3_edocs
+msgid "Check Signature"
+msgstr "Habilitar Firma"
+
+#. module: oe_edocs
+#: model:ir.actions.act_window,help:oe_edocs.action_transport_permit_out_form
+msgid "Click to create a Transport Permit."
+msgstr "Haga clic para crear un Permiso de Transporte."
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_code
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_code
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Code"
+msgstr "Código"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_code_assistant
+msgid "Code Assistant"
+msgstr "Código Auxiliar"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_code_main
+msgid "Code Main"
+msgstr "Código Principal"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_company_id
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_company_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_company_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_company_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:232
+#, python-format
+msgid "Compose Email"
+msgstr "Escribir Correo"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.account_invoice_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.account_withholding_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.transport_permit_sent_view
+msgid "Confirm Sending Documents"
+msgstr "Confirmar envió de documentos"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:292
+#, python-format
+msgid "Connection failed authorization: %s"
+msgstr "Autorización de conexión fallida: %s"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:224
+#, python-format
+msgid "Connection failed reception: %s"
+msgstr "Recepción fallida de conexión: %s"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:180
+#: code:addons/oe_edocs/models/sri.py:182
+#: code:addons/oe_edocs/models/sri.py:184
+#, python-format
+msgid "Connection failed: %s"
+msgstr "La conexión falló: %s"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:252
+#, python-format
+msgid "Connection: %s"
+msgstr "Conección: %s"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:195
+#, python-format
+msgid "Connection: %s:%s"
+msgstr "Conección: %s:%s"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+msgid "Create Transport Permit"
+msgstr "Crear Guía de Remisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_sent_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_sent_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_create_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_sent_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_sent_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_create_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_customs_document
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Customs Document"
+msgstr "Documento Aduanero"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Date Emission"
+msgstr "Fecha emisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_tmpl_invoice_date
+msgid "Date invoice emission"
+msgstr "Fecha de documento emitida"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_due_signer
+msgid "Date of Expiry"
+msgstr "Fecha de expiración"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_enable_signer
+msgid "Date of Issue"
+msgstr "Fecha de emisión"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Date of issue"
+msgstr "Fecha de emisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_res_company_enable_signer
+msgid "Date of issue of the electronic signature"
+msgstr "Fecha de emisión de la firma electrónica."
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_name
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_name
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Description"
+msgstr "Descripción"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_customs_document
+msgid "Description customs document"
+msgstr "Descripción documento aduanero"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_destination_id
+msgid "Destination"
+msgstr "Destino"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Destinations"
+msgstr "Destinos"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Disc."
+msgstr "Desc."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_sent_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_sent_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_display_name
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: oe_edocs
+#: model:ir.actions.report,name:oe_edocs.account_withholdings_electronics
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_invoice_id
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Document"
+msgstr "Documento"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:198
+#, python-format
+msgid "Document response status: %s"
+msgstr "Estado de respuesta del documento: %s"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_invoice_ids
+msgid "Documents Invoice"
+msgstr "Referencia factura"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_transport_ids
+msgid "Documents Transport"
+msgstr "Referencia guía de remisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_withhold_ids
+msgid "Documents Withhold"
+msgstr "Referencia retención"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.portal_invoice_page
+msgid "Download PDF"
+msgstr "Descargar PDF"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.portal_invoice_page
+msgid "Download XML"
+msgstr "Descargar XML"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.footer_text
+msgid "Download your electronic invoice in the following link"
+msgstr "Descarga tu factura electrónica en el siguiente enlace"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+#: selection:transport.permit,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:206
+#, python-format
+msgid "Draft Transport Permit"
+msgstr "Borrador Guía de Remisión"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_withholding.py:52
+#, python-format
+msgid "Draft Withholding"
+msgstr "Retención Borrador"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_partner_driver
+#: model:ir.model.fields,field_description:oe_edocs.field_res_users_driver
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_partner_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_tree
+msgid "Driver"
+msgstr "Conductor"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_company_form_inherit_g3_edocs
+msgid "Electronic Signature"
+msgstr "Firma electrónica"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_edi_document_batch
+msgid "Electronic documents by batch"
+msgstr "Documentos electrónicos por lote"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Asistente para composición de Email"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_res_company_email_edoc
+msgid "Email that who is being sent"
+msgstr "Envía un correo electrónico a quien se está enviando"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.account_journal_dashboard_kanban_view_inherit_oe_edocs
+msgid "Emails not sent"
+msgstr "Correos no enviados"
+
+#. module: oe_edocs
+#: selection:code.validation.document,type_validation:0
+msgid "Emission"
+msgstr "Emisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_date_emission
+msgid "Emission Date"
+msgstr "Fecha emisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_manual_sequence
+msgid "Enable allows to carry the sequential of the document that is entered manually"
+msgstr "Habilitar permite llevar el secuencial del documento que se ingresa manualmente"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_invoice_substitute_permit
+#: model:ir.model.fields,help:oe_edocs.field_account_refund_invoice_substitute_permit
+msgid "Enable this option, indicates that the invoice replaces the referral guide"
+msgstr "Habilitar esta opción, indica que la factura reemplaza la guía de referencia"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_res_company_environment
+msgid "Enabling the testing environment, otherwise it will be in production."
+msgstr "Habilitando el entorno de prueba, de lo contrario estará en producción."
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_password_crypt
+msgid "Encrypted Password"
+msgstr "Contraseña Encriptada"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_reason
+msgid "Enter a reason why you are generating the transport permit"
+msgstr "Ingrese una razón por la cual está generando el permiso de transporte"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_invoice.py:158
+#, python-format
+msgid "Enter data from the Substitute Remission Guide in the invoice"
+msgstr "Ingrese los datos de la Guía de remisión sustitutiva en el documento"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:411
+#, python-format
+msgid "Enter the document number!"
+msgstr "Ingrese el número de documento!"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_environment
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_environment
+msgid "Environment"
+msgstr "Entorno"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_error
+msgid "Error"
+msgstr "Error"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_code_validation_document
+msgid "Error and Alert of Validation Code"
+msgstr "Error y Alerta de Código de Validación."
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_code_validation_document_name
+msgid "Error and Alert of result"
+msgstr "Error y alerta de resultado."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/res_company.py:118
+#, python-format
+msgid "Exceeded the limit of sending electronic documents"
+msgstr "Superado el límite de envío de documentos electrónicos."
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_res_company_due_signer
+msgid "Expiration date of the electronic signature"
+msgstr "Fecha de expiración de la firma electrónica."
+
+#. module: oe_edocs
+#: selection:res.company,state_signer:0
+msgid "Expired"
+msgstr "Expira"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_signed_digital
+msgid "File Content"
+msgstr "Contenido del archivo"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_filename
+msgid "File Name"
+msgstr "Nombre del archivo"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Fiscal exercise"
+msgstr "Ejercicio Fiscal"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Future Activities"
+msgstr "Actividades futuras"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "General"
+msgstr "General"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "Generate XML"
+msgstr "Generate XML"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_line_details_sequence
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_sequence
+msgid "Gives the sequence of this line when displaying the transport permit."
+msgstr "Da la secuencia de esta línea cuando se muestra el permiso de transporte."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_edi_document_ids
+#: model:ir.model.fields,field_description:oe_edocs.field_account_refund_invoice_edi_document_ids
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_edi_document_ids
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_edi_document_ids
+msgid "History"
+msgstr "Historia del SRI"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_edi_document
+#: model:ir.model,name:oe_edocs.model_information_message_history
+msgid "History Information Message SRI"
+msgstr "Historial de mensajes del SRI"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "History lines"
+msgstr "Lineas de Historia"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_id
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_id
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_sent_id
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_sent_id
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "INDISPONIBLE"
+msgstr "INDISPONIBLE"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_refund_invoice_incoterms_id
+msgid "Incoterms"
+msgstr "Incoterms"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_refund_invoice_incoterms_id
+msgid "Incoterms are series of sales terms. They are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices."
+msgstr "Los incoterms son una serie de términos de venta. Se usan para dividir los costes de la transacción y las responsabilidades entre el comprador y el vendedor y reflejan las últimas prácticas en el transporte"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_info_ids
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Information Additional Lines"
+msgstr "Información Líneas Adicionales"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_type
+msgid "Information type"
+msgstr "Tipo de Información"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_internal_number
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_internal_number
+msgid "Internal Number"
+msgstr "Número Interno"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:122
+#, python-format
+msgid "Invalid XML document error: %s"
+msgstr "Error de documento XML no válido: %s"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_invoice
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+msgid "Invoice Address"
+msgstr "Dirección factura"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_is_electronic
+msgid "Is electronic"
+msgstr "Es electrónico"
+
+#. module: oe_edocs
+#: model:res.groups,name:oe_edocs.group_transport_permit
+msgid "Issue Referral Guide"
+msgstr "Guía de referencia"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_name_subject
+msgid "Issued to"
+msgstr "Emitido a"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_sent
+msgid "It indicates that the transport has been sent."
+msgstr "Indica que el transporte ha sido enviado."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:152
+#, python-format
+msgid "It was not possible to sign the electronic document,\n"
+"the password or the electronic signature is incorrect (%s: %s)"
+msgstr "No fue posible firmar el documento electrónico,\n"
+"la contraseña o la firma electrónica es incorrecta (%s: %s)"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_batch_date
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_date_due
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_date_emission
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_date_transport
+msgid "Keep empty to use the current date"
+msgstr "Dejarlo vacío para utilizar la fecha actual."
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_sent___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_sent___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line___last_update
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_sent_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_sent_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent_write_uid
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_sent_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_account_withholding_sent_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent_write_date
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Late Activities"
+msgstr "Actividades tardías"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_license_plate
+msgid "License plate"
+msgstr "Placa"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_manual_sequence
+msgid "Manual Sequence"
+msgstr "Secuencia Manual"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_message
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_message_state
+msgid "Message Authorization"
+msgstr "Estado en el SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_message
+msgid "Message info"
+msgstr "Mensaje Informativo"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_rise
+msgid "Message of relationship with the document"
+msgstr "Mensaje de relacion con el documento"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "My Activities"
+msgstr "Mis actividades"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "My Transport Permit"
+msgstr "Mi Guía de Remisión"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "NO"
+msgstr "NO"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "NORMAL"
+msgstr "NORMAL"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_edi_document.py:27
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sequence_number_next
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sequence_number_next_prefix
+msgid "Next Number"
+msgstr "Próximo número"
+
+#. module: oe_edocs
+#: selection:code.validation.document,type_action:0
+#: selection:code.validation.document,type_validation:0
+msgid "None"
+msgstr "Ninguno"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.account_journal_dashboard_kanban_view_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_account_invoice_filter_inherit_oe_edocs
+msgid "Not authorized by SRI"
+msgstr "No enviado al SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_number
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_number
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Number"
+msgstr "Número"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_tmpl_invoice_number
+msgid "Number of document"
+msgstr "Número de documento"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:254
+#, python-format
+msgid "Number of vouchers %s"
+msgstr "Número de voucher %s"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "N° Document"
+msgstr "N° Documento"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_authorization_number
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_authorization_number
+msgid "N° authorization"
+msgstr "N° autorización"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Observations..."
+msgstr "Observaciones..."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.footer_text
+msgid "Once the document is issued, no changes are accepted. This is a service of"
+msgstr "Una vez emitido el documento, no se aceptan cambios. Este es un servicio de "
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.account_invoice_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.account_withholding_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.transport_permit_sent_view
+msgid "Once the documents have been sent to the SRI platform, you cannot modify them once they have been sent.\n"
+"                    The documents will receive a confirmation message from the SRI once authorized.\n"
+"					Note:\n"
+"					-&gt; It is recommended to send the documents in groups of 50 records.\n"
+"					-&gt; It should be noted that the maximum time it will take to\n"
+"					   SRI to process an electronic receipt will be 24 hours."
+msgstr "Una vez que los documentos han sido enviados a la plataforma SRI, no se pueden modificar una vez enviados..\n"
+"                    Los documentos recibirán un mensaje de confirmación del SRI una vez autorizados.\n"
+"					Nota:\n"
+"					-&gt; Se recomienda enviar los documentos en grupos de 50 registros..\n"
+"					-&gt; Cabe señalar que el tiempo máximo que llevará SRI para procesar un recibo electrónico será de 24 horas."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_invoice.py:64
+#, python-format
+msgid "Only one transport permit can be added for each Invoice"
+msgstr "Solo se puede agregar un permiso de transporte por cada Factura"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_invoice_id
+msgid "Origin invoice"
+msgstr "Factura Origen"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Other Info"
+msgstr "Otra Información"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_reason
+msgid "Other Reason"
+msgstr "Razón Translado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_partner_id
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/res_company.py:56
+#, python-format
+msgid "Pass: %s"
+msgstr "Const: %s"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_password_signed
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_res_company_password_signed
+msgid "Password used to open the electronic signature."
+msgstr "Contraseña utilizada para abrir la firma electrónica."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Percent"
+msgstr "Porcentaje"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "Perform the electronic document<strong> cancellation</strong> on the"
+msgstr "Documento electrónico <strong> anulado </strong> en el"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Pre authorization"
+msgstr "Pre Autorización"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: oe_edocs
+#: selection:res.company,environment:0
+msgid "Production"
+msgstr "Producción"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+msgid "Products"
+msgstr "Productos"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_quantity
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "REFUND INFORMATION"
+msgstr "DATOS DE REEMBOLSO"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Reason of Modification"
+msgstr "Motivo de modificación"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+msgid "Received"
+msgstr "Recibido"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_received
+msgid "Received by SRI"
+msgstr "Recibido por SRI"
+
+#. module: oe_edocs
+#: selection:code.validation.document,type_validation:0
+msgid "Reception"
+msgstr "Recepción"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_origin
+msgid "Reference of the document that produced this transport."
+msgstr "Referencia del documento que produjo este transporte."
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_name
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_name
+msgid "Reference/Description"
+msgstr "Número de Documento"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_transport_id
+msgid "Relation Transport"
+msgstr "Transporte de relación"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_invoice_id
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_withholding_id
+msgid "Relation invoice"
+msgstr "Relación con factura"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_validation_id
+msgid "Relation validation"
+msgstr "Relación de validación"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+msgid "Relocated"
+msgstr "Reubicado"
+
+#. module: oe_edocs
+#: selection:code.validation.document,type_action:0
+msgid "Resend"
+msgstr "Reenviar"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Reset to Draft"
+msgstr "Cambiar a Borrador"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_batch_user_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_user_id
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "Restore"
+msgstr "Restaurar"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_code
+#: model:ir.model.fields,help:oe_edocs.field_code_validation_document_code
+msgid "Result code of the SRI"
+msgstr "Código de resultado del SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_rise
+msgid "Rise"
+msgstr "Rise"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_route
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Route"
+msgstr "Ruta"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "SI"
+msgstr "SI"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "SRI"
+msgstr "SRI"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "SRI Info"
+msgstr "SRI Info"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_tree_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_account_invoice_filter_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_tree_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_tree
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_tree_inherit_oe_edocs
+msgid "SRI status"
+msgstr "Estado en el SRI"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "SRI:"
+msgstr "SRI:"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "SRI: RECEIVED"
+msgstr "SRI: RECIBIDA"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_edi_document.py:179
+#, python-format
+msgid "SRI: at the moment the SRi services are not available or are under maintenance"
+msgstr "SRI: por el momento los servicios del SRI no están disponibles o están en mantenimiento"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_invoice.py:475
+#, python-format
+msgid "Sale"
+msgstr "Venta"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Search Transport Permit"
+msgstr "Buscar Guía Remisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_access_token
+msgid "Security Token"
+msgstr "Token de seguridad"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_is_electronic
+msgid "Select you have the possibility of sending the electronic document to the SRI"
+msgstr "Seleccione que tiene la posibilidad de enviar el documento electrónico al SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_authorization
+msgid "Selected indicates that the invoice is authorized by the SRI"
+msgstr "Seleccionado indica que la factura está autorizada por el SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_received
+msgid "Selected indicates that the invoice is received by the SRI"
+msgstr "Seleccionado indica que la factura es recibida por el SRI"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/wizard/account_document_sent.py:64
+#, python-format
+msgid "Selected transport permit(s) cannot be sent SRI as they are in %s 'Draft' state."
+msgstr "Los permisos de transporte seleccionados no se pueden enviar al SRI ya que están en %s estado 'Borrador'."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/wizard/account_document_sent.py:44
+#, python-format
+msgid "Selected withholding(s) cannot be sent SRI as they are in %s 'Draft' state."
+msgstr "Las retenciones seleccionadas no se pueden enviar a SRI ya que están en el estado 'Borrador' de %s."
+
+#. module: oe_edocs
+#: selection:code.validation.document,type_action:0
+msgid "Send"
+msgstr "Enviar"
+
+#. module: oe_edocs
+#: model:ir.actions.act_window,name:oe_edocs.action_account_invoice_sent
+#: model:ir.actions.act_window,name:oe_edocs.action_account_withholding_sent
+#: model:ir.actions.act_window,name:oe_edocs.action_transport_permit_sent
+msgid "Send Documents to the SRI"
+msgstr "Enviar documentos al SRI"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Send by Email"
+msgstr "Enviar por correo"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_invoice.py:118
+#, python-format
+msgid "Send document %s by mail %s of %s"
+msgstr "Enviar documento %s por mail %s de %s"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.account_invoice_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.account_withholding_sent_view
+#: model:ir.ui.view,arch_db:oe_edocs.transport_permit_sent_view
+msgid "Send documents to the SRI"
+msgstr "Enviar documentos al SRI"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_invoice.py:132
+#, python-format
+msgid "Send of documento %s SRI %s of %s"
+msgstr "Send of documento %s SRI %s of %s"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "Send to SRI"
+msgstr "Enviar al SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_email_edoc
+msgid "Sender Mail"
+msgstr "Correo Remitente"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_sender_name
+msgid "Sender Name"
+msgstr "Remitente"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_res_company_sender_name
+msgid "Sender name of the person sending the email"
+msgstr "Nombre del remitente de la persona que envía el correo electrónico."
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_line_route
+msgid "Sending Route"
+msgstr "Sending Route"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/wizard/account_document_sent.py:24
+#, python-format
+msgid "Sending to SRI"
+msgstr "Enviando al SRI"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_sent
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: oe_edocs
+#: model:ir.actions.server,name:oe_edocs.ir_cron_authorization_sri_ir_actions_server
+#: model:ir.actions.server,name:oe_edocs.ir_cron_sent_sri_ir_actions_server
+#: model:ir.cron,cron_name:oe_edocs.ir_cron_authorization_sri
+#: model:ir.cron,cron_name:oe_edocs.ir_cron_sent_sri
+#: model:ir.cron,name:oe_edocs.ir_cron_authorization_sri
+#: model:ir.cron,name:oe_edocs.ir_cron_sent_sri
+msgid "Sent Document to SRI"
+msgstr "Enviar documentos al SRI"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_invoice_sent
+msgid "Sent the selected invoices"
+msgstr "Envió las facturas seleccionadas"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_transport_permit_sent
+msgid "Sent the selected transport permit"
+msgstr "Envió el permiso de transporte seleccionado"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_withholding_sent
+msgid "Sent the selected withholdings"
+msgstr "Envió las retenciones seleccionadas"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_sequence
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_sequence
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Set to Cancel"
+msgstr "Anular"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_company_form_inherit_g3_edocs
+msgid "Settings D.E."
+msgstr "Configuración D.E."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Shipping Detail"
+msgstr "Detalle de Productos"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Show all records which has next action date is before today"
+msgstr "Mostrar todos los registros que tienen la próxima fecha de acción antes de hoy"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_edi_document.py:142
+#: code:addons/oe_edocs/models/account_edi_document.py:147
+#, python-format
+msgid "Signature %s"
+msgstr "Firma %s"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+msgid "Signed"
+msgstr "Firmado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_message_solution
+msgid "Solution message"
+msgstr "Mensaje de Solución"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_origin
+msgid "Source Document"
+msgstr "Doc. Fuente"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_address_starting
+msgid "Starting address where the vehicle leaves"
+msgstr "Dirección de partida donde el vehículo se dirige"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_state
+msgid "State"
+msgstr "Estado"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_state_signer
+msgid "State Signer"
+msgstr "Estado Firma"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_state
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Status"
+msgstr "Estado"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Subtotal without taxes"
+msgstr "Subtotal sin impuesto"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "TRANSPORT PERMIT"
+msgstr "Guía de Remisión"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_electronic_transport_permit
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Tax ID"
+msgstr "RUC"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_tmpl_invoice_date
+msgid "Temporary Date invoice"
+msgstr "Fecha de temporal"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_tmpl_invoice_number
+msgid "Temporary Entity"
+msgstr "Punto empresa temporal"
+
+#. module: oe_edocs
+#: selection:res.company,environment:0
+msgid "Test"
+msgstr "Pruebas"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_edi_document.py:213
+#, python-format
+msgid "The XML document is not created in the system"
+msgstr "El documento XML no se crea en el sistema"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_edi_document.py:212
+#, python-format
+msgid "The XML document was created in the system"
+msgstr "El documento XML fue creado en el sistema"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:401
+#, python-format
+msgid "The authorizations do not have a sequence!"
+msgstr "Las autorizaciones no tienen una secuencia.!"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_company_id
+msgid "The company this user is currently working for."
+msgstr "La compañía para la cual trabaja este usuario actualmente."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_invoice.py:217
+#, python-format
+msgid "The customer is not validated correctly"
+msgstr "El cliente no está validado correctamente."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:305
+#, python-format
+msgid "The driver is not validated correctly"
+msgstr "El controlador no está validado correctamente"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/res_company.py:100
+#, python-format
+msgid "The electronic signature is damaged"
+msgstr "La firma electrónica está dañada."
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_attachment_id
+msgid "The file generated by edi_format_id when the invoice is posted (and this document is processed)."
+msgstr "El archivo generado por edi_format_id cuando se registra la factura (y se procesa este documento)."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/wizard/account_document_sent.py:21
+#, python-format
+msgid "The invoice must be open to send to the SRI"
+msgstr "La factura debe estar abierta para enviar al SRI."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/wizard/account_document_sent.py:23
+#, python-format
+msgid "The invoice must not be authorized by the SRI"
+msgstr "La factura no debe ser autorizada por el SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_batch_name
+#: model:ir.model.fields,help:oe_edocs.field_transport_permit_name
+msgid "The name that will be used on transport permit"
+msgstr "El nombre que se usará en el permiso de transporte"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_res_partner_driver
+#: model:ir.model.fields,help:oe_edocs.field_res_users_driver
+msgid "The person is driver"
+msgstr "La persona es un conductor"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_withholding.py:120
+#, python-format
+msgid "The supplier is not validated correctly"
+msgstr "El proveedor no está validado correctamente."
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_error
+msgid "The text of the last error that happened during Electronic Invoice operation."
+msgstr "El texto del último error ocurrido durante la operación de Factura Electrónica."
+
+#. module: oe_edocs
+#: model:ir.actions.act_window,help:oe_edocs.action_transport_permit_out_form
+msgid "The transport permit facilitated and adjust the Collection of permits."
+msgstr "El permiso de transporte facilitó y ajustó la Colección de permisos."
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Tip"
+msgstr "Propina"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+msgid "To Cancel"
+msgstr "A anular"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+msgid "To Send"
+msgstr "A enviar"
+
+#. module: oe_edocs
+#: selection:account.edi.document,state:0
+msgid "To Sign"
+msgstr "A firmar"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Today Activities"
+msgstr "Actividades de Hoy"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Total"
+msgstr "Total"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Transfer Reason"
+msgstr "Razón Traslado"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Transport"
+msgstr "Transporte"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_transport_count
+#: model:ir.model.fields,field_description:oe_edocs.field_account_refund_invoice_transport_count
+msgid "Transport Count"
+msgstr "Conteo Guía de Remisión"
+
+#. module: oe_edocs
+#: selection:transport.permit,type:0
+msgid "Transport Inbound"
+msgstr "Entrada de Guía Remisión"
+
+#. module: oe_edocs
+#: selection:transport.permit,type:0
+msgid "Transport Outbound"
+msgstr "Salida de Guía Remisión"
+
+#. module: oe_edocs
+#: model:ir.actions.act_window,name:oe_edocs.action_transport_permit_out_form
+#: model:ir.actions.report,name:oe_edocs.account_transport_permit_electronics
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_transport_id
+#: model:ir.ui.menu,name:oe_edocs.menu_action_transport_permit_out
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_tree
+msgid "Transport Permit"
+msgstr "Guía de Remisión"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:207
+#: code:addons/oe_edocs/models/transport_permit.py:210
+#, python-format
+msgid "Transport Permit - %s"
+msgstr "Guía de Remisión - %s"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_filter
+msgid "Transport Permit Date"
+msgstr "Fecha Emisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_transport_permit_line_details_ids
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_transport_permit_line_details_ids
+msgid "Transport Permit Line Detalle"
+msgstr "Transport Permit Line Detalle"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_transport_permit_line_ids
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Transport Permit Lines"
+msgstr "Lineas de Guía de Remisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_transport_permit_id
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_line_transport_permit_id
+msgid "Transport Permit Reference"
+msgstr "Referencia"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_line_details_transport_line_detail_id
+msgid "Transport Permit Reference Line"
+msgstr "Transport Permit Reference Line"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_substitute_permit
+#: model:ir.model.fields,field_description:oe_edocs.field_account_refund_invoice_substitute_permit
+msgid "Transport Permit Substitute"
+msgstr "Sustitutiva Guía Remisión"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:466
+#, python-format
+msgid "Transport Permit must be cancelled in order to reset it to draft."
+msgstr "El permiso de transporte debe cancelarse para restablecerlo a borrador."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:454
+#, python-format
+msgid "Transport Permit must be in draft or open state in order to be cancelled."
+msgstr "El Permiso de Transporte debe estar en estado de borrador o abierto para poder ser anulado."
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_invoice_transport_permit_ids
+#: model:ir.model.fields,field_description:oe_edocs.field_account_refund_invoice_transport_permit_ids
+msgid "Transport Permits"
+msgstr "Guía de Remisión"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_additional_info_transport_id
+msgid "Transport Reference"
+msgstr "Referencia de guía"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_date_due
+msgid "Transport finish"
+msgstr "Fecha de final"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:373
+#, python-format
+msgid "Transport must be in draft state in order to validate it."
+msgstr "El transporte debe estar en estado de borrador para poder validarlo."
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_date_transport
+msgid "Transport start"
+msgstr "Fecha de inicio"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_type
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_type_action
+msgid "Type Action"
+msgstr "Tipo Acción"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_emission_code
+msgid "Type the emssion"
+msgstr "Tipo de emisión"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/sri.py:213
+#: code:addons/oe_edocs/models/sri.py:281
+#, python-format
+msgid "Unable to establish communication with SRI web service"
+msgstr "No se puede establecer comunicación con el servicio web SRI"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_edi_document.py:132
+#, python-format
+msgid "Unable to sign the password or the certificate is encountering problems"
+msgstr "No se puede firmar la contraseña o el certificado tiene problemas"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Unit Price"
+msgstr "Precio un."
+
+#. module: oe_edocs
+#: selection:res.company,state_signer:0
+msgid "Unverified"
+msgstr "No Valido"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_res_company_url_web
+msgid "Url Download"
+msgstr "Descargar URL"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_account_edi_document_sequence
+msgid "Used to order Companies in the company switcher"
+msgstr "Utilizado para ordenar las compañías al menú de cambio de compañía"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "VAT"
+msgstr "Identificación"
+
+#. module: oe_edocs
+#: selection:res.company,state_signer:0
+msgid "Valid"
+msgstr "Valido"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "Validate with SRI"
+msgstr "Validar por SRI"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_validation_id
+msgid "Validation"
+msgstr "Validación"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_code_validation_document_type_validation
+msgid "Validation Type"
+msgstr "Tipo de Validación"
+
+#. module: oe_edocs
+#: model:ir.model.fields,help:oe_edocs.field_code_validation_document_type_validation
+msgid "Validation type information SRI"
+msgstr "Información de tipo de validación SRI"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:209
+#, python-format
+msgid "Vendor Transport Permit"
+msgstr "Transportista"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_withholding_document_electronic
+msgid "Voucher"
+msgstr "Comprobante"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_transport_permit_type_document_id
+msgid "Voucher type"
+msgstr "Tipo comprobante"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.report_invoice_document_electronic
+msgid "Withhold"
+msgstr "Retener"
+
+#. module: oe_edocs
+#: model:ir.model.fields,field_description:oe_edocs.field_account_edi_document_withholding_id
+msgid "Withholding"
+msgstr "Retención"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_withholding.py:53
+#, python-format
+msgid "Withholding - %s"
+msgstr "Retención - %s"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.portal_my_invoices
+msgid "XML"
+msgstr "XML"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/res_company.py:126
+#, python-format
+msgid "You are in a TEST environment when sending to the SRI."
+msgstr "Se encuentra en un entorno de PRUEBA al enviar al SRI."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/res_company.py:79
+#, python-format
+msgid "You can not validate the electronic signature entered, verify the password or re-enter the signature again %s"
+msgstr "No puede validar la firma electrónica ingresada, verificar la contraseña o volver a ingresar la firma nuevamente %s"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:583
+#, python-format
+msgid "You can only delete an transport permit line if the transport permit is in draft state."
+msgstr "Solo puede eliminar una línea de permiso de transporte si el permiso de transporte está en estado de borrador."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:481
+#, python-format
+msgid "You cannot delete an transport permit after it has been validated (and received a number). You can set it back to \"Draft\" state and modify its content, then re-confirm it."
+msgstr "No puede eliminar un permiso de transporte después de que haya sido validado (y recibido un número). Puede volver a establecerlo en el estado \"Borrador\" y modificar su contenido, luego volver a confirmarlo."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/transport_permit.py:479
+#, python-format
+msgid "You cannot delete an transport permit which is not draft."
+msgstr "No se puede eliminar un permiso de transporte que no sea borrador."
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_edi_document.py:186
+#: code:addons/oe_edocs/models/account_edi_document.py:258
+#, python-format
+msgid "You have exceeded the number of attempts allowed per day 3 in the SRI.\n"
+"\n"
+"                Check the incidents that have occurred in the SRI Information. %s of %s"
+msgstr "Has superado el número de intentos permitidos por día 3 en el SRI.\n"
+"\n"
+"                Consulta las incidencias acaecidas en la Información del SRI. %s de %s"
+
+#. module: oe_edocs
+#: code:addons/oe_edocs/models/account_invoice.py:126
+#, python-format
+msgid "You have exceeded the number of attempts allowed per day 3 in the SRI.\n"
+"                        Check the incidents that have occurred in the SRI Information. %s of %s"
+msgstr "Ha superado el número de intentos permitidos por día 3 en el SRI.\n"
+"                        Consulta las incidencias acaecidas en la información del SRI. %s de %s"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "platform"
+msgstr "plataforma"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_transport_line_details
+msgid "transport line details"
+msgstr "Detalle de Guía"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_transport_permit
+msgid "transport permit"
+msgstr "Guía de remisión"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_transport_permit_line
+msgid "transport permit line"
+msgstr "Linea de guía de remisión"
+
+#. module: oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.invoice_purchase_clearance_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_invoice_form_inherit_oe_edocs
+#: model:ir.ui.view,arch_db:oe_edocs.view_transport_permit_out_form
+#: model:ir.ui.view,arch_db:oe_edocs.view_withholding_purchase_form_inherit_oe_edocs
+msgid "verify which document was authorized by SRI"
+msgstr "verifique qué documento fue autorizado por SRI"
+
+#. module: oe_edocs
+#: model:ir.model,name:oe_edocs.model_account_withholding
+msgid "withholding"
+msgstr "retención"
+

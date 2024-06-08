@@ -1,0 +1,186 @@
+/* --- Fonts --- */
+
+@font-face{
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins-Medium.otf);
+}
+
+.pos {
+    color: #000000;
+    font-size: 10px;
+}
+
+/*  b) the search box */
+
+.pos .searchbox {
+    position: absolute;
+    right: 2px;
+    margin-right: 10px;
+}
+.pos .searchbox input {
+    width: 250px;
+}
+
+/* c) The receipt screen */
+.pos-sale-ticket {
+    font-size: 13px;
+    width: 310px;
+    padding: 10px;
+    border: solid 0px rgb(220,220,220);
+    border-radius: 0px;
+    font-family: "Poppins";
+}
+
+.pos .pos-sale-ticket {
+    font-size: 13px;
+    width: 310px;
+    padding: 10px;
+    border: solid 0px rgb(220,220,220);
+    border-radius: 0px;
+    font-family: "Poppins";
+}
+
+.pos .pos-sale-ticket pre{
+    font-family: "Poppins";
+}
+
+/* e) The Client List Screen */
+
+.required > .label::after {
+	content: " *";
+}
+
+.pos .clientlist-screen .client-detail > .label{
+    width: 150px;
+}
+
+.pos .clientlist-screen .client-details input,
+.pos .clientlist-screen .client-details select
+{
+    width: 400px;
+    font-size: 15px;
+}
+
+.pos .clientlist-screen .client-details input.client-name {
+    width: 400px;
+}
+
+.pos .clientlist-screen .searchbox{
+    margin-left: -400px;
+}
+
+.pos .clientlist-screen .searchbox input{
+    width: 400px;
+}
+
+/*  ********* The OrderLineWidget  ********* */
+
+.pos .order .orderline.selected {
+	background-color: @odoo-color-silver;
+}
+
+.pos .order .orderline .info-list{
+    color: #000;
+}
+
+.pos .order .orderline .info-list em{
+    color: #000;
+}
+
+.pos .order .orderline .qty-info{
+	color: #000000;
+	font-weight: bold;
+	font-style: normal;
+}
+.pos .order .orderline .qty-info.not-available{
+	color:red;
+}
+
+.pos .order .summary .line .base_taxes{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.pos .order .summary .line .base_0{
+    font-size: 16px;
+    font-weight: normal;
+}
+.pos .order .summary .line .subtotal{
+    font-size: 16px;
+    font-weight: normal;
+}
+.pos .order .summary .line .subentry{
+    font-size: 16px;
+    font-weight: normal;
+}
+/* Payment Screen */
+.screen > .screen-content {
+	max-width: 100%;
+}
+
+/* Tamaño del logo */
+.pos .pos-logo {
+	height: 100%;
+}
+
+/*Autocomplete */
+.ui-autocomplete {
+   max-height: 500px !important;
+   height: auto;
+   min-height:0px;
+   width: 150px;
+   background: #ffffff;
+   overflow-y: auto;
+   overflow-x: hidden;
+   z-index: 1000 !important;
+   cursor: pointer;
+   list-style: none;
+   width: 210px;
+   padding-left: 0px;
+   border-radius: 20px;
+}
+
+.ui-autocomplete li{
+    padding: 10px 10px;
+}
+
+.ui-state-focus {
+    background: none;
+    background-color: #7f82acb3;
+}
+
+/* Shortcut Tips */
+
+table.shortcut-tips-table{
+    width: 100%;
+}
+
+table.shortcut-tips-table th{
+    background-color: #cfcfcf;
+}
+
+table.shortcut-tips-table th,td{
+    height: 7px;
+    text-align: left;
+    
+    padding: 1px 1px;
+    border-bottom: 1px solid #dddddd;
+}
+
+/*  ********* The PopupWidgets  ********* */
+.pos .popup .title {
+    padding: 10px;
+}
+
+/*  ********* The Numpad ********* */
+
+.pos .numpad button {
+    color: #000000;
+}
+
+
+/*  ********* The actionpad (payment, set customer) ********* */
+
+.pos .actionpad .button {
+    color: #000000;
+}

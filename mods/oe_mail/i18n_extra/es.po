@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* mail
+#	* oe_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-19 21:48+0000\n"
+"PO-Revision-Date: 2019-09-19 21:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mail
+#: model:ir.ui.menu,name:mail.mail_channel_menu_root_chat
+#: model:ir.ui.view,arch_db:mail.res_config_settings_view_form
+msgid "Discuss"
+msgstr "Mensajería"
+
+#. module: mail
+#: model:ir.model,name:mail.model_mail_channel
+msgid "Discussion channel"
+msgstr "Canal de conversación"
+
+#. module: mail
+#: model:mail.message.subtype,name:mail.mt_comment
+msgid "Discussions"
+msgstr "Mensajería"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/client_action.xml:11
+#, python-format
+msgid "Odoo needs your permission to"
+msgstr "El sistema necesita su permiso para"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/chatter.xml:60
+#, python-format
+msgid "Schedule activity"
+msgstr "Registrar actividad"
+
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/activity.xml:6
+#, python-format
+msgid "Planned activities"
+msgstr "Registros planificadas"
+
+#. module: mail
+#: code:addons/mail/wizard/invite.py:29
+#, python-format
+msgid "%(user_name)s invited you to follow %(document)s document: %(title)s"
+msgstr "%(user_name)s te invitó a seguir %(document)s documento: %(title)s"
+
+#. module: mail
+#: code:addons/mail/wizard/invite.py:31
+#, python-format
+msgid "%(user_name)s invited you to follow a new document."
+msgstr "%(user_name)s te invitó a seguir un nuevo documento."
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/xml/chatter.xml:60
+#, python-format
+msgid "Schedule activity"
+msgstr "Registrar actividad"
+
+#. module: mail
+#: selection:res.users,notification_type:0
+msgid "Handle in Odoo"
+msgstr "Manejar en em.pren.do"
+
+#. module: mail
+#: model:ir.ui.view,arch_db:mail.message_user_assigned
+msgid "Odoo"
+msgstr "AppEcuaOnline"
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/client_action.js:898
+#, python-format
+msgid ""
+"Odoo has now the permission to send you native notifications on this device."
+msgstr ""
+"El sistema tiene ahora permisos para enviarle notificaciones nativas en este "
+"dispositivo."
+
+#. module: mail
+#. openerp-web
+#: code:addons/mail/static/src/js/client_action.js:895
+#, python-format
+msgid ""
+"Odoo will not have the permission to send native notifications on this "
+"device."
+msgstr ""
+"El sistema no tendrá permisos para enviar notificaciones nativas en este "
+"dispositivo."
+
+#. module: mail
+#: model:ir.model.fields,help:mail.field_res_users_notification_type
+msgid ""
+"Policy on how to handle Chatter notifications:\n"
+"- Emails: notifications are sent to your email\n"
+"- Odoo: notifications appear in your Odoo Inbox"
+msgstr ""
+"Política de gestión de notificaciones del chat:\n"
+"- Emails: las notificaciones son enviadas a su email\n"
+"- El sistema: las notificaciones aparecen en su bandeja de em.pren.do"
+
+#. module: mail
+#: model:ir.model.fields,help:mail.field_mail_alias_alias_model_id
+#: model:ir.model.fields,help:mail.field_mail_alias_mixin_alias_model_id
+#: model:ir.model.fields,help:mail.field_mail_channel_alias_model_id
+#: model:ir.model.fields,help:mail.field_mail_test_alias_model_id
+msgid ""
+"The model (Odoo Document Kind) to which this alias corresponds. Any incoming"
+" email that does not reply to an existing record will cause the creation of "
+"a new record of this model (e.g. a Project Task)"
+msgstr ""
+"El modelo (Tipo de documento de AppEcuaOnline) al que corresponde este seudónimo. "
+"Cualquier correo entrante que no sea respuesta a un registro existente, "
+"causará la creación de un nuevo registro de este modelo (por ejemplo, una "
+"tarea de proyecto)."
+
+#. module: mail
+#: model:ir.model.fields,help:mail.field_res_config_settings_alias_domain
+msgid ""
+"If you have setup a catch-all email domain redirected to the Odoo server, "
+"enter the domain name here."
+msgstr ""
+"Si tiene un dominio de correo electrónico general redireccionado a un "
+"servidor de AppEcuaOnline, ponga el nombre del dominio aquí."
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+        <template id="assets" name="oe_pos_mrp_order assets"  inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+            	<!-- JS -->
+                <script type="text/javascript" src="/oe_pos_mrp/static/src/js/models.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

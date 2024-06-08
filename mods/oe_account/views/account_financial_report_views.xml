@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+	    <record id="view_account_financial_report_form_inherit_oe_account" model="ir.ui.view">
+	        <field name="name">>account.financial.report.form.inherit.oe_account</field>
+	        <field name="model">account.financial.report</field>
+	        <field name="inherit_id" ref="account.view_account_financial_report_form"/>
+	        <field name="arch" type="xml">
+	        
+	            <xpath expr="//field[@name='style_overwrite']" position="before">
+	                <field name="beginning_balance" />
+	            </xpath>
+	            
+	        </field>
+	    </record>
+    
+    </data>
+</odoo>

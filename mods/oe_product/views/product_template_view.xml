@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+	
+		<record id="product_template_only_form_view_inherit_oe_product" model="ir.ui.view">
+	        <field name="name">product.template.product.form.inherit.oe_product</field>
+	        <field name="model">product.template</field>
+	        <field name="inherit_id" ref="product.product_template_form_view"/>
+	        <field name="arch" type="xml">
+	        	
+				<xpath expr="/form/sheet/div[hasclass('oe_title')]/div[@name='options']" position="inside">
+	                <field name="is_combo"/>
+	                <label for="is_combo"/>
+	            </xpath>
+	        	
+	        	<xpath expr="//field[@name='list_price']" position="after">
+	        		<field name="last_cost"/>
+	        	</xpath>
+	        	
+	            <xpath expr="//field[@name='company_id']" position="before">
+					<field name="filename_product" invisible="1" attrs="{'invisible': [('sale_ok','=',False)]}"/>
+					<field name="sheet_product_id" filename="filename_product" widget="binary" attrs="{'invisible': [('sale_ok','=',False)]}"/>
+					<field name="template_id" attrs="{'invisible': [('sale_ok','=',False)]}"/>
+	            </xpath>
+	            
+	            <xpath expr="/form/sheet/notebook/page[@name='sales']" position="after">
+	                <page name="combo_product" string="Combo Items" attrs="{'invisible':[('is_combo', '=', False)]}">
+	                    <field name="combo_product_ids">
+	                        <tree editable="bottom">
+	                            <field name="product_id" options="{'no_create': True}"/>
+	                            <field name="product_quantity"/>
+	                            <field name="uom_id" readonly="1"/>
+	                        </tree>
+	                    </field>
+	                </page>
+	                <page name="price_history" string="Price History"> <!-- attrs="{'invisible':[('purchase_ok','=',False)]}" -->
+	                	<field name="history_price_ids" readonly="1">
+	                        <tree editable="bottom">
+	                            <field name="product_id" options="{'no_create': True}" invisible="1"/>
+	                            <field name="datetime"/>
+	                            <field name="cost"/>
+	                        </tree>
+	                    </field>
+	                </page>
+	            </xpath>
+	            
+	        </field>
+		</record>
+		
+	</data>
+</odoo>

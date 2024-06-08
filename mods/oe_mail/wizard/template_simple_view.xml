@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+		<record id="template_simple_form_view" model="ir.ui.view">
+            <field name="name">template.simple.form.view</field>
+            <field name="model">template.simple</field>
+            <field name="arch" type="xml">
+                <form string="Template Simple">
+                    <group>
+                        <field name="name"/>
+                        <field name="body"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    
+    </data>
+</odoo>

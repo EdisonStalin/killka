@@ -1,0 +1,398 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* oe_web
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-18 13:11+0000\n"
+"PO-Revision-Date: 2022-07-18 13:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/fields/field_utils_format.js:31
+#: code:addons/oe_web/static/src/js/fields/field_utils_format.js:37
+#: code:addons/oe_web/static/src/js/fields/field_utils_format.js:42
+#: code:addons/oe_web/static/src/js/fields/field_utils_format.js:52
+#, python-format
+msgid "'%s' is not a correct float"
+msgstr "'%s' no es un valor correcto"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/dashboard.xml:7
+#, python-format
+msgid "1.0 (basado en Odoo 11.0 VC)"
+msgstr "1.0 (basado en Odoo 11.0 VC)"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_ir_cron_channel_ids
+msgid "Add Channels"
+msgstr "Añadir canales"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_ir_cron_partner_ids
+msgid "Add Followers"
+msgstr "Añadir seguidores"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/dashboard.xml:8
+#, python-format
+msgid "App"
+msgstr "App"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/listview_button_view.xml:20
+#, python-format
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/progress_bar.xml:11
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/progress_bar.xml:5
+#, python-format
+msgid "Cancel ongoing operation?"
+msgstr "Cancelar operación en curso?"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_cancellable
+msgid "Cancellable"
+msgstr "Cancelar"
+
+#. module: oe_web
+#: selection:web.progress,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/progress_bar.js:131
+#, python-format
+msgid "Cancelling..."
+msgstr "Cancelando..."
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/field_open_tab.js:47
+#, python-format
+msgid "Click in order to open on new tab"
+msgstr "Haga clic para abrir en una nueva pestaña"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_code
+msgid "Code"
+msgstr "Código"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/fields/field_registry.js:26
+#, python-format
+msgid "Create: "
+msgstr "Creando: "
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_create_uid
+msgid "Created by"
+msgstr "Creado por:"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: oe_web
+#: model:res.groups,name:oe_web.group_disallow_export_view_data_excel
+msgid "Disallow Export View Data to Excel"
+msgstr "No permitir exportar datos de vista a Excel"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_done
+#: selection:web.progress,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/dashboard.xml:10
+#, python-format
+msgid "EcuaOnline"
+msgstr "EcuaOnline"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_time_elapsed
+msgid "Elapsed Time"
+msgstr "Tiempo transcurrido"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_ir_cron_template_id
+msgid "Email Template"
+msgstr "Plantilla de correo electrónico"
+
+#. module: oe_web
+#: model:ir.ui.view,arch_db:oe_web.external_layout_background
+#: model:ir.ui.view,arch_db:oe_web.external_layout_boxed
+#: model:ir.ui.view,arch_db:oe_web.external_layout_clean
+#: model:ir.ui.view,arch_db:oe_web.external_layout_standard
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/progress_bar.js:77
+#, python-format
+msgid "Est. time left: "
+msgstr "Est. tiempo restante: "
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/web_export_template_view.xml:6
+#, python-format
+msgid "Export xls"
+msgstr "Exportar xls o xlsx"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/web_export_view.js:88
+#, python-format
+msgid "False"
+msgstr "Falso"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_id
+msgid "ID"
+msgstr "ID"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/button_import.xml:9
+#, python-format
+msgid "Import"
+msgstr "Importar"
+
+#. module: oe_web
+#: model:ir.ui.view,arch_db:oe_web.external_layout_background
+#: model:ir.ui.view,arch_db:oe_web.external_layout_boxed
+#: model:ir.ui.view,arch_db:oe_web.external_layout_clean
+#: model:ir.ui.view,arch_db:oe_web.external_layout_standard
+msgid "Invoice Data"
+msgstr "Datos de Facturación"
+
+#. module: oe_web
+#: code:addons/oe_web/odoo/models.py:129
+#, python-format
+msgid "Iterating on model {}"
+msgstr "Iterando en modelo {}"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress___last_update
+msgid "Last Modified on"
+msgstr "Fecha de modificación"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_write_uid
+msgid "Last Updated by"
+msgstr "Ultima Actualización por"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_write_date
+msgid "Last Updated on"
+msgstr "Actualizado en"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_msg
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/progress_bar.xml:7
+#, python-format
+msgid "No"
+msgstr "No"
+
+#. module: oe_web
+#: selection:web.progress,state:0
+msgid "Ongoing"
+msgstr "En marcha"
+
+#. module: oe_web
+#: model:ir.model,name:oe_web.model_web_progress
+msgid "Operation Progress"
+msgstr "Progreso de la operación"
+
+#. module: oe_web
+#: code:addons/oe_web/models/web_progress.py:369
+#, python-format
+msgid "Operation has been cancelled by"
+msgstr "La operación ha sido cancelada por"
+
+#. module: oe_web
+#: model:ir.ui.view,arch_db:oe_web.external_layout_background
+#: model:ir.ui.view,arch_db:oe_web.external_layout_boxed
+#: model:ir.ui.view,arch_db:oe_web.external_layout_clean
+#: model:ir.ui.view,arch_db:oe_web.external_layout_standard
+msgid "Page:\n"
+"	                    <span class=\"page\"/>\n"
+"	                    of\n"
+"	                    <span class=\"topage\"/>"
+msgstr "Página:\n"
+"	                    <span class=\"page\"/>\n"
+"	                    de\n"
+"	                    <span class=\"topage\"/>"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/fields/field_utils_format.js:87
+#, python-format
+msgid "Percent field value must be 0 to 100 only"
+msgstr "El valor del campo de porcentaje debe ser solo de 0 a 100"
+
+#. module: oe_web
+#: model:ir.ui.view,arch_db:oe_web.external_layout_background
+#: model:ir.ui.view,arch_db:oe_web.external_layout_boxed
+#: model:ir.ui.view,arch_db:oe_web.external_layout_clean
+#: model:ir.ui.view,arch_db:oe_web.external_layout_standard
+msgid "Phone:"
+msgstr "Teléfono:"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/web_progress_menu.xml:6
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_progress
+#, python-format
+msgid "Progress"
+msgstr "Progreso"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_progress_total
+msgid "Progress Total"
+msgstr "Total Progreso"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_recur_depth
+msgid "Recursion depth"
+msgstr "Profundidad de recursividad"
+
+#. module: oe_web
+#: model:ir.model,name:oe_web.model_ir_cron
+msgid "Scheduled Actions"
+msgstr "Acciones planificadas"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/fields/field_registry.js:26
+#, python-format
+msgid "Search: "
+msgstr "Buscar: "
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/listview_button_view.xml:8
+#, python-format
+msgid "Select Column(s)"
+msgstr "Seleccionar columna(s)"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_state
+msgid "State"
+msgstr "Estado"
+
+#. module: oe_web
+#: model:ir.ui.view,arch_db:oe_web.external_layout_background
+#: model:ir.ui.view,arch_db:oe_web.external_layout_boxed
+#: model:ir.ui.view,arch_db:oe_web.external_layout_clean
+#: model:ir.ui.view,arch_db:oe_web.external_layout_standard
+msgid "Tax ID"
+msgstr "RUC"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_time_left
+msgid "Time Left"
+msgstr "Tiempo Restante"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_time_total
+msgid "Time Total"
+msgstr "Tiempo Total"
+
+#. module: oe_web
+#: model:ir.model.fields,field_description:oe_web.field_web_progress_total
+msgid "Total"
+msgstr "Total"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/web_export_view.js:88
+#, python-format
+msgid "True"
+msgstr "Verdad"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/js/field_open_tab.js:48
+#, python-format
+msgid "Widget"
+msgstr "Widget"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/progress_bar.xml:6
+#, python-format
+msgid "Yes"
+msgstr "Si"
+
+#. module: oe_web
+#: model:ir.model,name:oe_web.model_base
+msgid "base"
+msgstr "base"
+
+#. module: oe_web
+#: code:addons/oe_web/odoo/models.py:160
+#, python-format
+msgid "exporting batches of 1000 lines"
+msgstr "exportando lotes de 1000 líneas"
+
+#. module: oe_web
+#: code:addons/oe_web/odoo/models.py:142
+#, python-format
+msgid "importing to {}"
+msgstr "importando a {}"
+
+#. module: oe_web
+#: model:ir.model,name:oe_web.model_ir_actions_report
+msgid "ir.actions.report"
+msgstr "ir.actions.report"
+
+#. module: oe_web
+#: model:ir.model,name:oe_web.model_ir_ui_view
+msgid "ir.ui.view"
+msgstr "ir.ui.view"
+
+#. module: oe_web
+#. openerp-web
+#: code:addons/oe_web/static/src/xml/datepicker.xml:6
+#, python-format
+msgid "off"
+msgstr "off"
+

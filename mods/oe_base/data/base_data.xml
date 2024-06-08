@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data noupdate="1">
+    	
+    	<!-- Alter Basic Partner  -->
+    	<record id="base.main_partner" model="res.partner" context="{'default_is_company': True}">
+			<field name="firstname">BYRON JEFFERSON</field>
+			<field name="lastname">TIPAN ZARUMA</field>
+			<field name="comercial_name">App EcuaOnline</field>
+			<field name="vat">1723045736001</field>
+            <field name="company_id" eval="None"/>
+            <field name="supplier" eval="False"/>
+            <field name="customer" eval="False"/>
+            <field name="company_type">person</field>
+            <field name="is_company" eval="False"/>
+            <field name="street">Calle Linea Ferrea LT 8B</field>
+            <field name="city">Quito</field>
+            <field name="state_id" ref="oe_base.state_ec_17"/>
+            <field name="zip">170404</field>
+            <field name="phone">02-23761</field>
+            <field name="mobile">0979323156</field>
+            <field name="email">appecuaonline@gmail.com</field>
+            <field name="website">https://www.appecuaonline.com</field>
+    	</record>
+    	
+    	<!-- Alter Basic Company  -->
+        <record id="base.main_company" model="res.company">
+            <field name="name">BYRON JEFFERSON TIPAN ZARUMA</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="logo" type="base64" file="oe_base/static/src/img/logo_login.png"/>
+            <field name="name_software">App EcuaOnline</field>
+            <field name="web_software">https://www.appecuaonline.com</field>
+            <field name="documentation_url">https://documentacion.appecuaonline/</field>
+            <field name="support_url">https://ayuda.appecuaonline/</field>
+            <field name="account_url">https://appecuaonline/mi-cuenta/</field>
+        </record>
+        
+	</data>
+
+	<data noupdate="1">
+
+		<record model="res.partner" id="final_consumer">
+			<field name="firstname">CONSUMIDOR FINAL</field>
+			<field name="name">CONSUMIDOR FINAL</field>
+			<field name="vat">9999999999999</field>
+			<field name="l10n_latam_identification_type_id" ref="oe_base.it_fc"/>
+			<field name="is_validation_vat" eval="True"/>
+			<field name="street">Calle Linea Ferrea LT 8B</field>
+            <field name="city">Quito</field>
+            <field name="state_id" ref="oe_base.state_ec_17"/>
+            <field name="zip">170404</field>
+            <field name="phone">02-23761</field>
+            <field name="mobile">0979323156</field>
+			<field name="email">appecuaonline@gmail.com</field>
+			<field name="customer" eval="True"/>
+			<field name="supplier" eval="False"/>
+		</record>
+
+		<record id="base.ec" model="res.country">
+            <field name="currency_id" ref="base.USD" />
+            <field name="vat_label">RUC</field>
+        </record>
+        
+        <record id="base.public_partner" model="res.partner">
+            <field name="firstname">Administrador</field>
+            <field name="name">Administrador</field>
+            <field name="email">appecuaonline@gmail.com</field>
+            <field name="customer" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="base.partner_root" model="res.partner">
+            <field name="firstname">Administrador</field>
+            <field name="name">Administrador</field>
+            <field name="email">appecuaonline@gmail.com</field>
+            <field name="customer" eval="False"/>
+        </record>
+        
+	</data>
+
+	<data noupdate="0">
+
+		<record id="base.paperformat_euro" model="report.paperformat">
+            <field name="name">European A4</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">45</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">30</field>
+            <field name="dpi">90</field>
+        </record>
+
+		<record id="paperformat_A5" model="report.paperformat">
+            <field name="name">Format External A5</field>
+            <field name="default" eval="True" />
+            <field name="format">A5</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">25</field>
+            <field name="dpi">90</field>
+        </record>
+
+		<record id="paperformat_ticket" model="report.paperformat">
+            <field name="name">Ticket</field>
+            <field name="default" eval="False"/>
+            <field name="format">custom</field>
+            <field name="page_height">210</field>
+            <field name="page_width">80</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0.50</field>
+            <field name="margin_bottom">1</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">110</field>
+        </record>
+
+		<record id="paperformat_a4" model="report.paperformat">
+            <field name="name">Format A4 External</field>
+            <field name="default" eval="False"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">35</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">30</field>
+            <field name="dpi">110</field>
+        </record>
+
+    </data>
+</odoo>    

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+    
+		<!-- Users Extension -->
+    	
+		<record id="view_users_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">res.users.form.inherit.oe_account</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+            
+            	<xpath expr="//notebook/page[2]" position="after">
+            		<page name="settings_account" string="Invoice">
+            			<group>
+            				<field string="Allowed Authorizations" name="authorization_ids" widget="many2many_tags"
+            					options="{'no_create': True, 'no_edit': True}"/>
+            			</group>            			
+            		</page>            		
+            	</xpath>
+            
+            </field>
+    	</record>
+    
+    </data>
+</odoo>    

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+    	<record id="view_bank_statement_tree_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.bank.statement.tree.inherit.oe_account</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_tree"/>
+            <field name="arch" type="xml">
+            
+            	<xpath expr="//field[@name='date']" position="after">
+            		<field name="date_close"/>
+            	</xpath>
+            	
+            </field>
+		</record>
+    
+    	<record id="view_bank_statement_form_inherit_oe_account" model="ir.ui.view">
+            <field name="name">account.bank.statement.form.inherit.oe_account</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+            	
+            	<xpath expr="//button[@name='%(account.action_bank_reconcile_bank_statements)d']" position="attributes">
+            		<attribute name="invisible">0</attribute>
+            	</xpath>
+            	
+            	<xpath expr="//button[@name='check_confirm_bank']" position="before">
+            		<!--button name="action_review_payments" string="Review payments" type="object"
+            			attrs="{'invisible':['|','|',('all_lines_reconciled','=',True),('line_ids','=',[]),('state', '!=', 'open')]}"/-->
+            		<button name="action_cancel_reconciliation" string="Revert reconciliation" type="object"/>
+            	</xpath>
+            	
+            	<xpath expr="//div[@name='button_box']" position="inside">
+					<button class="oe_stat_button" name="button_journal_items"
+	                    	string="Journal Items" type="object"
+	                    	attrs="{'invisible':[('move_line_count','=', 0)]}" icon="fa-bars"/>
+                    <button type="object" class="oe_stat_button" icon="fa-bars" name="button_not_reconciled"
+                        attrs="{'invisible': [('count_no_payment', '=', 0)]}" context="{'default_search_journal_id': journal_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="count_no_payment" widget='statinfo' nolabel="1"/>
+                            </span>
+                            <span class="o_stat_text">Payments not Reconciled</span>
+                        </div>
+                    </button>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='date']" position="after">
+            		<field name="date_close"/>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='line_ids']/tree" position="attributes">
+            		<attribute name="decoration-muted">False</attribute>
+            		<attribute name="decoration-success">journal_entry_ids</attribute>
+            	</xpath>
+
+            	<xpath expr="//field[@name='line_ids']/tree/field[@name='ref']" position="attributes">
+            		<attribute name="required">1</attribute>
+            		<attribute name="groups"></attribute>
+            	</xpath>
+            	
+            	<xpath expr="//field[@name='line_ids']/tree/field[@name='amount']" position="before">
+            		<field name="transaction_type"/>
+            		<field name="payment_method_id" readonly="1"/>
+            		<!--field name="move_name" attrs="{'readonly': [('state','=','confirm')]}"/-->
+            		<field name="state" invisible="1"/>
+            	</xpath>
+            	
+            	<xpath expr="//page[@name='statement_line_ids']" position="after">
+	                <page string="Debit" name="statement_debit_ids">
+	                    <field name="move_debit_ids" context="{'date':date}" attrs="{'readonly': [('state','!=','open')]}">
+	                        <tree editable="bottom" string="Statement debit">
+								<field name="payment_id" required="1" options="{'no_create': True}"
+									domain="[('journal_id','=',parent.journal_id),('payment_type','=','inbound'),('state','=','posted')]"/>
+	                            <field name="name" invisible="1"/>
+	                            <field name="date" readonly="1"/>
+	                            <field name="partner_id" readonly="1"/>
+	                            <field name="ref" readonly="1"/>
+	                            <field name="payment_amount"/>
+	                            <field name="payment_state"/>
+	                            <field name="statement_id" invisible="1"/>
+	                            <field name="statement_line_id" readonly="0" options="{'no_create': True}"
+	                            	domain="[('journal_id','=',parent.journal_id),('amount','&gt;',0),('statement_id','=',statement_id)]"/>
+	                        </tree>
+	                    </field>
+	                </page>
+	                <page string="Credit" name="statement_credit_ids">
+	                    <field name="move_credit_ids" context="{'date':date}" attrs="{'readonly': [('state','!=','open')]}">
+	                        <tree editable="bottom" string="Statement credit">
+	                            <field name="payment_id" required="1" options="{'no_create': True}"
+	                            	domain="[('journal_id','=',parent.journal_id),('payment_type','=','outbound'),('state','=','posted')]"/>
+	                            <field name="name" invisible="1"/>
+	                            <field name="date" readonly="1"/>
+	                            <field name="partner_id" readonly="1"/>
+	                            <field name="ref" readonly="1"/>
+	                            <field name="payment_amount"/>
+	                            <field name="payment_state"/>
+	                            <field name="statement_id" invisible="1"/>
+	                            <field name="statement_line_id" readonly="0" options="{'no_create': True}"
+	                            	domain="[('journal_id','=',parent.journal_id),('amount','&lt;',0),('statement_id','=',statement_id)]"/>
+	                        </tree>
+	                    </field>
+	                </page>
+            	</xpath>
+            	
+            </field>
+		</record>            
+    
+    	<menuitem id="menu_account_bank_statement" parent="account.menu_finance_entries_management"
+    		action="account.action_bank_statement_tree" sequence="1"/>
+		
+    </data>
+</odoo>    

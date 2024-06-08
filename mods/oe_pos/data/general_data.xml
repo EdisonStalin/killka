@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data noupdate="0">
+    
+		<record id="pos_service_category" model="pos.category">
+			<field name="name">POS Service</field>
+			<field name="not_view_pos" eval="1"/>
+		</record>
+
+		<record id="point_of_sale.product_product_tip" model="product.product">
+            <field name="name">Domicilio</field>
+            <field name="default_code">delivery</field>
+            <field name="lst_price">1.0</field>
+            <field name="sale_ok" eval="1"/>
+            <field name="purchase_ok" eval="0"/>
+            <field name="type">service</field>
+            <field name="pos_categ_id" ref="oe_pos.pos_service_category"/>
+            <field name="active" eval="1"/>
+        </record>
+		
+		<record id="oe_product.product_product_tip" model="product.product">
+            <field name="sale_ok" eval="1"/>
+            <field name="pos_categ_id" ref="oe_pos.pos_service_category"/>
+        </record>
+		
+		<!-- Cash Line -->
+		
+		<record model="account.cashbox.line" id="cash_001">
+			<field name="coin_value">0.01</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_005">
+			<field name="coin_value">0.05</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_010">
+			<field name="coin_value">0.10</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_025">
+			<field name="coin_value">0.25</field>
+		</record>
+		
+		<record model="account.cashbox.line" id="cash_050">
+			<field name="coin_value">0.50</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_1">
+			<field name="coin_value">1.00</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_2">
+			<field name="coin_value">2.00</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_5">
+			<field name="coin_value">5.00</field>
+		</record>
+		
+		<record model="account.cashbox.line" id="cash_10">
+			<field name="coin_value">10.00</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_20">
+			<field name="coin_value">20.00</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_50">
+			<field name="coin_value">50.00</field>
+		</record>
+
+		<record model="account.cashbox.line" id="cash_100">
+			<field name="coin_value">100.00</field>
+		</record>
+
+        <record model="pos.config" id="point_of_sale.pos_config_main">
+            <field name="name">BOX Main</field>
+            <field name="default_partner_id" ref="oe_base.final_consumer"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+
+		<!-- Purchase Clearance -->
+
+        <record id="invoice_purchase_clearance_tree" model="ir.ui.view">
+            <field name="name">account.invoice.purchase.clearance.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Purchase Clearance">
+                    <field name="partner_id" groups="base.group_user" string="Supplier"/>
+                    <field name="date_invoice"/>
+                    <field name="type_document_id"/>
+                    <field name="is_electronic"/>
+                    <field name="name" string="Number"/>
+                    <field name="commercial_partner_id" invisible="1"/>
+                    <field name="reference" invisible="1"/>
+                    <field name="name" invisible="1"/>
+                    <field name="journal_id" invisible="1"/>
+                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    <field name="user_id"/>
+                    <field name="date_due"/>
+                    <field name="origin"/>
+                    <field name="amount_total_signed" string="Total" sum="Total"/>
+                    <field name="amount_untaxed_0" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            		<field name="amount_untaxed"/>
+                    <field name="amount_withhold" groups="account.group_account_invoice"/>
+                    <field name="residual_signed" string="Amount Due" sum="Amount Due" groups="account.group_account_invoice"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="company_currency_id" invisible="1"/>
+                    <field name="authorization_number" invisible="1"/>
+                    <field name="state"/>
+                    <field name="type" invisible="context.get('type',True)"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="invoice_purchase_clearance_form" model="ir.ui.view">
+            <field name="name">account.invoice.purchase.clearance.form</field>
+            <field name="model">account.invoice</field>
+            <field name="priority">3</field>
+            <field name="arch" type="xml">
+                <form string="Purchase Clearance">
+                <header>
+                	<button name="action_invoice_sent" type="object" string="Send by Email" attrs="{'invisible':['|',('sent','=',True), ('state', 'not in', ('open','paid'))]}" class="oe_highlight o_invoice_send" groups="base.group_user"/>
+                    <button name="action_invoice_sent" type="object" string="Send by Email" attrs="{'invisible':['|',('sent','=',False), ('state', 'not in', ('open','paid'))]}" groups="base.group_user"/>
+                    <button name="action_invoice_open" type="object" states="draft" string="Validate" class="oe_highlight" groups="account.group_account_invoice"/>
+                    <button name="%(account.action_account_invoice_payment)d" type="action" states="open" string="Register Payment" 
+                    	groups="account.group_account_invoice" class="oe_highlight" context="{'default_method_id': method_id}"/>                        
+                    <button name="action_invoice_draft" states="cancel" string="Set to Draft" type="object" groups="account.group_account_invoice"/>
+                    <button name="action_invoice_cancel" type="object" states="draft,open" string="Cancel Clearance" groups="account.group_account_invoice"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,paid"/>
+                </header>
+                <div groups="account.group_account_invoice" class="alert alert-info" role="alert" style="margin-bottom:0px;" attrs="{'invisible': [('has_outstanding','=',False)]}">
+                    You have <bold><a class="alert-link" href="#outstanding" role="button">outstanding debits</a></bold> for this supplier. You can allocate them to mark this bill as paid.
+                </div>
+                <field name="has_outstanding" invisible="1"/>
+                <sheet string="Purchase Clearance">
+                    <div name="title">
+                        <h1 class="mt0">                            
+                            <div attrs="{'invisible': [('sequence_number_next_prefix','=',False)]}">
+                                <field name="sequence_number_next_prefix" class="oe_inline"/>
+                                <field name="sequence_number_next" class="oe_inline" readonly="1"/>
+                            </div>
+                        </h1>
+                    </div>
+                    <field name="type" invisible="1"/>
+                    <field name="sent" invisible="1"/>
+                    <group>
+                        <group>
+                            <field string="Supplier" name="partner_id" domain="[('supplier', '=', True)]"
+                              context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1, 'default_company_type': 'company', 'default_is_validation_vat': 1}"/>
+                            <field name="number" attrs="{'readonly': ['|', ('manual_sequence','=',False),('state','!=','draft')]}"/>
+                            <field name="reference" string="Vendor Reference"/>
+                            <field name="payment_term_id" options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="origin" attrs="{'invisible': [('origin', '=', False)]}"/>
+                            <field name="tax_support_id" attrs="{'readonly': [('state', '!=', 'draft')]}" required="1" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="type_document_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" 
+            					options="{'no_create': True, 'no_open': True}" domain="[('type', 'in', ['in', 'both'])]"/>
+                            <field name="date_invoice" string="Bill Date"/>
+                            <field name="date_due" attrs="{'readonly': ['|',('payment_term_id','!=',False), ('state', 'in', ['open', 'paid'])]}" force_save="1"/>
+                            <field name="move_name" invisible="1"/>
+                            <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                            <field name="company_currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Bill" name="details">
+                            <field context="{'type': type, 'journal_id': journal_id}" name="invoice_line_ids">
+                                <tree string="Bill lines" editable="bottom">
+                                    <field name="sequence" widget="handle" />
+                                    <field name="product_id"
+                                        context="{'partner_id': parent.partner_id}" domain="[('purchase_ok','=',True)]"/>
+                                    <field name="name"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="account_id" groups="account.group_account_user" options="{'no_create': True}"
+                                        domain="[('company_id', '=', parent.company_id), ('internal_type', '=', 'other'), ('deprecated', '=', False)]"/>
+                                    <field name="account_analytic_id" groups="analytic.group_analytic_accounting"
+                                        domain="[('company_id', '=', parent.company_id)]"
+                                        context="{'default_partner_id': parent.partner_id}"/>
+                                    <field name="analytic_tag_ids" invisible="1" groups="analytic.group_analytic_accounting" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id" groups="product.group_uom" options="{'no_create': True}"/>
+                                    <field name="price_unit"/>
+                                    <field name="discount"/>
+                                    <field name="invoice_line_tax_ids" widget="many2many_tags" options="{'no_create': True}" context="{'type':parent.type}"
+                                        domain="['&amp;', ('type_tax_use','in', ['purchase']), ('company_id', '=', parent.company_id),
+                                        	('tax_group_id.type','in',['iva','iva0','nobiva','exiva','ice'])]"/>
+                                    <field name="tax_tag_ids" readonly="1" widget="many2many_tags" width="0.5"
+										force_save="1" string="Tax Grids" groups="oe_account.group_manager_form"
+				                    	options="{'no_open': True, 'no_create': True}" domain="[('applicability', '=', 'taxes')]"/>
+                                    <field name="price_subtotal"/>
+									<field name="price_tax" groups="base.group_no_one"/>
+									<field name="price_total" widget="monetary" groups="base.group_no_one"/>
+                                    <field name="currency_id" invisible="1"/>
+                                </tree>
+                            </field>
+                            <group>
+								<group>
+			                        <div class="oe_inline">
+			                        	<h2><label for="line_info_ids" string="Additional Information"/></h2>
+										<field name="line_info_ids" nolabel="1" widget="one2many_list" 
+					            			mode="tree" context="{'default_invoice_id': active_id}">
+					            			<tree string="Information Additional Lines" editable="bottom">
+					            				<field name="sequence" widget="handle"/>
+					            				<field name="invoice_id" invisible="1"/>
+					            				<field name="name"/>
+					            				<field name="value_tag"/>
+					            			</tree>
+					            		</field>
+					            		<h2><label for="comment" string="Observations"/></h2>
+					            		<field name="comment" placeholder="Observations..."/>
+			                        </div>
+								</group>
+                                <group class="oe_subtotal_footer oe_right">
+									<field name="details_tax" widget="boolean_toggle"/>
+				            		<field name="subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_discount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_subtotal" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_no_oject_tax" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+						            <field name="amount_no_apply_tax" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_untaxed_0" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_base_ice" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_ice" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="amount_untaxed" attrs="{'invisible': [('details_tax', '=', False)]}"/>
+                                    <field name="amount_tax" string="Tax difference of 0%" attrs="{'invisible': [('details_tax', '=', False)]}"/>
+                                    <field name="amount_base_irbpnr" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_irbpnr" attrs="{'invisible': [('details_tax', '=', False)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="total_tax" attrs="{'invisible': [('details_tax', '=', True)]}" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_tax_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+				            		<field name="amount_withhold" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                    <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                    <field name="payments_widget" colspan="2" nolabel="1" widget="payment"/>
+                                    <field name="residual" class="oe_subtotal_footer_separator" attrs="{'invisible': [('state', '=', 'draft')]}"
+                                    	groups="account.group_account_invoice"/>
+                                    <field name="reconciled" invisible="1"/>
+                                    <field name="outstanding_credits_debits_widget" colspan="2" nolabel="1" widget="payment" attrs="{'invisible': [('state', 'not in', 'open')]}"
+                                    	groups="account.group_account_invoice"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Other Info" name="other_info">
+                            <group>
+                                <group>
+                                	<field name="method_id" required="1" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="journal_id" groups="account.group_account_user" options="{'no_create': True}"
+                                        attrs="{'readonly':[('move_name','!=',False)]}"/>
+                                    <field domain="[('partner_id', '=', partner_id)]" name="partner_bank_id" invisible="1"/>
+                                    <field name="user_id" string="Responsible"/>
+                                    <field domain="[('company_id', '=', company_id), ('internal_type', '=', 'payable'), ('deprecated', '=', False)]"
+                                		name="account_id" groups="account.group_account_user" options="{'no_create': True}"/>
+                                    <field name="document_type"/>
+                                </group>
+                                <group>
+                                	<field name="is_refund" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    <field name="is_electronic" attrs="{'readonly': [('state', '!=', 'draft')]}"/>            		
+				            		<field name="authorization_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"
+				            			domain="[('is_electronic', '=', is_electronic), ('type_document_id', '=', type_document_id), ('type', '=', 'internal')]"           			
+				            			options="{'no_create': True, 'no_edit': True}"
+				            			context="{'form_view_ref': 'oe_account.view_authorization_form', 'tree_view_ref': 'oe_account.view_authorization_form'}"/>
+                                    <field name="manual_sequence" invisible="1"/>
+                                    <field name="move_id" groups="account.group_account_user" attrs="{'invisible': [('move_id', '=', False)]}"/>
+                                    <field name="date" domain="[('state', '=', 'draft'), ('company_id', '=', company_id)]" groups="account.group_account_user"/>
+                                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                                    <field name="fiscal_position_id" options="{'no_create': True}" placeholder="Auto-detect"/>
+                                </group>
+                            </group>
+							<group>
+	                            <div class="oe_inline">
+	                                <field name="tax_line_ids">
+	                                    <tree editable="bottom" string="Taxes">
+	                                        <field name="name"/>
+	                                        <!--Need invisible fields for on_change to create all necessary info -->
+	                                        <field name="tax_id" invisible="1"/>
+	                                        <field name="sequence" invisible="1"/>
+	                                        <field name="manual" invisible="1"/>
+	                                        <field name="account_id" groups="account.group_account_user" options="{'no_create': True}"/>
+	                                        <field name="account_analytic_id" domain="[('company_id', '=', parent.company_id)]" groups="analytic.group_analytic_accounting"/>
+	                                        <field name="base"/>
+	                                        <field name="amount"/>
+	                                        <field name="amount_rounding" invisible="1"/>
+	                                        <field name="amount_total" invisible="1"/>
+	                                        <field name="currency_id" invisible="1" force_save="1"/>
+	                                    </tree>
+	                                </field>
+	                            </div>
+	                        </group>
+                        </page>
+						<page string="Refunds Data" name="refunds" attrs="{'invisible': [('is_refund', '=',False)]}">
+							<field name="refund_ids" domain="[('type', '=', 'in_invoice'), ('is_refund','=',True), ('state', '!=', 'draft')]" 
+	       						context="{'form_view_ref': 'account.invoice_supplier_form', 'tree_view_ref': 'account.invoice_supplier_tree'}">
+	       						<tree>
+		       						<field name="partner_id" string="Supplier"/>
+		       						<field name="name"/>
+		       						<field name="date_invoice"/>
+		       						<field name="type_document_id"/>
+		       						<field name="authorization_number"/>
+		       						<field name="amount_untaxed_0"/>
+		       						<field name="amount_untaxed"/>
+		       						<field name="amount_ice"/>
+		       						<field name="amount_total"/>	       						
+		       						<field name="state"/>
+		       						<field name="type" invisible="1"/>
+	       						</tree>
+	       					</field>
+						</page>
+						<page string="SRI Info" name="sri_info" attrs="{'invisible': [('is_electronic', '=', False)]}">
+						    <field name="statement_tax_line_ids">
+						        <tree string="Statement">
+						            <field name="form_id"/>
+						            <field name="name"/>
+						            <field name="tax_group_id"/>
+						            <field name="base"/>
+						            <field name="percentage"/>
+						            <field name="amount"/>
+						            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+						            <field name="currency_id" invisible="1" force_save="1"/>
+						        </tree>
+						    </field>
+						</page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_invoice_purchase_clearance_tree" model="ir.actions.act_window">
+            <field name="name">Purchase Clearance</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain" eval="[('type','=','in_invoice'), ('document_type','=','clearance')]"/>
+            <field name="context" eval="{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase', 
+            	'default_document_type': 'clearance'}"/>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new purchase clearance.
+              </p><p>
+                You can control the purchase clearance from your vendor according to
+                what you purchased or received.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_invoice_purchase_clearance_tree1_view1" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="invoice_purchase_clearance_tree"/>
+            <field name="act_window_id" ref="action_invoice_purchase_clearance_tree"/>
+        </record>
+
+        <record id="action_invoice_purchase_clearance_tree1_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="invoice_purchase_clearance_form"/>
+            <field name="act_window_id" ref="action_invoice_purchase_clearance_tree"/>
+        </record>
+
+		<menuitem action="action_invoice_purchase_clearance_tree" id="menu_action_invoice_purchase_clearance" 
+			parent="account.menu_finance_payables_documents" sequence="2"/>
+    
+    </data>
+</odoo>    

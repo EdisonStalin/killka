@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+	<data>
+		
+		<menuitem id="menu_templates_sale" parent="sale.menu_sale_config"
+			name="Template Sale" sequence="2" groups="sales_team.group_sale_manager"/>
+
+		<record model="ir.actions.act_window" id="action_email_template_tree_sale">
+            <field name="name">Templates Email</field>
+            <field name="res_model">mail.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="mail.email_template_tree" />
+            <field name="domain">[('model_id.model', 'in', ['sale.order'])]</field>
+            <field name="context">{'default_model': 'sale.order'}</field>
+            <field name="search_view_id" ref="mail.view_email_template_search"/>
+        </record>
+
+		<menuitem id="menu_email_templates_sale" parent="menu_templates_sale"
+			action="action_email_template_tree_sale" sequence="1" groups="sales_team.group_sale_manager"/>
+
+    </data>	
+</odoo>
