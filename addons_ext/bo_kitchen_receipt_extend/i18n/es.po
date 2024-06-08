@@ -1,0 +1,6 @@
+#. module: bo_kitchen_receipt_extend
+#. openerp-web
+#: code:addons/bo_kitchen_receipt_extend/static/src/xml/multiprint.xml:6
+#, python-format
+msgid "Waiter:"
+msgstr "Mozo:"

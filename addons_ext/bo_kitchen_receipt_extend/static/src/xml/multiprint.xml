@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="OrderChangeReceipt">
+        <t t-jquery="br:odd" t-operation="replace"/>
+        <t t-jquery='t[t-if="changes.cancelled.length > 0"] span[size="double-height"]' t-operation="before">
+            <t t-esc='changes.full_date' />
+        </t>
+        <t t-jquery='t[t-if="changes.new.length > 0"] span[size="double-height"]' t-operation="before">
+            <t t-esc='changes.full_date' />
+        </t>
+
+    </t>
+</templates>
