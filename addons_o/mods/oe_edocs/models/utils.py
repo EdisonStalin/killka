@@ -11,8 +11,10 @@ codeTax = {
     '0': '0',
     '12': '2',
     '14': '3',
+    '15': '4',
     'novat': '6',
-    'excento': '7'
+    'excento': '7',
+    '13': '10',
 }
 
 TEMPLATES = {
@@ -81,7 +83,8 @@ def _info_tributary(document):
         'estab': document.authorization_id.entity,
         'ptoEmi': document.authorization_id.issue,
         'secuencial': document.number,
-        'dirMatriz': fix_chars('%s' % company.partner_id._display_address() or ''),
+        #'dirMatriz': fix_chars('%s' % company.partner_id._display_address() or ''),
+        'dirMatriz':  company.partner_id.street+' '+company.partner_id.street2+' '+company.partner_id.city+' '+company.partner_id.country_id.name,
     }
     if document.authorization_id.establishment_id:
         establishment = document.authorization_id.establishment_id

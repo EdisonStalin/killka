@@ -59,7 +59,7 @@ class Establishment(models.Model):
             'state_name': self.state_id.name or '',
             'country_code': self.country_id.code or '',
             'country_name': self.country_id.name or '',
-            'company_name': self.name or '',
+            #'company_name': self.name or '',
         }
         for field in ['street', 'street2', 'zip', 'city', 'state_id', 'country_id']:
             args[field] = getattr(self, field) or ''
