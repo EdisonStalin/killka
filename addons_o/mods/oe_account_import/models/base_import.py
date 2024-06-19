@@ -51,8 +51,11 @@ PER_TAX_IVA = {
     '0': 'iva0',
     '2': 'iva',
     '3': 'iva',
+    '4': 'iva',
+    '5': 'iva',
     '6': 'nobiva',
     '7': 'exiva',
+    '10': 'iva',
 }
 
 EXPRESSION = {
@@ -438,7 +441,7 @@ class Import(models.TransientModel):
                 type_tax = PER_TAX_IVA[ca]
             if 'descuentoAdicional' in tx:
                 discount += float(tx.get('descuentoAdicional', 0.0))
-            tax_g = self.env['account.tax.group'].search([('type', '=', type_tax), ('code', '=', code_tax)])
+            tax_g = self.env['account.tax.group'].search([('type', '=', type_tax), ('code', '=', code_tax)], limit=1)
             domain = [('tax_group_id', '=', tax_g.id), ('form_code_ats', '=', ca), ('company_id', '=', company.id),('active','=',True)]
             tax_id = self.env['account.tax'].with_context(type=self.type_document).search(domain, order='sequence ASC')
             if code_tax in ['3', '5'] and ca == '0':
