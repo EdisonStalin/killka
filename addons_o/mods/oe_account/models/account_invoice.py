@@ -789,7 +789,8 @@ class AccountInvoice(models.Model):
 
     @api.multi
     def action_invoice_draft(self):
-        for record in self.web_progress_iter(self, _('Record draft') + "({})".format(self._description)):
+        #for record in self.web_progress_iter(self, _('Record draft') + "({})".format(self._description)):
+        for record in self:
             if not record.manual_sequence:
                 internal_number = 0
                 number = '000000000'
@@ -804,7 +805,8 @@ class AccountInvoice(models.Model):
 
     @api.multi
     def action_invoice_cancel(self):
-        for record in self.web_progress_iter(self, _('Record cancel ') + "({})".format(self._description)):
+        #for record in self.web_progress_iter(self, _('Record cancel ') + "({})".format(self._description)):
+        for record in self:
             if record.withholding_count >= 1:
                 domain = [ ('partner_id', '=', record.partner_id.id), '|', ('tmpl_invoice_number', '=', record.name), ('invoice_id', '=', record.id)]
                 withhold_line_ids = self.env['account.withholding.line'].search(domain)
