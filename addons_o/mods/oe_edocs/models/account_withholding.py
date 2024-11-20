@@ -123,7 +123,7 @@ class AccountWithholding(models.Model):
             'fechaEmision': time.strftime('%d/%m/%Y', time.strptime(self.date_withholding, '%Y-%m-%d')),
             'obligadoContabilidad': 'SI' if company.partner_id.check_accounting else 'NO',
             'tipoIdentificacionSujetoRetenido': partner.l10n_latam_identification_type_id.code,
-            'razonSocialSujetoRetenido': partner.name,
+            'razonSocialSujetoRetenido': utils.fix_chars(partner.name),
             'identificacionSujetoRetenido': partner.vat,
             'periodoFiscal': time.strftime('%m/%Y', time.strptime(self.date_withholding, '%Y-%m-%d')),
         }
